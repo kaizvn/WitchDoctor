@@ -1,0 +1,86 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7 lt-ie10" id="ng-app" ng-app="iDocApp" ng-cloak> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie10" id="ng-app" ng-app="iDocApp" ng-cloak> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9 lt-ie10" id="ng-app" ng-app="iDocApp"> <![endif]-->
+<!--[if IE 9]>
+<html class="no-js lt-ie10" id="ng-app"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" id="ng-app" ng-app="iDocApp"> <!--<![endif]-->
+<head>
+    <title>Doc App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- build:css assets/styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="../bower_components/textAngular/dist/textAngular.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) assets/styles/main.css -->
+    <link rel="stylesheet" href="/assets/styles/main.css">
+    <!-- endbuild -->
+
+    <script>
+        var loc = window.location.href;
+        if (loc.indexOf("#") != -1 && loc.indexOf("#!") == -1) {
+            window.location.href = loc.replace("#", "#!");
+        }
+    </script>
+</head>
+<body>
+<div ui-view="content-view"></div>
+
+<!--[if lt IE 9]>
+<script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+<script src="bower_components/es5-shim/es5-shim.js"></script>
+<![endif]-->
+
+<!-- build:js assets/js/vendor.js -->
+<!-- bower:js -->
+<script src="../bower_components/es5-shim/es5-shim.js"></script>
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+<script src="../bower_components/modernizr/modernizr.js"></script>
+<script src="../bower_components/jquery-ui/ui/jquery-ui.js"></script>
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="../bower_components/angular-ui-bootstrap-bower/ui-bootstrap-tpls.js"></script>
+<script src="../bower_components/angular-route/angular-route.js"></script>
+<script src="../bower_components/angular-resource/angular-resource.js"></script>
+<script src="../bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="../bower_components/ui-router-extras/release/ct-ui-router-extras.js"></script>
+<script src="../bower_components/angular-translate/angular-translate.js"></script>
+<script src="../bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+<script src="../bower_components/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
+<script src="../bower_components/messageformat/messageformat.js"></script>
+<script src="../bower_components/messageformat/locale/fr.js"></script>
+<script src="../bower_components/messageformat/locale/en.js"></script>
+<script src="../bower_components/angular-translate-interpolation-messageformat/angular-translate-interpolation-messageformat.js"></script>
+<script src="../bower_components/angular-dynamic-locale/src/tmhDynamicLocale.js"></script>
+<script src="../bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+<script src="../bower_components/angular-cache-buster/angular-cache-buster.js"></script>
+<script src="../bower_components/underscore/underscore.js"></script>
+<script src="../bower_components/rangy/rangy-core.js"></script>
+<script src="../bower_components/rangy/rangy-classapplier.js"></script>
+<script src="../bower_components/rangy/rangy-highlighter.js"></script>
+<script src="../bower_components/rangy/rangy-selectionsaverestore.js"></script>
+<script src="../bower_components/rangy/rangy-serializer.js"></script>
+<script src="../bower_components/rangy/rangy-textrange.js"></script>
+<script src="../bower_components/textAngular/dist/textAngular.js"></script>
+<script src="../bower_components/textAngular/dist/textAngular-sanitize.js"></script>
+<script src="../bower_components/textAngular/dist/textAngularSetup.js"></script>
+<script src="../bower_components/ngstorage/ngStorage.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,src/main/resources/static}) assets/js/app.js -->
+<script src="assets/js/app.js"></script>
+<script src="assets/js/route.js"></script>
+<script src="assets/js/app.constants.js"></script>
+
+<script src="idoc/home/home.controller.js"></script>
+<!-- endbuild -->
+
+</body>
+</html>
