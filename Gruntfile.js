@@ -126,7 +126,7 @@ module.exports = function (grunt) {
                     port: 9000,
                     hostname: '*',
                     server: path.resolve('./express.config.js'),
-                    bases: ['src', 'src/idoc'],
+                    bases: ['src', 'src/idoc', 'src/i18n'],
                     livereload: !grunt.option('livereload')
                 }
             }

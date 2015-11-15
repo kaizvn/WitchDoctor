@@ -12,6 +12,12 @@ angular.module('iDocApp')
                             "controller": "HomeCtrl",
                             "templateUrl": "idoc/home/home.html"
                         }
+                    },
+                    resolve: {
+                        translatePartialLoader: function ($translate, $translatePartialLoader) {
+                            $translatePartialLoader.addPart('common');
+                            return $translate.refresh();
+                        }
                     }
                 })
 

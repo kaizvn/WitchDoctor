@@ -33,7 +33,7 @@
 
             // Initialize angular-translate
             $translateProvider.useLoader('$translatePartialLoader', {
-                urlTemplate: 'i18n/{lang}/{part}'
+                urlTemplate: 'i18n/{lang}/{part}.json'
             });
 
             $translateProvider.preferredLanguage('en');
@@ -44,10 +44,8 @@
             tmhDynamicLocaleProvider.defaultLocale("en-en");
             tmhDynamicLocaleProvider.localeLocationPattern('bower_components/angular-i18n/angular-locale_{{locale}}.js');
             tmhDynamicLocaleProvider.useCookieStorage('NG_TRANSLATE_LANG_KEY');
-
             
             $locationProvider.hashPrefix('!');
-
 
         })
         .run(function ($rootScope, $location, $http, $translate, ENV, VERSION, tmhDynamicLocale, $window) {

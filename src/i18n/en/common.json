@@ -1,0 +1,11 @@
+{
+    "global": {
+        "menu": {
+            "account": {
+                "main": "Account",
+                "profile": "Profile",
+                "logout": "Logout"
+            }
+        }
+    }
+}
