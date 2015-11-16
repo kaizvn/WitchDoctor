@@ -46,6 +46,12 @@
         "bootflat/js/*",
         "bootflat/img/*"
       ]
+    },
+    "font-awesome": {
+      "main": [
+        "css/font-awesome.css",
+        "fonts/*"
+      ]
     }
   },
   "devDependencies": {
