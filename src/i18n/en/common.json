@@ -1,11 +1,20 @@
 {
     "global": {
+        "app": "KhamBacSi",
+        "search": "Search Doctor by Name",
         "menu": {
             "account": {
                 "main": "Account",
                 "profile": "Profile",
-                "logout": "Logout"
+                "logout": "Logout",
+                "login": "Log In",
+                "signup": "Sign Up"
             }
-        }
+        },
+        "banner": {
+            "title": "Find a Doctor You’ll Love",
+            "subTitle": "Search over 1,000,000 doctors rated by education and experience"
+        },
+        "copyright": "&copy 2015 iDoctor - Find the Right Doctor for You"
     }
 }

@@ -1,10 +1,5 @@
 @charset "UTF-8";
 
-html {
-  font-size: 100%;
-  /* 1 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
-  -ms-text-size-adjust: 100%;
-  /* 2 */
-}
+@import 'override';
+@import 'block/banner';
+@import 'block/footer';

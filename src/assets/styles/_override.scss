@@ -1,0 +1,29 @@
+/* Override style of bootflat */
+
+.navbar {
+	border-radius: 0;
+	margin-bottom: 0;
+}
+
+.navbar-nav {
+	margin-top: 4px;
+	> li > a {
+		padding: 10px 15px;
+		margin-left: 5px;
+		&.btn:hover,
+		&.btn:focus {
+			background: #4fc1e9;
+			color: #fff;
+		}
+		&:hover,
+		&:focus {
+			background: none;
+			color: #4fc1e9;
+		}
+	}
+}
+
+.nav-border {
+	border-left: 1px solid #4fc1e9;
+	padding-left: 15px;
+}

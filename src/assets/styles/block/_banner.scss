@@ -1,0 +1,14 @@
+.banner {
+	background: url(/assets/images/banner.jpg) top left no-repeat;
+	min-height: 450px;
+	background-size: cover;
+	&__head {
+		text-align: center;
+		&_title {
+
+		}
+		&_subTitle {
+
+		}
+	}
+}
