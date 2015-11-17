@@ -8,3 +8,4 @@ src/assets/styles/main.css
 src/dist
 .grunt
 node_modules
+.idea/
