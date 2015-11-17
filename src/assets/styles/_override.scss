@@ -1,4 +1,7 @@
 /* Override style of bootflat */
+body {
+	color: #666;
+}
 
 .navbar {
 	border-radius: 0;
@@ -26,4 +29,11 @@
 .nav-border {
 	border-left: 1px solid #4fc1e9;
 	padding-left: 15px;
+}
+
+.form-search-small {	
+	width: 350px;
+	input {
+		font-size: 12px;
+	}
 }
