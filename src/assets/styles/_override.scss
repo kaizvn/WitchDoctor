@@ -6,12 +6,13 @@ body {
 .navbar {
 	border-radius: 0;
 	margin-bottom: 0;
+	background: #fff;
 }
 
 .navbar-nav {
-	margin-top: 4px;
+	margin-top: 8px;
 	> li > a {
-		padding: 10px 15px;
+		padding: 6px 15px;
 		margin-left: 5px;
 		&.btn:hover,
 		&.btn:focus {
@@ -31,9 +32,14 @@ body {
 	padding-left: 15px;
 }
 
-.form-search-small {	
-	width: 350px;
-	input {
-		font-size: 12px;
+.idoc-pagination {
+	li {
+		&.active a,
+		&.active a:hover,
+		a:hover,
+		a:focus{
+			background: #37bc9b;
+			border-color: #37bc9b;
+		}
 	}
 }

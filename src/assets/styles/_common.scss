@@ -1,0 +1,34 @@
+.block {
+	padding: 40px 0;
+	&__title {
+		text-align: center;
+		font-size: 30px;
+	}
+	&__subTitle {
+		text-align: center;
+		color: #989898;
+		font-size: 18px;
+		margin-bottom: 30px;
+	}
+}
+
+#main {
+	margin-top: 50px;
+}
+
+.form-search-small {	
+	width: 350px;
+	input {
+		font-size: 12px;
+	}
+}
+
+.blockSearch {
+	background: #525f6e;
+	min-height: 60px;
+	position: fixed;
+	top: 50px;
+	left: 0;
+	width: 100%;
+	z-index: 1025;
+}
