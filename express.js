@@ -13,7 +13,7 @@ var methodOverride = require('method-override'); // simulate DELETE and PUT (exp
 app.use(express.static(__dirname + '/src/dist'));                 // set the static files location /public/img will be /img for users
 
 app.get('*', function(req, res) {
-    res.sendfile(__dirname + '/src/dist/index.html'); // load the single view file (angular will handle the page changes on the front-end)
+    res.sendFile(__dirname + '/src/dist/index.html'); // load the single view file (angular will handle the page changes on the front-end)
 });
 
 app.use(bodyParser.urlencoded({'extended': 'true'}));            // parse application/x-www-form-urlencoded
