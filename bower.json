@@ -34,7 +34,7 @@
     "messageformat": {
       "main": [
         "messageformat.js",
-        "locale/fr.js",
+        "locale/vi.js",
         "locale/en.js"
       ]
     },
