@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'ProximaNovaReg';
+    src:  url('/assets/fonts/proximanova-regular-webfont.eot');
+    src:  url('/assets/fonts/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('/assets/fonts/proximanova-regular-webfont.woff') format('woff'),
+    url('/assets/fonts/proximanova-regular-webfont.ttf') format('truetype'),
+    url('/assets/fonts/proximanova-regular-webfont.svg#helveticaneue') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProximaNovaBolLBol';
+    src:  url('/assets/fonts/proximanova-bold-webfont.eot');
+    src:  url('/assets/fonts/proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('/assets/fonts/proximanova-bold-webfont.woff') format('woff'),
+    url('/assets/fonts/proximanova-bold-webfont.ttf') format('truetype'),
+    url('/assets/fonts/proximanova-bold-webfont.svg#helveticaneue') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProximaNovaLight';
+    src:  url('/assets/fonts/proximanova-light-webfont.eot');
+    src:  url('/assets/fonts/proximanova-light-webfont.eot?#iefix') format('embedded-opentype'),
+    url('/assets/fonts/proximanova-light-webfont.woff') format('woff'),
+    url('/assets/fonts/proximanova-light-webfont.ttf') format('truetype'),
+    url('/assets/fonts/proximanova-light-webfont.svg#helveticaneue') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
