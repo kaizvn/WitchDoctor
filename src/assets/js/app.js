@@ -36,12 +36,12 @@
                 urlTemplate: 'i18n/{lang}/{part}.json'
             });
 
-            $translateProvider.preferredLanguage('en');
+            $translateProvider.preferredLanguage('vi');
             $translateProvider.addInterpolation('$translateMessageFormatInterpolation');
             $translateProvider.useLoaderCache(true);
             $translateProvider.useCookieStorage();
 
-            tmhDynamicLocaleProvider.defaultLocale("en-en");
+            tmhDynamicLocaleProvider.defaultLocale("vi-vn");
             tmhDynamicLocaleProvider.localeLocationPattern('bower_components/angular-i18n/angular-locale_{{locale}}.js');
             tmhDynamicLocaleProvider.useCookieStorage('NG_TRANSLATE_LANG_KEY');
             

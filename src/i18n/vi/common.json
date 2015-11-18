@@ -1,0 +1,20 @@
+{
+    "global": {
+        "app": "KhamBacSi",
+        "search": "Tìm bác sĩ",
+        "menu": {
+            "account": {
+                "main": "Tài khoản",
+                "profile": "Hồ sơ",
+                "logout": "Thoát",
+                "login": "Đăng nhập",
+                "signup": "Đăng ký"
+            }
+        },
+        "banner": {
+            "title": "Hỗ trợ bạn tìm được những bác sĩ tin cậy, uy tín",
+            "subTitle": "Hồ sơ trên 1,000,000 bác sĩ được đánh giá theo kinh nghiệm và trình độ"
+        },
+        "copyright": "&copy 2015 Khambacsi.vn"
+    }
+}
