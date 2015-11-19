@@ -158,9 +158,9 @@ module.exports = function (grunt) {
             ]
         },
         concat: {
-        // not used since Uglify task does concat,
-        // but still available if needed
-        //    dist: {}
+            // not used since Uglify task does concat,
+            // but still available if needed
+            //    dist: {}
         },
         rev: {
             dist: {
@@ -183,9 +183,9 @@ module.exports = function (grunt) {
                             js: ['concat', 'uglifyjs'],
                             css: ['cssmin', useminAutoprefixer] // Let cssmin concat files so it corrects relative paths to fonts and images
                         },
-                            post: {}
-                        }
+                        post: {}
                     }
+                }
             }
         },
         usemin: {
@@ -205,10 +205,10 @@ module.exports = function (grunt) {
                     ],
                     css: [
                         [/(assets\/images\/.*?\.(?:gif|jpeg|jpg|png|webp|svg|woff|ttf))/gm, 'Update the JS to reference our revved images']
-                            // to test
+                        // to test
                         //[/(assets\/fonts\/.*?\.(?:woff|ttf))/gm, 'Update the JS to reference our revved images']
                     ],
-                   html: [
+                    html: [
                         [/(assets\/images\/.*?\.(?:gif|jpeg|jpg|png|webp|svg))/gm, 'Update the HTML to reference our revved images']
                     ]
                 },
@@ -271,7 +271,7 @@ module.exports = function (grunt) {
                 root: 'src' // Replace relative paths for static resources with absolute path
             }
         },
-        ngtemplates:    {
+        ngtemplates: {
             dist: {
                 cwd: 'src',
                 src: ['common/**/*.html', 'idoc/**/*.html'],
@@ -279,7 +279,7 @@ module.exports = function (grunt) {
                 options: {
                     module: 'iDocApp',
                     usemin: 'assets/js/app.js',
-                    htmlmin:  {
+                    htmlmin: {
                         removeCommentsFromCDATA: true,
                         // https://github.com/yeoman/grunt-usemin/issues/44
                         collapseWhitespace: true,
@@ -328,6 +328,7 @@ module.exports = function (grunt) {
                         '*.html',
                         'common/**/*.html',
                         'idoc/**/*.html',
+                        'i18n/**/*',
                         'assets/images/**/*.{jpg,png,gif,webp}',
                         'assets/skin/**/*.{jpg,png,gif,webp}',
                         'assets/fonts/**/*'
@@ -349,14 +350,15 @@ module.exports = function (grunt) {
                         'angular-i18n/angular-locale_en-us.js',
                         'angular-i18n/angular-locale_en.js'
                     ]
-                }, {
-                    expand: true,
-                    cwd: '.tmp/assets/styles',
-                    dest: '<%= yeoman.dist %>/assets/styles',
-                    src: [
-                        'print.css', 'renault.css', 'dacia.css'
-                    ]
-                } ]
+                },
+                    {
+                        expand: true,
+                        cwd: '.tmp/assets/styles',
+                        dest: '<%= yeoman.dist %>/assets/styles',
+                        src: [
+                            'print.css', 'renault.css', 'dacia.css'
+                        ]
+                    }]
             }
         },
         concurrent: {
@@ -422,7 +424,7 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.registerTask('serve','run server', function(target, role) {
+    grunt.registerTask('serve', 'run server', function (target, role) {
         // exporting target value to allow external node modules to use it
         global.serveTarget = target;
 
