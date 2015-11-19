@@ -2,13 +2,25 @@
 	background: url(/assets/images/banner.jpg) top left no-repeat;
 	min-height: 450px;
 	background-size: cover;
+	position: relative;
 	&__head {
+		position: relative;
+		z-index: 99;
 		text-align: center;
 		&_title {
-
+			color: #fff;
 		}
 		&_subTitle {
-
+			color: #fff;
 		}
+	}
+	.overlay {
+		position: absolute;
+		z-index: 9;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.2);
 	}
 }
