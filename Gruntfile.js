@@ -341,6 +341,16 @@ module.exports = function (grunt) {
                     ]
                 }, {
                     expand: true,
+                    cwd: 'bower_components',
+                    dest: '<%= yeoman.dist %>/bower_components',
+                    src: [
+                        'angular-i18n/angular-locale_vi-vn.js',
+                        'angular-i18n/angular-locale_vi.js',
+                        'angular-i18n/angular-locale_en-us.js',
+                        'angular-i18n/angular-locale_en.js'
+                    ]
+                }, {
+                    expand: true,
                     cwd: '.tmp/assets/styles',
                     dest: '<%= yeoman.dist %>/assets/styles',
                     src: [
