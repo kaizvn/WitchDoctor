@@ -7,13 +7,15 @@ var express = require('express');
 var app = express();                               // create our app w/ express
 var bodyParser = require('body-parser');    // pull information from HTML POST (express4)
 var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
+var path = require('path'); //use for static page
 
 // configuration =================
 
 app.use(express.static(__dirname + '/src/dist'));                 // set the static files location /public/img will be /img for users
 
-app.get('*', function(req, res) {
-    res.sendFile(__dirname + '/src/dist/index.html'); // load the single view file (angular will handle the page changes on the front-end)
+app.get('*', function (req, res) {
+    res.sendFile('index.html', {root: path.join(__dirname, 'src/dist')});
+    //res.sendfile(__dirname + '/src/dist/index.html'); // load the single view file (angular will handle the page changes on the front-end
 });
 
 app.use(bodyParser.urlencoded({'extended': 'true'}));            // parse application/x-www-form-urlencoded
