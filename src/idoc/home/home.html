@@ -5,7 +5,22 @@
 			<p class="banner__head_subTitle">{{'global.banner.subTitle' | translate}}</p>
 		</div>
 		<div class="banner__body">
-			
+			<div class="row">
+				<div class="col-sm-5">
+					<input type="text" class="form-control" placeholder="{{'global.banner.form.input' | translate}}">
+				</div>
+				<div class="col-sm-4">
+					<select class="form-control">
+						<option value="">{{'global.banner.form.location' | translate}}</option>
+						<option value="">Hà Nội</option>
+						<option value="">Hồ Chí Minh</option>
+						<option value="">Đà Nẵng</option>
+					</select>
+				</div>
+				<div class="col-sm-3">
+					<button type="button" class="btn btn-primary btn-block">{{'global.banner.form.action' | translate}}</button>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class="overlay"></div>

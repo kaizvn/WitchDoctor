@@ -60,7 +60,7 @@ body {
 }
 
 .nav-border {
-	border-left: 1px solid #4fc1e9;
+	border-left: 1px solid #ccc;
 	padding-left: 15px;
 }
 
@@ -74,4 +74,9 @@ body {
 			border-color: #37bc9b;
 		}
 	}
+}
+
+.btn,
+.form-control {
+	border-radius: 2px;
 }
