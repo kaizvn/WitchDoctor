@@ -5,14 +5,30 @@
 			<p class="banner__head_subTitle">{{'global.banner.subTitle' | translate}}</p>
 		</div>
 		<div class="banner__body">
-			
+			<div class="row">
+				<div class="col-sm-5">
+					<input type="text" class="form-control" placeholder="{{'global.banner.form.input' | translate}}">
+				</div>
+				<div class="col-sm-4">
+					<select class="form-control">
+						<option value="">{{'global.banner.form.location' | translate}}</option>
+						<option value="">Hà Nội</option>
+						<option value="">Hồ Chí Minh</option>
+						<option value="">Đà Nẵng</option>
+					</select>
+				</div>
+				<div class="col-sm-3">
+					<button type="button" class="btn btn-primary btn-block">{{'global.banner.form.action' | translate}}</button>
+				</div>
+			</div>
 		</div>
 	</div>
+	<div class="overlay"></div>
 </div>
 
-<div class="block container">
-	<h2 class="block__title">Discover the Best Doctors in Mountain View, CA</h2>
-	<p class="block__subTitle">Simplify your search with our picks of the top doctors in your area</p>
+<div class="section container">
+	<h2 class="section__title">Discover the Best Doctors in Mountain View, CA</h2>
+	<p class="section__subTitle">Simplify your search with our picks of the top doctors in your area</p>
 	<div class="row">
 		<div class="col-sm-6 col-md-4">
 			<div class="thumbnail">

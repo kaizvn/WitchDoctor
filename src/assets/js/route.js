@@ -35,7 +35,22 @@ angular.module('iDocApp')
                         return $translate.refresh();
                     }
                 }
-            })
+            }).state({
+                name: 'detail',
+                url: "/detail",
+                views: {
+                    "content-view": {
+                        "controller": "DetailCtrl",
+                        "templateUrl": "idoc/detail/detail.html"
+                    }
+                } ,
+                resolve: {
+                    translatePartialLoader: function ($translate, $translatePartialLoader) {
+                        $translatePartialLoader.addPart('common');
+                        return $translate.refresh();
+                    }
+                }
+            });
 
         $urlRouterProvider.otherwise('/');
     });

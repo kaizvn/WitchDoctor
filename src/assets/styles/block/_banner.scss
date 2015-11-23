@@ -2,13 +2,44 @@
 	background: url(/assets/images/banner.jpg) top left no-repeat;
 	min-height: 450px;
 	background-size: cover;
+	position: relative;
 	&__head {
+		position: relative;
+		z-index: 99;
 		text-align: center;
+		margin-top: 125px;
 		&_title {
-
+			color: #fff;
 		}
 		&_subTitle {
-
+			color: #fff;
 		}
+	}
+	&__body {
+		position: relative;
+		z-index: 99;
+		padding: 5px;
+		background: #fff;
+		max-width: 695px;
+		margin: 0 auto;
+		border-radius: 2px;
+		margin-top: 30px;
+		.form-control {
+			height: 45px;
+		}
+		.btn {
+			font-size: 20px;
+			font-weight: bold;
+			padding: 7px 12px;
+		}
+	}
+	.overlay {
+		position: absolute;
+		z-index: 9;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.2);
 	}
 }

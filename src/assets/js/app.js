@@ -24,6 +24,12 @@
     angular.module('iDocApp')
         .config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider,
                       $translateProvider, $provide, tmhDynamicLocaleProvider, httpRequestInterceptorCacheBusterProvider) {
+            //enable htmlmode - remove #! on url
+            //$locationProvider.html5Mode(true);
+            /*$locationProvider.html5Mode({
+                enabled: true,
+                requireBase: false
+            });*/
             //enable CSRF
             $httpProvider.defaults.xsrfCookieName = 'CSRF-TOKEN';
             $httpProvider.defaults.xsrfHeaderName = 'X-CSRF-TOKEN';
@@ -42,7 +48,7 @@
             $translateProvider.useCookieStorage();
 
             tmhDynamicLocaleProvider.defaultLocale("vi-vn");
-            tmhDynamicLocaleProvider.localeLocationPattern('bower_components/angular-i18n/angular-locale_{{locale}}.js');
+            tmhDynamicLocaleProvider.localeLocationPattern('/bower_components/angular-i18n/angular-locale_{{locale}}.js');
             tmhDynamicLocaleProvider.useCookieStorage('NG_TRANSLATE_LANG_KEY');
             
             $locationProvider.hashPrefix('!');

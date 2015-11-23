@@ -13,7 +13,12 @@
         },
         "banner": {
             "title": "Hỗ trợ bạn tìm được những bác sĩ tin cậy, uy tín",
-            "subTitle": "Hồ sơ trên 1,000,000 bác sĩ được đánh giá theo kinh nghiệm và trình độ"
+            "subTitle": "Hồ sơ trên 1,000,000 bác sĩ được đánh giá theo kinh nghiệm và trình độ",
+            "form": {
+                "input": "Triệu chứng ...",
+                "location": "Chọn thành phố",
+                "action": "Tìm kiếm"
+            }
         },
         "copyright": "&copy 2015 Khambacsi.vn"
     }

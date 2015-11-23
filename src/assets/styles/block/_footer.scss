@@ -1,9 +1,17 @@
 .footer {
 	background-color: #676767;
     color: white;
-    padding: 25px 0;
+    padding: 40px 0 20px;
 }
 
-#copyright {
-	margin-bottom: 0;
+.footer-nav .nav-title {
+	color: #ccc;
+}
+
+.footer-nav .nav-item > a {
+	color: #fff;
+}
+
+.footer-copyright {
+	color: #ccc;
 }
