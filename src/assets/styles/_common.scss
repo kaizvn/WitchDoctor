@@ -124,6 +124,128 @@ h1, h2, h3, h4, h5 {
 	}
 }
 
+.map {
+	height: 300px;
+}
+
+.doctor-big {
+	.doctor__image {
+		width: 183px;
+		height: 209px;
+		margin-top: -70px;
+		img {
+			width: 183px;
+			height: 209px;
+			border: 5px solid #fff;
+		}
+	}
+	.doctor__favorite {
+		font-size: 24px;
+	}
+	.doctor__name {
+		font-size: 24px;
+		line-height: 24px;
+		font-weight: normal;
+		margin-bottom: 15px;
+		color: #666;
+		&:hover {
+			color: #666;
+		}
+	}
+	.doctor__details {
+		padding-left: 200px;
+		border-bottom: none;
+	}
+	.doctor__better {
+		font-size: 22px;
+	}
+	.doctor__rating {
+		margin-top: 20px;
+		span {
+			font-size: 24px;
+		}
+	}
+}
+
+
+.btn-icon {
+	font-size: 18px;
+	margin-bottom: 5px;
+	padding: 10px 15px;
+	i {
+		float: left;
+		font-size: 24px;
+	}
+}
+
+.recentWrap {
+	&__title {
+	    line-height: 50px;
+	    padding: 20px 30px 15px;
+	    text-align: left;
+    	font-size: 20px;
+    	font-weight: normal;
+	}
+}
+
+.recentBl {
+	text-align: center;
+	&__detail {
+		border: 1px solid #e5e5e5;
+		background: #fff;
+		text-align: center;
+		padding: 45px 0 30px;
+	}
+	&__image {
+		width: 112px;
+	    height: 134px;
+	    display: inline-block;
+	    margin-bottom: -35px;
+	    img {
+	    	width: 112px;
+		    height: 134px;
+		    border: 1px solid #fff;
+	    }
+	}
+	&__name {
+		color: #666;
+		font-size: 14px;
+		margin-bottom: 10px;
+	}
+	&__specialty {
+		color: #999;
+	}
+	&__rating {
+		color: #da4453;
+		margin: 7px 0 20px;
+		span {
+			font-size: 24px;
+		}
+	}
+}
+
+.btn-viewprofile {
+	background: none;
+	border: 1px solid #3BAFDA;
+	color: #3BAFDA;
+	padding: 8px 15px;
+	min-width: 190px;
+	&:hover {
+		background: #3BAFDA;
+		border: 1px solid #3BAFDA;
+		color: #fff;
+	}
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

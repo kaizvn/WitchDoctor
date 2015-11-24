@@ -26,10 +26,10 @@
                       $translateProvider, $provide, tmhDynamicLocaleProvider, httpRequestInterceptorCacheBusterProvider) {
             //enable htmlmode - remove #! on url
             //$locationProvider.html5Mode(true);
-            /*$locationProvider.html5Mode({
+            $locationProvider.html5Mode({
                 enabled: true,
                 requireBase: false
-            });*/
+            });
             //enable CSRF
             $httpProvider.defaults.xsrfCookieName = 'CSRF-TOKEN';
             $httpProvider.defaults.xsrfHeaderName = 'X-CSRF-TOKEN';
