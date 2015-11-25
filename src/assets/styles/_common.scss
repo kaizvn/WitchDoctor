@@ -237,6 +237,39 @@ h1, h2, h3, h4, h5 {
 	}
 }
 
+.block-sm {
+	.block__title {
+		padding: 15px 20px;
+		margin-bottom: 10px;
+		h3 {
+			font-size: 16px;
+			line-height: 22px;
+		}
+	}
+}
+
+.media {
+	margin: 10px;
+	border-bottom: 1px solid #eee;
+	padding-bottom: 7px;
+	&:last-child {
+		border-bottom: none;
+	}
+	img {
+		width: 48px;
+		height: 56px;
+		border: 1px solid #eee;
+		border-radius: 2px;
+	}
+	.doctor__name {
+		font-size: 15px;
+		margin-top: 0;
+	}
+	.doctor__address {
+		font-size: 13px;
+	}
+}
+
 
 
 
