@@ -10,6 +10,13 @@ body {
 	background: #fff;
 }
 
+.navbar-brand {
+	padding: 5px 15px;
+	img {
+		height: 40px;
+	}
+}
+
 .navbar-nav {
 	margin-top: 8px;
 	> li > a {
