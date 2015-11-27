@@ -15,10 +15,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!-- build:css assets/styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="../bower_components/Bootflat/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../bower_components/Bootflat/bootflat/css/bootflat.css" />
-    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css" />
-    <link rel="stylesheet" href="../bower_components/textAngular/dist/textAngular.css" />
+    <link rel="stylesheet" href="../bower_components/Bootflat/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../bower_components/Bootflat/bootflat/css/bootflat.css"/>
+    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="../bower_components/textAngular/dist/textAngular.css"/>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) assets/styles/main.css -->
@@ -33,81 +33,82 @@
     </script>
 </head>
 <body>
-    <!-- Start Nav -->
-    <nav class="navbar navbar-fixed-top" role="navigation">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#iDocNav">
+<!-- Start Nav -->
+<nav class="navbar navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#iDocNav">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#"><img src="assets/images/logo.png" alt="{{'global.app' | translate}}"></a>
-            </div>
-            <div class="collapse navbar-collapse" id="iDocNav">
-                <form class="navbar-form navbar-left" role="search">
-                    <div class="input-group form-search form-search-small">
-                        <input type="text" class="form-control search-query" placeholder="{{'global.search' | translate}}">
+            </button>
+            <a class="navbar-brand" href="#"><img src="assets/images/logo.png" alt="{{'global.app' | translate}}"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="iDocNav">
+            <form class="navbar-form navbar-left" role="search">
+                <div class="input-group form-search form-search-small">
+                    <input type="text" class="form-control search-query" placeholder="{{'global.search' | translate}}">
                         <span class="input-group-btn">
-                            <button type="submit" class="btn btn-primary" data-type="last"><i class="fa fa-search"></i></button>
+                            <button type="submit" class="btn btn-primary" data-type="last"><i class="fa fa-search"></i>
+                            </button>
                         </span>
-                    </div>
-                </form>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">For Doctor</a></li>
-                    <li class="nav-border"><a href="#">{{'global.menu.account.login' | translate}}</a></li>
-                    <li><a href="#" class="btn btn-primary">{{'global.menu.account.signup' | translate}}</a></li>
-                </ul>
-            </div>
+                </div>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">For Doctor</a></li>
+                <li class="nav-border"><a href="#">{{'global.menu.account.login' | translate}}</a></li>
+                <li><a href="#" class="btn btn-primary">{{'global.menu.account.signup' | translate}}</a></li>
+            </ul>
         </div>
-    </nav>
-    <!-- End Nav -->
-
-    <!-- Start Main View -->
-    <div id="main" ui-view="content-view">
-        
     </div>
-    <!-- End Main View -->
+</nav>
+<!-- End Nav -->
 
-    <!-- Start Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="clearfix">
-                <div class="footer-logo"><a href="#"><img src="assets/images/logo_footer.png" alt="Khám Bác Sĩ"></a></div>
-                <dl class="footer-nav">
-                    <dt class="nav-title">PORTFOLIO</dt>
-                    <dd class="nav-item"><a href="#">Web Design</a></dd>
-                    <dd class="nav-item"><a href="#">Branding &amp; Identity</a></dd>
-                    <dd class="nav-item"><a href="#">Mobile Design</a></dd>
-                    <dd class="nav-item"><a href="#">Print</a></dd>
-                    <dd class="nav-item"><a href="#">User Interface</a></dd>
-                </dl>
-                <dl class="footer-nav">
-                    <dt class="nav-title">ABOUT</dt>
-                    <dd class="nav-item"><a href="#">The Company</a></dd>
-                    <dd class="nav-item"><a href="#">History</a></dd>
-                    <dd class="nav-item"><a href="#">Vision</a></dd>
-                </dl>
-                <dl class="footer-nav">
-                    <dt class="nav-title">GALLERY</dt>
-                    <dd class="nav-item"><a href="#">Flickr</a></dd>
-                    <dd class="nav-item"><a href="#">Picasa</a></dd>
-                    <dd class="nav-item"><a href="#">iStockPhoto</a></dd>
-                    <dd class="nav-item"><a href="#">PhotoDune</a></dd>
-                </dl>
-                <dl class="footer-nav">
-                    <dt class="nav-title">CONTACT</dt>
-                    <dd class="nav-item"><a href="#">Basic Info</a></dd>
-                    <dd class="nav-item"><a href="#">Map</a></dd>
-                    <dd class="nav-item"><a href="#">Conctact Form</a></dd>
-                </dl>
-            </div>
-            <p class="footer-copyright" ng-bind-html="'global.copyright' | translate"></p>
+<!-- Start Main View -->
+<div id="main" ui-view="content-view">
+
+</div>
+<!-- End Main View -->
+
+<!-- Start Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="clearfix">
+            <div class="footer-logo"><a href="#"><img src="assets/images/logo_footer.png" alt="Khám Bác Sĩ"></a></div>
+            <dl class="footer-nav">
+                <dt class="nav-title">PORTFOLIO</dt>
+                <dd class="nav-item"><a href="#">Web Design</a></dd>
+                <dd class="nav-item"><a href="#">Branding &amp; Identity</a></dd>
+                <dd class="nav-item"><a href="#">Mobile Design</a></dd>
+                <dd class="nav-item"><a href="#">Print</a></dd>
+                <dd class="nav-item"><a href="#">User Interface</a></dd>
+            </dl>
+            <dl class="footer-nav">
+                <dt class="nav-title">ABOUT</dt>
+                <dd class="nav-item"><a href="#">The Company</a></dd>
+                <dd class="nav-item"><a href="#">History</a></dd>
+                <dd class="nav-item"><a href="#">Vision</a></dd>
+            </dl>
+            <dl class="footer-nav">
+                <dt class="nav-title">GALLERY</dt>
+                <dd class="nav-item"><a href="#">Flickr</a></dd>
+                <dd class="nav-item"><a href="#">Picasa</a></dd>
+                <dd class="nav-item"><a href="#">iStockPhoto</a></dd>
+                <dd class="nav-item"><a href="#">PhotoDune</a></dd>
+            </dl>
+            <dl class="footer-nav">
+                <dt class="nav-title">CONTACT</dt>
+                <dd class="nav-item"><a href="#">Basic Info</a></dd>
+                <dd class="nav-item"><a href="#">Map</a></dd>
+                <dd class="nav-item"><a href="#">Conctact Form</a></dd>
+            </dl>
         </div>
-    </footer>
-    <!-- End Footer -->
+        <p class="footer-copyright" ng-bind-html="'global.copyright' | translate"></p>
+    </div>
+</footer>
+<!-- End Footer -->
 
 <!--[if lt IE 9]>
 <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
@@ -118,6 +119,7 @@
 <!-- bower:js -->
 <script src="../bower_components/es5-shim/es5-shim.js"></script>
 <script src="../bower_components/jquery/dist/jquery.js"></script>
+<script src="../bower_components/lodash/lodash.min.js"></script>
 <script src="../bower_components/modernizr/modernizr.js"></script>
 <script src="../bower_components/jquery-ui/ui/jquery-ui.js"></script>
 <script src="../bower_components/Bootflat/bootflat/js/icheck.min.js"></script>

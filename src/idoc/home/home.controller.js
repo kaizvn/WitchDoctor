@@ -5,7 +5,8 @@ function homeController($scope, IdocRestService) {
     $scope.content = 'Home';
 
     $scope.doSearch = function () {
-        IdocRestService.getDoctors().then(function (response) {
+        var params = {};
+        IdocRestService.getDoctors(params).then(function (response) {
             console.log(response.data);
         }, function (error) {
             console.trace(error);
