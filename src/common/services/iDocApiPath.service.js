@@ -8,4 +8,8 @@ angular
         this.getBaseUrl= function() {
             return '/srv/idoc/api/v1';
         };
+
+        this.getDoctors = function() {
+        	return this.getBaseUrl() + '/doctors';
+        };
     });
