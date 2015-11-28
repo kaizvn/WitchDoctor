@@ -1,10 +1,12 @@
 # Logs
 logs
 *.log
+*.DS_Store
 .tmp
 .sass-cache
 bower_components
 src/assets/styles/main.css
+src/assets/styles/main.css.map
 src/dist
 .grunt
 node_modules

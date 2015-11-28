@@ -350,6 +350,13 @@ module.exports = function (grunt) {
                         'angular-i18n/angular-locale_en-us.js',
                         'angular-i18n/angular-locale_en.js'
                     ]
+                },{
+                    expand: true,
+                    cwd: 'bower_components',
+                    dest: '<%= yeoman.dist %>/bower_components',
+                    src: [
+                        'font-awesome/fonts/**'
+                    ]
                 },
                     {
                         expand: true,
@@ -358,7 +365,8 @@ module.exports = function (grunt) {
                         src: [
                             'print.css', 'renault.css', 'dacia.css'
                         ]
-                    }]
+                    }
+                ]
             }
         },
         concurrent: {

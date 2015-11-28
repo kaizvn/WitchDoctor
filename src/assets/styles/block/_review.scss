@@ -1,0 +1,43 @@
+
+.review {
+	padding: 20px 0 10px;
+	font-size: 13px;
+	&__image {
+		width: 55px;
+		height: 55px;
+		float: left;
+		img {
+			width: 55px;
+			height: 55px;
+		}
+	}
+	.doctor__rating {
+
+	}
+	&__info {
+		padding-left: 65px;
+	}
+	&__date {
+		display: block;
+	}
+	&__username {
+		display: block;
+		padding-left: 2px;
+	}
+	&__quocte {
+		color: #888;
+		padding-left: 215px;
+		position: relative;
+		padding-top: 5px;
+		i {
+			font-size: 18px;
+			position: absolute;
+			top: 0;
+			left: 190px;
+		}
+	}
+}
+
+.read-more-review {
+	font-size: 16px;
+}
