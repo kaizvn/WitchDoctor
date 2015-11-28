@@ -53,7 +53,7 @@ function iDocRestService($http, iDocApiPath, $q) {
         params = params || {};
 
         _.defaults(params, DEFAULT_PARAMS['getDoctor']);
-        console.log(params);
+
         return $http({
             method: 'GET',
             url: iDocApiPath.getDoctors(),
