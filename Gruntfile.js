@@ -355,7 +355,7 @@ module.exports = function (grunt) {
                         cwd: '.tmp/assets/styles',
                         dest: '<%= yeoman.dist %>/assets/styles',
                         src: [
-                            'print.css', 'renault.css', 'dacia.css'
+                            'main.css'
                         ]
                     }
                 ]
