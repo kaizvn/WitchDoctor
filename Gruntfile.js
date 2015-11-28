@@ -61,7 +61,7 @@ module.exports = function (grunt) {
         wiredep: {
             app: {
                 src: ['src/index.html'],
-                exclude: [/angular-i18n/]
+                exclude: [/angular-i18n/, /font-awesome/]
             },
             sass: {
                 src: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
@@ -350,15 +350,7 @@ module.exports = function (grunt) {
                         'angular-i18n/angular-locale_en-us.js',
                         'angular-i18n/angular-locale_en.js'
                     ]
-                },{
-                    expand: true,
-                    cwd: 'bower_components',
-                    dest: '<%= yeoman.dist %>/bower_components',
-                    src: [
-                        'font-awesome/fonts/**'
-                    ]
-                },
-                    {
+                }, {
                         expand: true,
                         cwd: '.tmp/assets/styles',
                         dest: '<%= yeoman.dist %>/assets/styles',
