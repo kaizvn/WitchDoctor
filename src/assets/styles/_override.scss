@@ -35,6 +35,10 @@ body {
 	}
 }
 
+.navbar-nav.navbar-right:first-child {
+	margin-right: 0;
+}
+
 .form-search .search-query,
 .form-search .search-query:first-child,
 .form-search .search-query:last-child {
@@ -85,5 +89,5 @@ body {
 
 .btn,
 .form-control {
-	border-radius: 2px;
+	border-radius: 3px;
 }

@@ -17,7 +17,7 @@
             "form": {
                 "input": "Triệu chứng ...",
                 "location": "Chọn thành phố",
-                "action": "Tìm kiếm"
+                "action": "Tìm"
             }
         },
         "copyright": "&copy 2015 Khambacsi.vn"

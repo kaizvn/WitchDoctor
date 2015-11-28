@@ -9,13 +9,10 @@
 </div>
 <!-- End Block Search -->
 
-<div class="map">
 
-</div>
-
-<div class="container">
+<div class="container" id="detail">
 	<div class="row">
-		<div class="col-md-9">
+		<div class="col-md-6">
 			<div class="doctor doctor-big">
 				<span class="doctor__favorite"><i class="fa fa-heart"></i></span>
 				<div class="clearfix">
@@ -35,19 +32,24 @@
 							<span class="fa fa-star"></span>
 							<span class="fa fa-star"></span>
 						</div>
+						<div class="doctor__address">
+							<div class="doctor__address_street">701 E El Camino Real</div>
+							<div class="doctor__address_city">Mountain View, CA 94040</div>
+						</div>
 					</div>
+				</div>
+				<div class="doctor__action">
+					<button type="button" class="btn btn-icon btn-warning">
+						<i class="fa fa-phone"></i>
+						<span>Contact info</span>
+					</button>
 				</div>
 			</div>
 		</div>
-		<div class="col-md-3">
-			<button type="button" class="btn btn-icon btn-warning btn-block">
-				<i class="fa fa-phone"></i>
-				<span>Contact info</span>
-			</button>
-			<button type="button" class="btn btn-icon btn-primary btn-block">
-				<i class="fa fa-umbrella"></i>
-				<span>Verify Your Insurance</span>
-			</button>
+		<div class="col-md-6">
+			<div id="maps" maps lat="37.368649" lon="-122.081845">
+
+			</div>
 		</div>
 	</div>
 </div>
