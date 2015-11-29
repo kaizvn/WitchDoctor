@@ -8,6 +8,7 @@ var app = express();                               // create our app w/ express
 var bodyParser = require('body-parser');    // pull information from HTML POST (express4)
 var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
 var path = require('path'); //use for static page
+var PORT = process.env.PORT || 8080;
 
 // configuration =================
 
@@ -24,5 +25,5 @@ app.use(bodyParser.json({type: 'application/vnd.api+json'})); // parse applicati
 app.use(methodOverride());
 
 // listen (start app with node server.js) ======================================
-app.listen(process.env.PORT || 8081);
-console.log("App listening on port 8080 or", process.env.PORT);
+app.listen(PORT);
+console.log("App listening on port %s", PORT);
