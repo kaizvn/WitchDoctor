@@ -12,19 +12,23 @@
 
 <div class="container" id="detail">
 	<div class="row">
-		<div class="col-md-6">
+		<div class="col-md-7">
 			<div class="doctor doctor-big">
 				<span class="doctor__favorite"><i class="fa fa-heart"></i></span>
 				<div class="clearfix">
 					<div class="doctor__image">
-						<img src="assets/images/doctor.jpg" alt="">
+						<img ng-src="{{doctor.profile.image_url}}" alt="">
 					</div>
 					<div class="doctor__details">
 						<a class="doctor__name" href="">
-							<span>Stephanie Wong, MD</span>
+							<span>Dr. {{doctor.profile.first_name}} {{doctor.profile.last_name}}, {{doctor.profile.title}}</span>
 							<span class="doctor__better"><i class="fa fa-check-circle"></i></span>
 						</a>
-						<div class="doctor__specialty">Internist</div>
+						<div class="doctor__specialty">
+							<span ng-repeat="special in doctor.specialties">{{special.name}}
+								<span ng-hide="doctor.specialties.length == 1 || (doctor.specialties.length - 1) == $index"> | </span>
+							</span>
+						</div>
 						<div class="doctor__rating">
 							<span class="fa fa-star"></span>
 							<span class="fa fa-star"></span>
@@ -33,22 +37,22 @@
 							<span class="fa fa-star"></span>
 						</div>
 						<div class="doctor__address">
-							<div class="doctor__address_street">701 E El Camino Real</div>
-							<div class="doctor__address_city">Mountain View, CA 94040</div>
+							<div class="doctor__address_street">{{doctor.practices[0].visit_address.street}}</div>
+							<div class="doctor__address_city">{{doctor.practices[0].visit_address.city}}, {{doctor.practices[0].visit_address.state}} {{doctor.practices[0].visit_address.zip}}</div>
 						</div>
 					</div>
 				</div>
 				<div class="doctor__action">
 					<button type="button" class="btn btn-icon btn-warning">
 						<i class="fa fa-phone"></i>
-						<span>Contact info</span>
+						<span ng-show="!showShoneNumber" ng-click="showShoneNumber = !showShoneNumber">Contact info</span>
+						<span ng-show="showShoneNumber">{{doctor.practices[0].phones[0].number}}</span>
 					</button>
 				</div>
 			</div>
 		</div>
-		<div class="col-md-6">
-			<div id="maps" maps lat="37.368649" lon="-122.081845">
-
+		<div class="col-md-5">
+				<div id="maps" maps lat="{{doctor.practices[0].visit_address.lat}}" lon="{{doctor.practices[0].visit_address.lon}}">
 			</div>
 		</div>
 	</div>
@@ -95,14 +99,14 @@
 			<div class="col-md-9">
 				<div class="block">
 					<div class="block__title">
-						<h3>George Triadafilopoulos' Background</h3>
+						<h3>{{doctor.profile.first_name}} {{doctor.profile.last_name}}' Background</h3>
 					</div>
 					<div class="block__detail">
 						<div class="block__detail_line">
 							<span class="line__icon fa fa-heartbeat"></span>
 							<div class="line__content">
 								<h4 class="line__content_title">BIO</h4>
-								<div class="line__content_description">Dr. George Triadafilopoulos is Clinical Professor of Medicine at the Division of Gastroenterology and Hepatology, Stanford University School of Medicine, Stanford, CA. He is certified in Internal Medicine and Gastroenterology by the American Board of Internal Medicine. Dr. Triadafilopoulos’s research activity ranges from gastroesophageal reflux disease and Barrett’s esophagus, to NSAID-induced gastropathy, colon polyps, C.difficile infection, motility disorders and irritable bowel syndrome</div>
+								<div class="line__content_description">{{doctor.profile.bio}}</div>
 							</div>
 						</div>
 
@@ -110,7 +114,12 @@
 							<span class="line__icon fa fa-mortar-board"></span>
 							<div class="line__content">
 								<h4 class="line__content_title">EDUCATION & EXPERIENCE</h4>
-								<div class="line__content_description">Dr. George Triadafilopoulos is Clinical Professor of Medicine at the Division of Gastroenterology and Hepatology, Stanford University School of Medicine, Stanford, CA. He is certified in Internal Medicine and Gastroenterology by the American Board of Internal Medicine. Dr. Triadafilopoulos’s research activity ranges from gastroesophageal reflux disease and Barrett’s esophagus, to NSAID-induced gastropathy, colon polyps, C.difficile infection, motility disorders and irritable bowel syndrome</div>
+								<div class="line__content_description">
+									<div ng-repeat="education in doctor.educations">
+										<h5 class="">{{education.degree}} <span ng-show="education.graduation_year">({{education.graduation_year}})</span></h5>
+										<p>{{education.school}}</p>
+									</div>
+								</div>
 							</div>
 						</div>
 
@@ -119,13 +128,9 @@
 							<div class="line__content">
 								<h4 class="line__content_title">SPECIALTIES</h4>
 								<div class="line__content_description">
-									<div>
-										<h5 class="">GASTROENTEROLOGY</h5>
-										<p>Specializes in the digestive system.</p>
-									</div>
-									<div>
-										<h5 class="">INTERNAL MEDICINE</h5>
-										<p>Specializes in common illnesses and complex medical problems.</p>
+									<div ng-repeat="special in doctor.specialties">
+										<h5>{{special.name}}</h5>
+										<p>{{special.description}}</p>
 									</div>
 								</div>
 							</div>
@@ -135,7 +140,11 @@
 							<span class="line__icon fa fa-language"></span>
 							<div class="line__content">
 								<h4 class="line__content_title">LANGUAGES SPOKEN IN THIS PRACTICE</h4>
-								<div class="line__content_description">English</div>
+								<div class="line__content_description">
+									<span ng-repeat="language in doctor.profile.languages">{{language.name}}
+										<span ng-hide="doctor.profile.languages.length == 1 || (doctor.profile.languages.length - 1) == $index">, </span>
+									</span>
+								</div>
 							</div>
 						</div>
 					</div>

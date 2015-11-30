@@ -14,6 +14,10 @@ function iDocApiPath($http) {
     this.getDoctors = function () {
         return this.getBaseUrl() + '/doctors';
     };
+
+    this.getDoctorsDetail = function (id) {
+        return this.getBaseUrl() + '/doctors/' + id;
+    };
 }
 
 iDocApiPath.$inject = ['$http'];

@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module('iDocApp')
-    .directive('maps', function($timeout) {
+    .directive('maps', function() {
 
         function initMap(lat, lon, id) {
             var myLatlng = new google.maps.LatLng(lat, lon),
@@ -26,7 +26,9 @@ angular.module('iDocApp')
                 lon: '@'
             },
             link: function (scope, element, attributes) {
-                google.maps.event.addDomListener(window, 'load', initMap(scope.lat, scope.lon, 'maps'));
+                scope.$watch('lat', function() {
+                    google.maps.event.addDomListener(window, 'load', initMap(parseFloat(scope.lat), parseFloat(scope.lon), 'maps'));
+                });              
             }
         };
     }
