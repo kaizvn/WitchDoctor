@@ -1,0 +1,3 @@
+<div class="doctor__rating">
+	<span ng-repeat="star in stars" ng-class="{'star-full': star.filled && !star.isHalf, 'star-haft': star.filled && star.isHalf}" class="star" ng-click="toggle($index)"></span>
+</div>

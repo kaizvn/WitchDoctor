@@ -1,0 +1,19 @@
+.star {
+	display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-right: 2px;
+    cursor: pointer;
+    &:before {
+    	content: "\f006";
+    }
+	&.star-haft:before {
+		content: "\f123";
+	}
+	&.star-full:before {
+		content: "\f005";
+	}
+}

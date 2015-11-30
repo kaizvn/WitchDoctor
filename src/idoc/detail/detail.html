@@ -29,13 +29,7 @@
 								<span ng-hide="doctor.specialties.length == 1 || (doctor.specialties.length - 1) == $index"> | </span>
 							</span>
 						</div>
-						<div class="doctor__rating">
-							<span class="fa fa-star"></span>
-							<span class="fa fa-star"></span>
-							<span class="fa fa-star"></span>
-							<span class="fa fa-star"></span>
-							<span class="fa fa-star"></span>
-						</div>
+						<star-rating rating-value="doctor.ratings[0].rating" readonly="true"></star-rating>
 						<div class="doctor__address">
 							<div class="doctor__address_street">{{doctor.practices[0].visit_address.street}}</div>
 							<div class="doctor__address_city">{{doctor.practices[0].visit_address.city}}, {{doctor.practices[0].visit_address.state}} {{doctor.practices[0].visit_address.zip}}</div>
@@ -43,9 +37,9 @@
 					</div>
 				</div>
 				<div class="doctor__action">
-					<button type="button" class="btn btn-icon btn-warning">
+					<button type="button" class="btn btn-icon btn-warning" ng-click="showShoneNumber = ">
 						<i class="fa fa-phone"></i>
-						<span ng-show="!showShoneNumber" ng-click="showShoneNumber = !showShoneNumber">Contact info</span>
+						<span ng-show="!showShoneNumber">Contact info</span>
 						<span ng-show="showShoneNumber">{{doctor.practices[0].phones[0].number}}</span>
 					</button>
 				</div>
