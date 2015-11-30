@@ -73,13 +73,28 @@
 			font-weight: normal;
 		}
 		&_description {
-			> div {
-				padding-bottom: 15px;
+			padding-left: 9px;
+			> div:last-child .pull-left {
+				border-left: none;
+				padding-bottom: 0;
+			}
+			.pull-left {
+				padding-bottom: 50px;
+				border-left: 1px solid #ccc;
 			}
 			h5 {
 				font-size: 14px;
 				font-weight: normal;
 				color: #3bafda;
+				text-transform: uppercase;
+				margin-bottom: 5px;
+				&.doctor__education_title {
+					padding-left: 30px;
+					color: #979797;
+				}
+			}
+			.doctor__education_school {
+				padding-left: 30px;
 			}
 		}
 	}
@@ -130,6 +145,10 @@
 	.doctor__action {
 		margin-top: 20px;
 	}
+}
+
+.doctor__special {
+	padding-bottom: 15px;
 }
 
 
@@ -234,4 +253,24 @@
 	.doctor__address {
 		font-size: 13px;
 	}
+}
+
+.outer-circle {
+	border-radius: 50%;
+    border: 1px solid #ccc;
+    height: 18px;
+    width: 18px;
+    position: relative;
+    left: -9px;
+    background: white;
+    .inner-circle {
+    	position: absolute;
+	    background: #778da1;
+	    border-radius: 50%;
+	    height: 6px;
+	    width: 6px;
+	    top: 50%;
+	    left: 50%;
+	    margin: -3px 0 0 -3px;
+    }
 }
