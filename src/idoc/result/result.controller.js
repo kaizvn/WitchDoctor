@@ -16,7 +16,7 @@ function ResultCtrl($scope, $state, $stateParams, IdocRestService, $localStorage
                 return {
                     full_name: [doctor.profile.first_name, doctor.profile.middle_name, doctor.profile.last_name].join(' '),
                     specialties: _.pluck(doctor.specialties, 'name').join(' | '),
-                    rating: doctor.ratings.map(function (rate) {
+                    ratings: doctor.ratings.map(function (rate) {
                         return {
                             provider: rate.provider,
                             provider_uid: rate.provider_uid,

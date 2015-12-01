@@ -27,11 +27,8 @@
 
                         <div class="doctor__specialty">{{item.specialties}}</div>
 
-                        <div ng-repeat="rates in item.rating" class="doctor__rating">
-                            <span class="fa"
-                                  style="height : 16px ; width : 150px;background: url('{{rates.image_url_small}}') no-repeat top left;">
-                            </span>
-                        </div>
+                        <star-rating rating-value="item.ratings[0].rating" readonly="true"></star-rating>
+
                         <div ng-repeat="address in item.visit_address" class="doctor__address">
                             <div class="doctor__address_street">{{address.street}}</div>
                             <div class="doctor__address_city">{{address.city}}, {{address.state}} {{address.zip}}</div>
