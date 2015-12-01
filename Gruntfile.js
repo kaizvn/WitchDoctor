@@ -331,7 +331,8 @@ module.exports = function (grunt) {
                         'i18n/**/*',
                         'assets/images/**/*.{jpg,png,gif,webp}',
                         'assets/skin/**/*.{jpg,png,gif,webp}',
-                        'assets/fonts/**/*'
+                        'assets/fonts/**/*',
+                        'data.json'
                     ]
                 }, {
                     expand: true,
@@ -351,13 +352,13 @@ module.exports = function (grunt) {
                         'angular-i18n/angular-locale_en.js'
                     ]
                 }, {
-                        expand: true,
-                        cwd: '.tmp/assets/styles',
-                        dest: '<%= yeoman.dist %>/assets/styles',
-                        src: [
-                            'main.css'
-                        ]
-                    }
+                    expand: true,
+                    cwd: '.tmp/assets/styles',
+                    dest: '<%= yeoman.dist %>/assets/styles',
+                    src: [
+                        'main.css'
+                    ]
+                }
                 ]
             }
         },
