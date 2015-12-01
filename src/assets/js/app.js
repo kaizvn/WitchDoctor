@@ -8,6 +8,7 @@
         [
             'LocalStorageModule',
             'tmh.dynamicLocale',
+            'angularUtils.directives.dirPagination',
             'ngResource',
             'ngCookies',
             'ui.router',
@@ -31,8 +32,6 @@
              enabled: true,
              requireBase: false
              });*/
-
-            console.log($localStorageProvider);
 
             //$localStorageProvider.setKeyPrefix('iDoc_');
 

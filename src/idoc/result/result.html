@@ -12,45 +12,34 @@
     <div class="col-md-5 col-sm-6">
         <div class="result__list clearfix">
 
-            <div class="doctor" ng-repeat="item in results">
+            <div class="doctor" dir-paginate="doctor in results.data | itemsPerPage: 10" total-items="results.meta.total">
                 <span class="doctor__favorite"><i class="fa fa-heart"></i></span>
 
                 <div class="clearfix">
                     <div class="doctor__image">
-                        <img ng-src="{{item.image_url}}" alt="">
+                        <img ng-src="{{doctor.image_url}}" alt="">
                     </div>
                     <div class="doctor__details">
-                        <a class="doctor__name" ui-sref="detail({uid : item.uid})">
-                            <span>{{item.full_name}}</span>
+                        <a class="doctor__name" ui-sref="detail({uid : doctor.uid})">
+                            <span>{{doctor.full_name}}</span>
                             <span class="doctor__better"><i class="fa fa-check-circle"></i></span>
                         </a>
-
-                        <div class="doctor__specialty">{{item.specialties}}</div>
-
-                        <star-rating rating-value="item.ratings[0].rating" readonly="true"></star-rating>
-
-                        <div ng-repeat="address in item.visit_address" class="doctor__address">
-                            <div class="doctor__address_street">{{address.street}}</div>
-                            <div class="doctor__address_city">{{address.city}}, {{address.state}} {{address.zip}}</div>
-                        </div>
+                        <div class="doctor__specialty">{{doctor.specialties}}</div>
+                        <star-rating rating-value="doctor.ratings[0].rating" readonly="true"></star-rating>
+                        <div class="doctor__address">
+                            <div class="doctor__address_street">{{doctor.visit_address[0].street}}</div>
+                            <div class="doctor__address_city">{{doctor.visit_address[0].city}}, {{doctor.visit_address[0].state}} {{doctor.visit_address[0].zip}}</div>
+                        </div> 
                     </div>
                 </div>
                 <div class="doctor__snippet">
-                    <p>{{item.bio}} <a ui-sref="detail({uid : item.uid})" class="read-more">Read more</a>
+                    <p>{{doctor.bio}} <a ui-sref="detail({uid : doctor.uid})" class="read-more">Read more</a>
                     </p>
                 </div>
             </div>
 
+            <dir-pagination-controls on-page-change="pageChanged(newPageNumber)"></dir-pagination-controls>
 
-            <ul class="pagination idoc-pagination pull-right">
-                <li class="active"><a href="#">PREV</a></li>
-                <li><a href="#">1</a></li>
-                <li class="active"><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li class="disabled"><a href="#">5</a></li>
-                <li class="active"><a href="#">NEXT</a></li>
-            </ul>
         </div>
     </div>
     <div class="col-md-7 col-sm-6">
