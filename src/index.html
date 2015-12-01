@@ -31,7 +31,7 @@
         }
     </script>
 </head>
-<body>
+<body ng-controller="MainCtrl">
 <!-- Start Nav -->
 <nav class="navbar navbar-fixed-top" role="navigation">
     <div class="container-fluid">
@@ -48,7 +48,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">Blog</a></li>
                 <li><a href="#">For Doctor</a></li>
-                <li class="nav-border"><a href="#">{{'global.menu.account.login' | translate}}</a></li>
+                <li class="nav-border"><a href="javascript:void(0)" ng-click="openLogin()">{{'global.menu.account.login' | translate}}</a></li>
                 <li><a href="#" class="btn btn-primary">{{'global.menu.account.signup' | translate}}</a></li>
             </ul>
         </div>
@@ -158,6 +158,9 @@
 
 <script src="common/directives/maps.directive.js"></script>
 <script src="common/directives/starRaiting.directive.js"></script>
+
+<script src="common/controllers/main.controller.js"></script>
+<script src="common/controllers/login.controller.js"></script>
 
 <script src="idoc/home/home.controller.js"></script>
 <script src="idoc/result/result.controller.js"></script>

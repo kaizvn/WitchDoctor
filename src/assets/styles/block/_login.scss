@@ -1,0 +1,64 @@
+.btn-facebook {
+	background: #3b579e;
+	border: 1px solid #3b579e;
+	&:hover {
+		background: #4a619b;
+		border: 1px solid #4a619b;
+	}
+}
+
+.btn-google {
+	background: #d73d32;
+	border: 1px solid #d73d32;
+	&:hover {
+		background: #d5544a;
+		border: 1px solid #d5544a;
+	}
+}
+
+.modal-sm {
+	width: 400px;
+}
+
+.modal-header {
+	padding: 20px;
+}
+
+.modal-body {
+	padding: 0 20px;
+}
+
+.modal-content {
+	&__login {
+		padding-bottom: 20px;
+		.btn {
+			margin-bottom: 15px;
+		}
+		.form-control {
+			margin-bottom: 0;
+			height: 50px;
+			border: 1px solid #ccc;
+			margin-bottom: 0;
+			&.input-email {
+				border-bottom: none;
+			}
+		}
+		.btn-login {
+			height: 50px;
+			margin-top: 15px;
+		}
+		.or {
+			text-align: center;
+			border-top: 1px solid #ddd;
+			margin-top: 20px;
+			span {
+				background: #fff;
+				display: inline-block;
+				padding: 0 10px;
+				text-transform: uppercase;
+				top: -10px;
+				position: relative;
+			}
+		}
+	}
+}
