@@ -4,32 +4,38 @@
     /**
      * Declare and configure app
      */
-    angular.module('iDocApp', 
-            [
-                'LocalStorageModule',
-                'tmh.dynamicLocale',
-                'ngResource',
-                'ngCookies',
-                'ui.router',
-                'ct.ui.router.extras',
-                'pascalprecht.translate',
-                'ui.bootstrap',
-                'ngCacheBuster',
-                'textAngular',
-                'ngLocale',
-                'ngSanitize',
-                'ngStorage'
+    angular.module('iDocApp',
+        [
+            'LocalStorageModule',
+            'tmh.dynamicLocale',
+            'ngResource',
+            'ngCookies',
+            'ui.router',
+            'ct.ui.router.extras',
+            'pascalprecht.translate',
+            'ui.bootstrap',
+            'ui.bootstrap.typeahead',
+            'ngCacheBuster',
+            'textAngular',
+            'ngLocale',
+            'ngSanitize',
+            'ngStorage'
         ]);
 
     angular.module('iDocApp')
         .config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider,
-                      $translateProvider, $provide, tmhDynamicLocaleProvider, httpRequestInterceptorCacheBusterProvider) {
+                          $translateProvider, $provide, tmhDynamicLocaleProvider, httpRequestInterceptorCacheBusterProvider, $localStorageProvider) {
             //enable htmlmode - remove #! on url
             //$locationProvider.html5Mode(true);
             /*$locationProvider.html5Mode({
-                enabled: true,
-                requireBase: false
-            });*/
+             enabled: true,
+             requireBase: false
+             });*/
+
+            console.log($localStorageProvider);
+
+            //$localStorageProvider.setKeyPrefix('iDoc_');
+
             //enable CSRF
             $httpProvider.defaults.xsrfCookieName = 'CSRF-TOKEN';
             $httpProvider.defaults.xsrfHeaderName = 'X-CSRF-TOKEN';
@@ -50,7 +56,7 @@
             tmhDynamicLocaleProvider.defaultLocale("vi-vn");
             tmhDynamicLocaleProvider.localeLocationPattern('/bower_components/angular-i18n/angular-locale_{{locale}}.js');
             tmhDynamicLocaleProvider.useCookieStorage('NG_TRANSLATE_LANG_KEY');
-            
+
             $locationProvider.hashPrefix('!');
 
         })
@@ -75,7 +81,7 @@
                 tmhDynamicLocale.set(data.language.toLowerCase().replace(/_/g, '-'));
             });
 
-            
+
         });
 
 })();

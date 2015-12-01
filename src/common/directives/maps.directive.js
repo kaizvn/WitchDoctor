@@ -11,7 +11,7 @@ angular.module('iDocApp')
                     scrollwheel: false
                 },
                 map = new google.maps.Map(document.getElementById(id), mapOptions);
-                
+
             var marker = new google.maps.Marker({
                     position: myLatlng,
                     map: map,

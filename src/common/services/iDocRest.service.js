@@ -62,10 +62,16 @@ function iDocRestService($http, iDocApiPath, $q) {
     };
 
     api.getDoctorDetail = function (id) {
-        return $http.get(iDocApiPath.getDoctorsDetail(id), {params: {
-            user_key: SECRET_KEY
-        }})
-    }
+        return $http.get(iDocApiPath.getDoctorsDetail(id), {
+            params: {
+                user_key: SECRET_KEY
+            }
+        })
+    };
+
+    api.getAutocompleteTags = function (keyword) {
+        return $http.get('/data.json');
+    };
 
     return api;
 

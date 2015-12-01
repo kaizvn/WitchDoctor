@@ -1,3 +1,32 @@
+<style>
+    .banner .custom-popup-wrapper {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+        display: none;
+        background-color: #f9f9f9;
+    }
+
+    .banner .custom-popup-wrapper > .message {
+        padding: 10px 20px;
+        border-bottom: 1px solid #ddd;
+        color: #868686;
+    }
+
+    .banner .custom-popup-wrapper > .dropdown-menu {
+        position: static;
+        float: none;
+        display: block;
+        min-width: 160px;
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+    }
+</style>
+
+
 <div class="banner">
     <div class="container">
         <div class="banner__head">
@@ -9,11 +38,32 @@
             <form ng-submit="doSearch()">
                 <div class="row">
                     <div class="col-sm-5">
-                        <input type="text" class="form-control"
-                               placeholder="{{'global.banner.form.input' | translate}}">
+                        <!--<input type="text" class="form-control" placeholder="{{'global.banner.form.input' | translate}}"  ng-autocomplete ng-model="autocompleteValue" options="options"/>-->
+                        <!--<input type="text" ng-model="querySearch" ng-change="autoComplete()" class="form-control"/>-->
+
+                        <input type="text" ng-model="querySearch"
+                               placeholder="{{'global.banner.form.input' | translate}}"
+                               uib-typeahead="tag for tag in fetchData($viewValue)"
+                               typeahead-loading="loadingLocations" typeahead-no-results="noResults"
+                               class="form-control">
+                        <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
+
+                        <div ng-show="noResults">
+                            <i class="glyphicon glyphicon-remove"></i> No Results Found
+                        </div>
+
+
+                        <select chosen
+                                multi
+                                data-placeholder="Choose a beer"
+                                no-results-text="'Could not find any beers :('"
+                                ng-model="querySearch"
+                                ng-options="b for b in tags">
+                        </select>
+
                     </div>
                     <div class="col-sm-4">
-                        <select class="form-control">
+                        <select ng-model="location" class="form-control">
                             <option value="">{{'global.banner.form.location' | translate}}</option>
                             <option value="">Hà Nội</option>
                             <option value="">Hồ Chí Minh</option>

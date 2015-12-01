@@ -1,149 +1,62 @@
-
 <!-- Start Block Search -->
 <div class="blockSearch">
-	<div class="row">
-		<div class="container">
+    <div class="row">
+        <div class="container">
 
-		</div>
-	</div>
+        </div>
+    </div>
 </div>
 <!-- End Block Search -->
 
 <div class="result row">
-	<div class="col-md-5 col-sm-6">
-		<div class="result__list clearfix">
-			<div class="doctor">
-				<span class="doctor__favorite"><i class="fa fa-heart"></i></span>
-				<div class="clearfix">
-					<div class="doctor__image">
-						<img src="assets/images/doctor.jpg" alt="">
-					</div>
-					<div class="doctor__details">
-						<a class="doctor__name" href="">
-							<span>Stephanie Wong, MD</span>
-							<span class="doctor__better"><i class="fa fa-check-circle"></i></span>
-						</a>
-						<div class="doctor__specialty">Internist</div>
-						<div class="doctor__rating">
-							<span class="fa fa-star"></span>
-							<span class="fa fa-star"></span>
-							<span class="fa fa-star"></span>
-							<span class="fa fa-star"></span>
-							<span class="fa fa-star"></span>
-						</div>
-						<div class="doctor__address">
-							<div class="doctor__address_street">701 E El Camino Real</div>
-							<div class="doctor__address_city">Mountain View, CA 94040</div>
-						</div>
-					</div>
-				</div>
-				<div class="doctor__snippet">
-					<p>Dr. Triadafilopoulos is exceptional in every way. He asks all the right questions, listens attentively and has already given me more information than other... <span class="read-more">Read more</span></p>
-				</div>
-			</div>
+    <div class="col-md-5 col-sm-6">
+        <div class="result__list clearfix">
 
-			<div class="doctor">
-				<span class="doctor__favorite doctor__favorite-active"><i class="fa fa-heart"></i></span>
-				<div class="clearfix">
-					<div class="doctor__image">
-						<img src="assets/images/doctor.jpg" alt="">
-					</div>
-					<div class="doctor__details">
-						<a class="doctor__name" href="">
-							<span>Stephanie Wong, MD</span>
-							<span></span>
-						</a>
-						<div class="doctor__specialty">Internist</div>
-						<div class="doctor__rating">
-							<span class="fa fa-star"></span>
-							<span class="fa fa-star"></span>
-							<span class="fa fa-star"></span>
-							<span class="fa fa-star"></span>
-							<span class="fa fa-star"></span>
-						</div>
-						<div class="doctor__address">
-							<div class="doctor__address_street">701 E El Camino Real</div>
-							<div class="doctor__address_city">Mountain View, CA 94040</div>
-						</div>
-					</div>
-				</div>
-				<div class="doctor__snippet">
-					<p>Dr. Triadafilopoulos is exceptional in every way. He asks all the right questions, listens attentively and has already given me more information than other... <span class="read-more">Read more</span></p>
-				</div>
-			</div>
+            <div class="doctor" ng-repeat="item in results">
+                <span class="doctor__favorite"><i class="fa fa-heart"></i></span>
 
-			<div class="doctor">
-				<span class="doctor__favorite doctor__favorite-active"><i class="fa fa-heart"></i></span>
-				<div class="clearfix">
-					<div class="doctor__image">
-						<img src="assets/images/doctor.jpg" alt="">
-					</div>
-					<div class="doctor__details">
-						<a class="doctor__name" href="">
-							<span>Stephanie Wong, MD</span>
-							<span></span>
-						</a>
-						<div class="doctor__specialty">Internist</div>
-						<div class="doctor__rating">
-							<span class="fa fa-star"></span>
-							<span class="fa fa-star"></span>
-							<span class="fa fa-star"></span>
-							<span class="fa fa-star"></span>
-							<span class="fa fa-star"></span>
-						</div>
-						<div class="doctor__address">
-							<div class="doctor__address_street">701 E El Camino Real</div>
-							<div class="doctor__address_city">Mountain View, CA 94040</div>
-						</div>
-					</div>
-				</div>
-				<div class="doctor__snippet">
-					<p>Dr. Triadafilopoulos is exceptional in every way. He asks all the right questions, listens attentively and has already given me more information than other... <span class="read-more">Read more</span></p>
-				</div>
-			</div>
+                <div class="clearfix">
+                    <div class="doctor__image">
+                        <img ng-src="{{item.image_url}}" alt="">
+                    </div>
+                    <div class="doctor__details">
+                        <a class="doctor__name" ui-sref="detail({uid : item.uid})">
+                            <span>{{item.full_name}}</span>
+                            <span class="doctor__better"><i class="fa fa-check-circle"></i></span>
+                        </a>
 
-			<div class="doctor">
-				<span class="doctor__favorite doctor__favorite-active"><i class="fa fa-heart"></i></span>
-				<div class="clearfix">
-					<div class="doctor__image">
-						<img src="assets/images/doctor.jpg" alt="">
-					</div>
-					<div class="doctor__details">
-						<a class="doctor__name" href="">
-							<span>Stephanie Wong, MD</span>
-							<span></span>
-						</a>
-						<div class="doctor__specialty">Internist</div>
-						<div class="doctor__rating">
-							<span class="fa fa-star"></span>
-							<span class="fa fa-star"></span>
-							<span class="fa fa-star"></span>
-							<span class="fa fa-star"></span>
-							<span class="fa fa-star"></span>
-						</div>
-						<div class="doctor__address">
-							<div class="doctor__address_street">701 E El Camino Real</div>
-							<div class="doctor__address_city">Mountain View, CA 94040</div>
-						</div>
-					</div>
-				</div>
-				<div class="doctor__snippet">
-					<p>Dr. Triadafilopoulos is exceptional in every way. He asks all the right questions, listens attentively and has already given me more information than other... <span class="read-more">Read more</span></p>
-				</div>
-			</div>
+                        <div class="doctor__specialty">{{item.specialties}}</div>
 
-			<ul class="pagination idoc-pagination pull-right">
-				<li class="active"><a href="#">PREV</a></li>
-				<li><a href="#">1</a></li>
-				<li class="active"><a href="#">2</a></li>
-				<li><a href="#">3</a></li>
-				<li><a href="#">4</a></li>
-				<li class="disabled"><a href="#">5</a></li>
-				<li class="active"><a href="#">NEXT</a></li>
-			</ul>
-		</div>
-	</div>
-	<div class="col-md-7 col-sm-6">
+                        <div ng-repeat="rates in item.rating" class="doctor__rating">
+                            <span class="fa"
+                                  style="height : 16px ; width : 150px;background: url('{{rates.image_url_small}}') no-repeat top left;">
+                            </span>
+                        </div>
+                        <div ng-repeat="address in item.visit_address" class="doctor__address">
+                            <div class="doctor__address_street">{{address.street}}</div>
+                            <div class="doctor__address_city">{{address.city}}, {{address.state}} {{address.zip}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="doctor__snippet">
+                    <p>{{item.bio}} <a ui-sref="detail({uid : item.uid})" class="read-more">Read more</a>
+                    </p>
+                </div>
+            </div>
 
-	</div>
+
+            <ul class="pagination idoc-pagination pull-right">
+                <li class="active"><a href="#">PREV</a></li>
+                <li><a href="#">1</a></li>
+                <li class="active"><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li class="disabled"><a href="#">5</a></li>
+                <li class="active"><a href="#">NEXT</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-7 col-sm-6">
+
+    </div>
 </div>

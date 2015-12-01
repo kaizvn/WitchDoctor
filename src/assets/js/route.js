@@ -23,12 +23,16 @@ angular.module('iDocApp')
             .state({
                 name: 'result',
                 url: "/result",
+                params: {
+                    query: null,
+                    location: null
+                },
                 views: {
                     "content-view": {
                         "controller": "ResultCtrl",
                         "templateUrl": "idoc/result/result.html"
                     }
-                } ,
+                },
                 resolve: {
                     translatePartialLoader: function ($translate, $translatePartialLoader) {
                         $translatePartialLoader.addPart('common');
@@ -36,21 +40,21 @@ angular.module('iDocApp')
                     }
                 }
             }).state({
-                name: 'detail',
-                url: "/detail/:uid",
-                views: {
-                    "content-view": {
-                        "controller": "DetailCtrl",
-                        "templateUrl": "idoc/detail/detail.html"
-                    }
-                } ,
-                resolve: {
-                    translatePartialLoader: function ($translate, $translatePartialLoader) {
-                        $translatePartialLoader.addPart('common');
-                        return $translate.refresh();
-                    }
+            name: 'detail',
+            url: "/detail/:uid",
+            views: {
+                "content-view": {
+                    "controller": "DetailCtrl",
+                    "templateUrl": "idoc/detail/detail.html"
                 }
-            });
+            },
+            resolve: {
+                translatePartialLoader: function ($translate, $translatePartialLoader) {
+                    $translatePartialLoader.addPart('common');
+                    return $translate.refresh();
+                }
+            }
+        });
 
         $urlRouterProvider.otherwise('/');
     });
