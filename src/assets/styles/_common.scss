@@ -35,3 +35,17 @@ h1, h2, h3, h4, h5 {
 .no-padding {
 	padding: 0 !important;
 }
+
+.mapInfo__title {
+	padding-bottom: 10px;
+	font-weight: normal;
+}
+
+#maps {
+	height: 500px;
+	max-height: 100%;
+	position: fixed !important;
+	top: 110px;
+	right: 2px;
+	z-index: 9999;
+}

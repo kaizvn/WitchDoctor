@@ -3,31 +3,63 @@
 angular.module('iDocApp')
     .directive('maps', function() {
 
-        function initMap(lat, lon, id) {
-            var myLatlng = new google.maps.LatLng(lat, lon),
+        function adapSizeMap() {
+            var wWeight = $(window).height();
+            $('#maps').height(wWeight - 110);
+        }
+
+        function initMap(mapsData, id) {
+
+            var firstLatlng = new google.maps.LatLng(mapsData[0].lat, mapsData[0].lon),
                 mapOptions = {
-                    zoom: 17,
-                    center: myLatlng,
+                    zoom: 16,
+                    center: firstLatlng,
                     scrollwheel: false
                 },
-                map = new google.maps.Map(document.getElementById(id), mapOptions);
+                map = new google.maps.Map(document.getElementById(id), mapOptions),
+                infoWindow = new google.maps.InfoWindow(),
+                markers = [];
 
-            var marker = new google.maps.Marker({
-                    position: myLatlng,
+            var createMarker = function (info){
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(info.lat, info.lon),
                     map: map,
+                    animation: google.maps.Animation.DROP,
+                    title: info.title,
                     icon: '/assets/images/icon_map.png'
                 });
-        };
+
+                marker.content = '<p>' + info.desc + '</p>';
+
+                google.maps.event.addListener(marker, 'click', function(){
+                    infoWindow.setContent('<h5 class="mapInfo__title">' + marker.title + '</h5>' + marker.content);
+                    infoWindow.open(map, marker);
+                });
+                markers.push(marker);
+            };
+
+            for (var i = 0; i < mapsData.length; i++){
+                createMarker(mapsData[i]);
+            }
+        }
 
         return {
             restrict: 'A',
             scope: {
-                lat: '@',
-                lon: '@'
+                mapData: '='
             },
             link: function (scope, element, attributes) {
-                scope.$watch('lat', function() {
-                    google.maps.event.addDomListener(window, 'load', initMap(parseFloat(scope.lat), parseFloat(scope.lon), 'maps'));
+                var id = attributes.id;
+                scope.$watch('mapData', function(maps) {
+                    if(maps) {
+                        google.maps.event.addDomListener(window, 'load', initMap(scope.mapData, id));
+                        if(id === 'maps') {
+                            adapSizeMap();
+                            $(window).rezise(function() {
+                                adapSizeMap();
+                            })
+                        }
+                    }
                 });              
             }
         };
