@@ -13,4 +13,16 @@ angular.module('iDocApp')
 	            
 	        });
 		};
+
+		$scope.openRegister = function() {
+			var registerModel = $uibModal.open({
+				size: 'lg',
+				templateUrl: "/common/frag/modals/register.html",
+				controller: 'RegisterCtrl'
+			});
+
+	        registerModel.result.then(function () {
+	            
+	        });
+		};
     });

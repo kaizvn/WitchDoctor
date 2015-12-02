@@ -1,7 +1,8 @@
 .btn-facebook {
 	background: #3b579e;
 	border: 1px solid #3b579e;
-	&:hover {
+	font-size: 16px;
+	&:hover, &:focus {
 		background: #4a619b;
 		border: 1px solid #4a619b;
 	}
@@ -10,7 +11,8 @@
 .btn-google {
 	background: #d73d32;
 	border: 1px solid #d73d32;
-	&:hover {
+	font-size: 16px;
+	&:hover, &:focus {
 		background: #d5544a;
 		border: 1px solid #d5544a;
 	}
@@ -22,6 +24,13 @@
 
 .modal-header {
 	padding: 20px;
+	position: relative;
+	.fa {
+		position: absolute;
+		right: 10px;
+		top: 10px;
+		cursor: pointer;
+	}
 }
 
 .modal-body {
@@ -46,6 +55,7 @@
 		.btn-login {
 			height: 50px;
 			margin-top: 15px;
+			font-size: 16px;
 		}
 		.or {
 			text-align: center;
@@ -60,5 +70,22 @@
 				position: relative;
 			}
 		}
+	}
+}
+
+.register {
+	p {
+		font-size: 16px;
+		margin-bottom: 15px;
+	}
+}
+
+.register__info {
+	&_title {
+		font-weight: normal;
+		margin-bottom: 20px;
+	}
+	&_description {
+		font-size: 16px;
 	}
 }
