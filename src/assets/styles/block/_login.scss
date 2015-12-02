@@ -2,6 +2,7 @@
 	background: #3b579e;
 	border: 1px solid #3b579e;
 	font-size: 16px;
+	min-width: 100%;
 	&:hover, &:focus {
 		background: #4a619b;
 		border: 1px solid #4a619b;
@@ -12,6 +13,7 @@
 	background: #d73d32;
 	border: 1px solid #d73d32;
 	font-size: 16px;
+	min-width: 100%;
 	&:hover, &:focus {
 		background: #d5544a;
 		border: 1px solid #d5544a;
