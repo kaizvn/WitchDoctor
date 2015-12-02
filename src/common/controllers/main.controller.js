@@ -1,7 +1,10 @@
 "use strict";
 
 angular.module('iDocApp')
-    .controller('MainCtrl', function ($scope, IdocRestService, $uibModal) {
+    .controller('MainCtrl', function ($rootScope, $scope, IdocRestService, $uibModal) {
+
+    	$scope.hideFooter = $rootScope.hideFooter;
+    	
         $scope.openLogin = function() {
 			var loginModel = $uibModal.open({
 				size: 'sm',

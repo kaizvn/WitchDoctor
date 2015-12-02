@@ -41,7 +41,6 @@ function ResultCtrl($scope, $state, $stateParams, IdocRestService, $localStorage
             });
 
             $scope.maps = _.map($scope.results.data, function (doctor) {
-                console.log(doctor);
                 return {
                     lat: doctor.visit_address[0].lat,
                     lon: doctor.visit_address[0].lon,

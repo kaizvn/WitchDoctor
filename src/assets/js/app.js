@@ -69,6 +69,13 @@
             });
 
             $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
+
+                if(toState.name === 'result'){
+                    $rootScope.hideFooter = true;
+                } else {
+                    $rootScope.hideFooter = false;
+                }
+
                 $rootScope.previousStateName = fromState.name;
                 $rootScope.previousStateParams = fromParams;
             });

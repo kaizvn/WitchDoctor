@@ -4,8 +4,11 @@ angular.module('iDocApp')
     .directive('maps', function() {
 
         function adapSizeMap() {
-            var wWeight = $(window).height();
-            $('#maps').height(wWeight - 110);
+            var wWeight = $(window).height(),
+                wWidth = $(window).width(),
+                resultWidth = $('.result__list').width();
+
+            $('#maps').width(wWidth - resultWidth - 10).height(wWeight - 110);
         }
 
         function initMap(mapsData, id) {
@@ -55,9 +58,9 @@ angular.module('iDocApp')
                         google.maps.event.addDomListener(window, 'load', initMap(scope.mapData, id));
                         if(id === 'maps') {
                             adapSizeMap();
-                            $(window).rezise(function() {
+                            $(window).resize(function() {
                                 adapSizeMap();
-                            })
+                            });
                         }
                     }
                 });              
