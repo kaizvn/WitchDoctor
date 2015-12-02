@@ -6,7 +6,12 @@
 	left: 0;
 	width: 100%;
 	z-index: 1025;
-	padding-top: 15px;
+	padding-top: 14px;
+	.form-control {
+		box-shadow: none;
+		border-radius: 0;
+		border: none;
+	}
 }
 
 .select-group {
@@ -14,9 +19,24 @@
 	.fa {
 		position: absolute;
 		left: 10px;
-		top: 5px;
+		top: 6px;
 		font-size: 20px;
 		color: #ccc;
 		z-index: 1024;
+	}
+}
+
+@media (max-width: 767px) {
+	.blockSearch {
+		padding: 10px 0;
+		.container {
+			padding: 0 10px;
+		}
+		.form-control {
+			margin-bottom: 10px;
+		}
+		.chosen-container {
+			margin-bottom: 10px;
+		}
 	}
 }

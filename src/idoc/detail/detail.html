@@ -1,12 +1,9 @@
 <!-- Start Block Search -->
 <div class="blockSearch">
-    <div class="row">
+    <div class="blockSearch__inner">
         <div class="container">
             <div class="row">
-                <div class="col-sm-2">
-                    <span>Find</span>
-                </div>
-                <div class="col-sm-4">
+                <div class="col-sm-5">
                     <input type="text" ng-model="querySearch"
                        placeholder="{{'global.banner.form.input' | translate}}"
                        uib-typeahead="tag for tag in fetchData($viewValue)"
@@ -14,7 +11,7 @@
                        class="form-control">
                     <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-5">
                     <div class="select-group">
                         <i class="fa fa-map-marker"></i>
                         <select data-iconfont_type="city" skin-select ng-model="city" ng-options="city as city.text for city in citys"
@@ -24,7 +21,7 @@
                     </div>
                 </div>
                 <div class="col-sm-2">
-                    <button class="btn btn-primary">
+                    <button class="btn btn-primary btn-block btn-no-radius">
                         {{'global.banner.form.action' | translate}}
                     </button>
                 </div>
@@ -125,7 +122,7 @@
 							<span class="line__icon fa fa-heartbeat"></span>
 							<div class="line__content">
 								<h4 class="line__content_title">BIO</h4>
-								<div class="line__content_description">{{doctor.profile.bio}}</div>
+								<div class="line__content_description no-padding">{{doctor.profile.bio}}</div>
 							</div>
 						</div>
 

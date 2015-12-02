@@ -38,6 +38,10 @@ angular.module('iDocApp')
 			{
 				value: 3,
 				text: 'Đà Nẵng'
+			},
+			{
+				value: 4,
+				text: 'Huế'
 			}
 		];
 
