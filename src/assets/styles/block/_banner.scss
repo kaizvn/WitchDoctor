@@ -32,6 +32,16 @@
 			font-weight: bold;
 			padding: 7px 12px;
 		}
+		.chosen-container-single .chosen-single {
+			height: 45px;
+			line-height: 45px;
+			div b {
+				margin-top: 18px;
+			}
+		}		
+		.select-group .fa {
+			top: 12px;
+		}
 	}
 	.overlay {
 		position: absolute;

@@ -16,7 +16,6 @@ function homeController($scope, $state, IdocRestService, $timeout, $http) {
 
                 return inf.toUpperCase().indexOf(value.toUpperCase()) >= 0;
             });
-            console.log(d);
             return d;
 
             //return response.data.map(function (item) {
@@ -29,7 +28,6 @@ function homeController($scope, $state, IdocRestService, $timeout, $http) {
 
 
     $scope.doSearch = function () {
-        console.log('aaa');
         $state.go('result', {query: $scope.querySearch, location: $scope.location});
     };
 

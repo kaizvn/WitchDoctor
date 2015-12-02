@@ -25,4 +25,23 @@ angular.module('iDocApp')
 	            
 	        });
 		};
+
+		$scope.citys = [
+			{
+				value: 1,
+				text: 'Hồ Chí Minh'
+			},
+			{
+				value: 2,
+				text: 'Hà Nội'
+			},
+			{
+				value: 3,
+				text: 'Đà Nẵng'
+			}
+		];
+
+		$scope.onSelectedCity = function(city) {
+			//Search Here
+		};
     });

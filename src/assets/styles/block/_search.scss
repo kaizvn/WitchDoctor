@@ -1,0 +1,22 @@
+.blockSearch {
+	background: #525f6e;
+	min-height: 60px;
+	position: fixed;
+	top: 50px;
+	left: 0;
+	width: 100%;
+	z-index: 1025;
+	padding-top: 15px;
+}
+
+.select-group {
+	position: relative;
+	.fa {
+		position: absolute;
+		left: 10px;
+		top: 5px;
+		font-size: 20px;
+		color: #ccc;
+		z-index: 1024;
+	}
+}
