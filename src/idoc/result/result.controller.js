@@ -5,6 +5,7 @@ function ResultCtrl($scope, $state, $stateParams, IdocRestService, $localStorage
 
     var $storage = $sessionStorage,
         _this = this;
+    $scope.isShowResult = false;
 
     var params = ($stateParams.query)
         ? $stateParams
@@ -39,16 +40,18 @@ function ResultCtrl($scope, $state, $stateParams, IdocRestService, $localStorage
                 }
             });
 
+            $scope.isShowResult = true;
             $storage.lastSearchTerm = JSON.stringify(params);
 
         }, function (error) {
             console.trace(error);
         });
-    }
+    };
 
     this.getDoctors(params);
 
-    $scope.pageChanged = function(pageNumber) {
+    $scope.pageChanged = function (pageNumber) {
+        $scope.isShowResult = false;
         params.skip = pageNumber - 1;
         _this.getDoctors(params);
     };

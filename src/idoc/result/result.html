@@ -33,7 +33,8 @@
     <div class="col-md-5 col-sm-6">
         <div class="result__list clearfix">
 
-            <div class="doctor" dir-paginate="doctor in results.data | itemsPerPage: 10" total-items="results.meta.total">
+            <div class="doctor" dir-paginate="doctor in results.data | itemsPerPage: 10"
+                 total-items="results.meta.total">
                 <span class="doctor__favorite"><i class="fa fa-heart"></i></span>
 
                 <div class="clearfix">
@@ -45,23 +46,26 @@
                             <span>{{doctor.full_name}}</span>
                             <span class="doctor__better"><i class="fa fa-check-circle"></i></span>
                         </a>
+
                         <div class="doctor__specialty">{{doctor.specialties}}</div>
                         <star-rating rating-value="doctor.ratings[0].rating" readonly="true"></star-rating>
                         <div class="doctor__address">
                             <div class="doctor__address_street">{{doctor.visit_address[0].street}}</div>
-                            <div class="doctor__address_city">{{doctor.visit_address[0].city}}, {{doctor.visit_address[0].state}} {{doctor.visit_address[0].zip}}</div>
-                        </div> 
+                            <div class="doctor__address_city">{{doctor.visit_address[0].city}},
+                                {{doctor.visit_address[0].state}} {{doctor.visit_address[0].zip}}
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="doctor__snippet">
+                <div class="doctor__snippet" ng-show="isShowResult">
                     <p>{{doctor.bio}} <a ui-sref="detail({uid : doctor.uid})" class="read-more">Read more</a>
                     </p>
                 </div>
             </div>
 
-            <dir-pagination-controls on-page-change="pageChanged(newPageNumber)"></dir-pagination-controls>
-
         </div>
+
+        <dir-pagination-controls on-page-change="pageChanged(newPageNumber)"></dir-pagination-controls>
     </div>
     <div class="col-md-7 col-sm-6 hide-sm hide-xs">
 
