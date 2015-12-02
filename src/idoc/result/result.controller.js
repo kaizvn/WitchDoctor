@@ -1,7 +1,7 @@
 "use strict";
 
 
-function ResultCtrl($scope, $state, $stateParams, IdocRestService, $localStorage, $sessionStorage) {
+function ResultCtrl($scope, $state, $stateParams, IdocRestService, $localStorage, $sessionStorage, $anchorScroll) {
 
     var $storage = $sessionStorage,
         _this = this;
@@ -11,6 +11,7 @@ function ResultCtrl($scope, $state, $stateParams, IdocRestService, $localStorage
         : JSON.parse($storage.lastSearchTerm || '{}');
 
     this.getDoctors = function (params) {
+        $anchorScroll('#result');
         IdocRestService.getDoctors(params).then(function (response) {
             $scope.results = response.data;
 
@@ -54,6 +55,6 @@ function ResultCtrl($scope, $state, $stateParams, IdocRestService, $localStorage
 }
 
 
-ResultCtrl.$inject = ['$scope', '$state', '$stateParams', 'IdocRestService', '$localStorage', '$sessionStorage'];
+ResultCtrl.$inject = ['$scope', '$state', '$stateParams', 'IdocRestService', '$localStorage', '$sessionStorage', '$anchorScroll'];
 
 angular.module('iDocApp').controller('ResultCtrl', ResultCtrl);
