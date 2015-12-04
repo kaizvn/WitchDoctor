@@ -99,3 +99,51 @@ body {
 .container {
 	max-width: 1100px;
 }
+
+.modal-sm {
+	width: 400px;
+}
+
+.modal-header {
+	padding: 20px;
+	position: relative;
+	.fa {
+		position: absolute;
+		right: 10px;
+		top: 10px;
+		cursor: pointer;
+	}
+}
+
+.modal-body {
+	padding: 0 20px;
+}
+
+@media (max-width: 767px) {
+	.nav-border {
+		padding: 0;
+		border: none;
+	}
+	.btn-register {
+		background: none !important;
+		border: none !important;
+		display: inline-block !important;
+		text-align: left;
+		color: #3bafda;
+		&:hover, &:focus {
+			color: #4fc1e9 !important;
+		}
+	}
+	.navbar.navbar-fixed-top {
+		position: relative !important;
+	}
+	.navbar-toggle {
+		.icon-bar {
+			color: #4fc1e9;
+			background: #4fc1e9;
+		}
+	}
+	.modal-sm {
+		width: auto;
+	}
+}

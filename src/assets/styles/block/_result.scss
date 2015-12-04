@@ -5,7 +5,17 @@
 		padding: 10px;
 		min-height: 700px;
 	}
-	.col-md-5 {
-		padding-right: 0;
+	.col-md-5, .col-xs-6 {
+		padding: 0;
+	}
+}
+
+#result {
+	margin: 0;
+}
+
+@media (max-width: 767px) {
+	.result__list {
+		margin-top: 10px;
 	}
 }

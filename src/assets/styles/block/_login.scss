@@ -20,25 +20,6 @@
 	}
 }
 
-.modal-sm {
-	width: 400px;
-}
-
-.modal-header {
-	padding: 20px;
-	position: relative;
-	.fa {
-		position: absolute;
-		right: 10px;
-		top: 10px;
-		cursor: pointer;
-	}
-}
-
-.modal-body {
-	padding: 0 20px;
-}
-
 .modal-content {
 	&__login {
 		padding-bottom: 20px;

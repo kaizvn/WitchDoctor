@@ -8,7 +8,7 @@ angular.module('iDocApp')
                 wWidth = $(window).width(),
                 resultWidth = $('.result__list').width();
 
-            $('#maps').width(wWidth - resultWidth - 10).height(wWeight - 110);
+            $('#maps').width(wWidth - resultWidth - 20).height(wWeight - 110);
         }
 
         function initMap(mapsData, id) {

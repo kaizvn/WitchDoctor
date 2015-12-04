@@ -274,3 +274,9 @@
 	    margin: -3px 0 0 -3px;
     }
 }
+
+@media (max-width: 767px) {
+	#detail {
+		margin-top: 10px;
+	}
+}

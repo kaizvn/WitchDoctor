@@ -36,7 +36,7 @@
 <nav class="navbar navbar-fixed-top" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#iDocNav">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -44,12 +44,12 @@
             </button>
             <a class="navbar-brand" href="#"><img src="assets/images/logo.png" alt="{{'global.app' | translate}}"></a>
         </div>
-        <div class="collapse navbar-collapse" id="iDocNav">
+        <div collapse="navCollapsed" class="collapse navbar-collapse" id="iDocNav">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">Blog</a></li>
                 <li><a href="#">For Doctor</a></li>
                 <li class="nav-border"><a href="javascript:void(0)" ng-click="openLogin()">{{'global.menu.account.login' | translate}}</a></li>
-                <li><a href="javascript:void(0)" ng-click="openRegister()" class="btn btn-primary">{{'global.menu.account.signup' | translate}}</a></li>
+                <li><a href="javascript:void(0)" ng-click="openRegister()" class="btn btn-primary btn-register">{{'global.menu.account.signup' | translate}}</a></li>
             </ul>
         </div>
     </div>
@@ -63,7 +63,7 @@
 <!-- End Main View -->
 
 <!-- Start Footer -->
-<footer class="footer" ng-show="hideFooter">
+<footer class="footer" ng-hide="hideFooter">
     <div class="container">
         <div class="clearfix">
             <div class="footer-logo"><a href="#"><img src="assets/images/logo_footer.png" alt="Khám Bác Sĩ"></a></div>

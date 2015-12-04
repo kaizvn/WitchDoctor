@@ -3,7 +3,9 @@
 angular.module('iDocApp')
     .controller('MainCtrl', function ($rootScope, $scope, IdocRestService, $uibModal) {
 
-    	$scope.hideFooter = $rootScope.hideFooter;
+    	$rootScope.$watch('hideFooter', function(value) {
+    		$scope.hideFooter = value;
+    	});
     	
         $scope.openLogin = function() {
 			var loginModel = $uibModal.open({
