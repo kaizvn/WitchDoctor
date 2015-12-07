@@ -70,7 +70,11 @@ function iDocRestService($http, iDocApiPath, $q) {
     };
 
     api.getAutocompleteTags = function (keyword) {
-        return $http.get('/data.json');
+        return $http.get('/mocks/data.json');
+    };
+
+    api.getCity = function () {
+        return $http.get(iDocApiPath.getCity());
     };
 
     return api;

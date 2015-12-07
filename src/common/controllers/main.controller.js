@@ -31,24 +31,9 @@ angular.module('iDocApp')
 	        });
 		};
 
-		$scope.citys = [
-			{
-				value: 1,
-				text: 'Hồ Chí Minh'
-			},
-			{
-				value: 2,
-				text: 'Hà Nội'
-			},
-			{
-				value: 3,
-				text: 'Đà Nẵng'
-			},
-			{
-				value: 4,
-				text: 'Huế'
-			}
-		];
+		IdocRestService.getCity().then(function (response){
+			$scope.citys = response.data;
+		});
 
 		$scope.onSelectedCity = function(city) {
 			//Search Here

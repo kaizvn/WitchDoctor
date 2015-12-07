@@ -18,6 +18,11 @@ function iDocApiPath($http) {
     this.getDoctorsDetail = function (id) {
         return this.getBaseUrl() + '/doctors/' + id;
     };
+
+    this.getCity = function () {
+        return '/mocks/city.json';
+        //return this.getBaseUrl() + '/city'
+    }
 }
 
 iDocApiPath.$inject = ['$http'];
