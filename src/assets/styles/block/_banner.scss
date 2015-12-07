@@ -62,6 +62,30 @@
 		height: 100%;
 		background: rgba(0, 0, 0, 0.2);
 	}
+
+	.custom-popup-wrapper {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+        display: none;
+        background-color: #f9f9f9;
+        > .message {
+	        padding: 10px 20px;
+	        border-bottom: 1px solid #ddd;
+	        color: #868686;
+	    }
+	    > .dropdown-menu {
+	        position: static;
+	        float: none;
+	        display: block;
+	        min-width: 160px;
+	        background-color: transparent;
+	        border: none;
+	        border-radius: 0;
+	        box-shadow: none;
+	    }
+    }
 }
 
 @media (max-width: 767px) {

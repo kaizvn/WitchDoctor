@@ -1,32 +1,3 @@
-<style>
-    .banner .custom-popup-wrapper {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        z-index: 1000;
-        display: none;
-        background-color: #f9f9f9;
-    }
-
-    .banner .custom-popup-wrapper > .message {
-        padding: 10px 20px;
-        border-bottom: 1px solid #ddd;
-        color: #868686;
-    }
-
-    .banner .custom-popup-wrapper > .dropdown-menu {
-        position: static;
-        float: none;
-        display: block;
-        min-width: 160px;
-        background-color: transparent;
-        border: none;
-        border-radius: 0;
-        box-shadow: none;
-    }
-</style>
-
-
 <div class="banner">
     <div class="container">
         <div class="banner__head">
@@ -38,9 +9,6 @@
             <form ng-submit="doSearch()">
                 <div class="row">
                     <div class="col-sm-5">
-                        <!--<input type="text" class="form-control" placeholder="{{'global.banner.form.input' | translate}}"  ng-autocomplete ng-model="autocompleteValue" options="options"/>-->
-                        <!--<input type="text" ng-model="querySearch" ng-change="autoComplete()" class="form-control"/>-->
-
                         <input type="text" ng-model="querySearch"
                                placeholder="{{'global.banner.form.input' | translate}}"
                                uib-typeahead="tag for tag in fetchData($viewValue)"
@@ -51,7 +19,6 @@
                         <div ng-show="noResults">
                             <i class="glyphicon glyphicon-remove"></i> No Results Found
                         </div>
-
                     </div>
                     <div class="col-sm-4">
                         <div class="select-group">
@@ -76,7 +43,6 @@
 
 <div class="section container">
     <h2 class="section__title">Discover the Best Doctors in Mountain View, CA</h2>
-
     <p class="section__subTitle">Simplify your search with our picks of the top doctors in your area</p>
 
     <div class="row">
