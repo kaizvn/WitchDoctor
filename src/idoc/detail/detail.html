@@ -39,7 +39,7 @@
 				<span class="doctor__favorite"><i class="fa fa-heart"></i></span>
 				<div class="clearfix">
 					<div class="doctor__image">
-						<img ng-src="{{doctor.profile.image_url}}" alt="">
+						<img ng-src="{{doctor.profile.image_url | imageDefault}}" alt="">
 					</div>
 					<div class="doctor__details">
 						<a class="doctor__name" href="">

@@ -39,7 +39,7 @@
 
                 <div class="clearfix">
                     <div class="doctor__image">
-                        <img ng-src="{{doctor.image_url}}" alt="">
+                        <img ng-src="{{doctor.image_url | imageDefault}}" alt="">
                     </div>
                     <div class="doctor__details">
                         <a class="doctor__name" ui-sref="detail({uid : doctor.uid})">
