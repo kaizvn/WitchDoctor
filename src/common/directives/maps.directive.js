@@ -1,7 +1,8 @@
 "use strict";
 
 angular.module('iDocApp')
-    .directive('maps', function() {
+    .directive('maps', function($timeout
+        ) {
 
         function adapSizeMap() {
             var wWeight = $(window).height(),
@@ -57,10 +58,12 @@ angular.module('iDocApp')
                     if(maps) {
                         google.maps.event.addDomListener(window, 'load', initMap(scope.mapData, id));
                         if(id === 'maps') {
-                            adapSizeMap();
-                            $(window).resize(function() {
+                            $timeout(function(){
                                 adapSizeMap();
-                            });
+                                $(window).resize(function() {
+                                    adapSizeMap();
+                                });
+                            }, 500);
                         }
                     }
                 });              
