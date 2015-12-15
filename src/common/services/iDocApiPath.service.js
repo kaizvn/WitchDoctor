@@ -8,7 +8,7 @@ function iDocApiPath($http) {
 
     /* Base Url API */
     this.getBaseUrl = function () {
-        return 'https://api.betterdoctor.com/2015-09-22';
+        return 'http://ec2-54-254-217-169.ap-southeast-1.compute.amazonaws.com';
     };
 
     this.getDoctors = function () {

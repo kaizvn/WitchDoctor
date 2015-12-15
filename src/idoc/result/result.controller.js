@@ -16,23 +16,14 @@ function ResultCtrl($scope, $state, $stateParams, IdocRestService, $localStorage
         IdocRestService.getDoctors(params).then(function (response) {
             $scope.results = response.data;
 
-            $scope.results.data = _.map($scope.results.data, function (doctor) {
+            $scope.results.results = _.map($scope.results.results, function (doctor) {
                 return {
-                    full_name: [doctor.profile.first_name, doctor.profile.middle_name, doctor.profile.last_name].join(' '),
+                    full_name: doctor.profile.name,
                     specialties: _.pluck(doctor.specialties, 'name').join(' | '),
-                    ratings: doctor.ratings.map(function (rate) {
-                        return {
-                            provider: rate.provider,
-                            provider_uid: rate.provider_uid,
-                            review_count: rate.review_count,
-                            rating: rate.rating,
-                            image_url_small: rate.image_url_small
-                        }
-                    }),
-                    uid: doctor.uid,
-                    npi: doctor.npi,
+                    rating: doctor.ratings.length > 0 ? doctor.ratings[0].rating : 0,
+                    uid: doctor.id,
                     visit_address: _.pluck(doctor.practices, 'visit_address'),
-                    bio: doctor.profile.bio.substr(0, 155) + '...',
+                    bio: doctor.profile.bio ? doctor.profile.bio.substr(0, 155) + '...' : '',
                     title: doctor.profile.title,
                     image_url: doctor.profile.image_url,
                     gender: doctor.profile.gender
@@ -40,14 +31,14 @@ function ResultCtrl($scope, $state, $stateParams, IdocRestService, $localStorage
                 }
             });
 
-            $scope.maps = _.map($scope.results.data, function (doctor) {
+            /*$scope.maps = _.map($scope.results.results, function (doctor) {
                 return {
                     lat: doctor.visit_address[0].lat,
                     lon: doctor.visit_address[0].lon,
                     title: doctor.full_name,
                     desc: doctor.visit_address[0].street +'<br>'+ doctor.visit_address[0].city +', '+ doctor.visit_address[0].state +' '+ doctor.visit_address[0].zip
                 }
-            });
+            });*/
 
             $scope.isShowResult = true;
             $storage.lastSearchTerm = JSON.stringify(params);

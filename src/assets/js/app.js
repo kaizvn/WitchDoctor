@@ -71,7 +71,6 @@
             $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
 
                 if(toState.name === 'result') {
-                    console.log('444');
                     $rootScope.hideFooter = true;
                 } else {
                     $rootScope.hideFooter = false;
