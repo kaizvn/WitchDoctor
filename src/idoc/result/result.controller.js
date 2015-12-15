@@ -25,7 +25,7 @@ function ResultCtrl($scope, $state, $stateParams, IdocRestService, $localStorage
                     visit_address: _.pluck(doctor.practices, 'visit_address'),
                     bio: doctor.profile.bio ? doctor.profile.bio.substr(0, 155) + '...' : '',
                     title: doctor.profile.title,
-                    image_url: doctor.profile.image_url,
+                    image_url: doctor.profile.images && doctor.profile.images.length > 0 ? doctor.profile.images[0].image : '',
                     gender: doctor.profile.gender
 
                 }

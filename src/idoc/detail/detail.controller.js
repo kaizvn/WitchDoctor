@@ -5,6 +5,7 @@ angular.module('iDocApp')
         IdocRestService.getDoctorDetail($stateParams.uid).then(function(response) {
         	$scope.doctor = response.data;
             $scope.doctor.profile.address = '';
+            $scope.doctor.profile.image_url = $scope.doctor.profile.images && $scope.doctor.profile.images.length > 0 ? $scope.doctor.profile.images[0].image : '';
             if($scope.doctor.practices) {
                 for(var i = 0; i < $scope.doctor.practices.length && !$scope.doctor.profile.address; i++) {
                     for(var j = 0; j < $scope.doctor.practices[i].addresses.length; j++) {
