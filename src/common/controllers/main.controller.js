@@ -35,6 +35,10 @@ angular.module('iDocApp')
 			$scope.citys = response.data;
 		});
 
+		IdocRestService.getHospital().then(function (response){
+			$scope.hospitals = response.data;
+		});
+
 		$scope.onSelectedCity = function(city) {
 			//Search Here
 		};

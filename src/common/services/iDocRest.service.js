@@ -77,6 +77,10 @@ function iDocRestService($http, iDocApiPath, $q) {
         return $http.get(iDocApiPath.getCity());
     };
 
+    api.getHospital = function () {
+        return $http.get(iDocApiPath.getHospital());
+    };
+
     return api;
 
 }

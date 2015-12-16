@@ -22,7 +22,12 @@ function iDocApiPath($http) {
     this.getCity = function () {
         return '/mocks/city.json';
         //return this.getBaseUrl() + '/city'
-    }
+    };
+
+    this.getHospital = function () {
+        return '/mocks/hospital.json';
+        //return this.getBaseUrl() + '/hospital'
+    };
 }
 
 iDocApiPath.$inject = ['$http'];

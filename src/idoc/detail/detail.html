@@ -3,7 +3,7 @@
     <div class="blockSearch__inner">
         <div class="container">
             <div class="row">
-                <div class="col-sm-5">
+                <div class="col-sm-4">
                     <input type="text" ng-model="querySearch"
                        placeholder="{{'global.banner.form.input' | translate}}"
                        uib-typeahead="tag for tag in fetchData($viewValue)"
@@ -11,12 +11,21 @@
                        class="form-control">
                     <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
                 </div>
-                <div class="col-sm-5">
+                <div class="col-sm-3">
                     <div class="select-group">
                         <i class="fa fa-map-marker"></i>
-                        <select data-iconfont_type="city" skin-select ng-model="city" ng-options="city as city.text for city in citys"
+                        <select skin-select ng-model="city" ng-options="city as city.text for city in citys"
                             ng-change="onSelectedCity(city)"
                             data-placeholder="Chọn thành phố">
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="select-group">
+                        <i class="fa fa-hospital-o"></i>
+                        <select skin-select ng-model="hospital" ng-options="hospital as hospital.text for hospital in hospitals"
+                            ng-change="onSelected(hospital)"
+                            data-placeholder="Chọn bệnh viện">
                         </select>
                     </div>
                 </div>
@@ -251,62 +260,16 @@
 				<div class="recentWrap">
 					<h4 class="recentWrap__title">Similar Primary Care Doctors in Mountain View, CA</h4>
 					<div class="row">
-						<div class="col-sm-4">
+						<div class="col-sm-4" ng-repeat="doctor in relatedDoctors">
 							<div class="recentBl">
 								<div class="recentBl__image">
-									<img src="assets/images/doctor.jpg" alt="">
+									<img ng-src="{{doctor.image_url | imageDefault}}" alt="">
 								</div>
 								<div class="recentBl__detail">
-									<h5 class="recentBl__name">Patricia Hockett, MD <span class="doctor__better"><i class="fa fa-check-circle"></i></span></h5>
-									<div class="recentBl__specialty">Family Practitioner</div>
-									<div class="recentBl__rating">
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-									</div>
-									<button class="btn btn-viewprofile">View Profile</button>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-sm-4">
-							<div class="recentBl">
-								<div class="recentBl__image">
-									<img src="assets/images/doctor.jpg" alt="">
-								</div>
-								<div class="recentBl__detail">
-									<h5 class="recentBl__name">Patricia Hockett, MD <span class="doctor__better"><i class="fa fa-check-circle"></i></span></h5>
-									<div class="recentBl__specialty">Family Practitioner</div>
-									<div class="recentBl__rating">
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-									</div>
-									<button class="btn btn-viewprofile">View Profile</button>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-sm-4">
-							<div class="recentBl">
-								<div class="recentBl__image">
-									<img src="assets/images/doctor.jpg" alt="">
-								</div>
-								<div class="recentBl__detail">
-									<h5 class="recentBl__name">Patricia Hockett, MD <span class="doctor__better"><i class="fa fa-check-circle"></i></span></h5>
-									<div class="recentBl__specialty">Family Practitioner</div>
-									<div class="recentBl__rating">
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-									</div>
-									<button class="btn btn-viewprofile">View Profile</button>
+									<h5 class="recentBl__name">{{doctor.full_name}} <span class="doctor__better"><i class="fa fa-check-circle"></i></span></h5>
+									<div class="recentBl__specialty">{{doctor.specialties}}</div>
+									<star-rating rating-value="doctor.rating" readonly="true"></star-rating>
+									<a ui-sref="detail({id : doctor.id})" class="btn btn-viewprofile">View Profile</a>
 								</div>
 							</div>
 						</div>
@@ -320,67 +283,17 @@
 						<h3>Top Primary Care Doctors in Mountain View, CA</h3>
 					</div>
 					<ul class="media-list">
-						<li class="media">
-							<a class="pull-left" href="#"><img class="media-object img-rounded" src="assets/images/doctor.jpg" data-pin-nopin="true"></a>
+						<li class="media" ng-repeat="doctor in topDoctors.results | limitTo:3">
+							<a class="pull-left" ui-sref="detail({id : doctor.id})"><img class="media-object img-rounded" <img ng-src="{{doctor.image_url | imageDefault}}" alt="" data-pin-nopin="true"></a>
 							<div class="media-body">
-								<a class="doctor__name" href="">
-									<span>Stephanie Wong, MD</span>
+								<a class="doctor__name" ui-sref="detail({id : doctor.id})">
+									<span>{{doctor.full_name}}</span>
 									<span class="doctor__better"><i class="fa fa-check-circle"></i></span>
 								</a>
-								<div class="doctor__specialty">Internist</div>
-								<div class="doctor__rating">
-									<span class="fa fa-star"></span>
-									<span class="fa fa-star"></span>
-									<span class="fa fa-star"></span>
-									<span class="fa fa-star"></span>
-									<span class="fa fa-star"></span>
-								</div>
+								<div class="doctor__specialty">{{doctor.specialties}}</div>
+								<star-rating rating-value="doctor.rating" readonly="true"></star-rating>
 								<div class="doctor__address">
-									<div class="doctor__address_street">701 E El Camino Real</div>
-									<div class="doctor__address_city">Mountain View, CA 94040</div>
-								</div>
-							</div>
-						</li>
-						<li class="media">
-							<a class="pull-left" href="#"><img class="media-object img-rounded" src="assets/images/doctor.jpg" data-pin-nopin="true"></a>
-							<div class="media-body">
-								<a class="doctor__name" href="">
-									<span>Stephanie Wong, MD</span>
-									<span class="doctor__better"><i class="fa fa-check-circle"></i></span>
-								</a>
-								<div class="doctor__specialty">Internist</div>
-								<div class="doctor__rating">
-									<span class="fa fa-star"></span>
-									<span class="fa fa-star"></span>
-									<span class="fa fa-star"></span>
-									<span class="fa fa-star"></span>
-									<span class="fa fa-star"></span>
-								</div>
-								<div class="doctor__address">
-									<div class="doctor__address_street">701 E El Camino Real</div>
-									<div class="doctor__address_city">Mountain View, CA 94040</div>
-								</div>
-							</div>
-						</li>
-						</li>
-						<li class="media">
-							<a class="pull-left" href="#"><img class="media-object img-rounded" src="assets/images/doctor.jpg" data-pin-nopin="true"></a>
-							<div class="media-body">
-								<a class="doctor__name" href="">
-									<span>Stephanie Wong, MD</span>
-									<span class="doctor__better"><i class="fa fa-check-circle"></i></span>
-								</a>
-								<div class="doctor__specialty">Internist</div>
-								<div class="doctor__rating">
-									<span class="fa fa-star"></span>
-									<span class="fa fa-star"></span>
-									<span class="fa fa-star"></span>
-									<span class="fa fa-star"></span>
-									<span class="fa fa-star"></span>
-								</div>
-								<div class="doctor__address">
-									<div class="doctor__address_street">701 E El Camino Real</div>
-									<div class="doctor__address_city">Mountain View, CA 94040</div>
+									<div class="doctor__address_street">{{doctor.address}}</div>
 								</div>
 							</div>
 						</li>

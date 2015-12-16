@@ -1,28 +1,39 @@
 <!-- Start Block Search -->
 <div class="blockSearch">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-5">
-                <input type="text" ng-model="querySearch"
-                   placeholder="{{'global.banner.form.input' | translate}}"
-                   uib-typeahead="tag for tag in fetchData($viewValue)"
-                   typeahead-loading="loadingLocations" typeahead-no-results="noResults"
-                   class="form-control">
-                <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
-            </div>
-            <div class="col-sm-5">
-                <div class="select-group">
-                    <i class="fa fa-map-marker"></i>
-                    <select data-iconfont_type="city" skin-select ng-model="city" ng-options="city as city.text for city in citys"
-                        ng-change="onSelectedCity(city)"
-                        data-placeholder="Chọn thành phố">
-                    </select>
+    <div class="blockSearch__inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <input type="text" ng-model="querySearch"
+                       placeholder="{{'global.banner.form.input' | translate}}"
+                       uib-typeahead="tag for tag in fetchData($viewValue)"
+                       typeahead-loading="loadingLocations" typeahead-no-results="noResults"
+                       class="form-control">
+                    <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
                 </div>
-            </div>
-            <div class="col-sm-2">
-                <button class="btn btn-primary btn-block btn-no-radius">
-                    {{'global.banner.form.action' | translate}}
-                </button>
+                <div class="col-sm-3">
+                    <div class="select-group">
+                        <i class="fa fa-map-marker"></i>
+                        <select skin-select ng-model="city" ng-options="city as city.text for city in citys"
+                            ng-change="onSelectedCity(city)"
+                            data-placeholder="Chọn thành phố">
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="select-group">
+                        <i class="fa fa-hospital-o"></i>
+                        <select skin-select ng-model="hospital" ng-options="hospital as hospital.text for hospital in hospitals"
+                            ng-change="onSelected(hospital)"
+                            data-placeholder="Chọn bệnh viện">
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <button class="btn btn-primary btn-block btn-no-radius">
+                        {{'global.banner.form.action' | translate}}
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -42,7 +53,7 @@
                         <img ng-src="{{doctor.image_url | imageDefault}}" alt="">
                     </div>
                     <div class="doctor__details">
-                        <a class="doctor__name" ui-sref="detail({uid : doctor.uid})">
+                        <a class="doctor__name" ui-sref="detail({id : doctor.id})">
                             <span>{{doctor.title}}. {{doctor.full_name}}</span>
                             <span class="doctor__better"><i class="fa fa-check-circle"></i></span>
                         </a>
@@ -50,15 +61,12 @@
                         <div class="doctor__specialty">{{doctor.specialties}}</div>
                         <star-rating rating-value="doctor.rating" readonly="true"></star-rating>
                         <div class="doctor__address">
-                            <div class="doctor__address_street">{{doctor.visit_address[0].street}}</div>
-                            <div class="doctor__address_city">{{doctor.visit_address[0].city}},
-                                {{doctor.visit_address[0].state}} {{doctor.visit_address[0].zip}}
-                            </div>
+                            <div class="doctor__address_street">{{doctor.address}}</div>
                         </div>
                     </div>
                 </div>
                 <div class="doctor__snippet" ng-show="isShowResult">
-                    <p>{{doctor.bio}} <a ui-sref="detail({uid : doctor.uid})" class="read-more">Read more</a>
+                    <p>{{doctor.bio}} <a ui-sref="detail({id : doctor.id})" class="read-more">Read more</a>
                     </p>
                 </div>
             </div>

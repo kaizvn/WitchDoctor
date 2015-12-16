@@ -1,7 +1,7 @@
 "use strict";
 
 
-function ResultCtrl($scope, $state, $stateParams, IdocRestService, $localStorage, $sessionStorage, $anchorScroll) {
+function ResultCtrl($scope, $state, $stateParams, DoctorsService, IdocRestService, $localStorage, $sessionStorage, $anchorScroll) {
 
     var $storage = $sessionStorage,
         _this = this;
@@ -14,22 +14,7 @@ function ResultCtrl($scope, $state, $stateParams, IdocRestService, $localStorage
     this.getDoctors = function (params) {
         $anchorScroll('#result');
         IdocRestService.getDoctors(params).then(function (response) {
-            $scope.results = response.data;
-
-            $scope.results.results = _.map($scope.results.results, function (doctor) {
-                return {
-                    full_name: doctor.profile.name,
-                    specialties: _.pluck(doctor.specialties, 'name').join(' | '),
-                    rating: doctor.ratings.length > 0 ? doctor.ratings[0].rating : 0,
-                    uid: doctor.id,
-                    visit_address: _.pluck(doctor.practices, 'visit_address'),
-                    bio: doctor.profile.bio ? doctor.profile.bio.substr(0, 155) + '...' : '',
-                    title: doctor.profile.title,
-                    image_url: doctor.profile.images && doctor.profile.images.length > 0 ? doctor.profile.images[0].image : '',
-                    gender: doctor.profile.gender
-
-                }
-            });
+            $scope.results = DoctorsService.formatDoctorsData(response.data);
 
             /*$scope.maps = _.map($scope.results.results, function (doctor) {
                 return {
@@ -58,6 +43,6 @@ function ResultCtrl($scope, $state, $stateParams, IdocRestService, $localStorage
 }
 
 
-ResultCtrl.$inject = ['$scope', '$state', '$stateParams', 'IdocRestService', '$localStorage', '$sessionStorage', '$anchorScroll'];
+ResultCtrl.$inject = ['$scope', '$state', '$stateParams', 'DoctorsService', 'IdocRestService', '$localStorage', '$sessionStorage', '$anchorScroll'];
 
 angular.module('iDocApp').controller('ResultCtrl', ResultCtrl);
