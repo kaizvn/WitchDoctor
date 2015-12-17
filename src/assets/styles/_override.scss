@@ -8,6 +8,7 @@ body {
 	border-radius: 0;
 	margin-bottom: 0;
 	background: #fff;
+	border-bottom: 1px solid #ddd;
 }
 
 .navbar-brand {
@@ -117,6 +118,24 @@ body {
 
 .modal-body {
 	padding: 0 20px;
+}
+
+.panel-default.panel {
+	margin-bottom: 5px;
+	> .panel-heading {
+		background: none;
+		border-radius: 0;
+		border: 1px solid #ddd;
+	}
+	.panel-collapse {
+		padding: 0 10px;
+		border: 1px solid #ddd;
+		border-top: none;
+	}
+}
+
+.panel-title {
+	padding: 0 10px;
 }
 
 @media (max-width: 767px) {

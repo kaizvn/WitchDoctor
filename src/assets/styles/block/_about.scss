@@ -1,0 +1,70 @@
+.about {
+	padding-top: 30px;
+	&__title {
+		color: #666;
+		margin-bottom: 10px;
+	}
+	&__description {
+		font-size: 16px;
+	}
+	&__detail {
+		background: #fff;
+		padding: 15px 20px 30px;
+	}
+}
+
+.panel-group {
+	margin-top: 20px;
+}
+
+.peopleList {
+	margin-top: 30px;
+	padding-top: 20px;
+	border-top: 1px solid #ddd;
+}
+
+.people {
+	margin-bottom: 50px;
+	float: left;
+	margin-right: 65px;
+	width: 165px;
+	img {
+		width: 100%;
+		border: 1px solid #ddd;
+	}
+	&__info {
+		text-align: left;
+		padding-top: 10px;
+		&_name {
+			color: #3bafda;
+			font-size: 15px;
+		}
+		&_title {
+			font-size: 15px;
+			line-height: 1.6;
+		}
+	}
+}
+
+.aboutList {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	background: #fff;
+	li {
+		border-bottom: 1px solid #ddd;
+		a {
+			display: block;
+			padding: 10px 15px;
+			border-left: 5px solid #fff;
+			&:hover {
+				border-left: 5px solid #4fc1e9;
+				color: #4fc1e9;
+			}
+			&:focus, &.active {
+				border-left: 5px solid #999;
+				color: #333;
+			}
+		}
+	}
+}

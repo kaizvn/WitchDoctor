@@ -40,21 +40,36 @@ angular.module('iDocApp')
                     }
                 }
             }).state({
-            name: 'detail',
-            url: "/detail/:id",
-            views: {
-                "content-view": {
-                    "controller": "DetailCtrl",
-                    "templateUrl": "idoc/detail/detail.html"
+                name: 'detail',
+                url: "/detail/:id",
+                views: {
+                    "content-view": {
+                        "controller": "DetailCtrl",
+                        "templateUrl": "idoc/detail/detail.html"
+                    }
+                },
+                resolve: {
+                    translatePartialLoader: function ($translate, $translatePartialLoader) {
+                        $translatePartialLoader.addPart('common');
+                        return $translate.refresh();
+                    }
                 }
-            },
-            resolve: {
-                translatePartialLoader: function ($translate, $translatePartialLoader) {
-                    $translatePartialLoader.addPart('common');
-                    return $translate.refresh();
+            }).state({
+                name: 'about',
+                url: "/about",
+                views: {
+                    "content-view": {
+                        "controller": "AboutCtrl",
+                        "templateUrl": "idoc/about/about.html"
+                    }
+                },
+                resolve: {
+                    translatePartialLoader: function ($translate, $translatePartialLoader) {
+                        $translatePartialLoader.addPart('common');
+                        return $translate.refresh();
+                    }
                 }
-            }
-        });
+            });
 
         $urlRouterProvider.otherwise('/');
     });
