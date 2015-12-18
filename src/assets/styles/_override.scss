@@ -138,6 +138,12 @@ body {
 	padding: 0 10px;
 }
 
+.input-group-btn {
+	.btn {
+		border-radius: 0;
+	}
+}
+
 @media (max-width: 767px) {
 	.nav-border {
 		padding: 0;

@@ -7,9 +7,7 @@ function ResultCtrl($scope, $state, $stateParams, DoctorsService, IdocRestServic
         _this = this;
     $scope.isShowResult = false;
 
-    var params = ($stateParams.query)
-        ? $stateParams
-        : JSON.parse($storage.lastSearchTerm || '{}');
+    var params = $stateParams.query;
 
     this.getDoctors = function (params) {
         $anchorScroll('#result');

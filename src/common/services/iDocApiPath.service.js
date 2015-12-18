@@ -24,6 +24,10 @@ function iDocApiPath($http) {
         //return this.getBaseUrl() + '/city'
     };
 
+    this.getSpecialtiesBy = function (value) {
+        return this.getBaseUrl() + '/conditions?name='+value;
+    }
+
     this.getHospital = function () {
         return '/mocks/hospital.json';
         //return this.getBaseUrl() + '/hospital'

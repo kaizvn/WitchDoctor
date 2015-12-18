@@ -1,0 +1,64 @@
+<!-- Start Block Search -->
+<div class="blockSearch">
+    <div class="blockSearch__inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <div class="input-group-btn" ng-class="{open: showSearchType}">
+                            <button type="button" class="btn" tabindex="-1">{{selectedType}}</button>
+                            <button type="button" class="btn dropdown-toggle" ng-click="showSearchType = !showSearchType">
+                                <span class="caret"></span>
+                            </button>
+                            <ul ng-show="showSearchType" class="dropdown-menu">
+                                <li><a href="javascript:void(0)" ng-click="onSelectType('name')">Bác sĩ</a></li>
+                                <li><a href="javascript:void(0)" ng-click="onSelectType('specialties')">Triệu chứng</a></li>
+                            </ul>
+                        </div>
+                        <input type="text"
+                            ng-show="action.name.value"
+                            placeholder="Nhập tên bác sĩ"
+                            uib-typeahead="specialties for specialties in getSpecialties($viewValue)"
+                            typeahead-loading="loadingLocations"
+                            typeahead-no-results="noResults"
+                            ng-model="specialties"
+                            class="form-control">
+                        <input type="text"
+                            ng-show="action.specialties.value"
+                            placeholder="Nhập triệu chứng"
+                            uib-typeahead="specialties for specialties in getSpecialties($viewValue)"
+                            typeahead-loading="loadingLocations"
+                            typeahead-no-results="noResults"
+                            ng-model="specialties"
+                            class="form-control">
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="select-group">
+                        <i class="fa fa-map-marker"></i>
+                        <select skin-select ng-model="city" ng-options="city as city.text for city in citys"
+                                ng-change="onSelectedCity(city)"
+                                data-placeholder="Chọn thành phố">
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="select-group">
+                        <i class="fa fa-hospital-o"></i>
+                        <select skin-select ng-model="hospital"
+                                ng-options="hospital as hospital.text for hospital in hospitals"
+                                ng-change="onSelected(hospital)"
+                                data-placeholder="Chọn bệnh viện">
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <button class="btn btn-primary btn-block btn-no-radius" ng-click="search(specialties)">
+                        {{'global.banner.form.action' | translate}}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Block Search -->

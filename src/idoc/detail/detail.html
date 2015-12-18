@@ -1,46 +1,4 @@
-<!-- Start Block Search -->
-<div class="blockSearch">
-    <div class="blockSearch__inner">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4">
-                    <input type="text" ng-model="querySearch"
-                           placeholder="{{'global.banner.form.input' | translate}}"
-                           uib-typeahead="tag for tag in fetchData($viewValue)"
-                           typeahead-loading="loadingLocations" typeahead-no-results="noResults"
-                           class="form-control">
-                    <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
-                </div>
-                <div class="col-sm-3">
-                    <div class="select-group">
-                        <i class="fa fa-map-marker"></i>
-                        <select skin-select ng-model="city" ng-options="city as city.text for city in citys"
-                                ng-change="onSelectedCity(city)"
-                                data-placeholder="Chọn thành phố">
-                        </select>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="select-group">
-                        <i class="fa fa-hospital-o"></i>
-                        <select skin-select ng-model="hospital"
-                                ng-options="hospital as hospital.text for hospital in hospitals"
-                                ng-change="onSelected(hospital)"
-                                data-placeholder="Chọn bệnh viện">
-                        </select>
-                    </div>
-                </div>
-                <div class="col-sm-2">
-                    <button class="btn btn-primary btn-block btn-no-radius">
-                        {{'global.banner.form.action' | translate}}
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Block Search -->
-
+<idoc-search></idoc-search>
 
 <div class="container" id="detail">
     <div class="row">
@@ -306,10 +264,9 @@
                     <ul class="media-list">
                         <li class="media" ng-repeat="doctor in topDoctors.results | limitTo:3">
                             <a class="pull-left" ui-sref="detail({id : doctor.id})">
-                                <img class="media-object img-rounded"/>
                                 <img ng-src="{{doctor.image_url | imageDefault}}"
-                                     alt="" data-pin-nopin="true"/></a>
-
+                                     alt="" data-pin-nopin="true"/>
+                            </a>
                             <div class="media-body">
                                 <a class="doctor__name" ui-sref="detail({id : doctor.id})">
                                     <span>{{doctor.full_name}}</span>

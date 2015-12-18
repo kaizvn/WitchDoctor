@@ -1,46 +1,4 @@
-<!-- Start Block Search -->
-<div class="blockSearch">
-    <div class="blockSearch__inner">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4">
-                    <input type="text" ng-model="querySearch"
-                           placeholder="{{'global.banner.form.input' | translate}}"
-                           uib-typeahead="tag for tag in fetchData($viewValue)"
-                           typeahead-loading="loadingLocations" typeahead-no-results="noResults"
-                           class="form-control">
-                    <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
-                </div>
-                <div class="col-sm-3">
-                    <div class="select-group">
-                        <i class="fa fa-map-marker"></i>
-                        <select skin-select ng-model="city" ng-options="city as city.text for city in citys"
-                                ng-change="onSelectedCity(city)"
-                                data-placeholder="Chọn thành phố">
-                        </select>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="select-group">
-                        <i class="fa fa-hospital-o"></i>
-                        <select skin-select ng-model="hospital"
-                                ng-options="hospital as hospital.text for hospital in hospitals"
-                                ng-change="onSelected(hospital)"
-                                data-placeholder="Chọn bệnh viện">
-                        </select>
-                    </div>
-                </div>
-                <div class="col-sm-2">
-                    <button class="btn btn-primary btn-block btn-no-radius">
-                        {{'global.banner.form.action' | translate}}
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Block Search -->
-
+<idoc-search></idoc-search>
 <div id="result" class="result row">
     <div class="col-md-5 col-sm-6">
         <div class="result__list clearfix">

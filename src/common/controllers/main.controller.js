@@ -30,16 +30,4 @@ angular.module('iDocApp')
 	            
 	        });
 		};
-
-		IdocRestService.getCity().then(function (response){
-			$scope.citys = response.data;
-		});
-
-		IdocRestService.getHospital().then(function (response){
-			$scope.hospitals = response.data;
-		});
-
-		$scope.onSelectedCity = function(city) {
-			//Search Here
-		};
     });

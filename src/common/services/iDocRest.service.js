@@ -81,6 +81,10 @@ function iDocRestService($http, iDocApiPath, $q) {
         return $http.get(iDocApiPath.getHospital());
     };
 
+    api.getSpecialtiesBy = function (value) {
+        return $http.get(iDocApiPath.getSpecialtiesBy(value));
+    };
+
     return api;
 
 }
