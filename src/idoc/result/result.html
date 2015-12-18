@@ -5,27 +5,28 @@
             <div class="row">
                 <div class="col-sm-4">
                     <input type="text" ng-model="querySearch"
-                       placeholder="{{'global.banner.form.input' | translate}}"
-                       uib-typeahead="tag for tag in fetchData($viewValue)"
-                       typeahead-loading="loadingLocations" typeahead-no-results="noResults"
-                       class="form-control">
+                           placeholder="{{'global.banner.form.input' | translate}}"
+                           uib-typeahead="tag for tag in fetchData($viewValue)"
+                           typeahead-loading="loadingLocations" typeahead-no-results="noResults"
+                           class="form-control">
                     <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
                 </div>
                 <div class="col-sm-3">
                     <div class="select-group">
                         <i class="fa fa-map-marker"></i>
                         <select skin-select ng-model="city" ng-options="city as city.text for city in citys"
-                            ng-change="onSelectedCity(city)"
-                            data-placeholder="Chọn thành phố">
+                                ng-change="onSelectedCity(city)"
+                                data-placeholder="Chọn thành phố">
                         </select>
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="select-group">
                         <i class="fa fa-hospital-o"></i>
-                        <select skin-select ng-model="hospital" ng-options="hospital as hospital.text for hospital in hospitals"
-                            ng-change="onSelected(hospital)"
-                            data-placeholder="Chọn bệnh viện">
+                        <select skin-select ng-model="hospital"
+                                ng-options="hospital as hospital.text for hospital in hospitals"
+                                ng-change="onSelected(hospital)"
+                                data-placeholder="Chọn bệnh viện">
                         </select>
                     </div>
                 </div>
@@ -50,7 +51,7 @@
 
                 <div class="clearfix">
                     <div class="doctor__image">
-                        <img ng-src="{{doctor.image_url | imageDefault}}" alt="">
+                        <img ng-src="{{doctor.image_url | imageDefault}}" alt=""/>
                     </div>
                     <div class="doctor__details">
                         <a class="doctor__name" ui-sref="detail({id : doctor.id})">
