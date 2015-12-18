@@ -5,27 +5,28 @@
             <div class="row">
                 <div class="col-sm-4">
                     <input type="text" ng-model="querySearch"
-                       placeholder="{{'global.banner.form.input' | translate}}"
-                       uib-typeahead="tag for tag in fetchData($viewValue)"
-                       typeahead-loading="loadingLocations" typeahead-no-results="noResults"
-                       class="form-control">
+                           placeholder="{{'global.banner.form.input' | translate}}"
+                           uib-typeahead="tag for tag in fetchData($viewValue)"
+                           typeahead-loading="loadingLocations" typeahead-no-results="noResults"
+                           class="form-control">
                     <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
                 </div>
                 <div class="col-sm-3">
                     <div class="select-group">
                         <i class="fa fa-map-marker"></i>
                         <select skin-select ng-model="city" ng-options="city as city.text for city in citys"
-                            ng-change="onSelectedCity(city)"
-                            data-placeholder="Chọn thành phố">
+                                ng-change="onSelectedCity(city)"
+                                data-placeholder="Chọn thành phố">
                         </select>
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="select-group">
                         <i class="fa fa-hospital-o"></i>
-                        <select skin-select ng-model="hospital" ng-options="hospital as hospital.text for hospital in hospitals"
-                            ng-change="onSelected(hospital)"
-                            data-placeholder="Chọn bệnh viện">
+                        <select skin-select ng-model="hospital"
+                                ng-options="hospital as hospital.text for hospital in hospitals"
+                                ng-change="onSelected(hospital)"
+                                data-placeholder="Chọn bệnh viện">
                         </select>
                     </div>
                 </div>
@@ -42,266 +43,291 @@
 
 
 <div class="container" id="detail">
-	<div class="row">
-		<div class="col-md-7">
-			<div class="doctor doctor-big">
-				<span class="doctor__favorite"><i class="fa fa-heart"></i></span>
-				<div class="clearfix">
-					<div class="doctor__image">
-						<img ng-src="{{doctor.profile.image_url | imageDefault}}" alt="">
-					</div>
-					<div class="doctor__details">
-						<a class="doctor__name" href="">
-							<span>{{doctor.profile.title}}. {{doctor.profile.name}}</span>
-							<span class="doctor__better"><i class="fa fa-check-circle"></i></span>
-						</a>
-						<div class="doctor__specialty">
+    <div class="row">
+        <div class="col-md-7">
+            <div class="doctor doctor-big">
+                <span class="doctor__favorite"><i class="fa fa-heart"></i></span>
+
+                <div class="clearfix">
+                    <div class="doctor__image">
+                        <img ng-src="{{doctor.profile.image_url | imageDefault}}" alt="">
+                    </div>
+                    <div class="doctor__details">
+                        <a class="doctor__name" href="">
+                            <span>{{doctor.profile.title}}. {{doctor.profile.name}}</span>
+                            <span class="doctor__better"><i class="fa fa-check-circle"></i></span>
+                        </a>
+
+                        <div class="doctor__specialty">
 							<span ng-repeat="special in doctor.specialties">{{special.name}}
 								<span ng-hide="doctor.specialties.length == 1 || (doctor.specialties.length - 1) == $index"> | </span>
 							</span>
-						</div>
-						<star-rating rating-value="doctor.ratings[0].rating" readonly="true"></star-rating>
-						<div class="doctor__address">
-							<div class="doctor__address_street">{{doctor.profile.address}}</div>
-						</div>
-					</div>
-				</div>
-				<div class="doctor__action">
-					<button type="button" class="btn btn-icon btn-warning" ng-click="showShoneNumber = true">
-						<i class="fa fa-phone"></i>
-						<span ng-show="!showShoneNumber">Contact info</span>
-						<span ng-show="showShoneNumber">{{doctor.practices[0].phones[0].number}}</span>
-					</button>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-5">
-				<div id="map" maps map-data="maps"></div>
-			</div>
-		</div>
-	</div>
+                        </div>
+                        <star-rating rating-value="doctor.ratings[0].rating" readonly="true"></star-rating>
+                        <div class="doctor__address">
+                            <div class="doctor__address_street">{{doctor.profile.address}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="doctor__action">
+                    <button type="button" class="btn btn-icon btn-warning" ng-click="showShoneNumber = true">
+                        <i class="fa fa-phone"></i>
+                        <span ng-show="!showShoneNumber">Contact info</span>
+                        <span ng-show="showShoneNumber">{{doctor.practices[0].phones[0].number}}</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div id="map" maps map-data="maps"></div>
+        </div>
+    </div>
+</div>
 </div>
 
 <div class="funfacts">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-3 col-sm-6">
-				<div class="fact">
-					<i class="fa fa-commenting-o"></i>
-					<span class="fact__number">35</span>
-					<span class="fact__text">Patient Reviews</span>
-				</div>
-			</div>
-			<div class="col-md-3 col-sm-6">
-				<div class="fact">
-					<i class="fa fa-rocket"></i>
-					<span class="fact__number">35</span>
-					<span class="fact__text">Years of Experience</span>
-				</div>
-			</div>
-			<div class="col-md-3 col-sm-6">
-				<div class="fact">
-					<i class="fa fa-suitcase"></i>
-					<span class="fact__number">35</span>
-					<span class="fact__text">Specialties</span>
-				</div>
-			</div>
-			<div class="col-md-3 col-sm-6">
-				<div class="fact">
-					<i class="fa fa-eye"></i>
-					<span class="fact__number">35</span>
-					<span class="fact__text">Profile Views</span>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="fact">
+                    <i class="fa fa-commenting-o"></i>
+                    <span class="fact__number">35</span>
+                    <span class="fact__text">Patient Reviews</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="fact">
+                    <i class="fa fa-rocket"></i>
+                    <span class="fact__number">35</span>
+                    <span class="fact__text">Years of Experience</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="fact">
+                    <i class="fa fa-suitcase"></i>
+                    <span class="fact__number">35</span>
+                    <span class="fact__text">Specialties</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="fact">
+                    <i class="fa fa-eye"></i>
+                    <span class="fact__number">35</span>
+                    <span class="fact__text">Profile Views</span>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="detail-wrap grey-bg">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-9">
-				<div class="block">
-					<div class="block__title">
-						<h3>{{doctor.profile.first_name}} {{doctor.profile.last_name}}' Background</h3>
-					</div>
-					<div class="block__detail">
-						<div class="block__detail_line">
-							<span class="line__icon fa fa-heartbeat"></span>
-							<div class="line__content">
-								<h4 class="line__content_title">BIO</h4>
-								<div class="line__content_description no-padding">{{doctor.profile.bio}}</div>
-							</div>
-						</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="block">
+                    <div class="block__title">
+                        <h3>{{doctor.profile.first_name}} {{doctor.profile.last_name}}' Background</h3>
+                    </div>
+                    <div class="block__detail">
+                        <div class="block__detail_line">
+                            <span class="line__icon fa fa-heartbeat"></span>
 
-						<div class="block__detail_line">
-							<span class="line__icon fa fa-mortar-board"></span>
-							<div class="line__content">
-								<h4 class="line__content_title">EDUCATION & EXPERIENCE</h4>
-								<div class="line__content_description">
-									<div ng-repeat="education in doctor.generic_educations" class="clearfix">
-										<div class="pull-left">
-											<div class="outer-circle">
-				                                <div class="inner-circle"></div>
-				                            </div>
-										</div>
-										<h5 class="doctor__education_title">{{education.degree.name}} <span ng-show="education.graduation_year">({{education.graduation}})</span></h5>
-										<p class="doctor__education_school">{{education.source.name}}</p>
-									</div>
-								</div>
-							</div>
-						</div>
+                            <div class="line__content">
+                                <h4 class="line__content_title">BIO</h4>
 
-						<div class="block__detail_line">
-							<span class="line__icon fa fa-life-saver"></span>
-							<div class="line__content">
-								<h4 class="line__content_title">SPECIALTIES</h4>
-								<div class="line__content_description no-padding">
-									<div ng-repeat="special in doctor.specialties" class="doctor__special">
-										<h5>{{special.name}}</h5>
-										<p>{{special.description}}</p>
-									</div>
-								</div>
-							</div>
-						</div>
+                                <div class="line__content_description no-padding">{{doctor.profile.bio}}</div>
+                            </div>
+                        </div>
 
-						<div class="block__detail_line">
-							<span class="line__icon fa fa-language"></span>
-							<div class="line__content">
-								<h4 class="line__content_title">LANGUAGES SPOKEN IN THIS PRACTICE</h4>
-								<div class="line__content_description">
+                        <div class="block__detail_line">
+                            <span class="line__icon fa fa-mortar-board"></span>
+
+                            <div class="line__content">
+                                <h4 class="line__content_title">EDUCATION & EXPERIENCE</h4>
+
+                                <div class="line__content_description">
+                                    <div ng-repeat="education in doctor.generic_educations" class="clearfix">
+                                        <div class="pull-left">
+                                            <div class="outer-circle">
+                                                <div class="inner-circle"></div>
+                                            </div>
+                                        </div>
+                                        <h5 class="doctor__education_title">{{education.degree.name}} <span
+                                                ng-show="education.graduation_year">({{education.graduation}})</span>
+                                        </h5>
+
+                                        <p class="doctor__education_school">{{education.source.name}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="block__detail_line">
+                            <span class="line__icon fa fa-life-saver"></span>
+
+                            <div class="line__content">
+                                <h4 class="line__content_title">SPECIALTIES</h4>
+
+                                <div class="line__content_description no-padding">
+                                    <div ng-repeat="special in doctor.specialties" class="doctor__special">
+                                        <h5>{{special.name}}</h5>
+
+                                        <p>{{special.description}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="block__detail_line">
+                            <span class="line__icon fa fa-language"></span>
+
+                            <div class="line__content">
+                                <h4 class="line__content_title">LANGUAGES SPOKEN IN THIS PRACTICE</h4>
+
+                                <div class="line__content_description">
 									<span ng-repeat="language in doctor.profile.languages">{{language.name}}
 										<span ng-hide="doctor.profile.languages.length == 1 || (doctor.profile.languages.length - 1) == $index">, </span>
 									</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-				<div class="block">
-					<div class="block__title">
-						<h3>Patient Reviews</h3>
-					</div>
-					<div class="block__detail">
-						<div class="review clearfix">
-							<div class="pull-left clearfix">
-								<div class="review__image">
-									<img src="assets/images/user_default.png" alt="">
-								</div>
-								<div class="review__info">
-									<div class="doctor__rating">
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-									</div>
-									<span class="review__date">10/06/2015</span>
-									<span class="review__username">By Bella O.</span>
-								</div>
-							</div>
-							<div class="review__quocte">
-                   				<i class="fa fa-quote-left"></i>
-                    			Dr. Triadafilopoulos is exceptional in every way. He asks all the right questions, listens attentively and has already given me more information than other...
-                    			<a class="review-link-more more-link" target="_blank">read more</a>
-							</div>
-						</div>
-						<div class="review clearfix">
-							<div class="pull-left clearfix">
-								<div class="review__image">
-									<img src="assets/images/user_default.png" alt="">
-								</div>
-								<div class="review__info">
-									<div class="doctor__rating">
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-									</div>
-									<span class="review__date">10/06/2015</span>
-									<span class="review__username">By Bella O.</span>
-								</div>
-							</div>
-							<div class="review__quocte">
-                   				<i class="fa fa-quote-left"></i>
-                    			Dr. Triadafilopoulos is exceptional in every way. He asks all the right questions, listens attentively and has already given me more information than other...
-                    			<a class="review-link-more more-link" target="_blank">read more</a>
-							</div>
-						</div>
-						<div class="review clearfix">
-							<div class="pull-left clearfix">
-								<div class="review__image">
-									<img src="assets/images/user_default.png" alt="">
-								</div>
-								<div class="review__info">
-									<div class="doctor__rating">
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-									</div>
-									<span class="review__date">10/06/2015</span>
-									<span class="review__username">By Bella O.</span>
-								</div>
-							</div>
-							<div class="review__quocte">
-                   				<i class="fa fa-quote-left"></i>
-                    			Dr. Triadafilopoulos is exceptional in every way. He asks all the right questions, listens attentively and has already given me more information than other...
-                    			<a hreft="#" target="_blank">read more</a>
-							</div>
-						</div>
-						<p class="text-center read-more-review"><a href="#">Read more reviews</a></p>
-					</div>
-				</div>
+                <div class="block">
+                    <div class="block__title">
+                        <h3>Patient Reviews</h3>
+                    </div>
+                    <div class="block__detail">
+                        <div class="review clearfix">
+                            <div class="pull-left clearfix">
+                                <div class="review__image">
+                                    <img src="assets/images/user_default.png" alt="">
+                                </div>
+                                <div class="review__info">
+                                    <div class="doctor__rating">
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                    </div>
+                                    <span class="review__date">10/06/2015</span>
+                                    <span class="review__username">By Bella O.</span>
+                                </div>
+                            </div>
+                            <div class="review__quocte">
+                                <i class="fa fa-quote-left"></i>
+                                Dr. Triadafilopoulos is exceptional in every way. He asks all the right questions,
+                                listens attentively and has already given me more information than other...
+                                <a class="review-link-more more-link" target="_blank">read more</a>
+                            </div>
+                        </div>
+                        <div class="review clearfix">
+                            <div class="pull-left clearfix">
+                                <div class="review__image">
+                                    <img src="assets/images/user_default.png" alt="">
+                                </div>
+                                <div class="review__info">
+                                    <div class="doctor__rating">
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                    </div>
+                                    <span class="review__date">10/06/2015</span>
+                                    <span class="review__username">By Bella O.</span>
+                                </div>
+                            </div>
+                            <div class="review__quocte">
+                                <i class="fa fa-quote-left"></i>
+                                Dr. Triadafilopoulos is exceptional in every way. He asks all the right questions,
+                                listens attentively and has already given me more information than other...
+                                <a class="review-link-more more-link" target="_blank">read more</a>
+                            </div>
+                        </div>
+                        <div class="review clearfix">
+                            <div class="pull-left clearfix">
+                                <div class="review__image">
+                                    <img src="assets/images/user_default.png" alt="">
+                                </div>
+                                <div class="review__info">
+                                    <div class="doctor__rating">
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                    </div>
+                                    <span class="review__date">10/06/2015</span>
+                                    <span class="review__username">By Bella O.</span>
+                                </div>
+                            </div>
+                            <div class="review__quocte">
+                                <i class="fa fa-quote-left"></i>
+                                Dr. Triadafilopoulos is exceptional in every way. He asks all the right questions,
+                                listens attentively and has already given me more information than other...
+                                <a hreft="#" target="_blank">read more</a>
+                            </div>
+                        </div>
+                        <p class="text-center read-more-review"><a href="#">Read more reviews</a></p>
+                    </div>
+                </div>
 
-				<div class="recentWrap">
-					<h4 class="recentWrap__title">Similar Primary Care Doctors in Mountain View, CA</h4>
-					<div class="row">
-						<div class="col-sm-4" ng-repeat="doctor in relatedDoctors">
-							<div class="recentBl">
-								<div class="recentBl__image">
-									<img ng-src="{{doctor.image_url | imageDefault}}" alt="">
-								</div>
-								<div class="recentBl__detail">
-									<h5 class="recentBl__name">{{doctor.full_name}} <span class="doctor__better"><i class="fa fa-check-circle"></i></span></h5>
-									<div class="recentBl__specialty">{{doctor.specialties}}</div>
-									<star-rating rating-value="doctor.rating" readonly="true"></star-rating>
-									<a ui-sref="detail({id : doctor.id})" class="btn btn-viewprofile">View Profile</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+                <div class="recentWrap">
+                    <h4 class="recentWrap__title">Similar Primary Care Doctors in Mountain View, CA</h4>
 
-			<div class="col-md-3">
-				<div class="block block-sm">
-					<div class="block__title">
-						<h3>Top Primary Care Doctors in Mountain View, CA</h3>
-					</div>
-					<ul class="media-list">
-						<li class="media" ng-repeat="doctor in topDoctors.results | limitTo:3">
-							<a class="pull-left" ui-sref="detail({id : doctor.id})"><img class="media-object img-rounded" <img ng-src="{{doctor.image_url | imageDefault}}" alt="" data-pin-nopin="true"></a>
-							<div class="media-body">
-								<a class="doctor__name" ui-sref="detail({id : doctor.id})">
-									<span>{{doctor.full_name}}</span>
-									<span class="doctor__better"><i class="fa fa-check-circle"></i></span>
-								</a>
-								<div class="doctor__specialty">{{doctor.specialties}}</div>
-								<star-rating rating-value="doctor.rating" readonly="true"></star-rating>
-								<div class="doctor__address">
-									<div class="doctor__address_street">{{doctor.address}}</div>
-								</div>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
+                    <div class="row">
+                        <div class="col-sm-4" ng-repeat="doctor in relatedDoctors">
+                            <div class="recentBl">
+                                <div class="recentBl__image">
+                                    <img ng-src="{{doctor.image_url | imageDefault}}" alt="">
+                                </div>
+                                <div class="recentBl__detail">
+                                    <h5 class="recentBl__name">{{doctor.full_name}} <span class="doctor__better"><i
+                                            class="fa fa-check-circle"></i></span></h5>
+
+                                    <div class="recentBl__specialty">{{doctor.specialties}}</div>
+                                    <star-rating rating-value="doctor.rating" readonly="true"></star-rating>
+                                    <a ui-sref="detail({id : doctor.id})" class="btn btn-viewprofile">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="block block-sm">
+                    <div class="block__title">
+                        <h3>Top Primary Care Doctors in Mountain View, CA</h3>
+                    </div>
+                    <ul class="media-list">
+                        <li class="media" ng-repeat="doctor in topDoctors.results | limitTo:3">
+                            <a class="pull-left" ui-sref="detail({id : doctor.id})">
+                                <img class="media-object img-rounded"/>
+                                <img ng-src="{{doctor.image_url | imageDefault}}"
+                                     alt="" data-pin-nopin="true"/></a>
+
+                            <div class="media-body">
+                                <a class="doctor__name" ui-sref="detail({id : doctor.id})">
+                                    <span>{{doctor.full_name}}</span>
+                                    <span class="doctor__better"><i class="fa fa-check-circle"></i></span>
+                                </a>
+
+                                <div class="doctor__specialty">{{doctor.specialties}}</div>
+                                <star-rating rating-value="doctor.rating" readonly="true"></star-rating>
+                                <div class="doctor__address">
+                                    <div class="doctor__address_street">{{doctor.address}}</div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 
