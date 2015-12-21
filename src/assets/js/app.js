@@ -28,10 +28,11 @@
                           $translateProvider, $provide, tmhDynamicLocaleProvider, httpRequestInterceptorCacheBusterProvider, $localStorageProvider) {
             //enable htmlmode - remove #! on url
             //$locationProvider.html5Mode(true);
-            /*$locationProvider.html5Mode({
-             enabled: true,
-             requireBase: false
-             });*/
+            
+            $locationProvider.html5Mode({
+                enabled: true,
+                requireBase: false
+            });
 
             //$localStorageProvider.setKeyPrefix('iDoc_');
 
@@ -70,7 +71,7 @@
 
             $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
 
-                if(toState.name === 'result') {
+                if (toState.name === 'result') {
                     $rootScope.hideFooter = true;
                 } else {
                     $rootScope.hideFooter = false;
