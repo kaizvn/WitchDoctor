@@ -10,15 +10,15 @@ angular.module('iDocApp')
             $scope.doctor.profile.address = DoctorsService.getAddressDoctor($scope.doctor);
 
             var profile = $scope.doctor.profile;
-            $scope.maps = {
-                title: [profile.last_name, profile.middle_name, profile.first_name].join(' ')
-            }
-            ;
+            console.log(profile);
+            $scope.maps = [{
+                title: profile.name
+            }];
 
             if ($scope.doctor.profile.address) {
-                $scope.maps.lat = profile.address.lat;
-                $scope.maps.lon = profile.address.lng;
-                $scope.maps.des = profile.street || '' + '<br>' + profile.address.city || '' + ', ' + profile.address.state || '' + ' ' + profile.address.zip || ''
+                $scope.maps[0].lat = profile.address.lat;
+                $scope.maps[0].lon = profile.address.lng;
+                $scope.maps[0].des = profile.address.raw;
             }
 
 

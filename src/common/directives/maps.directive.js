@@ -33,7 +33,7 @@ angular.module('iDocApp')
                     icon: '/assets/images/icon_map.png'
                 });
 
-                marker.content = '<p>' + info.desc + '</p>';
+                marker.content = '<p>' + info.des + '</p>';
 
                 google.maps.event.addListener(marker, 'click', function(){
                     infoWindow.setContent('<h5 class="mapInfo__title">' + marker.title + '</h5>' + marker.content);
@@ -54,12 +54,12 @@ angular.module('iDocApp')
             },
             link: function (scope, element, attributes) {
                 var id = attributes.id;
+                adapSizeMap();
                 scope.$watch('mapData', function(maps) {
                     if(maps) {
                         google.maps.event.addDomListener(window, 'load', initMap(scope.mapData, id));
                         if(id === 'maps') {
                             $timeout(function(){
-                                adapSizeMap();
                                 $(window).resize(function() {
                                     adapSizeMap();
                                 });

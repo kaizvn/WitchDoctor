@@ -15,16 +15,15 @@ function ResultCtrl($scope, $state, $stateParams, DoctorsService, IdocRestServic
             $scope.results = DoctorsService.formatDoctorsData(response.data);
 
             $scope.maps = _.map($scope.results, function (doctor) {
+                console.log(doctor);
                 var obj = {title: doctor.full_name};
                 if (doctor.address) {
                     obj.lat = doctor.address.lat;
                     obj.lon = doctor.address.lng;
-                    obj.des = doctor.address.street + '<br>' + doctor.address.city + ', ' + doctor.address.state + ' ' + doctor.address.zip
+                    obj.des = doctor.address.raw;
                 }
                 return obj;
             });
-
-            console.log($scope.maps);
 
             $scope.isShowResult = true;
             $storage.lastSearchTerm = JSON.stringify(params);
