@@ -8,7 +8,7 @@
 <!--[if IE 9]>
 <html class="no-js lt-ie10" id="ng-app"> <![endif]-->
 <!--[if gt IE 9]><!-->
-<html class="no-js" id="ng-app" ng-app="iDocApp"> <!--<![endif]-->
+<html class="no-js" id="ng-app" ng-app="iDocApp" ng-cloak> <!--<![endif]-->
 <head>
     <title>iDoc</title>
 
@@ -33,7 +33,7 @@
 </head>
 <body ng-controller="MainCtrl" class="ng-cloak">
 <!-- Start Nav -->
-<nav class="navbar navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-fixed-top ng-cloak" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" ng-init="navCollapsed = true"
