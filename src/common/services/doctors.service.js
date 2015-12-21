@@ -19,11 +19,12 @@ function DoctorsService() {
                 for (var i = 0; i < doctor.practices.length && !found; i++) {
                     if (doctor.practices[i].address && doctor.practices[i].address.raw) {
                         found = true;
-                        return doctor.practices[i].address.raw;
+                        return doctor.practices[i].address;
                     }
                 }
             }
         },
+
 
         getRelatedDoctors: function (doctors, id) {
             var relatedDoctors = _.reject(doctors, function (doctor) {
@@ -33,13 +34,14 @@ function DoctorsService() {
         },
 
         formatDoctorsData: function (doctors) {
-            doctors.results = _.map(doctors.results, function (doctor) {
+            var self = this;
+            return _.map(doctors.results, function (doctor) {
                 return {
                     full_name: doctor.profile.name,
                     specialties: _.pluck(doctor.specialties, 'name').join(' | '),
                     rating: doctor.ratings.length > 0 ? doctor.ratings[0].rating : 0,
                     id: doctor.id,
-                    address: service.getAddressDoctor(doctor),
+                    address: self.getAddressDoctor(doctor),
                     bio: doctor.profile.bio ? doctor.profile.bio.substr(0, 155) + '...' : '',
                     title: doctor.profile.title,
                     image_url: doctor.profile.images && doctor.profile.images.length > 0 ? doctor.profile.images[0].image : '',
@@ -47,7 +49,6 @@ function DoctorsService() {
 
                 }
             });
-            return doctors;
         }
     };
 

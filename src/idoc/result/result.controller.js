@@ -14,14 +14,17 @@ function ResultCtrl($scope, $state, $stateParams, DoctorsService, IdocRestServic
         IdocRestService.getDoctors(params).then(function (response) {
             $scope.results = DoctorsService.formatDoctorsData(response.data);
 
-            /*$scope.maps = _.map($scope.results.results, function (doctor) {
-                return {
-                    lat: doctor.visit_address[0].lat,
-                    lon: doctor.visit_address[0].lon,
-                    title: doctor.full_name,
-                    desc: doctor.visit_address[0].street +'<br>'+ doctor.visit_address[0].city +', '+ doctor.visit_address[0].state +' '+ doctor.visit_address[0].zip
+            $scope.maps = _.map($scope.results, function (doctor) {
+                var obj = {title: doctor.full_name};
+                if (doctor.address) {
+                    obj.lat = doctor.address.lat;
+                    obj.lon = doctor.address.lng;
+                    obj.des = doctor.address.street + '<br>' + doctor.address.city + ', ' + doctor.address.state + ' ' + doctor.address.zip
                 }
-            });*/
+                return obj;
+            });
+
+            console.log($scope.maps);
 
             $scope.isShowResult = true;
             $storage.lastSearchTerm = JSON.stringify(params);

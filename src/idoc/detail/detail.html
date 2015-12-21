@@ -23,7 +23,7 @@
                         </div>
                         <star-rating rating-value="doctor.ratings[0].rating" readonly="true"></star-rating>
                         <div class="doctor__address">
-                            <div class="doctor__address_street">{{doctor.profile.address}}</div>
+                            <div class="doctor__address_street">{{doctor.profile.address.raw}}</div>
                         </div>
                     </div>
                 </div>
@@ -267,6 +267,7 @@
                                 <img ng-src="{{doctor.image_url | imageDefault}}"
                                      alt="" data-pin-nopin="true"/>
                             </a>
+
                             <div class="media-body">
                                 <a class="doctor__name" ui-sref="detail({id : doctor.id})">
                                     <span>{{doctor.full_name}}</span>
@@ -276,7 +277,7 @@
                                 <div class="doctor__specialty">{{doctor.specialties}}</div>
                                 <star-rating rating-value="doctor.rating" readonly="true"></star-rating>
                                 <div class="doctor__address">
-                                    <div class="doctor__address_street">{{doctor.address}}</div>
+                                    <div class="doctor__address_street">{{doctor.address.raw}}</div>
                                 </div>
                             </div>
                         </li>

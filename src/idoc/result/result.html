@@ -3,7 +3,7 @@
     <div class="col-md-5 col-sm-6">
         <div class="result__list clearfix">
 
-            <div class="doctor" dir-paginate="doctor in results.results | itemsPerPage: 10"
+            <div class="doctor" dir-paginate="doctor in results | itemsPerPage: 10"
                  total-items="results.total">
                 <span class="doctor__favorite"><i class="fa fa-heart"></i></span>
 
@@ -20,7 +20,7 @@
                         <div class="doctor__specialty">{{doctor.specialties}}</div>
                         <star-rating rating-value="doctor.rating" readonly="true"></star-rating>
                         <div class="doctor__address">
-                            <div class="doctor__address_street">{{doctor.address}}</div>
+                            <div class="doctor__address_street">{{doctor.address.raw}}</div>
                         </div>
                     </div>
                 </div>
