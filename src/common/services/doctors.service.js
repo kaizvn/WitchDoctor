@@ -14,14 +14,12 @@ function DoctorsService() {
         },
 
         getAddressDoctor: function (doctor) {
-            if(doctor.practices) {
+            if (doctor.practices) {
                 var found = false;
-                for(var i = 0; i < doctor.practices.length && !found; i++) {
-                    for(var j = 0; j < doctor.practices[i].addresses.length; j++) {
-                        if(doctor.practices[i].addresses[j] && doctor.practices[i].addresses[j].raw) {
-                            found = true;
-                            return doctor.practices[i].addresses[j].raw;
-                        }
+                for (var i = 0; i < doctor.practices.length && !found; i++) {
+                    if (doctor.practices[i].address && doctor.practices[i].address.raw) {
+                        found = true;
+                        return doctor.practices[i].address.raw;
                     }
                 }
             }
@@ -36,7 +34,7 @@ function DoctorsService() {
 
         formatDoctorsData: function (doctors) {
             doctors.results = _.map(doctors.results, function (doctor) {
-                return { 
+                return {
                     full_name: doctor.profile.name,
                     specialties: _.pluck(doctor.specialties, 'name').join(' | '),
                     rating: doctor.ratings.length > 0 ? doctor.ratings[0].rating : 0,
