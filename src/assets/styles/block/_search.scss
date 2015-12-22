@@ -46,5 +46,14 @@
 		.chosen-container {
 			margin-bottom: 10px;
 		}
+		.col-sm-2 > div {
+			padding: 0 15px;
+		}
+	}
+	.input-group {
+		margin-bottom: 10px;
+		.form-control {
+			margin-bottom: 0;
+		}
 	}
 }
