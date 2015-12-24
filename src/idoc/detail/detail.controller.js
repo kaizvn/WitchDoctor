@@ -20,7 +20,6 @@ angular.module('iDocApp')
                 $scope.maps[0].des = profile.address.raw;
             }
 
-
             if (DoctorsService.results) {
                 isRelated = true;
                 $scope.relatedDoctors = DoctorsService.getRelatedDoctors(DoctorsService.getDoctors().results, $scope.doctor.id);
@@ -29,7 +28,7 @@ angular.module('iDocApp')
             IdocRestService.getDoctors().then(function (response) {
                 $scope.topDoctors = DoctorsService.formatDoctorsData(response.data);
                 if (!isRelated) {
-                    $scope.relatedDoctors = DoctorsService.getRelatedDoctors($scope.topDoctors.results, $scope.doctor.id);
+                    $scope.relatedDoctors = DoctorsService.getRelatedDoctors($scope.topDoctors, $scope.doctor.id);
                 }
             }, function (error) {
                 console.trace(error);

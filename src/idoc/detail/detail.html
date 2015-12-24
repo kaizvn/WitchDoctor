@@ -262,7 +262,7 @@
                         <h3>Top Primary Care Doctors in Mountain View, CA</h3>
                     </div>
                     <ul class="media-list">
-                        <li class="media" ng-repeat="doctor in topDoctors.results | limitTo:3">
+                        <li class="media" ng-repeat="doctor in topDoctors | limitTo:3">
                             <a class="pull-left" ui-sref="detail({id : doctor.id})">
                                 <img ng-src="{{doctor.image_url | imageDefault}}"
                                      alt="" data-pin-nopin="true"/>

@@ -25,8 +25,9 @@ function DoctorsService() {
             }
         },
 
-
         getRelatedDoctors: function (doctors, id) {
+            console.log(id);
+            console.log(doctors);
             var relatedDoctors = _.reject(doctors, function (doctor) {
                 return doctor.id === id;
             });
