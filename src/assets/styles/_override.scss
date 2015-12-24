@@ -93,6 +93,10 @@ body {
 	border-radius: 3px;
 }
 
+.form-control-search-autocomplete {
+	padding-left: 40px;
+}
+
 .btn-no-radius {
 	border-radius: 0;
 }
@@ -170,5 +174,35 @@ body {
 	}
 	.modal-sm {
 		width: auto;
+	}
+}
+
+.dropdown-menu {
+	margin: 0;
+	border-radius: 0;
+	background: #fff;
+	box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
+	width: 100%;
+	li {
+		a {
+			background: #fff;
+			border-top: 1px solid #d0cfcb;
+			max-width: 100%;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			color: #6c6f70;
+			background: #fff;
+			padding: 10px 10px 10px 0;
+			text-indent: 15px;
+			line-height: 15px;
+			&:hover {
+				background-color: #f3f3f3;
+    			color: #758ca0;
+			}
+		}
+		&.active a, &.active a:hover {
+			background-color: #f3f3f3;
+    		color: #758ca0;
+		}
 	}
 }

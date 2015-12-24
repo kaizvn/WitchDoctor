@@ -19,18 +19,21 @@ function iDocApiPath($http) {
         return this.getBaseUrl() + '/doctors/' + id;
     };
 
-    this.getCity = function () {
-        return '/mocks/city.json';
-        //return this.getBaseUrl() + '/city'
+    this.getCities = function () {
+        return '/mocks/cities.json';
+        //return this.getBaseUrl() + 'search/cities'
     };
 
-    this.getSpecialtiesBy = function (value) {
-        return this.getBaseUrl() + '/conditions?name='+value;
+    this.getSpecialties = function (value) {
+        return this.getBaseUrl() + '/search/specialties?limit=10&query='+value;
     }
 
-    this.getHospital = function () {
-        return '/mocks/hospital.json';
-        //return this.getBaseUrl() + '/hospital'
+    this.getHospitals = function (value) {
+        return this.getBaseUrl() + '/search/hospitals?limit=10&query='+value;
+    };
+
+    this.getNameDoctors = function (value) {
+        return this.getBaseUrl() + '/search/doctors?limit=10&query='+value;
     };
 }
 

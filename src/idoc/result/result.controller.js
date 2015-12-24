@@ -15,7 +15,6 @@ function ResultCtrl($scope, $state, $stateParams, DoctorsService, IdocRestServic
             $scope.results = DoctorsService.formatDoctorsData(response.data);
 
             $scope.maps = _.map($scope.results, function (doctor) {
-                console.log(doctor);
                 var obj = {title: doctor.full_name};
                 if (doctor.address) {
                     obj.lat = doctor.address.lat;

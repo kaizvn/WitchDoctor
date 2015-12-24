@@ -69,20 +69,20 @@ function iDocRestService($http, iDocApiPath, $q) {
         })
     };
 
-    api.getAutocompleteTags = function (keyword) {
-        return $http.get('/mocks/data.json');
+    api.getCities = function () {
+        return $http.get(iDocApiPath.getCities());
     };
 
-    api.getCity = function () {
-        return $http.get(iDocApiPath.getCity());
+    api.getHospitals = function (value) {
+        return $http.get(iDocApiPath.getHospitals(value));
     };
 
-    api.getHospital = function () {
-        return $http.get(iDocApiPath.getHospital());
+    api.getSpecialties = function (value) {
+        return $http.get(iDocApiPath.getSpecialties(value));
     };
 
-    api.getSpecialtiesBy = function (value) {
-        return $http.get(iDocApiPath.getSpecialtiesBy(value));
+    api.getNameDoctors = function (value) {
+        return $http.get(iDocApiPath.getNameDoctors(value));
     };
 
     return api;

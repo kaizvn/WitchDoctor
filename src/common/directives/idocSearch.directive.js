@@ -30,19 +30,25 @@ angular.module('iDocApp')
                     $scope.showSearchType = !$scope.showSearchType;
                 };
 
-                IdocRestService.getCity().then(function (response){
-                    $scope.citys = response.data;
-                });
-
-                IdocRestService.getHospital().then(function (response){
-                    $scope.hospitals = response.data;
+                IdocRestService.getCities().then(function (response){
+                    $scope.cities = response.data;
                 });
 
                 $scope.getSpecialties = function (input) {
-                    return IdocRestService.getSpecialtiesBy(input).then(function (response) {
-                        return _.map(response.data.results, function (data) {
-                            return data.specialties[0] && data.specialties[0].name ? data.specialties[0].name : null
+                    if($scope.action.specialties.value) {
+                        return IdocRestService.getSpecialties(input).then(function (response) {
+                            return response.data;
                         });
+                    } else {
+                        return IdocRestService.getNameDoctors(input).then(function (response) {
+                            return response.data;
+                        });
+                    }                    
+                }
+
+                $scope.getHospitals = function (input) {
+                    return IdocRestService.getHospitals(input).then(function (response) {
+                        return response.data;
                     });
                 }
 

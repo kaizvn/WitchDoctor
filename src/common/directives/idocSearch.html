@@ -15,28 +15,30 @@
                                 <li><a href="javascript:void(0)" ng-click="onSelectType('specialties')">Triệu chứng</a></li>
                             </ul>
                         </div>
-                        <input type="text"
-                            ng-show="action.name.value"
-                            placeholder="Nhập tên bác sĩ"
-                            uib-typeahead="specialties for specialties in getSpecialties($viewValue)"
-                            typeahead-loading="loadingLocations"
-                            typeahead-no-results="noResults"
-                            ng-model="specialties"
-                            class="form-control">
-                        <input type="text"
-                            ng-show="action.specialties.value"
-                            placeholder="Nhập triệu chứng"
-                            uib-typeahead="specialties for specialties in getSpecialties($viewValue)"
-                            typeahead-loading="loadingLocations"
-                            typeahead-no-results="noResults"
-                            ng-model="specialties"
-                            class="form-control">
+                        <div class="input-group-text">
+                            <input type="text"
+                                ng-show="action.name.value"
+                                placeholder="Nhập tên bác sĩ"
+                                uib-typeahead="specialties.name for specialties in getSpecialties($viewValue)"
+                                typeahead-loading="loadingLocations"
+                                typeahead-no-results="noResults"
+                                ng-model="specialties"
+                                class="form-control">
+                            <input type="text"
+                                ng-show="action.specialties.value"
+                                placeholder="Nhập triệu chứng"
+                                uib-typeahead="specialties.name for specialties in getSpecialties($viewValue)"
+                                typeahead-loading="loadingLocations"
+                                typeahead-no-results="noResults"
+                                ng-model="specialties"
+                                class="form-control">
+                        </div>                        
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="select-group">
                         <i class="fa fa-map-marker"></i>
-                        <select skin-select ng-model="city" ng-options="city as city.text for city in citys"
+                        <select skin-select ng-model="city" ng-options="city as city.name for city in cities"
                                 ng-change="onSelectedCity(city)"
                                 data-placeholder="Chọn thành phố">
                         </select>
@@ -45,11 +47,19 @@
                 <div class="col-sm-3">
                     <div class="select-group">
                         <i class="fa fa-hospital-o"></i>
-                        <select skin-select ng-model="hospital"
+                        <input type="text"
+                            placeholder="Nhập bệnh viện"
+                            uib-typeahead="hospital.name for hospital in getHospitals($viewValue)"
+                            typeahead-loading="loadingLocations"
+                            typeahead-no-results="noResults"
+                            ng-model="hospital"
+                            class="form-control form-control-search-autocomplete">
+                            <!-- 
+                                <select skin-select ng-model="hospital"
                                 ng-options="hospital as hospital.text for hospital in hospitals"
                                 ng-change="onSelected(hospital)"
                                 data-placeholder="Chọn bệnh viện">
-                        </select>
+                                </select>  -->
                     </div>
                 </div>
                 <div class="col-sm-2">

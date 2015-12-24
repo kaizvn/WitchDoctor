@@ -10,7 +10,6 @@ angular.module('iDocApp')
             $scope.doctor.profile.address = DoctorsService.getAddressDoctor($scope.doctor);
 
             var profile = $scope.doctor.profile;
-            console.log(profile);
             $scope.maps = [{
                 title: profile.name
             }];
