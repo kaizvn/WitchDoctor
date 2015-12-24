@@ -7,14 +7,14 @@ function ResultCtrl($scope, $state, $stateParams, DoctorsService, IdocRestServic
         _this = this;
     $scope.isShowResult = false;
 
-    var params = $stateParams.query;
+    var params = $stateParams.query || {};
 
     this.getDoctors = function (params) {
         $anchorScroll('#result');
         IdocRestService.getDoctors(params).then(function (response) {
-            $scope.results = DoctorsService.formatDoctorsData(response.data);
+            $scope.data = DoctorsService.formatDoctorsData(response.data);
 
-            $scope.maps = _.map($scope.results, function (doctor) {
+            $scope.maps = _.map($scope.data.results, function (doctor) {
                 var obj = {title: doctor.full_name};
                 if (doctor.address) {
                     obj.lat = doctor.address.lat;

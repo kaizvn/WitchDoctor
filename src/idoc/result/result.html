@@ -1,32 +1,52 @@
 <idoc-search></idoc-search>
 <div id="result" class="result row">
-    <div class="col-md-5 col-sm-6">
+    <div class="col-md-6 col-sm-8">
         <div class="result__list clearfix">
+            
+            <div class="doctor" dir-paginate="doctor in data.results | itemsPerPage: 10" total-items="data.total">
+                <div class="doctor__info">
+                    <span class="doctor__favorite"><i class="fa fa-heart"></i></span>
+                    <div class="clearfix">
+                        <div class="doctor__image">
+                            <img ng-src="{{doctor.image_url | imageDefault}}" alt=""/>
+                        </div>
+                        <div class="doctor__details">
+                            <a class="doctor__name" ui-sref="detail({id : doctor.id})">
+                                <span>{{doctor.title}}. {{doctor.full_name}}</span>
+                                <span class="doctor__better"><i class="fa fa-check-circle"></i></span>
+                            </a>
 
-            <div class="doctor" dir-paginate="doctor in results | itemsPerPage: 10"
-                 total-items="results.total">
-                <span class="doctor__favorite"><i class="fa fa-heart"></i></span>
-
-                <div class="clearfix">
-                    <div class="doctor__image">
-                        <img ng-src="{{doctor.image_url | imageDefault}}" alt=""/>
-                    </div>
-                    <div class="doctor__details">
-                        <a class="doctor__name" ui-sref="detail({id : doctor.id})">
-                            <span>{{doctor.title}}. {{doctor.full_name}}</span>
-                            <span class="doctor__better"><i class="fa fa-check-circle"></i></span>
-                        </a>
-
-                        <div class="doctor__specialty">{{doctor.specialties}}</div>
-                        <star-rating rating-value="doctor.rating" readonly="true"></star-rating>
-                        <div class="doctor__address">
-                            <div class="doctor__address_street">{{doctor.address.raw}}</div>
+                            <div class="doctor__specialty">{{doctor.specialties}}</div>
+                            <star-rating rating-value="doctor.rating" readonly="true"></star-rating>
+                            <div class="doctor__address">
+                                <div class="doctor__address_street">{{doctor.address.raw}}</div>
+                            </div>
                         </div>
                     </div>
+                    <div class="doctor__snippet" ng-show="isShowResult">
+                        <p>{{doctor.bio}} <a ui-sref="detail({id : doctor.id})" class="read-more">Read more</a>
+                        </p>
+                    </div>
                 </div>
-                <div class="doctor__snippet" ng-show="isShowResult">
-                    <p>{{doctor.bio}} <a ui-sref="detail({id : doctor.id})" class="read-more">Read more</a>
-                    </p>
+                <div class="doctor__booking">
+                    <div class="doctor__booking_day">
+                        <span class="">12-30-15</span>
+                        <span>9:30 AM</span>
+                        <span>10:30 AM</span>
+                        <span>11:30 AM</span>
+                        <span>13:30 PM</span>
+                        <span>15:30 PM</span>
+                        <span>More...</span>
+                    </div>
+                    <div class="doctor__booking_day">
+                        <span class="">12-30-15</span>
+                        <span>9:30 AM</span>
+                        <span>10:30 AM</span>
+                        <span>11:30 AM</span>
+                        <span>13:30 PM</span>
+                        <span>15:30 PM</span>
+                        <span>More...</span>
+                    </div>
                 </div>
             </div>
 
@@ -34,6 +54,6 @@
 
         <dir-pagination-controls on-page-change="pageChanged(newPageNumber)"></dir-pagination-controls>
     </div>
-    <div class="col-md-7 col-sm-6 hide-sm hide-xs" id="maps" maps map-data="maps">
+    <div class="col-md-6 col-sm-4 hide-sm hide-xs" id="maps" maps map-data="maps">
     </div>
 </div>

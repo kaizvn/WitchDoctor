@@ -28,7 +28,7 @@ angular.module('iDocApp')
             IdocRestService.getDoctors().then(function (response) {
                 $scope.topDoctors = DoctorsService.formatDoctorsData(response.data);
                 if (!isRelated) {
-                    $scope.relatedDoctors = DoctorsService.getRelatedDoctors($scope.topDoctors, $scope.doctor.id);
+                    $scope.relatedDoctors = DoctorsService.getRelatedDoctors($scope.topDoctors.results, $scope.doctor.id);
                 }
             }, function (error) {
                 console.trace(error);

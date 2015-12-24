@@ -26,8 +26,6 @@ function DoctorsService() {
         },
 
         getRelatedDoctors: function (doctors, id) {
-            console.log(id);
-            console.log(doctors);
             var relatedDoctors = _.reject(doctors, function (doctor) {
                 return doctor.id === id;
             });
@@ -36,7 +34,7 @@ function DoctorsService() {
 
         formatDoctorsData: function (doctors) {
             var self = this;
-            return _.map(doctors.results, function (doctor) {
+            doctors.results = _.map(doctors.results, function (doctor) {
                 return {
                     full_name: doctor.profile.name,
                     specialties: _.pluck(doctor.specialties, 'name').join(' | '),
@@ -47,9 +45,9 @@ function DoctorsService() {
                     title: doctor.profile.title,
                     image_url: doctor.profile.images && doctor.profile.images.length > 0 ? doctor.profile.images[0].image : '',
                     gender: doctor.profile.gender
-
                 }
             });
+            return doctors;
         }
     };
 
