@@ -180,7 +180,8 @@ body {
 }
 
 .dropdown-menu {
-	margin: 0;
+	margin-top: 0;
+	border-top: 1px solid #e6e9ed;
 	border-radius: 0;
 	background: #fff;
 	box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
@@ -188,12 +189,10 @@ body {
 	li {
 		a {
 			background: #fff;
-			border-top: 1px solid #d0cfcb;
 			max-width: 100%;
 			overflow: hidden;
 			text-overflow: ellipsis;
 			color: #6c6f70;
-			background: #fff;
 			padding: 10px 10px 10px 0;
 			text-indent: 15px;
 			line-height: 15px;
