@@ -504,3 +504,17 @@
 .civility{
   text-indent: 0px;
 }
+
+.sortWrapper {
+    > span {
+        margin-right: 5px;
+    }
+    .sort {
+        max-width: 150px;
+        display: inline-block;
+    }
+    margin-bottom: 10px;
+    .chosen-single {
+        text-indent: 10px !important;
+    }
+}

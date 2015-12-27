@@ -2,7 +2,23 @@
 <div id="result" class="result row">
     <div class="col-md-6 col-sm-8">
         <div class="result__list clearfix">
-            
+            <div class="result__bar">
+                <p ng-show="data.total > 0" class="total">Tìm thấy <strong>{{data.total}}</strong> Bác Sĩ</p>
+                <p ng-show="data.total == 0">Không tìm thấy Bác Sĩ phù hợp</p>
+                <div class="sortWrapper pull-right">
+                    <span>Sắp xếp theo:</span>
+                    <div class="sort">
+                        <select class="chosen-noIcon"
+                            skin-select ng-model="sort"
+                            disable-search="true"
+                            data-placeholder="{{sort.label}}"
+                            ng-options="sort as sort.label for sort in sortOptions"
+                            ng-change="onSort(sort)">
+                        </select>
+                    </div>
+                </div>
+            </div>
+
             <div class="doctor" dir-paginate="doctor in data.results | itemsPerPage: 10" total-items="data.total">
                 <div class="doctor__info">
                     <span class="doctor__favorite"><i class="fa fa-heart"></i></span>
@@ -23,7 +39,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="doctor__snippet" ng-show="isShowResult">
+                    <div class="doctor__snippet" ng-show="isShowResult && doctor.bio">
                         <p>{{doctor.bio}} <a ui-sref="detail({id : doctor.id})" class="read-more">Read more</a>
                         </p>
                     </div>

@@ -5,6 +5,17 @@
 		padding: 10px;
 		min-height: 700px;
 	}
+	&__bar {
+		&:after {
+			clear: both;
+			display: block;
+			content: " ";
+		}
+		.total {
+			margin: 5px 0 0;
+			float: left;
+		}
+	}
 	.col-md-6, .col-xs-8 {
 		padding: 0;
 	}
