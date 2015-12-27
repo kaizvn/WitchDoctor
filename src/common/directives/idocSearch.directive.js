@@ -5,27 +5,34 @@ angular.module('iDocApp')
         return {
             restrict: 'E',
             templateUrl: '/common/directives/idocSearch.html',
+            scope: {
+                actionGroup: '=',
+                doctor: '@',
+                specialty: '@'
+            },
             link: function ($scope) {
-                $scope.action = {
-                    specialties: {
-                        value: false,
-                        text: 'Triệu chứng'
-                    },
-                    name: {
-                        value: true,
-                        text: 'Bác sĩ'
-                    }
-                };
+                if(!$scope.actionGroup) {
+                    $scope.actionGroup = {
+                        specialty: {
+                            value: false,
+                            text: 'Chuyên Khoa'
+                        },
+                        name: {
+                            value: true,
+                            text: 'Bác sĩ'
+                        }
+                    };
+                }
 
-                $scope.selectedType = $scope.action.name.text;
+                $scope.selectedType = $scope.actionGroup.name.value ? $scope.actionGroup.name.text : $scope.actionGroup.specialty.text;
 
                 $scope.onSelectType = function(type){
-                    _.each($scope.action, function (value, key, list) {
+                    _.each($scope.actionGroup, function (value, key, list) {
                         return list[key].value = false;
                     });
 
-                    $scope.selectedType = $scope.action[type].text;
-                    $scope.action[type].value = true;
+                    $scope.selectedType = $scope.actionGroup[type].text;
+                    $scope.actionGroup[type].value = true;
 
                     $scope.showSearchType = !$scope.showSearchType;
                 };
@@ -34,8 +41,8 @@ angular.module('iDocApp')
                     $scope.cities = response.data;
                 });
 
-                $scope.getSpecialties = function (input) {
-                    if($scope.action.specialties.value) {
+                $scope.getParams = function (input) {
+                    if($scope.actionGroup.specialty.value) {
                         return IdocRestService.getSpecialties(input).then(function (response) {
                             return response.data;
                         });
@@ -52,9 +59,11 @@ angular.module('iDocApp')
                     });
                 }
 
-                $scope.search = function (specialties) {
+                $scope.search = function (specialty, doctor) {
                     var querySearch = {
-                        specialties: specialties
+                        specialty: specialty,
+                        name: doctor,
+                        actionGroup: $scope.actionGroup
                     }
 
                     $state.go('result', {query: querySearch});

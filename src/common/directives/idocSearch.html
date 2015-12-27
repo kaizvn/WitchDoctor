@@ -12,25 +12,25 @@
                             </button>
                             <ul ng-show="showSearchType" class="dropdown-menu">
                                 <li><a href="javascript:void(0)" ng-click="onSelectType('name')">Bác sĩ</a></li>
-                                <li><a href="javascript:void(0)" ng-click="onSelectType('specialties')">Triệu chứng</a></li>
+                                <li><a href="javascript:void(0)" ng-click="onSelectType('specialty')">Chuyên Khoa</a></li>
                             </ul>
                         </div>
                         <div class="input-group-text">
                             <input type="text"
-                                ng-show="action.name.value"
+                                ng-show="actionGroup.name.value"
                                 placeholder="Nhập tên bác sĩ"
-                                uib-typeahead="specialties.name for specialties in getSpecialties($viewValue)"
+                                uib-typeahead="doctor.name for doctor in getParams($viewValue)"
                                 typeahead-loading="loadingLocations"
                                 typeahead-no-results="noResults"
-                                ng-model="specialties"
+                                ng-model="doctor"
                                 class="form-control">
                             <input type="text"
-                                ng-show="action.specialties.value"
-                                placeholder="Nhập triệu chứng"
-                                uib-typeahead="specialties.name for specialties in getSpecialties($viewValue)"
+                                ng-show="actionGroup.specialty.value"
+                                placeholder="Nhập chuyên khoa"
+                                uib-typeahead="specialty.name for specialty in getParams($viewValue)"
                                 typeahead-loading="loadingLocations"
                                 typeahead-no-results="noResults"
-                                ng-model="specialties"
+                                ng-model="specialty"
                                 class="form-control">
                         </div>                        
                     </div>
@@ -58,7 +58,7 @@
                 </div>
                 <div class="col-sm-2">
                     <div>
-                        <button class="btn btn-primary btn-block btn-no-radius" ng-click="search(specialties)">
+                        <button class="btn btn-primary btn-block btn-no-radius" ng-click="search(specialty, doctor)">
                             {{'global.banner.form.action' | translate}}
                         </button>
                     </div>                    

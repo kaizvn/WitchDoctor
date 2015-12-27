@@ -1,10 +1,16 @@
-<idoc-search></idoc-search>
+<idoc-search action-group="params.actionGroup" doctor="{{params.name}}" specialty="{{params.specialty}}"></idoc-search>
 <div id="result" class="result row">
     <div class="col-md-6 col-sm-8">
         <div class="result__list clearfix">
             <div class="result__bar">
-                <p ng-show="data.total > 0" class="total">Tìm thấy <strong>{{data.total}}</strong> Bác Sĩ</p>
-                <p ng-show="data.total == 0">Không tìm thấy Bác Sĩ phù hợp</p>
+                <p ng-show="data.total > 0" class="total">Tìm thấy <strong>{{data.total}}</strong> Bác Sĩ:    
+                    <strong ng-show="params.name">&#171;Tên : {{params.name}}&#187;</strong>
+                    <strong ng-show="params.specialty">&#171;Chuyên Khoa : {{params.specialty}}&#187;</strong>
+                </p>
+                <p ng-show="data.total == 0" class="pull-left">Không tìm thấy Bác Sĩ phù hợp
+                    <strong ng-show="params.name">&#171;Tên : {{params.name}}&#187;</strong>
+                    <strong ng-show="params.specialty">&#171;Chuyên Khoa : {{params.specialty}}&#187;</strong>
+                </p>
                 <div class="sortWrapper pull-right">
                     <span>Sắp xếp theo:</span>
                     <div class="sort">
@@ -66,9 +72,9 @@
                 </div>
             </div>
 
-        </div>
+            <dir-pagination-controls on-page-change="pageChanged(newPageNumber)"></dir-pagination-controls>
 
-        <dir-pagination-controls on-page-change="pageChanged(newPageNumber)"></dir-pagination-controls>
+        </div>
     </div>
     <div class="col-md-6 col-sm-4 hide-sm hide-xs" id="maps" maps map-data="maps">
     </div>

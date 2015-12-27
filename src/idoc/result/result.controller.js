@@ -1,13 +1,11 @@
 "use strict";
 
 
-function ResultCtrl($scope, $state, $stateParams, DoctorsService, IdocRestService, $localStorage, $sessionStorage, $anchorScroll) {
+function ResultCtrl($scope, $state, $stateParams, DoctorsService, IdocRestService, $localStorage, $anchorScroll) {
 
-    var $storage = $sessionStorage,
-        _this = this;
+    var _this = this;
     $scope.isShowResult = false;
-
-    var params = $stateParams.query || {};
+    $scope.params = $stateParams.query || {};
 
     this.getDoctors = function (params) {
         $anchorScroll('#result');
@@ -25,14 +23,13 @@ function ResultCtrl($scope, $state, $stateParams, DoctorsService, IdocRestServic
             });
 
             $scope.isShowResult = true;
-            $storage.lastSearchTerm = JSON.stringify(params);
 
         }, function (error) {
             console.trace(error);
         });
     };
 
-    this.getDoctors(params);
+    this.getDoctors($scope.params);
 
     $scope.sortOptions = [{
         label: 'Raiting',
@@ -42,19 +39,14 @@ function ResultCtrl($scope, $state, $stateParams, DoctorsService, IdocRestServic
         value: 'location'
     }];
 
-    $scope.sort = {
-        label: 'Raiting',
-        value: 'raiting'
-    }
-
     $scope.pageChanged = function (pageNumber) {
         $scope.isShowResult = false;
-        params.skip = (pageNumber - 1) * 10;
-        _this.getDoctors(params);
+        $scope.params.skip = (pageNumber - 1) * 10;
+        _this.getDoctors($scope.params);
     };
 }
 
 
-ResultCtrl.$inject = ['$scope', '$state', '$stateParams', 'DoctorsService', 'IdocRestService', '$localStorage', '$sessionStorage', '$anchorScroll'];
+ResultCtrl.$inject = ['$scope', '$state', '$stateParams', 'DoctorsService', 'IdocRestService', '$localStorage', '$anchorScroll'];
 
 angular.module('iDocApp').controller('ResultCtrl', ResultCtrl);
