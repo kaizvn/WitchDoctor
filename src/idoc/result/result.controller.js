@@ -49,7 +49,7 @@ function ResultCtrl($scope, $state, $stateParams, DoctorsService, IdocRestServic
 
     $scope.pageChanged = function (pageNumber) {
         $scope.isShowResult = false;
-        params.skip = pageNumber - 1;
+        params.skip = (pageNumber - 1) * 10;
         _this.getDoctors(params);
     };
 }
