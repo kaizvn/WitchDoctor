@@ -6,7 +6,7 @@ angular.module('iDocApp')
             restrict: 'E',
             templateUrl: '/common/directives/idocSearch.html',
             scope: {
-                actionGroup: '=',
+                actionGroup: '=?',
                 doctor: '@',
                 specialty: '@'
             },
