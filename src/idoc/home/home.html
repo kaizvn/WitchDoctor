@@ -9,16 +9,20 @@
             <form ng-submit="doSearch()">
                 <div class="row">
                     <div class="col-sm-5">
-                        <input type="text" ng-model="querySearch"
-                               placeholder="{{'global.banner.form.input' | translate}}"
-                               uib-typeahead="tag for tag in fetchData($viewValue)"
-                               typeahead-loading="loadingLocations" typeahead-no-results="noResults"
+                        <div class="relative">
+                            <input type="text" ng-model="condition"
+                               placeholder="Nhập triệu chứng"
+                               uib-typeahead="condition as condition.name for condition in getConditions($viewValue)"
+                               typeahead-loading="loading"
+                               typeahead-no-results="noResults"
                                class="form-control">
-                        <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
-
-                        <div ng-show="noResults">
-                            <i class="glyphicon glyphicon-remove"></i> No Results Found
-                        </div>
+                            <div class="searchLoading" ng-show="loading" >
+                                <i class="glyphicon glyphicon-refresh"></i> Tìm kiếm
+                            </div>
+                            <div class="searchNoResult" ng-show="noResults">
+                                <i class="glyphicon glyphicon-remove"></i> Không có kết quả
+                            </div>
+                        </div>   
                     </div>
                     <div class="col-sm-4">
                         <div class="select-group">

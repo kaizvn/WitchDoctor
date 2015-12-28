@@ -81,6 +81,10 @@ function iDocRestService($http, iDocApiPath, $q) {
         return $http.get(iDocApiPath.getSpecialties(value));
     };
 
+    api.getConditions = function (value) {
+        return $http.get(iDocApiPath.getConditions(value));
+    };
+
     api.getNameDoctors = function (value) {
         return $http.get(iDocApiPath.getNameDoctors(value));
     };
