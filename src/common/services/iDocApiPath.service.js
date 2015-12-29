@@ -28,6 +28,10 @@ function iDocApiPath($http) {
         return this.getBaseUrl() + '/search/specialties?limit=10&query='+value;
     }
 
+    this.getSpecialtiesByCondition = function (value) {
+        return this.getBaseUrl() + '/conditions?limit=10&name='+value;
+    }
+
     this.getConditions = function (value) {
         return this.getBaseUrl() + '/search/conditions?limit=10&query='+value;
     }

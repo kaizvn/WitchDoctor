@@ -11,6 +11,13 @@ function homeController($scope, $state, IdocRestService, $timeout, $http) {
         });
     }
 
+    $scope.onSelectCondition = function (item) {
+        IdocRestService.getSpecialtiesByCondition(item.name).then(function (response) {
+            querySearch.specialty = response.data.results[0].specialties[0].name;
+            $scope.doSearch();
+        });
+    }
+
     $scope.doSearch = function () {
         $state.go('result', {query: querySearch});
     };
