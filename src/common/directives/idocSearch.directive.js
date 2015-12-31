@@ -44,18 +44,18 @@ angular.module('iDocApp')
                 $scope.getParams = function (input) {
                     if($scope.actionGroup.specialty.value) {
                         return IdocRestService.getSpecialties(input).then(function (response) {
-                            return response.data;
+                            return response.data.results;
                         });
                     } else {
                         return IdocRestService.getNameDoctors(input).then(function (response) {
-                            return response.data;
+                            return response.data.results;
                         });
                     }                    
                 }
 
                 $scope.getHospitals = function (input) {
                     return IdocRestService.getHospitals(input).then(function (response) {
-                        return response.data;
+                        return response.data.results;
                     });
                 }
 
