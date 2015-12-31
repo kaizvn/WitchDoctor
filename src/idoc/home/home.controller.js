@@ -7,7 +7,7 @@ function homeController($scope, $state, IdocRestService, $timeout, $http) {
 
     $scope.getConditions = function (input) {
         return IdocRestService.getConditions(input).then(function (response) {
-            return response.data;
+            return response.data.results;
         });
     }
 
