@@ -18,7 +18,7 @@ var defaultParams = function (type) {
              sort: null,
              fields: null,*/
             skip: 0,
-            limit: 10
+            limit: 5
         }
     };
 
@@ -41,7 +41,7 @@ var DEFAULT_PARAMS = {
         location: '37.773,-122.413,100',
         user_location: '37.773,-122.413',
         skip: 0,
-        limit: 10
+        limit: 5
     }
 };
 

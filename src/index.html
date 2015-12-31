@@ -10,7 +10,7 @@
 <!--[if gt IE 9]><!-->
 <html class="no-js" id="ng-app" ng-app="iDocApp" ng-cloak> <!--<![endif]-->
 <head>
-    <title>iDoc</title>
+    <title>khambacsi</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!-- build:css assets/styles/vendor.css -->
@@ -48,8 +48,8 @@
         <div collapse="navCollapsed" class="collapse navbar-collapse" id="iDocNav">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">Blog</a></li>
-                <li><a href="#">For Doctor</a></li>
-                <li><a ui-sref="about">About Us</a></li>
+                <li><a href="#">Ngài là BS?</a></li>
+                <li><a ui-sref="about">Chúng tôi</a></li>
                 <li class="nav-border"><a href="javascript:void(0)" ng-click="openLogin()">{{'global.menu.account.login'
                     | translate}}</a></li>
                 <li><a href="javascript:void(0)" ng-click="openRegister()" class="btn btn-primary btn-register">{{'global.menu.account.signup'
@@ -72,31 +72,24 @@
         <div class="clearfix">
             <div class="footer-logo"><a href="#"><img src="assets/images/logo_footer.png" alt="Khám Bác Sĩ"></a></div>
             <dl class="footer-nav">
-                <dt class="nav-title">PORTFOLIO</dt>
-                <dd class="nav-item"><a href="#">Web Design</a></dd>
-                <dd class="nav-item"><a href="#">Branding &amp; Identity</a></dd>
-                <dd class="nav-item"><a href="#">Mobile Design</a></dd>
-                <dd class="nav-item"><a href="#">Print</a></dd>
-                <dd class="nav-item"><a href="#">User Interface</a></dd>
+                <dt class="nav-title">CHUYÊN KHOA</dt>
+                <dd class="nav-item"><a href="#">Ung thư</a></dd>
+                <dd class="nav-item"><a href="#">Da liễu</a></dd>
+                <dd class="nav-item"><a href="#">Tai mũi họng</a></dd>
+                <dd class="nav-item"><a href="#">Nhi khoa</a></dd>
+                <dd class="nav-item"><a href="#">Tiêu hóa</a></dd>
             </dl>
             <dl class="footer-nav">
-                <dt class="nav-title">ABOUT</dt>
-                <dd class="nav-item"><a href="#">The Company</a></dd>
-                <dd class="nav-item"><a href="#">History</a></dd>
-                <dd class="nav-item"><a href="#">Vision</a></dd>
+                <dt class="nav-title">ĐỘI NGŨ</dt>
+                <dd class="nav-item"><a href="#">Atlantic Technologies</a></dd>
+                <dd class="nav-item"><a href="#">Lịch sử</a></dd>
+                <dd class="nav-item"><a href="#">Tầm nhìn</a></dd>
             </dl>
             <dl class="footer-nav">
-                <dt class="nav-title">GALLERY</dt>
-                <dd class="nav-item"><a href="#">Flickr</a></dd>
-                <dd class="nav-item"><a href="#">Picasa</a></dd>
-                <dd class="nav-item"><a href="#">iStockPhoto</a></dd>
-                <dd class="nav-item"><a href="#">PhotoDune</a></dd>
-            </dl>
-            <dl class="footer-nav">
-                <dt class="nav-title">CONTACT</dt>
-                <dd class="nav-item"><a href="#">Basic Info</a></dd>
-                <dd class="nav-item"><a href="#">Map</a></dd>
-                <dd class="nav-item"><a href="#">Conctact Form</a></dd>
+                <dt class="nav-title">LIÊN HỆ</dt>
+                <dd class="nav-item"><a href="#">Thông tin</a></dd>
+                <dd class="nav-item"><a href="#">Bản đồ</a></dd>
+                <dd class="nav-item"><a href="#">Form liên lạc</a></dd>
             </dl>
         </div>
         <p class="footer-copyright" ng-bind-html="'global.copyright' | translate"></p>

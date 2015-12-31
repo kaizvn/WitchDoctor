@@ -3,7 +3,6 @@
 function iDocApiPath($http) {
     /* Base Url API */
     var url = 'https://api.betterdoctor.com/2015-09-22';
-    //location=37.773%2C-122.413%2C100&user_location=37.773%2C-122.413&skip=0&limit=10&user_key=
 
 
     /* Base Url API */
@@ -26,23 +25,23 @@ function iDocApiPath($http) {
     };
 
     this.getSpecialties = function (value) {
-        return this.getBaseUrl() + '/search/specialties?limit=10&query='+value;
+        return this.getBaseUrl() + '/search/specialties?limit=5&query='+value;
     }
 
     this.getSpecialtiesByCondition = function (value) {
-        return this.getBaseUrl() + '/conditions?limit=10&name='+value;
+        return this.getBaseUrl() + '/conditions?limit=5&name='+value;
     }
 
     this.getConditions = function (value) {
-        return this.getBaseUrl() + '/search/conditions?limit=10&query='+value;
+        return this.getBaseUrl() + '/search/conditions?limit=5&query='+value;
     }
 
     this.getHospitals = function (value) {
-        return this.getBaseUrl() + '/search/hospitals?limit=10&query='+value;
+        return this.getBaseUrl() + '/search/hospitals?limit=5&query='+value;
     };
 
     this.getNameDoctors = function (value) {
-        return this.getBaseUrl() + '/search/doctors?limit=10&query='+value;
+        return this.getBaseUrl() + '/search/doctors?limit=5&query='+value;
     };
 }
 

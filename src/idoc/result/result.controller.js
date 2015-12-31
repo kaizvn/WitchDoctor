@@ -32,8 +32,8 @@ function ResultCtrl($scope, $state, $stateParams, DoctorsService, IdocRestServic
     this.getDoctors($scope.params);
 
     $scope.sortOptions = [{
-        label: 'Raiting',
-        value: 'raiting'
+        label: 'Rating',
+        value: 'rating'
     }, {
         label: 'Location',
         value: 'location'
@@ -41,7 +41,7 @@ function ResultCtrl($scope, $state, $stateParams, DoctorsService, IdocRestServic
 
     $scope.pageChanged = function (pageNumber) {
         $scope.isShowResult = false;
-        $scope.params.skip = (pageNumber - 1) * 10;
+        $scope.params.skip = (pageNumber - 1) * 5;
         _this.getDoctors($scope.params);
     };
 }

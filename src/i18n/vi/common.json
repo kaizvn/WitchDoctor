@@ -12,14 +12,14 @@
             }
         },
         "banner": {
-            "title": "Hỗ trợ bạn tìm được những bác sĩ tin cậy, uy tín",
-            "subTitle": "Hồ sơ trên 1,000,000 bác sĩ được đánh giá theo kinh nghiệm và trình độ",
+            "title": "Danh sách bác sĩ tốt bạn hằng tìm kiếm, mọi chuyên khoa, một trang web",
+            "medium": "Bằng bất cứ phương thức nào: Tên bác sĩ | Bệnh mắc phải | Triệu chứng biểu hiện",
             "form": {
                 "input": "Triệu chứng / Bác Sĩ",
                 "location": "Chọn thành phố",
                 "action": "Tìm"
             }
         },
-        "copyright": "&copy 2015 Khambacsi.vn"
+        "copyright": "&copy 2015 khambacsi.com"
     }
 }

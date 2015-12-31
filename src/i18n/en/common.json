@@ -12,9 +12,10 @@
             }
         },
         "banner": {
-            "title": "Find a Doctor You’ll Love",
-            "subTitle": "Search over 1,000,000 doctors rated by education and experience"
+            "title": "Great doctors you wish you knew before, every specialties, all in one place",
+            "medium": "By any means: Doctor Names | Suspected Conditions | Symptoms Encountered"
+            // "medium": "Right treatment starts with meeting the right doctors"
         },
-        "copyright": "&copy 2015 iDoctor - Find the Right Doctor for You"
+        "copyright": "&copy 2015 khambacsi.com - Find the Right Doctor for You"
     }
 }
