@@ -18,7 +18,7 @@
                         <div class="input-group-text">
                             <input type="text"
                                 ng-show="actionGroup.name.value"
-                                placeholder="Nhập tên bác sĩ"
+                                placeholder="tên bác sĩ"
                                 uib-typeahead="doctor.name for doctor in getParams($viewValue)"
                                 typeahead-loading="loadingLocations"
                                 typeahead-no-results="noResults"
@@ -26,7 +26,7 @@
                                 class="form-control">
                             <input type="text"
                                 ng-show="actionGroup.specialty.value"
-                                placeholder="Nhập chuyên khoa"
+                                placeholder="chuyên khoa"
                                 uib-typeahead="specialty.name for specialty in getParams($viewValue)"
                                 typeahead-loading="loadingLocations"
                                 typeahead-no-results="noResults"
@@ -40,7 +40,7 @@
                         <i class="fa fa-map-marker"></i>
                         <select skin-select ng-model="city" ng-options="city as city.name for city in cities"
                                 ng-change="onSelectedCity(city)"
-                                data-placeholder="Chọn thành phố">
+                                data-placeholder="thành phố">
                         </select>
                     </div>
                 </div>
@@ -48,7 +48,7 @@
                     <div class="select-group">
                         <i class="fa fa-hospital-o"></i>
                         <input type="text"
-                            placeholder="Nhập bệnh viện"
+                            placeholder="bệnh viện"
                             uib-typeahead="hospital.name for hospital in getHospitals($viewValue)"
                             typeahead-loading="loadingLocations"
                             typeahead-no-results="noResults"

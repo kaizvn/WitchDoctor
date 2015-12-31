@@ -11,7 +11,7 @@
                     <div class="col-sm-5">
                         <div class="relative">
                             <input type="text" ng-model="condition"
-                               placeholder="Nhập triệu chứng"
+                               placeholder="Nhập bệnh"
                                uib-typeahead="condition as condition.name for condition in getConditions($viewValue)"
                                typeahead-loading="loading"
                                typeahead-on-select="onSelectCondition(condition)"
