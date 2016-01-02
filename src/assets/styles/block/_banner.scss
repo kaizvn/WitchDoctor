@@ -29,6 +29,9 @@
 			height: 45px;
 			border: none;
 			border-radius: 0;
+			&-city {
+				padding-left: 30px;
+			}
 		}
 		.input-group-text .form-control {
 			border-top-right-radius: 2px;

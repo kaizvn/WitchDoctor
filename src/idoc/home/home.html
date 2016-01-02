@@ -34,7 +34,7 @@
                                     <input type="text"
                                         ng-show="actionGroup.name.value"
                                         uib-typeahead="doctor.name for doctor in getParams($viewValue)"
-                                        typeahead-loading="loadingLocations"
+                                        typeahead-loading="loading"
                                         typeahead-no-results="noResults"
                                         typeahead-on-select="onSelectResult(doctor)"
                                         ng-model="doctor"
@@ -42,7 +42,7 @@
                                     <input type="text"
                                         ng-show="actionGroup.specialty.value"
                                         uib-typeahead="specialty.name for specialty in getParams($viewValue)"
-                                        typeahead-loading="loadingLocations"
+                                        typeahead-loading="loading"
                                         typeahead-no-results="noResults"
                                         typeahead-on-select="onSelectResult(specialty)"
                                         ng-model="specialty"
@@ -60,10 +60,13 @@
                     <div class="col-sm-4">
                         <div class="select-group">
                             <i class="fa fa-map-marker"></i>
-                            <select data-iconfont_type="city" skin-select ng-model="city" ng-options="city as city.text for city in citys"
-                                ng-change="onSelectedCity(city)"
-                                data-placeholder="Chọn thành phố">
-                            </select>
+                            <input type="text"
+                                uib-typeahead="city.name for city in getCities($viewValue)"
+                                typeahead-loading="loadingCity"
+                                typeahead-no-results="noResultsCity"
+                                placeholder="Nhập thành phố"
+                                ng-model="city"
+                                class="form-control form-control-city">
                         </div>
                     </div>
                     <div class="col-sm-2">

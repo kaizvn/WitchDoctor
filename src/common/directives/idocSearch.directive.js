@@ -68,6 +68,12 @@ angular.module('iDocApp')
                     });
                 }
 
+                $scope.getCities = function (input) {
+                    return IdocRestService.getCities(input).then(function (response) {
+                        return response.data.results;
+                    });
+                }
+
                 $scope.getHospitals = function (input) {
                     return IdocRestService.getHospitals(input).then(function (response) {
                         return response.data.results;

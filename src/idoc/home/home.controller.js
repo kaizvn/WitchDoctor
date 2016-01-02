@@ -40,6 +40,12 @@ function homeController($scope, $state, IdocRestService, $timeout, $http) {
         });
     }
 
+    $scope.getCities = function (input) {
+        return IdocRestService.getCities(input).then(function (response) {
+            return response.data.results;
+        });
+    }
+
     $scope.getParams = function (input) {
         if($scope.actionGroup.specialty.value) {
             return IdocRestService.getSpecialties(input).then(function (response) {

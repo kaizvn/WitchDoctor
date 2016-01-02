@@ -45,10 +45,14 @@
                 <div class="col-sm-3">
                     <div class="select-group">
                         <i class="fa fa-map-marker"></i>
-                        <select skin-select ng-model="city" ng-options="city as city.name for city in cities"
-                                ng-change="onSelectedCity(city)"
-                                data-placeholder="Thành phố">
-                        </select>
+                        <input type="text"
+                            uib-typeahead="city.name for city in getCities($viewValue)"
+                            typeahead-loading="loadingCity"
+                            typeahead-no-results="noResultsCity"
+                            typeahead-on-select="onSelectCity(city)"
+                            placeholder="Nhập thành phố"
+                            ng-model="city"
+                            class="form-control form-control-city">
                     </div>
                 </div>
                 <div class="col-sm-3">
