@@ -11,24 +11,31 @@
                                 <span class="caret"></span>
                             </button>
                             <ul ng-show="showSearchType" class="dropdown-menu">
+                                <li><a href="javascript:void(0)" ng-click="onSelectType('conditions')">Triệu chứng</a></li>
                                 <li><a href="javascript:void(0)" ng-click="onSelectType('name')">Bác sĩ</a></li>
                                 <li><a href="javascript:void(0)" ng-click="onSelectType('specialty')">Chuyên Khoa</a></li>
                             </ul>
                         </div>
                         <div class="input-group-text">
                             <input type="text"
+                                ng-show="actionGroup.conditions.value"
+                                uib-typeahead="condition as condition.name for condition in getConditions($viewValue)"
+                                typeahead-loading="loading"
+                                typeahead-on-select="onSelectCondition(condition)"
+                                typeahead-no-results="noResults"                                
+                                ng-model="condition"
+                                class="form-control">
+                            <input type="text"
                                 ng-show="actionGroup.name.value"
-                                placeholder="tên bác sĩ"
                                 uib-typeahead="doctor.name for doctor in getParams($viewValue)"
-                                typeahead-loading="loadingLocations"
+                                typeahead-loading="loading"
                                 typeahead-no-results="noResults"
                                 ng-model="doctor"
                                 class="form-control">
                             <input type="text"
                                 ng-show="actionGroup.specialty.value"
-                                placeholder="chuyên khoa"
                                 uib-typeahead="specialty.name for specialty in getParams($viewValue)"
-                                typeahead-loading="loadingLocations"
+                                typeahead-loading="loading"
                                 typeahead-no-results="noResults"
                                 ng-model="specialty"
                                 class="form-control">
@@ -40,7 +47,7 @@
                         <i class="fa fa-map-marker"></i>
                         <select skin-select ng-model="city" ng-options="city as city.name for city in cities"
                                 ng-change="onSelectedCity(city)"
-                                data-placeholder="thành phố">
+                                data-placeholder="Thành phố">
                         </select>
                     </div>
                 </div>
@@ -48,7 +55,7 @@
                     <div class="select-group">
                         <i class="fa fa-hospital-o"></i>
                         <input type="text"
-                            placeholder="bệnh viện"
+                            placeholder="Bệnh viện"
                             uib-typeahead="hospital.name for hospital in getHospitals($viewValue)"
                             typeahead-loading="loadingLocations"
                             typeahead-no-results="noResults"

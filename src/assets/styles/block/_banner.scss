@@ -10,6 +10,7 @@
 		margin-top: 125px;
 		&_title {
 			color: #fff;
+			margin-bottom: 5px;
 		}
 		&_subTitle {
 			color: #fff;
@@ -20,18 +21,28 @@
 		z-index: 99;
 		padding: 5px;
 		background: rgba(255, 255, 255, 0.3);
-		max-width: 695px;
+		max-width: 766px;
 		margin: 0 auto;
 		border-radius: 2px;
 		margin-top: 30px;
 		.form-control {
 			height: 45px;
 			border: none;
+			border-radius: 0;
+		}
+		.input-group-text .form-control {
+			border-top-right-radius: 2px;
+			border-bottom-right-radius: 2px;
 		}
 		.btn {
 			font-size: 20px;
 			font-weight: bold;
 			padding: 7px 12px;
+		}
+		.input-group-btn .btn {
+			font-size: 14px;
+			font-weight: normal;
+			height: 45px;
 		}
 		.chosen-container-single {
 		 	.chosen-single {
@@ -98,8 +109,14 @@
 			}
 		}
 		&__body {
+			margin-bottom: 60px;
 			.form-control,
+			.input-group-btn .btn,
 			.chosen-container {
+				font-size: 12px;
+			}
+			.select-group,
+			.input-group {
 				margin-bottom: 5px;
 			}
 		}

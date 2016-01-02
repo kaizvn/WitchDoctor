@@ -6,25 +6,32 @@ angular.module('iDocApp')
             restrict: 'E',
             templateUrl: '/common/directives/idocSearch.html',
             scope: {
-                actionGroup: '=?',
-                doctor: '@',
-                specialty: '@'
+                actionGroup: '=?'
             },
             link: function ($scope) {
+                var querySearch = {};
                 if(!$scope.actionGroup) {
                     $scope.actionGroup = {
+                        conditions: {
+                            value: true,
+                            text: 'Triệu chứng'
+                        },
                         specialty: {
                             value: false,
-                            text: 'Chuyên Khoa'
+                            text: 'Chuyên khoa'
                         },
                         name: {
-                            value: true,
+                            value: false,
                             text: 'Bác sĩ'
                         }
                     };
                 }
 
-                $scope.selectedType = $scope.actionGroup.name.value ? $scope.actionGroup.name.text : $scope.actionGroup.specialty.text;
+                _.each($scope.actionGroup, function(obj, key, list) {
+                    if(obj.value) {
+                       $scope.selectedType = obj.text;
+                    }
+                });
 
                 $scope.onSelectType = function(type){
                     _.each($scope.actionGroup, function (value, key, list) {
@@ -35,6 +42,8 @@ angular.module('iDocApp')
                     $scope.actionGroup[type].value = true;
 
                     $scope.showSearchType = !$scope.showSearchType;
+                    $scope.specialty = null;
+                    $scope.doctor = null;
                 };
 
                 IdocRestService.getCities().then(function (response){
@@ -50,7 +59,13 @@ angular.module('iDocApp')
                         return IdocRestService.getNameDoctors(input).then(function (response) {
                             return response.data.results;
                         });
-                    }                    
+                    }
+                }
+
+                $scope.getConditions = function (input) {
+                    return IdocRestService.getConditions(input).then(function (response) {
+                        return response.data.results;
+                    });
                 }
 
                 $scope.getHospitals = function (input) {
@@ -59,12 +74,16 @@ angular.module('iDocApp')
                     });
                 }
 
+                $scope.onSelectCondition = function (item) {
+                    IdocRestService.getSpecialtiesByCondition(item.name).then(function (response) {
+                       querySearch.specialty = response.data.results[0].specialties[0].name;
+                    });
+                }
+
                 $scope.search = function (specialty, doctor) {
-                    var querySearch = {
-                        specialty: specialty,
-                        name: doctor,
-                        actionGroup: $scope.actionGroup
-                    }
+                    querySearch.specialty = querySearch.specialty ? querySearch.specialty : specialty;
+                    querySearch.name =  doctor ? doctor : null;
+                    querySearch.actionGroup = $scope.actionGroup;
 
                     $state.go('result', {query: querySearch});
                 }
