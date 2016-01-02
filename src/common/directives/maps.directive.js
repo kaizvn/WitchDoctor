@@ -10,6 +10,7 @@ angular.module('iDocApp')
                 resultWidth = $('.result__list').width();
 
             $('#maps').width(wWidth - resultWidth - 20).height(wWeight - 110);
+            $('.result__list').css('min-height', wWeight - 110);
         }
 
         function initMap(mapsData, id) {

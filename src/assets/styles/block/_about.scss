@@ -33,15 +33,15 @@
 		width: 100%;
 	}
 	&__info {
-		text-align: left;
 		padding-top: 10px;
 		&_name {
 			color: #3bafda;
 			font-size: 15px;
+			margin-bottom: 5px;
 		}
 		&_title {
-			font-size: 15px;
-			line-height: 1.6;
+			font-size: 14px;
+			min-height: 40px;
 		}
 	}
 }
@@ -57,6 +57,7 @@
 			display: block;
 			padding: 10px 15px;
 			border-left: 5px solid #fff;
+			cursor: pointer;
 			&:hover {
 				border-left: 5px solid #4fc1e9;
 				color: #4fc1e9;
