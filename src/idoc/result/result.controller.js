@@ -8,7 +8,6 @@ function ResultCtrl($scope, $state, $stateParams, DoctorsService, IdocRestServic
     $scope.params = $stateParams.query || {};
 
     this.getDoctors = function (params) {
-        $anchorScroll('#result');
         IdocRestService.getDoctors(params).then(function (response) {
             $scope.data = DoctorsService.formatDoctorsData(response.data);
 
@@ -23,6 +22,8 @@ function ResultCtrl($scope, $state, $stateParams, DoctorsService, IdocRestServic
             });
 
             $scope.isShowResult = true;
+
+            $anchorScroll('#result');
 
         }, function (error) {
             console.trace(error);
