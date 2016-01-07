@@ -8,7 +8,7 @@ function homeController($scope, $state, IdocRestService, $timeout, $http) {
     $scope.actionGroup = {
         conditions: {
             value: true,
-            text: 'Triệu chứng'
+            text: 'Bệnh'
         },
         specialty: {
             value: false,

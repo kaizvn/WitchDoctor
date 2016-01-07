@@ -7,8 +7,8 @@ function iDocApiPath($http) {
 
     /* Base Url API */
     this.getBaseUrl = function () {
-        //return 'http://ec2-54-254-217-169.ap-southeast-1.compute.amazonaws.com';
-        return 'http://52.76.223.32';
+        // return 'http://52.76.223.32';
+        return 'http://api.khambacsi.com'
     };
 
     this.getDoctors = function () {
