@@ -8,6 +8,7 @@ function iDocApiPath($http) {
     /* Base Url API */
     this.getBaseUrl = function () {
         return 'http://api.khambacsi.com'
+        // return 'http://127.0.0.1:8000'
     };
 
     this.getDoctors = function () {

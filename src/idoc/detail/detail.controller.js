@@ -8,6 +8,19 @@ angular.module('iDocApp')
             $scope.doctor = response.data;
             $scope.doctor.profile.image_url = $scope.doctor.profile.images && $scope.doctor.profile.images.length > 0 ? $scope.doctor.profile.images[0].image : '';
             $scope.doctor.profile.address = DoctorsService.getAddressDoctor($scope.doctor);
+            $scope.doctor.experience_in_years = accumulateExperience(response.data.experiences);
+
+            function accumulateExperience(ar) {
+                if (!ar.length){
+                    return 0;
+                }
+
+                var exp = 0;
+                for( var i=0; i < ar.length; i++ ){
+                    exp += ( ar[i].duration ? parseInt(ar[i].duration) : 0 );
+                }
+                return exp;
+            }
 
             var profile = $scope.doctor.profile;
             $scope.maps = [{

@@ -49,29 +49,29 @@
             <div class="col-md-3 col-sm-6">
                 <div class="fact">
                     <i class="fa fa-commenting-o"></i>
-                    <span class="fact__number">35</span>
-                    <span class="fact__text">Lượt reviews</span>
+                    <span class="fact__number">18</span>
+                    <span class="fact__text">Lượt tôn vinh</span>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-3 col-sm-6" ng-show="doctor.experience_in_years">
                 <div class="fact">
                     <i class="fa fa-rocket"></i>
-                    <span class="fact__number">35</span>
+                    <span class="fact__number">{{doctor.experience_in_years}}</span>
                     <span class="fact__text">Năm kinh nghiệm</span>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
                 <div class="fact">
                     <i class="fa fa-suitcase"></i>
-                    <span class="fact__number">35</span>
+                    <span class="fact__number">{{doctor.specialties.length}}</span>
                     <span class="fact__text">Chuyên khoa</span>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
                 <div class="fact">
                     <i class="fa fa-eye"></i>
-                    <span class="fact__number">35</span>
-                    <span class="fact__text">Người tìm kiếm</span>
+                    <span class="fact__number">8748</span>
+                    <span class="fact__text">Lượt tìm kiếm</span>
                 </div>
             </div>
         </div>
@@ -84,10 +84,10 @@
             <div class="col-md-9">
                 <div class="block">
                     <div class="block__title">
-                        <h3>THÔNG TIN VỀ BÁC SĨ {{doctor.profile.first_name}}</h3>
+                        <h3>THÔNG TIN VỀ BÁC SĨ {{doctor.profile.first_name.toUpperCase()}}</h3>
                     </div>
                     <div class="block__detail">
-                        <div class="block__detail_line">
+                        <div class="block__detail_line" ng-show="doctor.profile.bio">
                             <span class="line__icon fa fa-heartbeat"></span>
 
                             <div class="line__content">
@@ -97,11 +97,75 @@
                             </div>
                         </div>
 
+                        <div class="block__detail_line" ng-show="doctor.practices.length">
+                            <span class="line__icon fa fa-heartbeat"></span>
+
+                            <div class="line__content">
+                                <h4 class="line__content_title">PHÒNG MẠCH</h4>
+                                <div ng-repeat="practice in doctor.practices" class="doctor__special">
+                                    <h5 ng-show="practice.name">Phòng mạch {{practice.name}}</h5>
+                                    <p>Địa chỉ: {{practice.address.formatted && practice.address.formatted || practice.address.raw}}</p>
+                                    <p ng-show="practice.office_hours">Giờ khám: {{practice.office_hours}}</p>
+                                    <p ng-show="practice.description">Giới thiệu: {{practice.description}}</p>
+                                </div>
+                            </div>
+                        </div>
+
+
                         <div class="block__detail_line">
+                            <span class="line__icon fa fa-life-saver"></span>
+
+                            <div class="line__content">
+                                <h4 class="line__content_title">CHUYÊN KHOA CÔNG TÁC</h4>
+
+                                <div class="line__content_description no-padding">
+                                    <div ng-repeat="special in doctor.specialties" class="doctor__special">
+                                        <h5>{{special.name}}</h5>
+
+                                        <p>{{special.description}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="block__detail_line" ng-show="doctor.hospital_affiliations.length">
+                            <span class="line__icon fa fa-life-saver"></span>
+
+                            <div class="line__content">
+                                <h4 class="line__content_title">BỆNH VIỆN</h4>
+
+                                <div class="line__content_description no-padding">
+                                    <div ng-repeat="affiliation in doctor.hospital_affiliations" class="doctor__special">
+                                        <h5>{{affiliation.hospital}}</h5>
+
+                                        <p>{{affiliation.duty}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="block__detail_line" ng-show="doctor.group_affiliations.length">
+                            <span class="line__icon fa fa-life-saver"></span>
+
+                            <div class="line__content">
+                                <h4 class="line__content_title">HỘI VIÊN</h4>
+
+                                <div class="line__content_description no-padding">
+                                    <div ng-repeat="affiliation in doctor.group_affiliations" class="doctor__special">
+                                        <h5>{{affiliation.group}}</h5>
+
+                                        <p>{{affiliation.duty}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="block__detail_line" ng-show="doctor.generic_educations.length">
                             <span class="line__icon fa fa-mortar-board"></span>
 
                             <div class="line__content">
-                                <h4 class="line__content_title">ĐÀO TẠO VÀ KINH NGHIỆM</h4>
+                                <h4 class="line__content_title">QUÁ TRÌNH ĐÀO TẠO</h4>
 
                                 <div class="line__content_description">
                                     <div ng-repeat="education in doctor.generic_educations" class="clearfix">
@@ -111,7 +175,7 @@
                                             </div>
                                         </div>
                                         <h5 class="doctor__education_title">{{education.degree}} <span
-                                                ng-show="education.graduation_year">({{education.graduation}})</span>
+                                                ng-show="education.graduation">({{education.graduation}})</span>
                                         </h5>
 
                                         <p class="doctor__education_school">{{education.source}}</p>
@@ -120,17 +184,48 @@
                             </div>
                         </div>
 
-                        <div class="block__detail_line">
-                            <span class="line__icon fa fa-life-saver"></span>
+                        <div class="block__detail_line" ng-show="doctor.experiences.length">
+                            <span class="line__icon fa fa-mortar-board"></span>
 
                             <div class="line__content">
-                                <h4 class="line__content_title">CHUYÊN KHOA</h4>
+                                <h4 class="line__content_title">KINH NGHIỆM CHỮA TRỊ</h4>
 
-                                <div class="line__content_description no-padding">
-                                    <div ng-repeat="special in doctor.specialties" class="doctor__special">
-                                        <h5>{{special.name}}</h5>
+                                <div class="line__content_description">
+                                    <div ng-repeat="experience in doctor.experiences" class="clearfix">
+                                        <div class="pull-left">
+                                            <div class="outer-circle">
+                                                <div class="inner-circle"></div>
+                                            </div>
+                                        </div>
+                                        <h5 class="doctor__education_title">{{experience.specialty}} <span
+                                                ng-show="experience.duration">({{experience.duration}} năm)</span>
+                                        </h5>
 
-                                        <p>{{special.description}}</p>
+                                        <p class="doctor__education_school">{{experience.institution}}</p>
+                                        <p class="doctor__education_school">{{experience.duty}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="block__detail_line" ng-show="doctor.profile.highlights.length">
+                            <span class="line__icon fa fa-mortar-board"></span>
+
+                            <div class="line__content">
+                                <h4 class="line__content_title">NHỮNG ĐIỂM SON TRONG SỰ NGHIỆP</h4>
+
+                                <div class="line__content_description">
+                                    <div ng-repeat="highlight in doctor.profile.highlights" class="clearfix">
+                                        <div class="pull-left">
+                                            <div class="outer-circle">
+                                                <div class="inner-circle"></div>
+                                            </div>
+                                        </div>
+                                        <h5 class="doctor__education_title">{{highlight.description}} <span
+                                                ng-show="highlight.when">({{highlight.when}})</span>
+                                        </h5>
+
+                                        <p class="doctor__education_school">{{highlight.where}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -177,8 +272,8 @@
                             <div class="review__quocte">
                                 <i class="fa fa-quote-left"></i>
                                 BS {{doctor.profile.first_name}} là một người thầy thuốc xuất sắc về chuyên môn.
-                                Không những thế, còn hết sức lắng nghe nỗi niềm của bệnh nhân và chia sẻ với họ ...
-                                <a class="review-link-more more-link" target="_blank">đọc thêm</a>
+                                Không những thế, còn hết sức lắng nghe nỗi niềm của bệnh nhân và chia sẻ với họ...
+                                <a class="review-link-more more-link" target="_blank">xem thêm</a>
                             </div>
                         </div>
                         <div class="review clearfix">
@@ -201,7 +296,7 @@
                             <div class="review__quocte">
                                 <i class="fa fa-quote-left"></i>
                                 Mình rất hài lòng khi đi khám tại phòng khám của BS {{doctor.profile.first_name}},
-                                nhất là về không gian phòng khám, rất yên tĩnh thư thái, tạo cảm giác nhẹ nhàng cho người bệnh trong khi chờ đợi.
+                                nhất là về không gian phòng khám, rất yên tĩnh thư thái, tạo cảm giác nhẹ nhàng cho người bệnh trong khi chờ đợi...
                                 <a class="review-link-more more-link" target="_blank">xem thêm</a>
                             </div>
                         </div>
@@ -225,7 +320,7 @@
                             <div class="review__quocte">
                                 <i class="fa fa-quote-left"></i>
                                 Tôi gặp trục trặc về sức khỏe của mình đã nhiều năm nay, chạy chữa nhiều nơi.
-                                Nhưng chỉ đến khi được giới thiệu BS {{doctor.profile.first_name}} (qua khambacsi.com), tôi mới nhận thấy nhận được rõ ràng những tiến triển trong bệnh tình của mình.
+                                Nhưng chỉ đến khi được giới thiệu BS {{doctor.profile.first_name}} (qua khambacsi.com), tôi mới nhận thấy được rõ ràng những tiến triển trong bệnh tình của mình...
                                 <a hreft="#" target="_blank">xem thêm</a>
                             </div>
                         </div>
