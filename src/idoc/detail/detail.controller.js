@@ -11,10 +11,6 @@ angular.module('iDocApp')
             $scope.doctor.experience_in_years = accumulateExperience(response.data.experiences);
 
             function accumulateExperience(ar) {
-                if (!ar.length){
-                    return 0;
-                }
-
                 var exp = 0;
                 for( var i=0; i < ar.length; i++ ){
                     exp += ( ar[i].duration ? parseInt(ar[i].duration) : 0 );
