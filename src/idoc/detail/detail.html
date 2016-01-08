@@ -50,28 +50,28 @@
                 <div class="fact">
                     <i class="fa fa-commenting-o"></i>
                     <span class="fact__number">35</span>
-                    <span class="fact__text">Patient Reviews</span>
+                    <span class="fact__text">Lượt reviews</span>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
                 <div class="fact">
                     <i class="fa fa-rocket"></i>
                     <span class="fact__number">35</span>
-                    <span class="fact__text">Years of Experience</span>
+                    <span class="fact__text">Năm kinh nghiệm</span>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
                 <div class="fact">
                     <i class="fa fa-suitcase"></i>
                     <span class="fact__number">35</span>
-                    <span class="fact__text">Specialties</span>
+                    <span class="fact__text">Chuyên khoa</span>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
                 <div class="fact">
                     <i class="fa fa-eye"></i>
                     <span class="fact__number">35</span>
-                    <span class="fact__text">Profile Views</span>
+                    <span class="fact__text">Người tìm kiếm</span>
                 </div>
             </div>
         </div>
@@ -84,14 +84,14 @@
             <div class="col-md-9">
                 <div class="block">
                     <div class="block__title">
-                        <h3>{{doctor.profile.first_name}} {{doctor.profile.last_name}}' Background</h3>
+                        <h3>THÔNG TIN VỀ BÁC SĨ {{doctor.profile.first_name}}</h3>
                     </div>
                     <div class="block__detail">
                         <div class="block__detail_line">
                             <span class="line__icon fa fa-heartbeat"></span>
 
                             <div class="line__content">
-                                <h4 class="line__content_title">BIO</h4>
+                                <h4 class="line__content_title">TIỂU SỬ</h4>
 
                                 <div class="line__content_description no-padding">{{doctor.profile.bio}}</div>
                             </div>
@@ -101,7 +101,7 @@
                             <span class="line__icon fa fa-mortar-board"></span>
 
                             <div class="line__content">
-                                <h4 class="line__content_title">EDUCATION & EXPERIENCE</h4>
+                                <h4 class="line__content_title">ĐÀO TẠO VÀ KINH NGHIỆM</h4>
 
                                 <div class="line__content_description">
                                     <div ng-repeat="education in doctor.generic_educations" class="clearfix">
@@ -124,7 +124,7 @@
                             <span class="line__icon fa fa-life-saver"></span>
 
                             <div class="line__content">
-                                <h4 class="line__content_title">SPECIALTIES</h4>
+                                <h4 class="line__content_title">CHUYÊN KHOA</h4>
 
                                 <div class="line__content_description no-padding">
                                     <div ng-repeat="special in doctor.specialties" class="doctor__special">
@@ -140,7 +140,7 @@
                             <span class="line__icon fa fa-language"></span>
 
                             <div class="line__content">
-                                <h4 class="line__content_title">LANGUAGES SPOKEN IN THIS PRACTICE</h4>
+                                <h4 class="line__content_title">NGÔN NGỮ DÙNG TẠI PHÒNG KHÁM</h4>
 
                                 <div class="line__content_description">
 									<span ng-repeat="language in doctor.profile.languages">{{language.name}}
@@ -154,7 +154,7 @@
 
                 <div class="block">
                     <div class="block__title">
-                        <h3>Patient Reviews</h3>
+                        <h3>Bệnh nhân nói về BS {{doctor.profile.first_name}} như sau</h3>
                     </div>
                     <div class="block__detail">
                         <div class="review clearfix">
@@ -171,14 +171,14 @@
                                         <span class="fa fa-star"></span>
                                     </div>
                                     <span class="review__date">10/06/2015</span>
-                                    <span class="review__username">By Bella O.</span>
+                                    <span class="review__username">Bởi cô Trinh</span>
                                 </div>
                             </div>
                             <div class="review__quocte">
                                 <i class="fa fa-quote-left"></i>
-                                Dr. Triadafilopoulos is exceptional in every way. He asks all the right questions,
-                                listens attentively and has already given me more information than other...
-                                <a class="review-link-more more-link" target="_blank">read more</a>
+                                BS {{doctor.profile.first_name}} là một người thầy thuốc xuất sắc về chuyên môn.
+                                Không những thế, còn hết sức lắng nghe nỗi niềm của bệnh nhân và chia sẻ với họ ...
+                                <a class="review-link-more more-link" target="_blank">đọc thêm</a>
                             </div>
                         </div>
                         <div class="review clearfix">
@@ -195,14 +195,14 @@
                                         <span class="fa fa-star"></span>
                                     </div>
                                     <span class="review__date">10/06/2015</span>
-                                    <span class="review__username">By Bella O.</span>
+                                    <span class="review__username">Bởi chị Phượng</span>
                                 </div>
                             </div>
                             <div class="review__quocte">
                                 <i class="fa fa-quote-left"></i>
-                                Dr. Triadafilopoulos is exceptional in every way. He asks all the right questions,
-                                listens attentively and has already given me more information than other...
-                                <a class="review-link-more more-link" target="_blank">read more</a>
+                                Mình rất hài lòng khi đi khám tại phòng khám của BS {{doctor.profile.first_name}},
+                                nhất là về không gian phòng khám, rất yên tĩnh thư thái, tạo cảm giác nhẹ nhàng cho người bệnh trong khi chờ đợi.
+                                <a class="review-link-more more-link" target="_blank">xem thêm</a>
                             </div>
                         </div>
                         <div class="review clearfix">
@@ -219,22 +219,22 @@
                                         <span class="fa fa-star"></span>
                                     </div>
                                     <span class="review__date">10/06/2015</span>
-                                    <span class="review__username">By Bella O.</span>
+                                    <span class="review__username">Bởi anh Nam</span>
                                 </div>
                             </div>
                             <div class="review__quocte">
                                 <i class="fa fa-quote-left"></i>
-                                Dr. Triadafilopoulos is exceptional in every way. He asks all the right questions,
-                                listens attentively and has already given me more information than other...
-                                <a hreft="#" target="_blank">read more</a>
+                                Tôi gặp trục trặc về sức khỏe của mình đã nhiều năm nay, chạy chữa nhiều nơi.
+                                Nhưng chỉ đến khi được giới thiệu BS {{doctor.profile.first_name}}, tôi mới nhận thấy nhận được rõ ràng những tiến triển trong bệnh tình của mình.
+                                <a hreft="#" target="_blank">xem thêm</a>
                             </div>
                         </div>
-                        <p class="text-center read-more-review"><a href="#">Read more reviews</a></p>
+                        <p class="text-center read-more-review"><a href="#">xem thêm những bình luận khác</a></p>
                     </div>
                 </div>
 
                 <div class="recentWrap">
-                    <h4 class="recentWrap__title">Similar Primary Care Doctors in Mountain View, CA</h4>
+                    <h4 class="recentWrap__title">Những bác sĩ tương tự tại Tp HCM</h4>
 
                     <div class="row">
                         <div class="col-sm-4" ng-repeat="doctor in relatedDoctors">
@@ -248,7 +248,7 @@
 
                                     <div class="recentBl__specialty">{{doctor.specialties}}</div>
                                     <star-rating rating-value="doctor.rating" readonly="true"></star-rating>
-                                    <a ui-sref="detail({id : doctor.id})" class="btn btn-viewprofile">View Profile</a>
+                                    <a ui-sref="detail({id : doctor.id})" class="btn btn-viewprofile">Xem thông tin</a>
                                 </div>
                             </div>
                         </div>
@@ -259,7 +259,7 @@
             <div class="col-md-3">
                 <div class="block block-sm">
                     <div class="block__title">
-                        <h3>Top Primary Care Doctors in Mountain View, CA</h3>
+                        <h3>Những bác sĩ hàng đầu tại Tp HCM</h3>
                     </div>
                     <ul class="media-list">
                         <li class="media" ng-repeat="doctor in topDoctors.results | limitTo:3">
@@ -287,16 +287,3 @@
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
