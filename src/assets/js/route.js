@@ -69,6 +69,47 @@ angular.module('iDocApp')
                         return $translate.refresh();
                     }
                 }
+            }).state({
+                name: 'user',
+                abstract: true,
+                url: '/user',
+                views: {
+                    'content-view': {
+                        'templateUrl': 'idoc/user/user.html'
+                    }
+                },
+                resolve: {
+                    translatePartialLoader: function ($translate, $translatePartialLoader) {
+                        $translatePartialLoader.addPart('common');
+                        return $translate.refresh();
+                    }
+                }
+            }).state('user.updateInformation', {
+                url: '/updateInformation',
+                views: {
+                    'user-view': {
+                        'templateUrl': 'idoc/user/doctorInformation.html'
+                    }
+                },
+                resolve: {
+                    translatePartialLoader: function ($translate, $translatePartialLoader) {
+                        $translatePartialLoader.addPart('common');
+                        return $translate.refresh();
+                    }
+                }
+            }).state('user.changePassword', {
+                url: '/changePassword',
+                views: {
+                    'user-view': {
+                        'templateUrl': 'idoc/user/changePassword.html'
+                    }
+                },
+                resolve: {
+                    translatePartialLoader: function ($translate, $translatePartialLoader) {
+                        $translatePartialLoader.addPart('common');
+                        return $translate.refresh();
+                    }
+                }
             });
 
         $urlRouterProvider.otherwise('/');

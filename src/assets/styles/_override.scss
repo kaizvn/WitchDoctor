@@ -91,8 +91,18 @@ body {
 }
 
 .btn,
-.form-control {
-	border-radius: 3px;
+.form-control,
+.panel,
+.panel-heading {
+	border-radius: 0;
+}
+
+label {
+	font-weight: normal;
+}
+
+.panel-title {
+	padding: 0 !important;
 }
 
 .form-control-search-autocomplete {
