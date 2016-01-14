@@ -1,0 +1,106 @@
+<div class="container booking">
+	<div class="row">
+		<div class="col-sm-9">
+			<div class="bar cleafix">									
+				<div class="bar__info" ng-class="{'bar__info-active': isFinishedStep([2,3,4,5])}">
+					<i class="fa fa-check"></i>
+					<span>Thời gian</span>
+					<i class="fa fa-chevron-right"></i>
+				</div>
+				<div class="bar__info" ng-class="{'bar__info-active': isFinishedStep([3,4,5])}">
+					<i class="fa fa-check"></i>
+					<span>Người khám</span>
+					<i class="fa fa-chevron-right"></i>
+				</div>
+				<div class="bar__info" ng-class="{'bar__info-active': isFinishedStep([4,5])}">
+					<i class="fa fa-check"></i>
+					<span>Lý do</span>
+					<i class="fa fa-chevron-right"></i>
+				</div>
+				<div class="bar__info" ng-class="{'bar__info-active': isFinishedStep([5])}">
+					<i class="fa fa-check"></i>
+					<span>Xác nhận</span>
+				</div>
+			</div>
+			<div class="step">
+				<div class="step__inner" ng-class="{'step1-active': step == 1, 'step2-active': step == 2, 'step3-active': step == 3, 'step4-active': step == 4, 'step5-active': step == 5,}">
+					<span class="point"></span>
+				</div>
+			</div>
+
+			<div ng-show="showStep(1)">
+				<h4 class="step__title"><i class="fa fa-clock-o"></i> Chọn thời gian khám bệnh</h4>
+				<uib-datepicker class="datePicker" ng-model="dt" min-date="minDate" show-weeks="false" custom-class="getDayClass(date, mode)"></uib-datepicker>
+				<div class="pt-30 clearfix">
+					<button class="btn btn-primary pull-right" ng-click="goStep(step, 1)">Tiếp tục <i class="fa fa-angle-right"></i></button>
+				</div>	
+			</div>
+			<div ng-show="showStep(2)">
+				<h4 class="step__title"><i class="fa fa-user"></i> Thông tin người khám bệnh</h4>
+				<form>
+	                <div class="form-group">
+	                    <div class="row">
+	                        <div class="col-sm-4">
+	                            <label for="">Họ & Tên</label>
+	                            <input type="text" class="form-control" id="">
+	                        </div>
+	                        <div class="col-sm-4">
+	                            <label for="">Email</label>
+	                            <input type="text" class="form-control" id="">
+	                        </div>
+	                        <div class="col-sm-4">
+	                            <label for="">Số điện thoại</label>
+	                            <input type="text" class="form-control" id="">
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="form-group">
+	                	<div class="row">	                        
+	                        <div class="col-sm-12">
+	                            <label for="">Địa chỉ</label>
+	                            <input type="text" class="form-control" id="">
+	                        </div>
+	                    </div>
+                    </div>
+	            </form>
+				<div class="pt-30 clearfix">
+					<button class="btn btn-primary pull-left" ng-click="goStep(step, -1)"><i class="fa fa-angle-left"></i> Trở lại</button>
+					<button class="btn btn-primary pull-right" ng-click="goStep(step, 1)">Tiếp tục <i class="fa fa-angle-right"></i></button>
+				</div>
+			</div>
+			<div ng-show="showStep(3)">
+				<h4 class="step__title"><i class="fa fa-heartbeat"></i> Lý do khám bệnh</h4>
+				<div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <label for="">Vui lòng lựa chọn</label>
+                            <input type="text" class="form-control" id="">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="">Chi tiết</label>
+                    <textarea type="text" class="form-control" id=""></textarea>
+                </div>
+				<div class="pt-30 clearfix">
+					<button class="btn btn-primary pull-left" ng-click="goStep(step, -1)"><i class="fa fa-angle-left"></i> Trở lại</button>
+					<button class="btn btn-primary pull-right" ng-click="goStep(step, 1)">Tiếp tục <i class="fa fa-angle-right"></i></button>
+				</div>
+			</div>
+			<div ng-show="showStep(4)">
+				<h4 class="step__title"><i class="fa fa-heartbeat"></i> Xác nhận thông tin</h4>
+				
+				<div class="pt-30 clearfix">
+					<button class="btn btn-primary pull-left" ng-click="goStep(step, -1)"><i class="fa fa-angle-left"></i> Trở lại</button>
+					<button class="btn btn-primary pull-right" ng-click="goStep(step, 1)">Tiếp tục <i class="fa fa-angle-right"></i></button>
+				</div>
+			</div>
+			<div ng-show="showStep(5)">
+				<h4 class="text-center">Đặt lịch khám thành công</h4>
+			</div>
+		</div>
+		<div class="col-sm-3">
+            
+		</div>		
+	</div>	
+</div>

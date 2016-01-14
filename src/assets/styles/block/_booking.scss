@@ -1,0 +1,143 @@
+.booking {
+	padding: 30px 0 60px;
+	.btn {
+		.fa-angle-right {
+			margin-left: 5px;
+		}
+		.fa-angle-left {
+			margin-right: 5px;
+		}
+	}
+}
+
+.bar {
+	margin-bottom: 30px;
+	&__info {
+		display: inline-block;
+		width: 25%;
+		float: left;
+		text-align: center;
+		&:after {
+			clear: both;
+			display: block;
+			content: " ";
+		}
+		&:last-child {
+			width: 25%;
+		}
+		i {
+			margin-right: 5px;
+			&:last-child {
+				float: right;
+				font-size: 10px;
+				color: #666 !important;
+				position: relative;
+				top: 6px;
+				right: -2px;
+			}
+		}
+		&-active {
+			color: #3bafda;
+		}
+	}
+}
+
+.step {	
+	width: 100%;
+	height: 5px;
+	background: #aab2bd;
+	margin: 10px 0 30px;
+	position: relative;
+	&__title {
+		font-weight: 400;
+		font-size: 15px;
+		margin-bottom: 20px;
+		i {
+			font-size: 20px;
+		    vertical-align: middle;
+		    display: inline-block;
+		    margin-right: 5px;
+		    position: relative;
+		    top: -1px;
+		}
+	}
+	&__inner {
+		background: #3bafda;
+		height: 5px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		transition: width ease-in-out 1.5s;
+		-webkit-transition: width ease-in-out 1.5s;
+		-moz-transition: width ease-in-out 1.5s;
+		-o-transition: width ease-in-out 1.5s;		
+		.point {
+			width: 14px;
+			height: 14px;
+			background: #3bafda;
+			border-radius: 50%;
+			position: absolute;
+			margin-left: -7px;
+			margin-top: -7px;
+			top: 50%;
+			right: -0.5px;
+		}
+	}
+	&1-active {
+		width: 0;
+		.point {
+			display: none;
+		}
+	}
+	&2-active {
+		width: 25%;
+	}
+	&3-active {
+		width: 50%;
+	}
+	&4-active {
+		width: 75%;
+	}
+	&5-active {
+		width: 100%;
+	}
+}
+
+
+/* Date Picker */
+.datePicker {
+	.btn {
+		border: none;
+		height: 30px;
+		min-width: 35px;
+		line-height: 30px;
+		line-height: 23px;
+		color: #333;
+		.text-muted {
+			color: #b1b1b1;
+		}
+		&:hover {
+			background: #50b3d8;
+			color: #fff;
+		}
+		&.active {
+			background: #3bafda;
+			box-shadow: none;
+			color: #fff;
+			.text-info {
+				color: #fff !important;
+			}
+		}
+	}
+	thead tr th {
+		text-transform: uppercase;
+		font-size: 14px;
+		font-weight: normal;
+		height: 30px;
+		button {
+			text-transform: uppercase;
+			font-size: 14px;
+			font-weight: normal !important;
+		}
+	}
+}

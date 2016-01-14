@@ -70,6 +70,21 @@ angular.module('iDocApp')
                     }
                 }
             }).state({
+                name: 'booking',
+                url: "/booking",
+                views: {
+                    "content-view": {
+                        "controller": "BookingCtrl",
+                        "templateUrl": "idoc/booking/booking.html"
+                    }
+                },
+                resolve: {
+                    translatePartialLoader: function ($translate, $translatePartialLoader) {
+                        $translatePartialLoader.addPart('common');
+                        return $translate.refresh();
+                    }
+                }
+            }).state({
                 name: 'user',
                 abstract: true,
                 url: '/user',
