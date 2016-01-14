@@ -1,7 +1,7 @@
 <div class="container booking">
 	<div class="row">
 		<div class="col-sm-9">
-			<div class="bar cleafix">									
+			<div class="bar clearfix">									
 				<div class="bar__info" ng-class="{'bar__info-active': isFinishedStep([2,3,4,5])}">
 					<i class="fa fa-check"></i>
 					<span>Thời gian</span>
@@ -30,7 +30,27 @@
 
 			<div ng-show="showStep(1)">
 				<h4 class="step__title"><i class="fa fa-clock-o"></i> Chọn thời gian khám bệnh</h4>
-				<uib-datepicker class="datePicker" ng-model="dt" min-date="minDate" show-weeks="false" custom-class="getDayClass(date, mode)"></uib-datepicker>
+				<div class="row">
+					<div class="col-sm-4">
+						<uib-datepicker class="datePicker" ng-model="dt" min-date="minDate" show-weeks="false" custom-class="getDayClass(date, mode)"></uib-datepicker>
+					</div>
+					<div class="col-sm-8">
+						<span class="time">Giờ</span>
+						<ul class="listTime">
+							<li><span>8:30 AM</span></li>
+							<li><span>9:30 AM</span></li>
+							<li><span>10:30 AM</span></li>
+							<li><span>11:30 AM</span></li>
+							<li><span>1:30 PM</span></li>
+							<li><span>2:30 PM</span></li>
+							<li><span>3:30 PM</span></li>
+							<li><span>4:30 PM</span></li>
+							<li><span>5:30 PM</span></li>
+							<li><span>6:30 PM</span></li>
+							<li><span>7:30 PM</span></li>
+						</ul>
+					</div>
+				</div>
 				<div class="pt-30 clearfix">
 					<button class="btn btn-primary pull-right" ng-click="goStep(step, 1)">Tiếp tục <i class="fa fa-angle-right"></i></button>
 				</div>	
@@ -89,7 +109,14 @@
 			</div>
 			<div ng-show="showStep(4)">
 				<h4 class="step__title"><i class="fa fa-heartbeat"></i> Xác nhận thông tin</h4>
-				
+				<div>
+					<p>Ngày hẹn khám bệnh: 25/12/2015 9:30 AM</p>
+					<p>Phạm Quốc Dũng<br>
+					Ngày sinh:	15/08/1978<br>
+					Số điện thoại: 0938 056 056<br>
+					Địa chỉ: 15A Phan Châu Trinh, Phường 1, Quận 1, TP Hồ Chí Minh</p>
+					<p>Lý do: Đau răng</p>
+				</div>
 				<div class="pt-30 clearfix">
 					<button class="btn btn-primary pull-left" ng-click="goStep(step, -1)"><i class="fa fa-angle-left"></i> Trở lại</button>
 					<button class="btn btn-primary pull-right" ng-click="goStep(step, 1)">Tiếp tục <i class="fa fa-angle-right"></i></button>

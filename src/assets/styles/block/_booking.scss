@@ -1,5 +1,5 @@
 .booking {
-	padding: 30px 0 60px;
+	padding: 30px 15px 60px;
 	.btn {
 		.fa-angle-right {
 			margin-left: 5px;
@@ -8,15 +8,25 @@
 			margin-right: 5px;
 		}
 	}
+	.time {
+		font-weight: bold;
+		color: #000;
+		text-transform: uppercase;
+		display: block;
+		padding: 7px 0 8px;
+	}
 }
 
 .bar {
-	margin-bottom: 30px;
+	margin-bottom: 10px;
 	&__info {
 		display: inline-block;
 		width: 25%;
 		float: left;
+		overflow: hidden;
+		text-overflow: ellipsis;
 		text-align: center;
+		white-space: nowrap;
 		&:after {
 			clear: both;
 			display: block;
@@ -46,8 +56,9 @@
 	width: 100%;
 	height: 5px;
 	background: #aab2bd;
-	margin: 10px 0 30px;
+	margin-bottom: 30px;
 	position: relative;
+	clear: both;
 	&__title {
 		font-weight: 400;
 		font-size: 15px;
@@ -100,6 +111,19 @@
 	}
 	&5-active {
 		width: 100%;
+	}
+}
+
+.listTime {
+	list-style: none;
+	padding: 0;
+	width: 230px;
+	color: #3bafda;
+	cursor: pointer;
+	li {
+		float: left;
+		width: 100px;
+		margin-bottom: 5px;
 	}
 }
 
