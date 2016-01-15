@@ -13,60 +13,63 @@
                             <div class="input-group">
                                 <div class="input-group-btn" ng-class="{open: showSearchType}">
                                     <button type="button" class="btn" tabindex="-1">{{selectedType}}</button>
-                                    <button type="button" class="btn dropdown-toggle" ng-click="showSearchType = !showSearchType">
+                                    <button type="button" class="btn dropdown-toggle"
+                                            ng-click="showSearchType = !showSearchType">
                                         <span class="caret"></span>
                                     </button>
-                                    <ul ng-show="showSearchType" class="dropdown-menu">                                        
-                                        <li><a href="javascript:void(0)" ng-click="onSelectType('conditions')">Bệnh</a></li>
+                                    <ul ng-show="showSearchType" class="dropdown-menu">
+                                        <li><a href="javascript:void(0)" ng-click="onSelectType('conditions')">Bệnh</a>
+                                        </li>
                                         <li><a href="javascript:void(0)" ng-click="onSelectType('name')">Bác sĩ</a></li>
-                                        <li><a href="javascript:void(0)" ng-click="onSelectType('specialty')">Chuyên Khoa</a></li>
+                                        <li><a href="javascript:void(0)" ng-click="onSelectType('specialty')">Chuyên
+                                            Khoa</a></li>
                                     </ul>
                                 </div>
                                 <div class="input-group-text">
                                     <input type="text"
-                                        ng-show="actionGroup.conditions.value"
-                                        ng-model="condition"
-                                        uib-typeahead="condition as condition.name for condition in getConditions($viewValue)"
-                                        typeahead-loading="loading"
-                                        typeahead-on-select="onSelectCondition(condition)"
-                                        typeahead-no-results="noResults"
-                                        class="form-control">
+                                           ng-show="actionGroup.conditions.value"
+                                           ng-model="condition"
+                                           uib-typeahead="condition as condition.name for condition in getConditions($viewValue)"
+                                           typeahead-loading="loading"
+                                           typeahead-on-select="onSelectCondition(condition)"
+                                           typeahead-no-results="noResults"
+                                           class="form-control">
                                     <input type="text"
-                                        ng-show="actionGroup.name.value"
-                                        uib-typeahead="doctor.name for doctor in getParams($viewValue)"
-                                        typeahead-loading="loading"
-                                        typeahead-no-results="noResults"
-                                        typeahead-on-select="onSelectResult(doctor)"
-                                        ng-model="doctor"
-                                        class="form-control">
+                                           ng-show="actionGroup.name.value"
+                                           uib-typeahead="doctor.name for doctor in getParams($viewValue)"
+                                           typeahead-loading="loading"
+                                           typeahead-no-results="noResults"
+                                           typeahead-on-select="onSelectResult(doctor)"
+                                           ng-model="doctor"
+                                           class="form-control">
                                     <input type="text"
-                                        ng-show="actionGroup.specialty.value"
-                                        uib-typeahead="specialty.name for specialty in getParams($viewValue)"
-                                        typeahead-loading="loading"
-                                        typeahead-no-results="noResults"
-                                        typeahead-on-select="onSelectResult(specialty)"
-                                        ng-model="specialty"
-                                        class="form-control">
+                                           ng-show="actionGroup.specialty.value"
+                                           uib-typeahead="specialty.name for specialty in getParams($viewValue)"
+                                           typeahead-loading="loading"
+                                           typeahead-no-results="noResults"
+                                           typeahead-on-select="onSelectResult(specialty)"
+                                           ng-model="specialty"
+                                           class="form-control">
                                 </div>
                             </div>
-                            <div class="searchLoading" ng-show="loading" >
+                            <div class="searchLoading" ng-show="loading">
                                 <i class="glyphicon glyphicon-refresh"></i> Tìm kiếm
                             </div>
                             <div class="searchNoResult" ng-show="noResults">
                                 <i class="glyphicon glyphicon-remove"></i> Không có kết quả
                             </div>
-                        </div>   
+                        </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="select-group">
                             <i class="fa fa-map-marker"></i>
                             <input type="text"
-                                uib-typeahead="city.name for city in getCities($viewValue)"
-                                typeahead-loading="loadingCity"
-                                typeahead-no-results="noResultsCity"
-                                placeholder="Nhập thành phố"
-                                ng-model="city"
-                                class="form-control form-control-city">
+                                   uib-typeahead="city.name for city in getCities($viewValue)"
+                                   typeahead-loading="loadingCity"
+                                   typeahead-no-results="noResultsCity"
+                                   placeholder="Nhập thành phố"
+                                   ng-model="city"
+                                   class="form-control form-control-city">
                         </div>
                     </div>
                     <div class="col-sm-2">
@@ -82,40 +85,40 @@
 </div>
 
 <div class="section container">
-    <h2 class="section__title">Chất lượng điều trị tốt khởi đầu từ việc gặp đúng bác sĩ giỏi</h2>
-    <p class="section__subTitle">Bằng cách kết hợp công nghệ và giúp bác sĩ tối ưu chất lượng dịch vụ</p>
+    <h2 class="section__title">{{'global.body.top_quote' | translate}} </h2>
+    <p class="section__subTitle">{{'global.body.sub_quote' | translate}}</p>
 
     <div class="row">
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
-                <img class="img-rounded" src="assets/images/info01.jpg" alt="">
+                <img class="img-rounded" ng-src="{{'global.body.thumbnails.slot01.img_url' | translate}}" alt="">
 
                 <div class="caption text-center">
-                    <h3>Đội ngũ bác sĩ</h3>
+                    <h3>{{'global.body.thumbnails.slot01.title' | translate}}</h3>
 
-                    <p>Đội ngũ bác sĩ là cốt lõi và mối liên kết chặt chẽ với họ là trọng tâm trong dịch vụ chúng tôi. Kho dữ liệu của khambacsi.com có trên 20.000 bác sĩ, trải rộng trên 3 trung tâm hành chính lớn nhất nước: Tp Hồ Chí Minh, Hà Nội và Đà Nẵng.</p>
+                    <p>{{ 'global.body.thumbnails.slot01.desc' | translate}}</p>
                 </div>
             </div>
         </div>
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
-                <img class="img-rounded" src="assets/images/info02.jpg" alt="">
+                <img class="img-rounded" ng-src="{{'global.body.thumbnails.slot02.img_url' | translate}}" alt="">
 
                 <div class="caption text-center">
-                    <h3>Công nghệ số</h3>
+                    <h3>{{'global.body.thumbnails.slot02.title' | translate}}</h3>
 
-                    <p>Dùng sức mạnh lan tỏa của công nghệ thông tin để tối đa hóa khả năng tiếp cận của họ đến bệnh nhân</p>
+                    <p>{{ 'global.body.thumbnails.slot02.desc' | translate}}</p>
                 </div>
             </div>
         </div>
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
-                <img class="img-rounded" src="assets/images/info03.jpg" alt="">
+                <img class="img-rounded" ng-src="{{'global.body.thumbnails.slot03.img_url' | translate}}" alt="">
 
                 <div class="caption text-center">
-                    <h3>Chất lượng dịch vụ</h3>
+                    <h3>{{ 'global.body.thumbnails.slot03.title' | translate}}</h3>
 
-                    <p>Hỗ trợ đội ngũ bác sĩ trong vấn đề quản lí và điều phối là mũi nhọn trong dịch vụ</p>
+                    <p>{{ 'global.body.thumbnails.slot03.desc' | translate}}</p>
                 </div>
             </div>
         </div>

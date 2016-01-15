@@ -8,20 +8,21 @@
 <!--[if IE 9]>
 <html class="no-js lt-ie10" id="ng-app"> <![endif]-->
 <!--[if gt IE 9]><!-->
-<html class="no-js" id="ng-app" ng-app="iDocApp" ng-cloak> <!--<![endif]-->
+<html class="no-js" id="ng-app" ng-app="iDocApp" class="ng-cloak" ng-cloak> <!--<![endif]-->
 <head>
     <title>khambacsi.com</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!-- build:css assets/styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="../bower_components/Bootflat/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../bower_components/Bootflat/bootflat/css/bootflat.css" />
-    <link rel="stylesheet" href="../bower_components/textAngular/dist/textAngular.css" />
+    <link rel='stylesheet' href='../bower_components/Bootflat/css/bootstrap.min.css'/>
+    <link rel='stylesheet' href='../bower_components/Bootflat/bootflat/css/bootflat.css'/>
+    <link rel='stylesheet' href='../bower_components/textAngular/dist/textAngular.css'/>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) assets/styles/main.css -->
     <link rel="stylesheet" href="/assets/styles/main.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <!-- endbuild -->
 
     <script>
@@ -31,10 +32,17 @@
         }
     </script>
     <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
         ga('create', 'UA-72221643-1', 'auto');
         ga('send', 'pageview');
@@ -81,27 +89,27 @@
         <div class="clearfix">
             <div class="footer-logo"><a href="#"><img src="assets/images/logo_footer.png" alt="Khám Bác Sĩ"></a></div>
             <dl class="footer-nav">
-                <dt class="nav-title">CHUYÊN KHOA</dt>
-                <dd class="nav-item"><a href="#">Ung thư</a></dd>
-                <dd class="nav-item"><a href="#">Da liễu</a></dd>
-                <dd class="nav-item"><a href="#">Tai mũi họng</a></dd>
-                <dd class="nav-item"><a href="#">Nhi khoa</a></dd>
-                <dd class="nav-item"><a href="#">Tiêu hóa</a></dd>
+                <dt class="nav-title">{{'global.footer.primary_care.label' | translate}}</dt>
+                <dd class="nav-item"><a href="#">{{'global.footer.primary_care.items.0.label' | translate}}</a></dd>
+                <dd class="nav-item"><a href="#">{{'global.footer.primary_care.items.1.label' | translate}}</a></dd>
+                <dd class="nav-item"><a href="#">{{'global.footer.primary_care.items.2.label' | translate}}</a></dd>
+                <dd class="nav-item"><a href="#">{{'global.footer.primary_care.items.3.label' | translate}}</a></dd>
+                <dd class="nav-item"><a href="#">{{'global.footer.primary_care.items.4.label' | translate}}</a></dd>
             </dl>
             <dl class="footer-nav">
-                <dt class="nav-title">ĐỘI NGŨ</dt>
-                <dd class="nav-item"><a href="#">Atlantic Technologies</a></dd>
-                <dd class="nav-item"><a href="#">Lịch sử</a></dd>
-                <dd class="nav-item"><a href="#">Tầm nhìn</a></dd>
+                <dt class="nav-title">{{'global.footer.doctors.label' | translate}}</dt>
+                <dd class="nav-item"><a href="#">{{'global.footer.doctors.items.0.label' | translate}}</a></dd>
+                <dd class="nav-item"><a href="#">{{'global.footer.doctors.items.1.label' | translate}}</a></dd>
+                <dd class="nav-item"><a href="#">{{'global.footer.doctors.items.2.label' | translate}}</a></dd>
             </dl>
             <dl class="footer-nav">
-                <dt class="nav-title">LIÊN HỆ</dt>
-                <dd class="nav-item"><a href="#">Thông tin</a></dd>
-                <dd class="nav-item"><a href="#">Bản đồ</a></dd>
-                <dd class="nav-item"><a href="#">Form liên lạc</a></dd>
+                <dt class="nav-title">{{'global.footer.contact.label' | translate}}</dt>
+                <dd class="nav-item"><a href="#">{{'global.footer.contact.items.0.label' | translate}}</a></dd>
+                <dd class="nav-item"><a href="#">{{'global.footer.contact.items.1.label' | translate}}</a></dd>
+                <dd class="nav-item"><a href="#">{{'global.footer.contact.items.2.label' | translate}}</a></dd>
             </dl>
         </div>
-        <p class="footer-copyright" ng-bind-html="'global.copyright' | translate"></p>
+        <p class="footer-copyright" ng-bind-html="'global.footer.copyright' | translate"></p>
     </div>
 </footer>
 <!-- End Footer -->

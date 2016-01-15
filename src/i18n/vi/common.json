@@ -1,25 +1,112 @@
 {
-    "global": {
-        "app": "KhamBacSi",
-        "search": "Tìm bác sĩ",
-        "menu": {
-            "account": {
-                "main": "Tài khoản",
-                "profile": "Hồ sơ",
-                "logout": "Thoát",
-                "login": "Đăng nhập",
-                "signup": "Đăng ký"
-            }
+  "global": {
+    "app": "KhamBacSi",
+    "search": "Tìm bác sĩ",
+    "menu": {
+      "account": {
+        "main": "Tài khoản",
+        "profile": "Hồ sơ",
+        "logout": "Thoát",
+        "login": "Đăng nhập",
+        "signup": "Đăng ký"
+      },
+      "top_url": {
+        "news": "Tin tức",
+        "is_doctor": "Là bác sĩ?",
+        "about_us": "Về chúng tôi"
+      }
+    },
+    "banner": {
+      "title": "Danh sách bác sĩ tốt bạn hằng tìm kiếm, mọi chuyên khoa, một trang web",
+      "medium": "Bằng bất cứ phương thức nào: Tên bác sĩ | Bệnh mắc phải | Triệu chứng biểu hiện",
+      "form": {
+        "input": "Triệu chứng / Bác Sĩ",
+        "location": "Chọn thành phố",
+        "action": "Tìm"
+      }
+    },
+    "body": {
+      "top_quote": "Chất lượng điều trị tốt khởi đầu từ việc gặp đúng bác sĩ giỏi",
+      "sub_quote": "Bằng cách kết hợp công nghệ và giúp bác sĩ tối ưu chất lượng dịch vụ",
+      "thumbnails": {
+        "slot01": {
+          "img_url": "assets/images/info01.jpg",
+          "title": "Đội ngũ bác sĩ",
+          "desc": "Đội ngũ bác sĩ là cốt lõi và mối liên kết chặt chẽ với họ là trọng tâm trong dịch vụ chúng tôi. Kho dữ liệu của khambacsi.com có trên 20.000 bác sĩ, trải rộng trên 3 trung tâm hành chính lớn nhất nước: Tp Hồ Chí Minh, Hà Nội và Đà Nẵng."
         },
-        "banner": {
-            "title": "Danh sách bác sĩ tốt bạn hằng tìm kiếm, mọi chuyên khoa, một trang web",
-            "medium": "Bằng bất cứ phương thức nào: Tên bác sĩ | Bệnh mắc phải | Triệu chứng biểu hiện",
-            "form": {
-                "input": "Triệu chứng / Bác Sĩ",
-                "location": "Chọn thành phố",
-                "action": "Tìm"
-            }
+        "slot02": {
+          "img_url": "assets/images/info02.jpg",
+          "title": "Công nghệ số",
+          "desc": "Dùng sức mạnh lan tỏa của công nghệ thông tin để tối đa hóa khả năng tiếp cận của họ đến bệnh nhân"
         },
-        "copyright": "&copy 2015 khambacsi.com"
+        "slot03": {
+          "img_url": "assets/images/info03.jpg",
+          "title": "Chất lượng dịch vụ",
+          "desc": "Hỗ trợ đội ngũ bác sĩ trong vấn đề quản lí và điều phối là mũi nhọn trong dịch vụ"
+        }
+      }
+    },
+    "footer": {
+      "primary_care": {
+        "label": "Chuyên khoa",
+        "items": [
+          {
+            "label": "Ung thư",
+            "keyword": ""
+          },
+          {
+            "label": "Da liễu",
+            "keyword": ""
+          },
+          {
+            "label": "Tai mũi họng",
+            "keyword": ""
+          },
+          {
+            "label": "Nhi khoa",
+            "keyword": ""
+          },
+          {
+            "label": "Tiêu hoá",
+            "keyword": ""
+          }
+        ]
+      },
+      "doctors": {
+        "label": "Đội ngũ",
+        "items": [
+          {
+            "label": "Atlantic technologies",
+            "keyword": ""
+          },
+          {
+            "label": "Lịch sử",
+            "keyword": ""
+          },
+          {
+            "label": "Tầm nhìn",
+            "keyword": ""
+          }
+        ]
+      },
+      "contact": {
+        "label": "Liên hệ",
+        "items": [
+          {
+            "label": "Thông tin",
+            "keyword": ""
+          },
+          {
+            "label": "Bản đồ",
+            "keyword": ""
+          },
+          {
+            "label": "Gửi câu hỏi",
+            "keyword": ""
+          }
+        ]
+      },
+      "copyright": "&copy 2015 khambacsi.com"
     }
+  }
 }
