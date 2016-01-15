@@ -22,6 +22,6 @@ function BookingCtrl($scope, $state, $stateParams, DoctorsService, IdocRestServi
 }
 
 
-ResultCtrl.$inject = ['$scope', '$state', '$stateParams', 'DoctorsService', 'IdocRestService'];
+BookingCtrl.$inject = ['$scope', '$state', '$stateParams', 'DoctorsService', 'IdocRestService'];
 
 angular.module('iDocApp').controller('BookingCtrl', BookingCtrl);
