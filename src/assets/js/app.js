@@ -88,9 +88,27 @@
                 tmhDynamicLocale.set(data.language.toLowerCase().replace(/_/g, '-'));
             });
 
-            $(document).ready(function () {
-                $rootScope.isDOMReady = true;
+
+            $rootScope.$on('$translateLoadingSuccess', function (event) {
+                console.log('party start');
+                $rootScope.isDOMReady = false;
             });
+
+            $rootScope.$on('$translateLoadingStart', function (event, a) {
+                 console.log('$translateLoadingStart', a);
+            });
+
+            $rootScope.$on('$translateChangeEnd', function (event) {
+                //console.log('$translateChangeEnd');
+            });
+            $rootScope.$on('$translateLoadingEnd', function (event) {
+                //console.log('$translateLoadingEnd');
+                setTimeout(function () {
+                    //console.log($translate.instant('MENU.USERS'));
+                    $rootScope.isDOMReady = true;
+                }, 0);
+            });
+
 
         });
 
