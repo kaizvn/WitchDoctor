@@ -91,12 +91,12 @@
 
             $rootScope.$on('$translateLoadingSuccess', function (event) {
                 console.log('party start');
-                $rootScope.isDOMReady = false;
-                $('body').hide();
             });
 
             $rootScope.$on('$translateLoadingStart', function (event, a) {
                  console.log('$translateLoadingStart', a);
+                $rootScope.isDOMReady = false;
+                $('body').hide();
             });
 
             $rootScope.$on('$translateChangeEnd', function (event) {
