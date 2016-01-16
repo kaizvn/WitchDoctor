@@ -95,8 +95,6 @@
 
             $rootScope.$on('$translateLoadingStart', function (event, a) {
                  console.log('$translateLoadingStart', a);
-                $rootScope.isDOMReady = false;
-                $('body').hide();
             });
 
             $rootScope.$on('$translateChangeEnd', function (event) {
@@ -105,7 +103,6 @@
             $rootScope.$on('$translateLoadingEnd', function (event) {
                 //console.log('$translateLoadingEnd');
                 setTimeout(function () {
-                    //console.log($translate.instant('MENU.USERS'));
                     $rootScope.isDOMReady = true;
                     $('body').show();
                 }, 0);
