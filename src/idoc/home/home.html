@@ -12,7 +12,7 @@
                         <div class="relative">
                             <div class="input-group">
                                 <div class="input-group-btn" ng-class="{open: showSearchType}">
-                                    <button type="button" class="btn" tabindex="-1">{{selectedType}}</button>
+                                    <button type="button" class="btn btn-select" tabindex="-1">{{selectedType}}</button>
                                     <button type="button" class="btn dropdown-toggle"
                                             ng-click="showSearchType = !showSearchType">
                                         <span class="caret"></span>
@@ -89,38 +89,40 @@
     <p class="section__subTitle">{{'global.body.sub_quote' | translate}}</p>
 
     <div class="row">
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <img class="img-rounded" ng-src="{{'global.body.thumbnails.slot01.img_url' | translate}}" alt="">
+        <div class="row-height">
+            <div class="col-sm-6 col-md-4 col-sm-height">
+                <div class="thumbnail inside-full-height">
+                    <img class="img-rounded" ng-src="{{'global.body.thumbnails.slot01.img_url' | translate}}" alt="">
 
-                <div class="caption text-center">
-                    <h3>{{'global.body.thumbnails.slot01.title' | translate}}</h3>
+                    <div class="caption text-center">
+                        <h3>{{'global.body.thumbnails.slot01.title' | translate}}</h3>
 
-                    <p>{{ 'global.body.thumbnails.slot01.desc' | translate}}</p>
+                        <p>{{ 'global.body.thumbnails.slot01.desc' | translate}}</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <img class="img-rounded" ng-src="{{'global.body.thumbnails.slot02.img_url' | translate}}" alt="">
+            <div class="col-sm-6 col-md-4 col-sm-height">
+                <div class="thumbnail inside-full-height">
+                    <img class="img-rounded" ng-src="{{'global.body.thumbnails.slot02.img_url' | translate}}" alt="">
 
-                <div class="caption text-center">
-                    <h3>{{'global.body.thumbnails.slot02.title' | translate}}</h3>
+                    <div class="caption text-center">
+                        <h3>{{'global.body.thumbnails.slot02.title' | translate}}</h3>
 
-                    <p>{{ 'global.body.thumbnails.slot02.desc' | translate}}</p>
+                        <p>{{ 'global.body.thumbnails.slot02.desc' | translate}}</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <img class="img-rounded" ng-src="{{'global.body.thumbnails.slot03.img_url' | translate}}" alt="">
+            <div class="col-sm-6 col-md-4 col-sm-height">
+                <div class="thumbnail inside-full-height">
+                    <img class="img-rounded" ng-src="{{'global.body.thumbnails.slot03.img_url' | translate}}" alt="">
 
-                <div class="caption text-center">
-                    <h3>{{ 'global.body.thumbnails.slot03.title' | translate}}</h3>
+                    <div class="caption text-center">
+                        <h3>{{ 'global.body.thumbnails.slot03.title' | translate}}</h3>
 
-                    <p>{{ 'global.body.thumbnails.slot03.desc' | translate}}</p>
+                        <p>{{ 'global.body.thumbnails.slot03.desc' | translate}}</p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </div>        
     </div>
 </div>
