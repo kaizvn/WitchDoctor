@@ -92,6 +92,7 @@
             $rootScope.$on('$translateLoadingSuccess', function (event) {
                 console.log('party start');
                 $rootScope.isDOMReady = false;
+                $('body').hide();
             });
 
             $rootScope.$on('$translateLoadingStart', function (event, a) {
@@ -106,6 +107,7 @@
                 setTimeout(function () {
                     //console.log($translate.instant('MENU.USERS'));
                     $rootScope.isDOMReady = true;
+                    $('body').show();
                 }, 0);
             });
 
