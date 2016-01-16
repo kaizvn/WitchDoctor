@@ -1,20 +1,20 @@
 <div class="modal-content__login">
     <div class="modal-header">
-        <h4 class="modal-title">Create an Account</h4>
+        <h4 class="modal-title">{{ 'global.register.title' | translate}}</h4>
         <span class="fa fa-close" ng-click="close()"></span>
     </div>
     
     <div class="modal-body">
         <div class="row">
             <div class="col-sm-6 register">
-                <p>Save your favorite doctors and access them at any time on any device.</p>
+                <p>{{ 'global.register.desc' | translate}}</p>
                 <button type="button" class="btn btn-icon btn-block btn-facebook">
                     <i class="fa fa-facebook"></i>
-                    <span>Sign Up with Faccebook</span>
+                    <span>{{ 'global.register.facebook_btn' | translate}}</span>
                 </button>
                 <button type="button" class="btn btn-icon btn-block btn-google">
                     <i class="fa fa-google-plus"></i>
-                    <span>Sign Up with Google</span>
+                    <span>{{ 'global.register.google_btn' | translate}}</span>
                 </button>
                 
                 <div class="or">
@@ -22,17 +22,17 @@
                 </div>
 
                 <form name="login">
-                    <input type="email" class="form-control input-email" placeholder="Email Address">
-                    <input type="password" class="form-control" placeholder="Password">
+                    <input type="email" class="form-control input-email" placeholder="{{ 'global.login.username' | translate}}">
+                    <input type="password" class="form-control" placeholder="{{ 'global.login.password' | translate}}">
                     <button type="button" class="btn btn-primary btn-block btn-login">
-                        <span>Sign Up</span>
+                        <span>{{ 'global.register.submit_btn' | translate}}</span>
                     </button>
                 </form>
             </div>
 
             <div class="col-sm-6">
-                <h3 class="register__info_title">Trust and Privacy is our top priority.</h3>
-                <p class="register__info_description">KhamBacSi keeps your information private and secure. We won’t email you, snail-mail you or post to your social media feeds without your permission.</p>
+                <h3 class="register__info_title">{{ 'global.register.right_title' | translate}}</h3>
+                <p class="register__info_description">{{ 'global.register.right_desc' | translate}}</p>
             </div>
         </div>
         

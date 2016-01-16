@@ -1,76 +1,80 @@
 .section {
-	padding: 40px 15px;
-	&__title {
-		text-align: center;
-		font-size: 30px;
-		margin-bottom: 5px;
-	}
-	&__subTitle {
-		text-align: center;
-		color: #989898;
-		font-size: 18px;
-		margin-bottom: 30px;
-	}
+  padding: 40px 15px;
+  &__title {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 5px;
+  }
+  &__subTitle {
+    text-align: center;
+    color: #989898;
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
 }
 
 #main {
-	margin-top: 50px;
-	position: relative;
+  margin-top: 50px;
+  position: relative;
+}
+
+#main > div {
+  min-height: 573px;
 }
 
 h1, h2, h3, h4, h5 {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .grey-bg {
-	background: #f3f3f3;
+  background: #f3f3f3;
 }
 
-.form-search-small {	
-	width: 290px;
-	input {
-		font-size: 12px;
-	}
+.form-search-small {
+  width: 290px;
+  input {
+    font-size: 12px;
+  }
 }
 
 .mb-10 {
-	margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .pt-30 {
-	padding-top: 30px;
+  padding-top: 30px;
 }
 
 .no-padding {
-	padding: 0 !important;
+  padding: 0 !important;
 }
 
 .mapInfo__title {
-	padding-bottom: 10px;
-	font-weight: normal;
+  padding-bottom: 10px;
+  font-weight: normal;
 }
 
 .input-group-text {
-	position: relative;
+  position: relative;
 }
 
 .relative {
-	position: relative;
+  position: relative;
 }
 
 #maps {
-	height: 500px;
-	max-height: 100%;
-	position: fixed !important;
-	top: 110px;
-	right: 0;
-	z-index: 88;
-	padding: 0;
+  height: 500px;
+  max-height: 100%;
+  position: fixed !important;
+  top: 110px;
+  right: 0;
+  z-index: 88;
+  padding: 0;
 }
 
 @media (max-width: 767px) {
-	#main {
-		margin-top: 0;
-	}
+  #main {
+    margin-top: 0;
+  }
 }

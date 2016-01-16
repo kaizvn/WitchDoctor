@@ -3,6 +3,41 @@
     "app": "KhamBacSi",
     "show": false,
     "search": "Search Doctor by Name",
+    "home": {
+      "banner": {
+        "banner": {
+          "title": "Great doctors you wish you knew before, every specialty, all in one place",
+          "medium": "By any means: Doctor Names | Suspected Conditions | Symptoms Encountered"
+          // "medium": "Right treatment starts with meeting the right doctors"
+        },
+        "form": {
+          "input": "Triệu chứng / Bác Sĩ",
+          "location": "Chọn thành phố",
+          "action": "Tìm"
+        }
+      },
+      "body": {
+        "top_quote": "Chất lượng điều trị tốt khởi đầu từ việc gặp đúng bác sĩ giỏi",
+        "sub_quote": "Bằng cách kết hợp công nghệ và giúp bác sĩ tối ưu chất lượng dịch vụ",
+        "thumbnails": {
+          "slot01": {
+            "img_url": "assets/images/info01.jpg",
+            "title": "Đội ngũ bác sĩ",
+            "desc": "Đội ngũ bác sĩ là cốt lõi và mối liên kết chặt chẽ với họ là trọng tâm trong dịch vụ chúng tôi. Kho dữ liệu của khambacsi.com có trên 20.000 bác sĩ, trải rộng trên 3 trung tâm hành chính lớn nhất nước: Tp Hồ Chí Minh, Hà Nội và Đà Nẵng."
+          },
+          "slot02": {
+            "img_url": "assets/images/info02.jpg",
+            "title": "Công nghệ số",
+            "desc": "Dùng sức mạnh lan tỏa của công nghệ thông tin để tối đa hóa khả năng tiếp cận của họ đến bệnh nhân"
+          },
+          "slot03": {
+            "img_url": "assets/images/info03.jpg",
+            "title": "Chất lượng dịch vụ",
+            "desc": "Hỗ trợ đội ngũ bác sĩ trong vấn đề quản lí và điều phối là mũi nhọn trong dịch vụ"
+          }
+        }
+      }
+    },
     "menu": {
       "account": {
         "main": "Account",
@@ -15,39 +50,6 @@
         "news": "Tin tức",
         "is_doctor": "Là bác sĩ?",
         "about_us": "Về chúng tôi"
-      }
-    },
-    "banner": {
-      "banner": {
-        "title": "Great doctors you wish you knew before, every specialty, all in one place",
-        "medium": "By any means: Doctor Names | Suspected Conditions | Symptoms Encountered"
-        // "medium": "Right treatment starts with meeting the right doctors"
-      },
-      "form": {
-        "input": "Triệu chứng / Bác Sĩ",
-        "location": "Chọn thành phố",
-        "action": "Tìm"
-      }
-    },
-    "body": {
-      "top_quote": "Chất lượng điều trị tốt khởi đầu từ việc gặp đúng bác sĩ giỏi",
-      "sub_quote": "Bằng cách kết hợp công nghệ và giúp bác sĩ tối ưu chất lượng dịch vụ",
-      "thumbnails": {
-        "slot01": {
-          "img_url": "assets/images/info01.jpg",
-          "title": "Đội ngũ bác sĩ",
-          "desc": "Đội ngũ bác sĩ là cốt lõi và mối liên kết chặt chẽ với họ là trọng tâm trong dịch vụ chúng tôi. Kho dữ liệu của khambacsi.com có trên 20.000 bác sĩ, trải rộng trên 3 trung tâm hành chính lớn nhất nước: Tp Hồ Chí Minh, Hà Nội và Đà Nẵng."
-        },
-        "slot02": {
-          "img_url": "assets/images/info02.jpg",
-          "title": "Công nghệ số",
-          "desc": "Dùng sức mạnh lan tỏa của công nghệ thông tin để tối đa hóa khả năng tiếp cận của họ đến bệnh nhân"
-        },
-        "slot03": {
-          "img_url": "assets/images/info03.jpg",
-          "title": "Chất lượng dịch vụ",
-          "desc": "Hỗ trợ đội ngũ bác sĩ trong vấn đề quản lí và điều phối là mũi nhọn trong dịch vụ"
-        }
       }
     },
     "footer": {
@@ -111,6 +113,75 @@
         ]
       },
       "copyright": "&copy 2015 khambacsi.com"
+    },
+    "about_us": {
+      "about": {
+        "label": "Giới thiệu",
+        "content": {
+          "title": "Về chúng tôi, đội ngũ phát triển sản phẩm",
+          "content": "<p>Về bản chất, Khambacsi.com là một sản phẩm đa ngành, kết hợp những lĩnh vực truyền thống (y tế, dịch vụ, tư vấn) và công nghệ (truyền thông, mạng xã hội, y tế số eHealth). Do đó, lẽ dĩ nhiên đội ngũ phát triển sản phẩm của chúng tôi phải là một tập thể hữu cơ của nhiều tài năng được đào tạo và trưởng thành từ nhiều lĩnh vực khác nhau, từ y tế, công nghệ tính toán đến kinh doanh, truyền thông số, marketing, pháp lý.</p><p>Chúng tôi tin tưởng một cách tuyệt đối rằng để phát triển tốt sản phẩm và đưa đến tay người sử dụng một cách hoàn hảo, mỗi một thành viên trong đội ngũ cần phải được tạo điều kiện để phát huy tối đa khả năng chuyên môn cũng như được giao trọng trách tương thích với đam mê và khát vọng của họ.</p><p>Chúng tôi tin tưởng một cách tuyệt đối rằng để phát triển tốt sản phẩm và đưa đến tay người sử dụng một cách hoàn hảo, mỗi một thành viên trong đội ngũ cần phải được tạo điều kiện để phát huy tối đa khả năng chuyên môn cũng như được giao trọng trách tương thích với đam mê và khát vọng của họ.</p>"
+        }
+      },
+      "team": {
+        "label": "Đội ngũ khambacsi",
+        "content": {
+          "title": "Giới thiệu những thành viên của Khambacsi",
+          "include": "Bao gồm",
+          "content": [
+            {
+              "name": "Nguyễn Trọng",
+              "title": "TS.",
+              "role": "Sáng lập viên | Giám đốc Sản phẩm"
+            },
+            {
+              "name": "Trần Đạt",
+              "title": "BS.",
+              "role": "Sáng lập viên | Giám đốc Hệ thống y tế"
+            },
+            {
+              "name": "Hồ Chung",
+              "title": "",
+              "role": "Phó giám đốc Pháp lí"
+            },
+            {
+              "name": "Phan Khanh",
+              "title": "",
+              "role": "Phó giám đốc kinh doanh"
+            },
+            {
+              "name": "Nguyên Thảo",
+              "title": "",
+              "role": "Quản lí Nội dung"
+            },
+            {
+              "name": "Trần Quân",
+              "title": "",
+              "role": "Thiết kế đồ họa"
+            },
+            {
+              "name": "Nguyễn Luân",
+              "title": "",
+              "role": "Digital Marketing"
+            }
+          ]
+        }
+      }
+    },
+    "login": {
+      "facebook_btn" : "Đăng nhập bằng tài khoản facebook",
+      "google_btn" : "Đăng nhập bằng tài khoản google",
+      "username": "Địa chỉ email",
+      "password": "Mật khẩu",
+      "submit_btn" : "Đăng nhập"
+    },
+    "register": {
+      "title" : "Tạo tài khoản mới",
+      "facebook_btn" : "Đăng ký bằng tài khoản facebook",
+      "google_btn" : "Đăng ký bằng tài khoản google",
+      "submit_btn" : "Đăng ký",
+      "desc"  : "Đánh dấu những bác sĩ bạn thích và tự động đăng nhập trên tất cả các thiết bị.",
+      "right_title" : "Trust and Privacy is our top priority",
+      "right_desc": "KhamBacSi keeps your information private and secure. We won’t email you, snail-mail you or post to your social media feeds without your permission."
     }
   }
 }

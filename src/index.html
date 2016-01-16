@@ -63,9 +63,12 @@
         </div>
         <div collapse="navCollapsed" class="collapse navbar-collapse" id="iDocNav">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="http://news.khambacsi.com">Tin tức</a></li>
-                <li><a href="#">Ngài là BS?</a></li>
-                <li><a ui-sref="about">Chúng tôi</a></li>
+                <li><a href="http://news.khambacsi.com">{{'global.menu.top_url.news'
+                    | translate}}</a></li>
+                <li><a href="#">{{'global.menu.top_url.is_doctor'
+                    | translate}}</a></li>
+                <li><a ui-sref="about">{{'global.menu.top_url.about_us'
+                    | translate}}</a></li>
                 <li class="nav-border"><a href="javascript:void(0)" ng-click="openLogin()">{{'global.menu.account.login'
                     | translate}}</a></li>
                 <li><a href="javascript:void(0)" ng-click="openRegister()" class="btn btn-primary btn-register">{{'global.menu.account.signup'
