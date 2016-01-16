@@ -76,6 +76,10 @@ function homeController($scope, $state, IdocRestService, $timeout, $http) {
         querySearch.actionGroup = $scope.actionGroup;
         $state.go('result', {query: querySearch});
     };
+
+    $('.dropdown-toggle').click(function() {
+        $(this).parent('.input-group-btn').addClass('open');
+    });
 }
 
 

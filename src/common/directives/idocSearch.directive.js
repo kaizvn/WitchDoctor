@@ -97,6 +97,10 @@ angular.module('iDocApp')
                 $scope.onSelectedCity = function(city) {
                     //Search Here
                 };
+
+                $('.dropdown-toggle').click(function() {
+                    $(this).parent('.input-group-btn').addClass('open');
+                });
             }
         };
     })

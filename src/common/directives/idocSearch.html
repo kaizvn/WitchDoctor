@@ -5,13 +5,13 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="input-group">
-                        <div class="input-group-btn" ng-class="{open: showSearchType}">
+                        <div class="input-group-btn">
                             <button type="button" class="btn btn-select" tabindex="-1">{{selectedType}}</button>
-                            <button type="button" class="btn dropdown-toggle" ng-click="showSearchType = !showSearchType">
+                            <button type="button" class="btn dropdown-toggle">
                                 <span class="caret"></span>
                             </button>
-                            <ul ng-show="showSearchType" class="dropdown-menu">
-                                <li><a href="javascript:void(0)" ng-click="onSelectType('conditions')">Triệu chứng</a></li>
+                            <ul class="dropdown-menu">
+                                <li><a href="javascript:void(0)" ng-click="onSelectType('conditions')">Bệnh</a></li>
                                 <li><a href="javascript:void(0)" ng-click="onSelectType('name')">Bác sĩ</a></li>
                                 <li><a href="javascript:void(0)" ng-click="onSelectType('specialty')">Chuyên Khoa</a></li>
                             </ul>

@@ -88,20 +88,7 @@
                 tmhDynamicLocale.set(data.language.toLowerCase().replace(/_/g, '-'));
             });
 
-
-            $rootScope.$on('$translateLoadingSuccess', function (event) {
-                console.log('party start');
-            });
-
-            $rootScope.$on('$translateLoadingStart', function (event, a) {
-                 console.log('$translateLoadingStart', a);
-            });
-
-            $rootScope.$on('$translateChangeEnd', function (event) {
-                //console.log('$translateChangeEnd');
-            });
             $rootScope.$on('$translateLoadingEnd', function (event) {
-                //console.log('$translateLoadingEnd');
                 setTimeout(function () {
                     $rootScope.isDOMReady = true;
                     $('body').show();
@@ -110,5 +97,4 @@
 
 
         });
-
 })();

@@ -3,7 +3,7 @@
 angular.module('iDocApp')
     .controller('MainCtrl', function ($rootScope, $scope, IdocRestService, $uibModal) {
 
-    	$rootScope.$watch('hideFooter', function(value) {
+	   	$rootScope.$watch('hideFooter', function(value) {
     		$scope.hideFooter = value;
     	});
     	
@@ -30,4 +30,8 @@ angular.module('iDocApp')
 	            
 	        });
 		};
+
+		$(document).mouseup(function(e){
+            $('.input-group-btn').removeClass('open');
+        });
     });
