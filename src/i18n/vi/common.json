@@ -31,17 +31,14 @@
         "sub_quote": "Bằng cách kết hợp công nghệ và giúp bác sĩ tối ưu chất lượng dịch vụ",
         "thumbnails": {
           "slot01": {
-            "img_url": "assets/images/info01.jpg",
             "title": "Đội ngũ bác sĩ",
             "desc": "Đội ngũ bác sĩ là cốt lõi và mối liên kết chặt chẽ với họ là trọng tâm trong dịch vụ chúng tôi. Kho dữ liệu của khambacsi.com có trên 20.000 bác sĩ, trải rộng trên 3 trung tâm hành chính lớn nhất nước: Tp Hồ Chí Minh, Hà Nội và Đà Nẵng."
           },
           "slot02": {
-            "img_url": "assets/images/info02.jpg",
             "title": "Công nghệ số",
             "desc": "Dùng sức mạnh lan tỏa của công nghệ thông tin để tối đa hóa khả năng tiếp cận của họ đến bệnh nhân"
           },
           "slot03": {
-            "img_url": "assets/images/info03.jpg",
             "title": "Chất lượng dịch vụ",
             "desc": "Hỗ trợ đội ngũ bác sĩ trong vấn đề quản lí và điều phối là mũi nhọn trong dịch vụ"
           }
