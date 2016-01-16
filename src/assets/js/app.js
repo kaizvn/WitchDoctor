@@ -89,7 +89,7 @@
             });
 
             $(document).ready(function () {
-                $rootScope.isShowBody = true;
+                $rootScope.isDOMReady = true;
             });
 
         });
