@@ -3,16 +3,16 @@
     <div class="col-md-6 col-sm-8">
         <div class="result__list clearfix">
             <div class="result__bar">
-                <p ng-show="data.total > 0" class="total">Tìm thấy <strong>{{data.total}}</strong> Bác Sĩ:    
-                    <strong ng-show="params.name">&#171;Tên : {{params.name}}&#187;</strong>
-                    <strong ng-show="params.specialty">&#171;Chuyên Khoa : {{params.specialty}}&#187;</strong>
+                <p ng-show="data.total > 0" class="total">{{'global.result.found' | translate}} <strong>{{data.total}}</strong> {{'global.result.doctor' | translate}}
+                    <strong ng-show="params.name">&#171;{{'global.result.name' | translate}} : {{params.name}}&#187;</strong>
+                    <strong ng-show="params.specialty">&#171;{{'global.result.primary' | translate}} : {{params.specialty}}&#187;</strong>
                 </p>
-                <p ng-show="data.total == 0" class="pull-left">Không tìm thấy Bác Sĩ phù hợp
-                    <strong ng-show="params.name">&#171;Tên : {{params.name}}&#187;</strong>
-                    <strong ng-show="params.specialty">&#171;Chuyên Khoa : {{params.specialty}}&#187;</strong>
+                <p ng-show="data.total == 0" class="pull-left">{{'global.result.not_found' | translate}}
+                    <strong ng-show="params.name">&#171;{{'global.result.name' | translate}} : {{params.name}}&#187;</strong>
+                    <strong ng-show="params.specialty">&#171;{{'global.result.primary' | translate}} : {{params.specialty}}&#187;</strong>
                 </p>
                 <div class="sortWrapper pull-right">
-                    <span>Sắp xếp theo:</span>
+                    <span>{{'global.result.order' | translate}}:</span>
                     <div class="sort">
                         <select class="chosen-noIcon"
                             skin-select ng-model="sort"

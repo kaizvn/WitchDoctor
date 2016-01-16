@@ -105,7 +105,7 @@
           }
         ]
       },
-      "copyright": "&copy 2015 khambacsi.com"
+      "copyright": "&copy; 2015 khambacsi.com"
     },
     "about_us": {
       "about": {
@@ -190,20 +190,28 @@
       }
     },
     "login": {
-      "facebook_btn" : "Đăng nhập bằng tài khoản facebook",
-      "google_btn" : "Đăng nhập bằng tài khoản google",
+      "facebook_btn": "Đăng nhập bằng tài khoản facebook",
+      "google_btn": "Đăng nhập bằng tài khoản google",
       "username": "Địa chỉ email",
       "password": "Mật khẩu",
-      "submit_btn" : "Đăng nhập"
+      "submit_btn": "Đăng nhập"
     },
     "register": {
-      "title" : "Tạo tài khoản mới",
-      "facebook_btn" : "Đăng ký bằng tài khoản facebook",
-      "google_btn" : "Đăng ký bằng tài khoản google",
-      "submit_btn" : "Đăng ký",
-      "desc"  : "Đánh dấu những bác sĩ bạn thích và tự động đăng nhập trên tất cả các thiết bị.",
-      "right_title" : "Trust and Privacy is our top priority",
+      "title": "Tạo tài khoản mới",
+      "facebook_btn": "Đăng ký bằng tài khoản facebook",
+      "google_btn": "Đăng ký bằng tài khoản google",
+      "submit_btn": "Đăng ký",
+      "desc": "Đánh dấu những bác sĩ bạn thích và tự động đăng nhập trên tất cả các thiết bị.",
+      "right_title": "Trust and Privacy is our top priority",
       "right_desc": "KhamBacSi keeps your information private and secure. We won’t email you, snail-mail you or post to your social media feeds without your permission."
+    },
+    "result": {
+      "order": "Sắp xếp theo",
+      "found": "Tìm thấy",
+      "doctor": "bác sĩ",
+      "name": "Tên",
+      "primary": "Chuyên khoa",
+      "not_found": "Không tìm thấy Bác Sĩ phù hợp"
     }
   }
 }
