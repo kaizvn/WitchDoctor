@@ -28,11 +28,11 @@
                           $translateProvider, $provide, tmhDynamicLocaleProvider, httpRequestInterceptorCacheBusterProvider, $localStorageProvider) {
             //enable htmlmode - remove #! on url
             //$locationProvider.html5Mode(true);
-            
+
             /* $locationProvider.html5Mode({
-                enabled: true,
-                requireBase: false
-            });*/
+             enabled: true,
+             requireBase: false
+             });*/
 
             //$localStorageProvider.setKeyPrefix('iDoc_');
 
@@ -88,6 +88,9 @@
                 tmhDynamicLocale.set(data.language.toLowerCase().replace(/_/g, '-'));
             });
 
+            $(document).ready(function () {
+                $rootScope.isShowBody = true;
+            });
 
         });
 
