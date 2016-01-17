@@ -7,7 +7,7 @@ function iDocApiPath($http) {
 
     /* Base Url API */
     this.getBaseUrl = function () {
-        return 'http://api.khambacsi.com'
+        return 'http://api.khambacsi.com:56765';
         // return 'http://127.0.0.1:8000'
     };
 
