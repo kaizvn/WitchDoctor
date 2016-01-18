@@ -43,6 +43,20 @@ function iDocApiPath($http) {
     this.getNameDoctors = function (value) {
         return this.getBaseUrl() + '/search/doctors?limit=10&query='+value;
     };
+
+
+    /* Auth */
+    this.register = function () {
+        return this.getBaseUrl() + '/auth/register/';
+    };
+
+    this.login = function () {
+        return this.getBaseUrl() + '/auth/token/';
+    };
+
+    this.logout = function () {
+        return this.getBaseUrl() + '/auth/revoke-token/';
+    };
 }
 
 iDocApiPath.$inject = ['$http'];

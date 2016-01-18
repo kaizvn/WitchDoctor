@@ -93,6 +93,27 @@ function iDocRestService($http, iDocApiPath, $q) {
         return $http.get(iDocApiPath.getNameDoctors(value));
     };
 
+    /* Auth */
+    api.register = function (data) {
+        return $http.post(iDocApiPath.register(), data, {
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            }
+        });
+    };
+
+    api.login = function (data) {
+        return $http.post(iDocApiPath.login(), data, {
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            }
+        });
+    };
+
+    api.logout = function () {
+        return $http.get(iDocApiPath.logout());
+    };
+
     return api;
 
 }

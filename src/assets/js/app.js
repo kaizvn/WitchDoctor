@@ -60,6 +60,26 @@
             $locationProvider.hashPrefix('!');
 
         })
+        .factory('authInterceptor', function ($rootScope, $q, $location, localStorageService) {
+            return {
+                request: function (config) {
+                    if(getHostName(config.url) === $location.host()) {
+                        config.headers = config.headers || {};
+                        var token = localStorageService.get('token');
+                        if (token && token.token && token.token.expires && token.token.expires > new Date().getTime()) {
+                            config.headers['x-auth-token'] = token.token.token;
+                        }
+                    }
+                    return config;
+                },
+                responseError: function(response) {
+                    if (response.status === 401) {
+                        $rootScope.$broadcast('unauthorized');
+                    }
+                    return $q.reject(response);
+                }
+            };
+        })
         .run(function ($rootScope, $location, $http, $translate, ENV, VERSION, tmhDynamicLocale, $window) {
             $rootScope.ENV = ENV;
             $rootScope.VERSION = VERSION;

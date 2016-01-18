@@ -21,10 +21,10 @@
                     <span>Or</span>
                 </div>
 
-                <form name="login">
-                    <input type="email" class="form-control input-email" placeholder="{{ 'global.login.username' | translate}}">
-                    <input type="password" class="form-control" placeholder="{{ 'global.login.password' | translate}}">
-                    <button type="button" class="btn btn-primary btn-block btn-login">
+                <form name="registerForm">
+                    <input type="email" class="form-control input-email" ng-model="user.email" placeholder="{{ 'global.login.username' | translate}}">
+                    <input type="password" class="form-control" ng-model="user.password" placeholder="{{ 'global.login.password' | translate}}">
+                    <button type="button" ng-click="register(user)" class="btn btn-primary btn-block btn-login">
                         <span>{{ 'global.register.submit_btn' | translate}}</span>
                     </button>
                 </form>
