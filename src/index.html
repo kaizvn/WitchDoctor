@@ -13,6 +13,7 @@
     <title>khambacsi.com</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="apple-touch-icon" href="/favicon-iphone.png" />
     <!-- build:css assets/styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="../bower_components/Bootflat/css/bootstrap.min.css" />
@@ -67,8 +68,6 @@
                     | translate}}</a></li>
                 <li><a href="#">{{'global.menu.top_url.is_doctor'
                     | translate}}</a></li>
-                <li><a ui-sref="about">{{'global.menu.top_url.about_us'
-                    | translate}}</a></li>
                 <li class="nav-border"><a href="javascript:void(0)" ng-click="openLogin()">{{'global.menu.account.login'
                     | translate}}</a></li>
                 <li><a href="javascript:void(0)" ng-click="openRegister()" class="btn btn-primary btn-register">{{'global.menu.account.signup'
@@ -100,6 +99,8 @@
             </dl>
             <dl class="footer-nav">
                 <dt class="nav-title">{{'global.footer.doctors.label' | translate}}</dt>
+
+                <dd class="nav-item"><a ui-sref="about">{{'global.menu.top_url.about_us' | translate}}</a></dd>
                 <dd class="nav-item"><a href="#">{{'global.footer.doctors.items.0.label' | translate}}</a></dd>
                 <dd class="nav-item"><a href="#">{{'global.footer.doctors.items.1.label' | translate}}</a></dd>
                 <dd class="nav-item"><a href="#">{{'global.footer.doctors.items.2.label' | translate}}</a></dd>

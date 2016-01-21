@@ -4,9 +4,22 @@ function DoctorsService() {
 
     var service = {
         results: null,
+        selectedDoctor: null,
 
         getDoctors: function () {
             return this.results;
+        },
+
+        getSelectedDoctor: function () {
+            return this.selectedDoctor;
+        },
+
+        setSelectedDoctor: function (doctor) {
+            this.selectedDoctor = doctor;
+        },
+
+        hasSelectedDoctor: function () {
+            return this.getSelectedDoctor() !== null;
         },
 
         setDoctors: function (results) {

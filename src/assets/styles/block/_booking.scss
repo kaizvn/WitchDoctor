@@ -13,7 +13,7 @@
 		color: #000;
 		text-transform: uppercase;
 		display: block;
-		padding: 7px 0 8px;
+		padding: 7px 0 8px 10px;
 	}
 }
 
@@ -122,8 +122,18 @@
 	cursor: pointer;
 	li {
 		float: left;
-		width: 100px;
+		width: 60px;
 		margin-bottom: 5px;
+		span {
+			display: inline-block;
+			padding: 5px 10px;
+		}
+		&.active, &:hover {
+			span {
+				color: #fff;
+				background: #3bafda;
+			}
+		}
 	}
 }
 

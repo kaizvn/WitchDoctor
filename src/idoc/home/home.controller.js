@@ -74,7 +74,14 @@ function homeController($scope, $state, IdocRestService, $timeout, $http) {
 
     $scope.doSearch = function () {
         querySearch.actionGroup = $scope.actionGroup;
-        $state.go('result', {query: querySearch});
+        if($scope.actionGroup.conditions.value) {
+            $scope.condition = querySearch.specialty;
+            $timeout(function () {
+                $state.go('result', {query: querySearch});
+            }, 500);
+        } else {
+            $state.go('result', {query: querySearch});
+        }        
     };
 
     $('.dropdown-toggle').click(function() {

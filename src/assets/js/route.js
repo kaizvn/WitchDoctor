@@ -72,6 +72,9 @@ angular.module('iDocApp')
             }).state({
                 name: 'booking',
                 url: "/booking",
+                params: {
+                    bookingDate: null
+                },
                 views: {
                     "content-view": {
                         "controller": "BookingCtrl",

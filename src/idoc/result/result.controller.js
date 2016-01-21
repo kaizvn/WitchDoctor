@@ -45,6 +45,11 @@ function ResultCtrl($scope, $state, $stateParams, DoctorsService, IdocRestServic
         $scope.params.skip = (pageNumber - 1) * 5;
         _this.getDoctors($scope.params);
     };
+
+    $scope.booking = function (doctor, bookingDate) {
+        DoctorsService.setSelectedDoctor(doctor);
+        $state.go('booking', {bookingDate: bookingDate});
+    }
 }
 
 
