@@ -4,10 +4,11 @@
 function ResultCtrl($scope, $state, $stateParams, DoctorsService, IdocRestService, $localStorage, $anchorScroll) {
 
     var _this = this;
-    $scope.isShowResult = false;
     $scope.params = $stateParams.query || {};
 
     this.getDoctors = function (params) {
+        $scope.loader.active = true;        
+        $scope.isShowResult = false;
         IdocRestService.getDoctors(params).then(function (response) {
             $scope.data = DoctorsService.formatDoctorsData(response.data);
 
@@ -22,11 +23,12 @@ function ResultCtrl($scope, $state, $stateParams, DoctorsService, IdocRestServic
             });
 
             $scope.isShowResult = true;
-
+            $scope.loader.active = false;            
             $anchorScroll('#result');
 
         }, function (error) {
             console.trace(error);
+            $scope.loader.active = false;
         });
     };
 
@@ -41,7 +43,6 @@ function ResultCtrl($scope, $state, $stateParams, DoctorsService, IdocRestServic
     }];
 
     $scope.pageChanged = function (pageNumber) {
-        $scope.isShowResult = false;
         $scope.params.skip = (pageNumber - 1) * 5;
         _this.getDoctors($scope.params);
     };

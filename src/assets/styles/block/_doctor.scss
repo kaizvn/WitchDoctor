@@ -13,9 +13,11 @@
 		float: left;
 		width: 107px;
 		height: 126px;
+		overflow: hidden;
+		text-align: center;
+		background: #ddd;
 		img {
 			width: 107px;
-			height: 126px;
 		}
 	}
 	&__details {

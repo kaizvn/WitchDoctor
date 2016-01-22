@@ -80,13 +80,15 @@
                 }
             };
         })
-        .run(function ($rootScope, $location, $http, $translate, ENV, VERSION, tmhDynamicLocale, $window) {
+        .run(function ($rootScope, $location, $http, $translate, ENV, VERSION, tmhDynamicLocale, $window, $timeout) {
             $rootScope.ENV = ENV;
             $rootScope.VERSION = VERSION;
+            $rootScope.loader = { active : true };
 
             $rootScope.$on('$stateChangeStart', function (event, toState, toStateParams) {
                 $rootScope.toState = toState;
                 $rootScope.toStateParams = toStateParams;
+                $rootScope.loader.active = true;
             });
 
             $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
@@ -99,10 +101,19 @@
 
                 $rootScope.previousStateName = fromState.name;
                 $rootScope.previousStateParams = fromParams;
+
+                var unbindLoader = $rootScope.$watch(function () {
+                    return $http.pendingRequests.length < 1;
+                }, function(arePendingRequests) {
+                    if(arePendingRequests === true) {
+                        $rootScope.loader.active = false;
+                        unbindLoader();
+                    }
+                });
             });
 
             $rootScope.$on('$translateChangeSuccess', function (event, data) {
-                document.documentElement.setAttribute('lang', data.language);// sets "lang" attribute to html
+                document.documentElement.setAttribute('lang', data.language); // sets "lang" attribute to html
 
                 // asking angular-dynamic-locale to load and apply proper AngularJS $locale setting
                 tmhDynamicLocale.set(data.language.toLowerCase().replace(/_/g, '-'));
@@ -115,6 +126,33 @@
                 }, 0);
             });
 
+            /*$window.fbAsyncInit = function() {
+                FB.init({ 
+                    appId: '***************',
+                    channelUrl: 'app/channel.html', 
+                    status: true,
+                    cookie: true, 
+                    xfbml: true 
+                });
+                sAuth.watchAuthenticationStatusChange();
+            };
 
+            (function(d){
+                var js, 
+                id = 'facebook-jssdk', 
+                ref = d.getElementsByTagName('script')[0];
+
+                if (d.getElementById(id)) {
+                  return;
+                }
+
+                js = d.createElement('script'); 
+                js.id = id; 
+                js.async = true;
+                js.src = "//connect.facebook.net/en_US/all.js";
+
+                ref.parentNode.insertBefore(js, ref);
+
+            } (document));*/
         });
 })();

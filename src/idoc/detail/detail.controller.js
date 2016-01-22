@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module('iDocApp')
-    .controller('DetailCtrl', function ($scope, IdocRestService, DoctorsService, $stateParams) {
+    .controller('DetailCtrl', function ($scope, IdocRestService, DoctorsService, $stateParams, $anchorScroll) {
         var isRelated;
         IdocRestService.getDoctorDetail($stateParams.id).then(function (response) {
             isRelated = false;
@@ -42,6 +42,8 @@ angular.module('iDocApp')
             }, function (error) {
                 console.trace(error);
             });
+
+            $anchorScroll('#result');
         }, function (error) {
 
         });

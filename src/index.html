@@ -49,6 +49,17 @@
     </script>
 </head>
 <body ng-controller="MainCtrl" style="display:none;" ng-show="isDOMReady">
+
+<div class="loader" ng-show="$root.loader.active">
+    <div class="center-item">
+        <div class="center-item__inner">
+            <div>
+                <img src="assets/images/loading.gif" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Start Nav -->
 <nav class="navbar navbar-fixed-top ng-cloak" role="navigation">
     <div class="container-fluid">
