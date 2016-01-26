@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "body-parser": "^1.14.2",
+    "express-http-proxy": "^0.6.0",
     "method-override": "^2.3.5"
   },
   "devDependencies": {

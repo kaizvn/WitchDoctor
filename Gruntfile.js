@@ -454,8 +454,7 @@ module.exports = function (grunt) {
         'ngconstant:dev',
         'concurrent:sass',
         'connect:test',
-        'apimocker',
-        'karma'
+        'apimocker'
     ]);
 
     grunt.registerTask('build', [
