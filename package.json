@@ -57,7 +57,6 @@
     "path": "^0.11.14",
     "fs-extra": "^0.16.4",
     "grunt-shell": "^1.1.2",
-    "express-http-proxy": "~0.6.0",
     "grunt-apimocker": "^0.0.1"
   },
   "scripts": {
