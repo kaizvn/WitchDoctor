@@ -7,7 +7,8 @@ function iDocApiPath($http) {
 
     /* Base Url API */
     this.getBaseUrl = function () {
-        return 'http://api.khambacsi.com:56765';
+        return '/api';
+        //return 'http://api.khambacsi.com:56765';
         // return 'http://127.0.0.1:8000'
     };
 
@@ -16,6 +17,7 @@ function iDocApiPath($http) {
     };
 
     this.getDoctorsDetail = function (id) {
+        console.log(this.getBaseUrl());
         return this.getBaseUrl() + '/doctors/' + id;
     };
 
@@ -25,23 +27,23 @@ function iDocApiPath($http) {
     };
 
     this.getSpecialties = function (value) {
-        return this.getBaseUrl() + '/search/specialties?limit=10&query='+value;
+        return this.getBaseUrl() + '/search/specialties?limit=10&query=' + value;
     };
 
     this.getSpecialtiesByCondition = function (value) {
-        return this.getBaseUrl() + '/conditions?limit=5&name='+value;
+        return this.getBaseUrl() + '/conditions?limit=5&name=' + value;
     };
 
     this.getConditions = function (value) {
-        return this.getBaseUrl() + '/search/conditions?limit=10&query='+value;
+        return this.getBaseUrl() + '/search/conditions?limit=10&query=' + value;
     };
 
     this.getHospitals = function (value) {
-        return this.getBaseUrl() + '/search/hospitals?limit=10&query='+value;
+        return this.getBaseUrl() + '/search/hospitals?limit=10&query=' + value;
     };
 
     this.getNameDoctors = function (value) {
-        return this.getBaseUrl() + '/search/doctors?limit=10&query='+value;
+        return this.getBaseUrl() + '/search/doctors?limit=10&query=' + value;
     };
 
 

@@ -91,7 +91,7 @@ module.exports = function (grunt) {
                     style: 'expanded'
                 },
                 files: {
-                    '.tmp/assets/styles/main.css': 'src/assets/styles/main.scss',
+                    '.tmp/assets/styles/main.css': 'src/assets/styles/main.scss'
                 }
             },
             debug: {
@@ -99,7 +99,7 @@ module.exports = function (grunt) {
                     style: 'expanded'
                 },
                 files: {
-                    'src/assets/styles/main.css': 'src/assets/styles/main.scss',
+                    'src/assets/styles/main.css': 'src/assets/styles/main.scss'
                 }
             }
 
@@ -122,7 +122,7 @@ module.exports = function (grunt) {
         express: {
             build: {
                 options: {
-                    open: true,
+                    open: false,
                     port: 9000,
                     hostname: '*',
                     server: path.resolve('./express.config.js'),
@@ -366,6 +366,9 @@ module.exports = function (grunt) {
         concurrent: {
             sass: [
                 'sass:dist'
+            ],
+            sassDev: [
+                'sass:debug'
             ],
             dist: [
                 'sass:dist',

@@ -14,14 +14,14 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="apple-touch-icon" href="/favicon-iphone.png" />
-    <!-- build:css assets/styles/vendor.css -->
+    <!-- build:css /assets/styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="../bower_components/Bootflat/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../bower_components/Bootflat/bootflat/css/bootflat.css" />
     <link rel="stylesheet" href="../bower_components/textAngular/dist/textAngular.css" />
     <!-- endbower -->
     <!-- endbuild -->
-    <!-- build:css(.tmp) assets/styles/main.css -->
+    <!-- build:css(.tmp) /assets/styles/main.css -->
     <link rel="stylesheet" href="/assets/styles/main.css">
     <!-- endbuild -->
 
@@ -54,7 +54,7 @@
     <div class="center-item">
         <div class="center-item__inner">
             <div>
-                <img src="assets/images/loading.gif" alt="">
+                <img src="/assets/images/loading.gif" alt="">
             </div>
         </div>
     </div>
@@ -71,7 +71,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" ui-sref="home"><img src="assets/images/logo.png" alt="{{'global.app' | translate}}"></a>
+            <a class="navbar-brand" ui-sref="home"><img src="/assets/images/logo.png" alt="{{'global.app' | translate}}"></a>
         </div>
         <div collapse="navCollapsed" class="collapse navbar-collapse" id="iDocNav">
             <ul class="nav navbar-nav navbar-right">
@@ -99,7 +99,7 @@
 <footer class="footer" ng-hide="hideFooter">
     <div class="container">
         <div class="clearfix">
-            <div class="footer-logo"><a href="#"><img src="assets/images/logo_footer.png" alt="Khám Bác Sĩ"></a></div>
+            <div class="footer-logo"><a href="#"><img src="/assets/images/logo_footer.png" alt="Khám Bác Sĩ"></a></div>
             <dl class="footer-nav">
                 <dt class="nav-title">{{'global.footer.primary_care.label' | translate}}</dt>
                 <dd class="nav-item"><a href="#">{{'global.footer.primary_care.items.0.label' | translate}}</a></dd>
@@ -129,13 +129,12 @@
 <!-- End Footer -->
 
 <!--[if lt IE 9]>
-<script src="bower_components/html5shiv/dist/html5shiv.js"></script>
-<script src="bower_components/es5-shim/es5-shim.js"></script>
+<script src="../bower_components/html5shiv/dist/html5shiv.js"></script>
+<script src="../bower_components/es5-shim/es5-shim.js"></script>
 <![endif]-->
 
 <!-- build:js /assets/js/vendor.js -->
 <!-- bower:js -->
-<script src="../bower_components/es5-shim/es5-shim.js"></script>
 <script src="../bower_components/jquery/dist/jquery.js"></script>
 <script src="../bower_components/modernizr/modernizr.js"></script>
 <script src="../bower_components/jquery-ui/ui/jquery-ui.js"></script>
@@ -180,34 +179,33 @@
 <script src='http://maps.google.com/maps/api/js?v=3.20&amp;libraries=places&amp;region=uk&amp;language=en&amp;sensor=false'></script>
 
 <!-- build:js({.tmp,src}) /assets/js/app.js -->
-<script src="assets/js/app.js"></script>
-<script src="assets/js/route.js"></script>
-<script src="assets/js/app.constants.js"></script>
+<script src="/assets/js/app.js"></script>
+<script src="/assets/js/route.js"></script>
+<script src="/assets/js/app.constants.js"></script>
 
-<script src="common/services/iDocApiPath.service.js"></script>
-<script src="common/services/iDocRest.service.js"></script>
-<script src="common/services/doctors.service.js"></script>
-<script src="common/services/auth.service.js"></script>
-<script src="common/services/util.service.js"></script>
+<script src="/common/services/iDocApiPath.service.js"></script>
+<script src="/common/services/iDocRest.service.js"></script>
+<script src="/common/services/doctors.service.js"></script>
+<script src="/common/services/auth.service.js"></script>
+<script src="/common/services/util.service.js"></script>
 
-<script src="common/directives/maps.directive.js"></script>
-<script src="common/directives/starRaiting.directive.js"></script>
-<script src="common/directives/skinSelect.directive.js"></script>
-<script src="common/directives/idocSearch.directive.js"></script>
-<script src="common/directives/hasRole.directive.js"></script>
+<script src="/common/directives/maps.directive.js"></script>
+<script src="/common/directives/starRaiting.directive.js"></script>
+<script src="/common/directives/skinSelect.directive.js"></script>
+<script src="/common/directives/idocSearch.directive.js"></script>
+<script src="/common/directives/hasRole.directive.js"></script>
 
-<script src="common/filters/imageDefault.filter.js"></script>
+<script src="/common/filters/imageDefault.filter.js"></script>
 
-<script src="common/controllers/main.controller.js"></script>
-<script src="common/controllers/login.controller.js"></script>
-<script src="common/controllers/register.controller.js"></script>
+<script src="/common/controllers/main.controller.js"></script>
+<script src="/common/controllers/login.controller.js"></script>
+<script src="/common/controllers/register.controller.js"></script>
 
-
-<script src="idoc/home/home.controller.js"></script>
-<script src="idoc/result/result.controller.js"></script>
-<script src="idoc/detail/detail.controller.js"></script>
-<script src="idoc/about/about.controller.js"></script>
-<script src="idoc/booking/booking.controller.js"></script>
+<script src="/idoc/home/home.controller.js"></script>
+<script src="/idoc/result/result.controller.js"></script>
+<script src="/idoc/detail/detail.controller.js"></script>
+<script src="/idoc/about/about.controller.js"></script>
+<script src="/idoc/booking/booking.controller.js"></script>
 <!-- endbuild -->
 
 </body>

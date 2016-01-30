@@ -29,10 +29,10 @@
             //enable htmlmode - remove #! on url
             //$locationProvider.html5Mode(true);
 
-            /* $locationProvider.html5Mode({
-             enabled: true,
-             requireBase: false
-             });*/
+            $locationProvider.html5Mode({
+                enabled: true,
+                requireBase: false
+            });
 
             //$localStorageProvider.setKeyPrefix('iDoc_');
 
@@ -45,7 +45,7 @@
 
             // Initialize angular-translate
             $translateProvider.useLoader('$translatePartialLoader', {
-                urlTemplate: 'i18n/{lang}/{part}.json'
+                urlTemplate: '/i18n/{lang}/{part}.json'
             });
 
             $translateProvider.preferredLanguage('vi');
@@ -63,7 +63,7 @@
         .factory('authInterceptor', function ($rootScope, $q, $location, localStorageService) {
             return {
                 request: function (config) {
-                    if(getHostName(config.url) === $location.host()) {
+                    if (getHostName(config.url) === $location.host()) {
                         config.headers = config.headers || {};
                         var token = localStorageService.get('token');
                         if (token && token.token && token.token.expires && token.token.expires > new Date().getTime()) {
@@ -72,7 +72,7 @@
                     }
                     return config;
                 },
-                responseError: function(response) {
+                responseError: function (response) {
                     if (response.status === 401) {
                         $rootScope.$broadcast('unauthorized');
                     }
@@ -83,7 +83,7 @@
         .run(function ($rootScope, $location, $http, $translate, ENV, VERSION, tmhDynamicLocale, $window, $timeout) {
             $rootScope.ENV = ENV;
             $rootScope.VERSION = VERSION;
-            $rootScope.loader = { active : true };
+            $rootScope.loader = {active: true};
 
             $rootScope.$on('$stateChangeStart', function (event, toState, toStateParams) {
                 $rootScope.toState = toState;
@@ -104,8 +104,8 @@
 
                 var unbindLoader = $rootScope.$watch(function () {
                     return $http.pendingRequests.length < 1;
-                }, function(arePendingRequests) {
-                    if(arePendingRequests === true) {
+                }, function (arePendingRequests) {
+                    if (arePendingRequests === true) {
                         $rootScope.loader.active = false;
                         unbindLoader();
                     }
@@ -127,32 +127,32 @@
             });
 
             /*$window.fbAsyncInit = function() {
-                FB.init({ 
-                    appId: '***************',
-                    channelUrl: 'app/channel.html', 
-                    status: true,
-                    cookie: true, 
-                    xfbml: true 
-                });
-                sAuth.watchAuthenticationStatusChange();
-            };
+             FB.init({
+             appId: '***************',
+             channelUrl: 'app/channel.html',
+             status: true,
+             cookie: true,
+             xfbml: true
+             });
+             sAuth.watchAuthenticationStatusChange();
+             };
 
-            (function(d){
-                var js, 
-                id = 'facebook-jssdk', 
-                ref = d.getElementsByTagName('script')[0];
+             (function(d){
+             var js,
+             id = 'facebook-jssdk',
+             ref = d.getElementsByTagName('script')[0];
 
-                if (d.getElementById(id)) {
-                  return;
-                }
+             if (d.getElementById(id)) {
+             return;
+             }
 
-                js = d.createElement('script'); 
-                js.id = id; 
-                js.async = true;
-                js.src = "//connect.facebook.net/en_US/all.js";
+             js = d.createElement('script');
+             js.id = id;
+             js.async = true;
+             js.src = "//connect.facebook.net/en_US/all.js";
 
-                ref.parentNode.insertBefore(js, ref);
+             ref.parentNode.insertBefore(js, ref);
 
-            } (document));*/
+             } (document));*/
         });
 })();

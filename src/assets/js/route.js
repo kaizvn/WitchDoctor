@@ -10,7 +10,7 @@ angular.module('iDocApp')
                 views: {
                     "content-view": {
                         "controller": "HomeCtrl",
-                        "templateUrl": "idoc/home/home.html"
+                        "templateUrl": "/idoc/home/home.html"
                     }
                 },
                 resolve: {
@@ -30,7 +30,7 @@ angular.module('iDocApp')
                 views: {
                     "content-view": {
                         "controller": "ResultCtrl",
-                        "templateUrl": "idoc/result/result.html"
+                        "templateUrl": "/idoc/result/result.html"
                     }
                 },
                 resolve: {
@@ -45,7 +45,7 @@ angular.module('iDocApp')
                 views: {
                     "content-view": {
                         "controller": "DetailCtrl",
-                        "templateUrl": "idoc/detail/detail.html"
+                        "templateUrl": "/idoc/detail/detail.html"
                     }
                 },
                 resolve: {
@@ -60,7 +60,7 @@ angular.module('iDocApp')
                 views: {
                     "content-view": {
                         "controller": "AboutCtrl",
-                        "templateUrl": "idoc/about/about.html"
+                        "templateUrl": "/idoc/about/about.html"
                     }
                 },
                 resolve: {
@@ -78,7 +78,7 @@ angular.module('iDocApp')
                 views: {
                     "content-view": {
                         "controller": "BookingCtrl",
-                        "templateUrl": "idoc/booking/booking.html"
+                        "templateUrl": "/idoc/booking/booking.html"
                     }
                 },
                 resolve: {
@@ -93,7 +93,7 @@ angular.module('iDocApp')
                 url: '/user',
                 views: {
                     'content-view': {
-                        'templateUrl': 'idoc/user/user.html'
+                        'templateUrl': '/idoc/user/user.html'
                     }
                 },
                 resolve: {
@@ -106,7 +106,7 @@ angular.module('iDocApp')
                 url: '/updateInformation',
                 views: {
                     'user-view': {
-                        'templateUrl': 'idoc/user/doctorInformation.html'
+                        'templateUrl': '/idoc/user/doctorInformation.html'
                     }
                 },
                 resolve: {
@@ -119,7 +119,7 @@ angular.module('iDocApp')
                 url: '/changePassword',
                 views: {
                     'user-view': {
-                        'templateUrl': 'idoc/user/changePassword.html'
+                        'templateUrl': '/idoc/user/changePassword.html'
                     }
                 },
                 resolve: {
