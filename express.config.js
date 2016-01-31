@@ -8,8 +8,8 @@ var proxy = require('express-http-proxy');
 var proxyConfig = require('./proxy.config.js');
 var busboy = require('connect-busboy');
 var fs = require('fs-extra');
-// configuration =================
 
+// configuration =================
 var API_SERVER = 'api.khambacsi.com:56765';
 
 /*app.use(bodyParser.urlencoded({'extended': 'true'}));            // parse application/x-www-form-urlencoded
@@ -18,18 +18,19 @@ var API_SERVER = 'api.khambacsi.com:56765';
  app.use(methodOverride());
  */
 
+app.use(bodyParser.urlencoded({'extended': 'true'}));
+app.use(methodOverride());
 app.use(busboy());
-//app.use(express.static(path.join(__dirname, '.tmp')));
+
+
 app.use(express.static(path.join(__dirname, 'src/')));
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
 
 
 app.use('/api', proxy(API_SERVER, proxyConfig.defaultProxyConfig));
-
 app.get('*', function (req, res) {
     res.sendFile('index.html', {root: path.join(__dirname, 'src')});
 });
-
 
 module.exports = app;
 
