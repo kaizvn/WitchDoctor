@@ -13,7 +13,7 @@ function iDocApiPath($http) {
     };
 
     this.getDoctors = function () {
-        return this.getBaseUrl() + '/doctors/';
+        return this.getBaseUrl() + '/doctors';
     };
 
     this.getDoctorsDetail = function (id) {
