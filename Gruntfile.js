@@ -14,6 +14,12 @@ module.exports = function (grunt) {
     require('time-grunt')(grunt);
 
     grunt.initConfig({
+        env: {
+            dev: {
+                NODE_ENV: 'development',
+                PORT: 9000
+            }
+        },
         yeoman: {
             // configurable paths
             app: require('./bower.json').appPath || 'app',
@@ -125,7 +131,7 @@ module.exports = function (grunt) {
                     open: false,
                     port: 9000,
                     hostname: '*',
-                    server: path.resolve('./express.config.js'),
+                    server: path.resolve('./express.js'),
                     bases: ['src', 'src/idoc', 'src/i18n'],
                     livereload: !grunt.option('livereload')
                 }
@@ -168,7 +174,7 @@ module.exports = function (grunt) {
                     src: [
                         '<%= yeoman.dist %>/assets/js/**/*.js',
                         '<%= yeoman.dist %>/assets/styles/**/*.css'
-                       // '<%= yeoman.dist %>/assets/images/**/*.{png,jpg,jpeg,gif,webp,svg}'
+                        // '<%= yeoman.dist %>/assets/images/**/*.{png,jpg,jpeg,gif,webp,svg}'
                     ]
                 }
             }
@@ -440,6 +446,7 @@ module.exports = function (grunt) {
         }
 
         grunt.task.run([
+            'env:dev',
             'clean:server',
             'wiredep',
             'ngconstant:dev',
