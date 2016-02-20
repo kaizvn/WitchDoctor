@@ -16,8 +16,7 @@ module.exports = function (grunt) {
     grunt.initConfig({
         env: {
             dev: {
-                NODE_ENV: 'development',
-                PORT: 9000
+                NODE_ENV: 'dev'
             }
         },
         yeoman: {

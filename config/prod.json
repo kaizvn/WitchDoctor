@@ -1,0 +1,14 @@
+{
+  "port": "8080",
+  "static_path": "/src/dist",
+  "api_path": "/api",
+  "api_server": "api.khambacsi.com:56765",
+  "proxy_config": "ProdProxyConfig",
+  "authentication": {
+    "facebook": {
+      "clientID": 154366684653118,
+      "clientSecret": "d0fee9ba6a86c6043bf7faeb92dda805",
+      "callbackURL": "http://localhost:8080/"
+    }
+  }
+}
