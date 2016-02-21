@@ -7,15 +7,16 @@ var PATTERN = new RegExp('(^[^?]+[^/?])([^/]*)$');
 module.exports = {
     defaultProxyConfig: {
         forwardPath: function (req) {
-            return urlParser.parse(req.url).path;
-            /*var trailing = req.url.match(PATTERN);
+            //return urlParser.parse(req.url).path;
+
+            var trailing = req.url.match(PATTERN);
             var path = req.url;
 
             if (trailing)
                 path = trailing[1] + '/' + trailing[2];
 
             console.log(path);
-            return urlParser.parse(path).path;*/
+            return urlParser.parse(path).path;
         },
         decorateRequest: function (req) {
             console.log('params', req.params);
@@ -24,14 +25,15 @@ module.exports = {
     },
     ProdProxyConfig: {
         forwardPath: function (req, res) {
-            return urlParser.parse(req.url).path;
-            /*var trailing = req.url.match(PATTERN);
-             var path = req.url;
+            //return urlParser.parse(req.url).path;
 
-             if (trailing)
-             path = trailing[1] + '/' + trailing[2];
+            var trailing = req.url.match(PATTERN);
+            var path = req.url;
 
-             return urlParser.parse(path).path;*/
+            if (trailing)
+                path = trailing[1] + '/' + trailing[2];
+
+            return urlParser.parse(path).path;
         },
         decorateRequest: function (req) {
             if (req.path.match(/auth\/token/)) {
