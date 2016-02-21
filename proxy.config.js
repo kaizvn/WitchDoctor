@@ -2,7 +2,7 @@
 
 
 var urlParser = require('url');
-var PATTERN =  new RegExp('(^[^?]+[^/?])([^/]*)$');
+var PATTERN = new RegExp('(^[^?]+[^/?])([^/]*)$');
 
 module.exports = {
     defaultProxyConfig: {
@@ -23,13 +23,14 @@ module.exports = {
     },
     ProdProxyConfig: {
         forwardPath: function (req, res) {
-            var trailing = req.url.match(PATTERN);
-            var path = req.url;
-
-            if (trailing)
-                path = trailing[1] + '/' + trailing[2];
-
             return urlParser.parse(path).path;
+            /*var trailing = req.url.match(PATTERN);
+             var path = req.url;
+
+             if (trailing)
+             path = trailing[1] + '/' + trailing[2];
+
+             return urlParser.parse(path).path;*/
         },
         decorateRequest: function (req) {
             if (req.path.match(/auth\/token/)) {
