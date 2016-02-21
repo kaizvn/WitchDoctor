@@ -16,7 +16,7 @@
     "grunt-autoprefixer": "2.2.0",
     "grunt-build-control": "0.2.2",
     "grunt-string-replace": "1.1.0",
-    "grunt-wiredep": "2.0.0",
+    "grunt-wiredep": "3.0.0",
     "grunt-cli": "0.1.13",
     "grunt-contrib-copy": "0.8.2",
     "grunt-concurrent": "1.0.0",

@@ -49,7 +49,7 @@ app.use(CONFIG['api_path'], proxy(CONFIG['api_server'], proxyConfig[CONFIG['prox
 
 // STATIC files
 app.get('*', function (req, res) {
-    res.sendFile('index.html', {root: path.join(__dirname, 'src/dist')});
+    res.sendFile('index.html', {root: path.join(__dirname, CONFIG['static_path'])});
 });
 
 if (process.env.NODE_ENV !== 'dev')
