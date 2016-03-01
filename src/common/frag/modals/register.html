@@ -3,27 +3,30 @@
         <h4 class="modal-title">{{ 'global.register.title' | translate}}</h4>
         <span class="fa fa-close" ng-click="close()"></span>
     </div>
-    
+
     <div class="modal-body">
         <div class="row">
             <div class="col-sm-6 register">
                 <p>{{ 'global.register.desc' | translate}}</p>
-                <button type="button" class="btn btn-icon btn-block btn-facebook">
+                <button type="button" ng-click="regFacebook()" class="btn btn-icon btn-block btn-facebook">
                     <i class="fa fa-facebook"></i>
                     <span>{{ 'global.register.facebook_btn' | translate}}</span>
                 </button>
+
                 <button type="button" class="btn btn-icon btn-block btn-google">
                     <i class="fa fa-google-plus"></i>
                     <span>{{ 'global.register.google_btn' | translate}}</span>
                 </button>
-                
+
                 <div class="or">
                     <span>Or</span>
                 </div>
 
                 <form name="registerForm">
-                    <input type="email" class="form-control input-email" ng-model="user.email" placeholder="{{ 'global.login.username' | translate}}">
-                    <input type="password" class="form-control" ng-model="user.password" placeholder="{{ 'global.login.password' | translate}}">
+                    <input type="email" class="form-control input-email" ng-model="user.email"
+                           placeholder="{{ 'global.login.username' | translate}}">
+                    <input type="password" class="form-control" ng-model="user.password"
+                           placeholder="{{ 'global.login.password' | translate}}">
                     <button type="button" ng-click="register(user)" class="btn btn-primary btn-block btn-login">
                         <span>{{ 'global.register.submit_btn' | translate}}</span>
                     </button>
@@ -35,6 +38,6 @@
                 <p class="register__info_description">{{ 'global.register.right_desc' | translate}}</p>
             </div>
         </div>
-        
+
     </div>
 </div>

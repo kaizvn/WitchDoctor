@@ -1,5 +1,5 @@
 {
-  "port": "9000",
+  "port": 9000,
   "static_path": "/src",
   "api_server": "api.khambacsi.com:56765",
   "proxy_config": "defaultProxyConfig"

@@ -9,7 +9,8 @@
     "grunt-env": "^0.4.4",
     "lodash": "^4.5.0",
     "method-override": "^2.3.5",
-    "passport": "^0.3.2"
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.0"
   },
   "devDependencies": {
     "grunt": "0.4.5",
