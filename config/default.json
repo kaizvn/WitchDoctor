@@ -3,6 +3,9 @@
   "FACEBOOK_APP_ID": 779323395534211,
   "FACEBOOK_APP_SECRET": "3379fdabe1c5c12a1617322786a45762",
   "FACEBOOK_CALLBACK_URL": "http://morementapp1.com:9000/auth/facebook/callback",
+  "GOOGLE_APP_ID": "915119278424-k5s66set46l1c4j0rco71nquhbn63f6d.apps.googleusercontent.com",
+  "GOOGLE_APP_SECRET": "HZLQ7AIHKo5dPYKxea14mMy7",
+  "GOOGLE_CALLBACK_URL": "http://morementapp1.com:9000/auth/google/return",
   "client_id": "rY1dYhZVV4eb2jIeHiaHC6r57E1O3n6BIEtCJhhj",
   "secret_key": "1lg43tMbInULuivsR7WYnu2ZiQyo8DCxduMTq9KlWLGFdNrFuSNHpVDSWVCCIqgOf2y93tEmyLcygGIZuLz2l1fxjSMnnzq51E8VSYIyv3KWChYJnxWFisCHSLVFO96R"
 }

@@ -10,7 +10,8 @@
     "lodash": "^4.5.0",
     "method-override": "^2.3.5",
     "passport": "^0.3.2",
-    "passport-facebook": "^2.1.0"
+    "passport-facebook": "^2.1.0",
+    "passport-google-oauth2": "^0.1.6"
   },
   "devDependencies": {
     "grunt": "0.4.5",

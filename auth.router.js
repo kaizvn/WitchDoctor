@@ -6,6 +6,7 @@ var express = require('express');
 var Router = express.Router();
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
+var GoogleStrategy = require('passport-google-oauth2').Strategy;
 var request = require('request');
 // authenticate
 
@@ -46,7 +47,7 @@ module.exports = function (app, CONFIG) {
         }
     ));
     Router.use(passport.initialize());
-//app.use(passport.session());
+    //app.use(passport.session());
 
     passport.serializeUser(function (user, done) {
         done(null, user);
@@ -70,6 +71,37 @@ module.exports = function (app, CONFIG) {
             errorRedirect: '/'
         })
     );
+
+    /* auth google account */
+
+    passport.use(new GoogleStrategy({
+            clientID: CONFIG['GOOGLE_APP_ID'],
+            clientSecret: CONFIG['GOOGLE_APP_SECRET'],
+            callbackURL: 'http://morementapp1.com:9000/auth/google/return',
+            passReqToCallback: true
+
+        },
+        function (request, accessToken, refreshToken, profile, done) {
+            console.log(accessToken, refreshToken, profile);
+            return done(null, profile);
+        }
+    ));
+
+
+    Router.get('/google', passport.authenticate('google', {
+        scope: ['https://www.googleapis.com/auth/plus.login',
+            'https://www.googleapis.com/auth/plus.profile.emails.read']
+    }));
+
+    // Google will redirect the user to this URL after authentication.  Finish
+    // the process by verifying the assertion.  If valid, the user will be
+    // logged in.  Otherwise, authentication has failed.
+    Router.get('/google/return',
+        passport.authenticate('google', {
+            successRedirect: '/',
+            failureRedirect: '/login'
+        }));
+
 
     app.use('/auth', Router);
 };
