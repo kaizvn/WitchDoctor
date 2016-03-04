@@ -23,14 +23,14 @@ module.exports = function (app, CONFIG) {
             // register here
             console.log(accessToken, refreshToken, profile);
 
-            request.post([CONFIG['api_server'], CONFIG['api_path'], '/auth/convert-token/'].join(''),
+            request.post(['http://', CONFIG['api_server'], CONFIG['api_path'], '/auth/convert-token/'].join(''),
                 {
                     form: {
                         client_id: CONFIG['client_id'],
                         client_secret: CONFIG['secret_key'],
                         grant_type: 'convert_token',
                         token: accessToken,
-                        backend: 'google-oauth2'
+                        backend: 'facebook-oauth2'
                     }
                 },
                 function (error, response, body) {
@@ -83,7 +83,24 @@ module.exports = function (app, CONFIG) {
         },
         function (request, accessToken, refreshToken, profile, done) {
             console.log(accessToken, refreshToken, profile);
-            return done(null, profile);
+
+            request.post(['http://', CONFIG['api_server'], CONFIG['api_path'], '/auth/convert-token/'].join(''),
+                {
+                    form: {
+                        client_id: CONFIG['client_id'],
+                        client_secret: CONFIG['secret_key'],
+                        grant_type: 'convert_token',
+                        token: accessToken,
+                        backend: 'google-oauth2'
+                    }
+                },
+                function (error, response, body) {
+                    if (!error && response.statusCode == 200) {
+                        console.log(body); // Show the HTML for the Google homepage.
+                        return done(null, profile);
+                    } else
+                        return done(error);
+                });
         }
     ));
 
