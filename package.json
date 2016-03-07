@@ -11,7 +11,8 @@
     "method-override": "^2.3.5",
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.0",
-    "passport-google-oauth2": "^0.1.6"
+    "passport-google-oauth2": "^0.1.6",
+    "request": "^2.69.0"
   },
   "devDependencies": {
     "grunt": "0.4.5",
