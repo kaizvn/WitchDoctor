@@ -90,13 +90,14 @@ module.exports = function (grunt) {
                 }
             }
         },
+
         sass: {
             dist: {
                 options: {
                     style: 'expanded'
                 },
                 files: {
-                    '.tmp/assets/styles/main.css': 'src/assets/styles/main.scss'
+                    '.tmp/assets/styles/main.css': 'src/assets/styles/main.scss',
                 }
             },
             debug: {
@@ -104,7 +105,7 @@ module.exports = function (grunt) {
                     style: 'expanded'
                 },
                 files: {
-                    'src/assets/styles/main.css': 'src/assets/styles/main.scss'
+                    'src/assets/styles/main.css': 'src/assets/styles/main.scss',
                 }
             }
 
@@ -449,7 +450,7 @@ module.exports = function (grunt) {
             'clean:server',
             'wiredep',
             'ngconstant:dev',
-            'concurrent:sass',
+            'concurrent:sassDev',
             'configureProxies',
             'express',
             'apimocker',
