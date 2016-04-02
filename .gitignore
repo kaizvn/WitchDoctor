@@ -12,3 +12,4 @@ src/dist
 node_modules
 .idea/
 /**/*/css.map
+src/assets/styles/main.css.map

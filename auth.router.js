@@ -12,10 +12,13 @@ var request = require('request');
 
 module.exports = function (app, CONFIG) {
     //Authentication
+    var fbConfig = CONFIG['FB_AUTH'];
+    //ggConfig = CONFIG.AUTH.GG;
+
     passport.use(new FacebookStrategy({
-            clientID: CONFIG.FACEBOOK_APP_ID,
-            clientSecret: CONFIG.FACEBOOK_APP_SECRET,
-            callbackURL: CONFIG.FACEBOOK_CALLBACK_URL,
+            clientID: fbConfig['APP_ID'],
+            clientSecret: fbConfig['APP_SECRET'],
+            callbackURL: fbConfig['CALLBACK_URL'],
             profileFields: ['id', 'name', 'name_format', 'birthday', 'bio', 'about', 'age_range', 'currency', 'education', 'devices', 'gender', 'email', 'link', 'likes']
             //enableProof: false
         },

@@ -4,11 +4,14 @@
   "api_path": "/api",
   "api_server": "api.khambacsi.com:56765",
   "proxy_config": "ProdProxyConfig",
-  "authentication": {
-    "facebook": {
-      "clientID": 154366684653118,
-      "clientSecret": "d0fee9ba6a86c6043bf7faeb92dda805",
-      "callbackURL": "http://localhost:8080/"
-    }
+  "FB_AUTH": {
+    "APP_ID": 154366684653118,
+    "APP_SECRET": "d0fee9ba6a86c6043bf7faeb92dda805",
+    "CALLBACK_URL": "http://localhost:8080/"
+  },
+  "GG_AUTH": {
+    "APP_ID": "915119278424-k5s66set46l1c4j0rco71nquhbn63f6d.apps.googleusercontent.com",
+    "APP_SECRET": "HZLQ7AIHKo5dPYKxea14mMy7",
+    "CALLBACK_URL": "http://morementapp1.com:9000/auth/google/return"
   }
 }
