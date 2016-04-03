@@ -12,8 +12,8 @@ var request = require('request');
 
 module.exports = function (app, CONFIG) {
     //Authentication
-    var fbConfig = CONFIG['FB_AUTH'];
-    //ggConfig = CONFIG.AUTH.GG;
+    var fbConfig = CONFIG['FB_AUTH'],
+    ggConfig = CONFIG['GG_AUTH'];
 
     passport.use(new FacebookStrategy({
             clientID: fbConfig['APP_ID'],
@@ -78,9 +78,9 @@ module.exports = function (app, CONFIG) {
     /* auth google account */
 
     passport.use(new GoogleStrategy({
-            clientID: CONFIG['GOOGLE_APP_ID'],
-            clientSecret: CONFIG['GOOGLE_APP_SECRET'],
-            callbackURL: 'http://morementapp1.com:9000/auth/google/return',
+            clientID: ggConfig['APP_ID'],
+            clientSecret: ggConfig['APP_SECRET'],
+            callbackURL: ggConfig['CALLBACK_URL'],
             passReqToCallback: true
 
         },
