@@ -1,7 +1,7 @@
-"use strict";
+'use strict';
 
 angular.module('iDocApp')
-    .directive('idocSearch', function (IdocRestService, $state) {
+    .directive('idocSearch', function (idocRestService, $state) {
         return {
             restrict: 'E',
             templateUrl: '/common/directives/idocSearch.html',
@@ -46,42 +46,42 @@ angular.module('iDocApp')
                     $scope.doctor = null;
                 };
 
-                IdocRestService.getCities().then(function (response){
+                idocRestService.getCities().then(function (response){
                     $scope.cities = response.data;
                 });
 
                 $scope.getParams = function (input) {
                     if($scope.actionGroup.specialty.value) {
-                        return IdocRestService.getSpecialties(input).then(function (response) {
+                        return idocRestService.getSpecialties(input).then(function (response) {
                             return response.data.results;
                         });
                     } else {
-                        return IdocRestService.getNameDoctors(input).then(function (response) {
+                        return idocRestService.getNameDoctors(input).then(function (response) {
                             return response.data.results;
                         });
                     }
                 }
 
                 $scope.getConditions = function (input) {
-                    return IdocRestService.getConditions(input).then(function (response) {
+                    return idocRestService.getConditions(input).then(function (response) {
                         return response.data.results;
                     });
                 }
 
                 $scope.getCities = function (input) {
-                    return IdocRestService.getCities(input).then(function (response) {
+                    return idocRestService.getCities(input).then(function (response) {
                         return response.data.results;
                     });
                 }
 
                 $scope.getHospitals = function (input) {
-                    return IdocRestService.getHospitals(input).then(function (response) {
+                    return idocRestService.getHospitals(input).then(function (response) {
                         return response.data.results;
                     });
                 }
 
                 $scope.onSelectCondition = function (item) {
-                    IdocRestService.getSpecialtiesByCondition(item.name).then(function (response) {
+                    idocRestService.getSpecialtiesByCondition(item.name).then(function (response) {
                        querySearch.specialty = response.data.results[0].specialties[0].name;
                     });
                 }

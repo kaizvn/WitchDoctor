@@ -1,6 +1,6 @@
 'use strict';
 
-function UtilService() {
+function utilService() {
 
     return {
         jsonToParams: function(obj) {
@@ -13,4 +13,4 @@ function UtilService() {
 
 angular
     .module('iDocApp')
-    .service('UtilService', UtilService);
+    .service('utilService', utilService);

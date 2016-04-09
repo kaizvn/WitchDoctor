@@ -1,12 +1,12 @@
-"use strict";
+'use strict';
 
 
-function BookingCtrl($scope, $state, $stateParams, DoctorsService, IdocRestService) {
+function BookingCtrl($scope, $state, $stateParams, doctorsService, idocRestService) {
 
-    if(!DoctorsService.hasSelectedDoctor()) {
+    if(!doctorsService.hasSelectedDoctor()) {
         $state.go('home');
     } else {
-        $scope.doctor = DoctorsService.getSelectedDoctor();
+        $scope.doctor = doctorsService.getSelectedDoctor();
     }
 
     $scope.data = {booking: {}, user: {}};
@@ -78,6 +78,7 @@ function BookingCtrl($scope, $state, $stateParams, DoctorsService, IdocRestServi
     }
 }
 
-BookingCtrl.$inject = ['$scope', '$state', '$stateParams', 'DoctorsService', 'IdocRestService'];
+BookingCtrl.$inject = ['$scope', '$state', '$stateParams', 'doctorsService', 'idocRestService'];
 
-angular.module('iDocApp').controller('BookingCtrl', BookingCtrl);
+angular.module('iDocApp')
+    .controller('BookingCtrl', BookingCtrl);

@@ -1,6 +1,6 @@
-"use strict";
+'use strict';
 
-function iDocApiPath($http) {
+function iDocApiPath() {
     /* Base Url API */
     var url = 'https://api.betterdoctor.com/2015-09-22';
 
@@ -60,8 +60,6 @@ function iDocApiPath($http) {
         return this.getBaseUrl() + '/auth/revoke-token/';
     };
 }
-
-iDocApiPath.$inject = ['$http'];
 
 angular
     .module('iDocApp')

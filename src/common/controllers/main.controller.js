@@ -1,41 +1,75 @@
-"use strict";
+'use strict';
 
-angular.module('iDocApp')
-    .controller('MainCtrl', function ($rootScope, $scope, IdocRestService, $uibModal, $timeout) {
+function MainCtrl($rootScope, $scope, idocRestService, $uibModal, titleService, $translate, doctorsService) {
 
-	   	$rootScope.$watch('hideFooter', function(value) {
-    		$scope.hideFooter = value;
-    	});
-    	
-        $scope.openLogin = function() {
-			var loginModel = $uibModal.open({
-				size: 'sm',
-				templateUrl: "/common/frag/modals/login.html",
-				controller: 'LoginCtrl'
-			});
+    var _this = this;
 
-	        loginModel.result.then(function () {
-	            
-	        });
-		};
+    this.setTitle = function(route) {
+        switch (route.name) {
+            case 'home':
+                $translate('global.pageTitle.home').then(function(txt) {
+                    titleService.setTitle(txt);
+                });
+                break;
 
-		$scope.openRegister = function() {
-			var registerModel = $uibModal.open({
-				size: 'lg',
-				templateUrl: "/common/frag/modals/register.html",
-				controller: 'RegisterCtrl'
-			});
+            case 'results':
+                $translate('global.pageTitle.results').then(function(txt) {
+                    titleService.setTitle(txt);
+                });
+                break;
 
-	        registerModel.result.then(function () {
-	            
-	        });
-		};
+            case 'about':
+                $translate('global.pageTitle.about').then(function(txt) {
+                    titleService.setTitle(txt);
+                });
+                break;
 
-		$(document).mouseup(function(e){
-            $('.input-group-btn').removeClass('open');
+            default:
+                $translate('global.pageTitle.home').then(function(txt) {
+                    titleService.setTitle(txt);
+                });
+                break;
+        }
+    };
+
+    $scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
+        _this.setTitle(toState);
+    });
+
+    $rootScope.$watch('hideFooter', function(value) {
+        $scope.hideFooter = value;
+    });
+
+    $scope.openLogin = function() {
+        var loginModel = $uibModal.open({
+            size: 'sm',
+            templateUrl: "/common/frag/modals/login.html",
+            controller: 'LoginCtrl'
         });
 
-        $timeout(function () {
-            $rootScope.$broadcast('INIT_COMPLETE');
-        }, 1);
+        loginModel.result.then(function () {
+
+        });
+    };
+
+    $scope.openRegister = function() {
+        var registerModel = $uibModal.open({
+            size: 'lg',
+            templateUrl: "/common/frag/modals/register.html",
+            controller: 'RegisterCtrl'
+        });
+
+        registerModel.result.then(function () {
+
+        });
+    };
+
+    $(document).mouseup(function(e){
+        $('.input-group-btn').removeClass('open');
     });
+}
+
+MainCtrl.$inject = ['$rootScope', '$scope', 'idocRestService', '$uibModal', 'titleService', '$translate', 'doctorsService'];
+
+angular.module('iDocApp')
+    .controller('MainCtrl', MainCtrl);

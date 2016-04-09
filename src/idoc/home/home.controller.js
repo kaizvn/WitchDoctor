@@ -1,7 +1,7 @@
-"use strict";
+'use strict';
 
 
-function homeController($scope, $state, IdocRestService, $timeout, $http) {
+function HomeCtrl($scope, $state, idocRestService, $timeout, $http) {
     $scope.content = 'Home';
     var querySearch = {};
 
@@ -35,24 +35,24 @@ function homeController($scope, $state, IdocRestService, $timeout, $http) {
     };
 
     $scope.getConditions = function (input) {
-        return IdocRestService.getConditions(input).then(function (response) {
+        return idocRestService.getConditions(input).then(function (response) {
             return response.data.results;
         });
     }
 
     $scope.getCities = function (input) {
-        return IdocRestService.getCities(input).then(function (response) {
+        return idocRestService.getCities(input).then(function (response) {
             return response.data.results;
         });
     }
 
     $scope.getParams = function (input) {
         if($scope.actionGroup.specialty.value) {
-            return IdocRestService.getSpecialties(input).then(function (response) {
+            return idocRestService.getSpecialties(input).then(function (response) {
                 return response.data.results;
             });
         } else {
-            return IdocRestService.getNameDoctors(input).then(function (response) {
+            return idocRestService.getNameDoctors(input).then(function (response) {
                 return response.data.results;
             });
         }
@@ -67,7 +67,7 @@ function homeController($scope, $state, IdocRestService, $timeout, $http) {
     }
 
     $scope.onSelectCondition = function (item) {
-        IdocRestService.getSpecialtiesByCondition(item.name).then(function (response) {
+        idocRestService.getSpecialtiesByCondition(item.name).then(function (response) {
            querySearch.specialty = response.data.results[0].specialties[0].name;
         });
     }
@@ -90,7 +90,8 @@ function homeController($scope, $state, IdocRestService, $timeout, $http) {
 }
 
 
-homeController.$inject = ['$scope', '$state', 'IdocRestService', '$timeout', '$http'];
+HomeCtrl.$inject = ['$scope', '$state', 'idocRestService', '$timeout', '$http'];
 
-angular.module('iDocApp').controller('HomeCtrl', homeController);
+angular.module('iDocApp')
+    .controller('HomeCtrl', HomeCtrl);
 

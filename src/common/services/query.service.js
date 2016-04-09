@@ -1,6 +1,6 @@
 'use strict';
 
-function QueryService() {
+function queryService() {
     var specialty = null,
         name = null,
         //limit: 5,
@@ -52,8 +52,8 @@ function QueryService() {
     };
 };
 
-QueryService.$inject = ['$http', 'localStorageService', 'IdocRestService'];
+queryService.$inject = ['$http', 'localStorageService', 'idocRestService'];
 
 angular
     .module('iDocApp')
-    .service('QueryService', QueryService);
+    .service('queryService', queryService);

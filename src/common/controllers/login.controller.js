@@ -1,14 +1,14 @@
-"use strict";
+'use strict';
 
 angular.module('iDocApp')
-    .controller('LoginCtrl', function ($scope, IdocRestService, $uibModalInstance, UtilService) {
+    .controller('LoginCtrl', function ($scope, idocRestService, $uibModalInstance, utilService) {
     	$scope.close = function () {
     		$uibModalInstance.dismiss('cancel');
     	}
 
     	$scope.login = function (user) {
-    		var data = UtilService.jsonToParams(user);
-        	AuthService.login(data).then(function (response) {
+    		var data = utilService.jsonToParams(user);
+        	authService.login(data).then(function (response) {
         		/* To do */
         		$uibModalInstance.close();
         	});

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('iDocApp')
-    .directive('hasAnyRole', ['AuthService', function (AuthService) {
+    .directive('hasAnyRole', ['authService', function (authService) {
         return {
             restrict: 'A',
             link: function (scope, element, attrs) {
@@ -17,7 +17,7 @@ angular.module('iDocApp')
                             setVisible();
                         }
 
-                        result = AuthService.isInAnyRole(roles);
+                        result = authService.isInAnyRole(roles);
                         if (result) {
                             setVisible();
                         } else {
@@ -32,7 +32,7 @@ angular.module('iDocApp')
             }
         };
     }])
-    .directive('hasRole', ['AuthService', function (AuthService) {
+    .directive('hasRole', ['authService', function (authService) {
         return {
             restrict: 'A',
             link: function (scope, element, attrs) {
@@ -48,7 +48,7 @@ angular.module('iDocApp')
                             setVisible();
                         }
 
-                        result = AuthService.isInRole(role);
+                        result = authService.isInRole(role);
                         if (result) {
                             setVisible();
                         } else {

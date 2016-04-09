@@ -1,8 +1,7 @@
-"use strict";
+'use strict';
 
 angular.module('iDocApp')
-    .directive('maps', function($timeout
-        ) {
+    .directive('maps', function($timeout) {
 
         function adapSizeMap() {
             var wWeight = $(window).height(),

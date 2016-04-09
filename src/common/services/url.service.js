@@ -1,6 +1,6 @@
 'use strict';
 
-function UrlService($http, localStorageService, IdocRestService) {
+function urlService($http, localStorageService, idocRestService) {
 
     var formatParams = function (params) {
         var chain = '';
@@ -53,8 +53,8 @@ function UrlService($http, localStorageService, IdocRestService) {
     };
 };
 
-UrlService.$inject = ['$http', 'localStorageService', 'IdocRestService'];
+urlService.$inject = ['$http', 'localStorageService', 'idocRestService'];
 
 angular
     .module('iDocApp')
-    .service('UrlService', UrlService);
+    .service('urlService', urlService);

@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 var SECRET_KEY = 'a6ca4d508fa19d1cea5fd1eeebbed9f3';
 var defaultParams = function (type) {
     if (type == void 0) return {};
@@ -46,7 +46,7 @@ var DEFAULT_PARAMS = {
 };
 
 
-function iDocRestService($http, iDocApiPath, $q) {
+function idocRestService($http, iDocApiPath, $q) {
     var api = {};
 
     api.getDoctors = function (params) {
@@ -118,9 +118,9 @@ function iDocRestService($http, iDocApiPath, $q) {
 
 }
 
-iDocRestService.$inject = ['$http', 'iDocApiPath', '$q'];
+idocRestService.$inject = ['$http', 'iDocApiPath', '$q'];
 
 
 angular
     .module('iDocApp')
-    .service('IdocRestService', iDocRestService);
+    .service('idocRestService', idocRestService);

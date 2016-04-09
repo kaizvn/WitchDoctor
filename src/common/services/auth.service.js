@@ -1,19 +1,19 @@
 'use strict';
 
-function AuthService($http, localStorageService, IdocRestService) {
+function authService($http, localStorageService, idocRestService) {
     var _identity,
         _authenticated = false;
 
     return {
         login: function(user) {
-            IdocRestService.login(user).then(function (response) {
+            idocRestService.login(user).then(function (response) {
                 _authenticated = true;
                 _identity = response.data;
                 localStorageService.set('token', response.data);
             });
         },
         logout: function() {
-            IdocRestService.logout().then(function (response) {
+            idocRestService.logout().then(function (response) {
                 localStorageService.clearAll();
                 this.authenticate(null);
             });
@@ -48,8 +48,8 @@ function AuthService($http, localStorageService, IdocRestService) {
     };
 };
 
-AuthService.$inject = ['$http', 'localStorageService', 'IdocRestService'];
+authService.$inject = ['$http', 'localStorageService', 'idocRestService'];
 
 angular
     .module('iDocApp')
-    .service('AuthService', AuthService);
+    .service('authService', authService);

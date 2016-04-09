@@ -2,6 +2,12 @@
   "global": {
     "app": "KhamBacSi",
     "search": "Tìm bác sĩ",
+    "pageTitle": {
+      "home": "Khám Bác Sĩ - Danh sách bác sĩ tốt bạn hằng tìm kiếm, mọi chuyên khoa, một trang web",
+      "results": "Kết quả tìm kiếm - Khám Bác Sĩ",
+      "about": "Về Chúng Tôi - Khám Bác Sĩ",
+      "detail": "Thông tin bác sĩ {{doctor}} - Khám Bác Sĩ"
+    },
     "menu": {
       "account": {
         "main": "Tài khoản",

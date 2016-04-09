@@ -1,7 +1,7 @@
-"use strict";
+'use strict';
 
 
-function ResultsCtrl($scope, $state, $stateParams, $location, DoctorsService, IdocRestService, $anchorScroll, UrlService, QueryService) {
+function ResultsCtrl($scope, $state, $stateParams, $location, doctorsService, idocRestService, $anchorScroll, urlService, queryService) {
 
     var _this = this;
     $scope.params = $stateParams.query || {};
@@ -9,8 +9,8 @@ function ResultsCtrl($scope, $state, $stateParams, $location, DoctorsService, Id
     this.getDoctors = function (params) {
         $scope.loader.active = true;
         $scope.isShowResult = false;
-        IdocRestService.getDoctors(params).then(function (response) {
-            $scope.data = DoctorsService.formatDoctorsData(response.data);
+        idocRestService.getDoctors(params).then(function (response) {
+            $scope.data = doctorsService.formatDoctorsData(response.data);
 
             $scope.data.currentPage = ($scope.data.skip / 5) + 1;
 
@@ -34,13 +34,13 @@ function ResultsCtrl($scope, $state, $stateParams, $location, DoctorsService, Id
     };
 
     this.updateUrl = function(params) {
-        var url = UrlService.getUrlFor('results', null, params, true);
+        var url = urlService.getUrlFor('results', null, params, true);
         $location.url(url);
     };
 
     this.initSearch = function() {
         var paramsQuery = JSON.parse($location.search().query);
-        QueryService.setQueryFromParams(paramsQuery);
+        queryService.setQueryFromParams(paramsQuery);
         _this.getDoctors(paramsQuery);
     }
 
@@ -48,8 +48,8 @@ function ResultsCtrl($scope, $state, $stateParams, $location, DoctorsService, Id
         if ($location.search().query) {
             _this.initSearch();
         } else {
-            QueryService.setQueryFromParams($scope.params);
-            var params = QueryService.getParams();
+            queryService.setQueryFromParams($scope.params);
+            var params = queryService.getParams();
             _this.updateUrl(params);
             _this.getDoctors(params);
         }
@@ -72,18 +72,18 @@ function ResultsCtrl($scope, $state, $stateParams, $location, DoctorsService, Id
     }];
 
     $scope.pageChanged = function (pageNumber) {
-        QueryService.setSkip((pageNumber - 1) * 5);
-        var params = QueryService.getParams();
+        queryService.setSkip((pageNumber - 1) * 5);
+        var params = queryService.getParams();
         _this.updateUrl(params);
     };
 
     $scope.booking = function (doctor, bookingDate) {
-        DoctorsService.setSelectedDoctor(doctor);
+        doctorsService.setSelectedDoctor(doctor);
         $state.go('booking', {bookingDate: bookingDate});
     }
 }
 
+ResultsCtrl.$inject = ['$scope', '$state', '$stateParams', '$location', 'doctorsService', 'idocRestService', '$anchorScroll', 'urlService', 'queryService'];
 
-ResultsCtrl.$inject = ['$scope', '$state', '$stateParams', '$location', 'DoctorsService', 'IdocRestService', '$anchorScroll', 'UrlService', 'QueryService'];
-
-angular.module('iDocApp').controller('ResultsCtrl', ResultsCtrl);
+angular.module('iDocApp')
+    .controller('ResultsCtrl', ResultsCtrl);

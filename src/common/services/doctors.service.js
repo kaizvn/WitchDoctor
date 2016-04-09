@@ -1,6 +1,6 @@
-"use strict";
+'use strict';
 
-function DoctorsService() {
+function doctorsService() {
 
     var service = {
         results: null,
@@ -69,4 +69,4 @@ function DoctorsService() {
 
 angular
     .module('iDocApp')
-    .service('DoctorsService', DoctorsService);
+    .service('doctorsService', doctorsService);

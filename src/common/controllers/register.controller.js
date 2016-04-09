@@ -1,7 +1,7 @@
-"use strict";
+'use strict';
 
 angular.module('iDocApp')
-    .controller('RegisterCtrl', function ($scope, IdocRestService, $uibModalInstance, UtilService) {
+    .controller('RegisterCtrl', function ($scope, idocRestService, $uibModalInstance, utilService) {
         $scope.close = function () {
             $uibModalInstance.dismiss('cancel');
         };
@@ -12,8 +12,8 @@ angular.module('iDocApp')
         };
 
         $scope.register = function (user) {
-            var data = UtilService.jsonToParams(user);
-            IdocRestService.register(data).then(function (response) {
+            var data = utilService.jsonToParams(user);
+            idocRestService.register(data).then(function (response) {
                 /* To do */
                 $uibModalInstance.close();
             });
