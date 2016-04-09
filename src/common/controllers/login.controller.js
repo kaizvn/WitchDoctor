@@ -8,7 +8,7 @@ angular.module('iDocApp')
 
     	$scope.login = function (user) {
     		var data = UtilService.jsonToParams(user);
-        	IdocRestService.login(data).then(function (response) {
+        	AuthService.login(data).then(function (response) {
         		/* To do */
         		$uibModalInstance.close();
         	});

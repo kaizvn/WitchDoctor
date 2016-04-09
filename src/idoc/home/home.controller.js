@@ -77,10 +77,10 @@ function homeController($scope, $state, IdocRestService, $timeout, $http) {
         if($scope.actionGroup.conditions.value) {
             $scope.condition = querySearch.specialty;
             $timeout(function () {
-                $state.go('result', {query: querySearch});
+                $state.go('results', {query: querySearch});
             }, 500);
         } else {
-            $state.go('result', {query: querySearch});
+            $state.go('results', {query: querySearch});
         }        
     };
 

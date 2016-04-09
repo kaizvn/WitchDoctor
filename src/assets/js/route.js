@@ -21,16 +21,16 @@ angular.module('iDocApp')
                 }
             })
             .state({
-                name: 'result',
-                url: "/result",
+                name: 'results',
+                url: "/results",
                 params: {
                     query: null,
                     location: null
                 },
                 views: {
                     "content-view": {
-                        "controller": "ResultCtrl",
-                        "templateUrl": "/idoc/result/result.html"
+                        "controller": "ResultsCtrl",
+                        "templateUrl": "/idoc/results/results.html"
                     }
                 },
                 resolve: {

@@ -1,25 +1,25 @@
 'use strict';
 
-function AuthService($http, localStorageService, iDocRestService) {
+function AuthService($http, localStorageService, IdocRestService) {
     var _identity,
         _authenticated = false;
 
     return {
         login: function(user) {
-            iDocRestService.login(user).then(function (response) {
+            IdocRestService.login(user).then(function (response) {
                 _authenticated = true;
                 _identity = response.data;
-                localStorageService.set('token', response.data.token);
+                localStorageService.set('token', response.data);
             });
         },
         logout: function() {
-            iDocRestService.logout().then(function (response) {
+            IdocRestService.logout().then(function (response) {
                 localStorageService.clearAll();
                 this.authenticate(null);
             });
         },
         getToken: function () {
-            return localStorageService.get('token');
+            return localStorageService.get('token').access_token;
         },
         isInRole: function (role) {
             if (!_authenticated || !_identity || !_identity.roles) {
@@ -48,7 +48,7 @@ function AuthService($http, localStorageService, iDocRestService) {
     };
 };
 
-AuthService.$inject = ['$http', 'localStorageService', 'iDocRestService'];
+AuthService.$inject = ['$http', 'localStorageService', 'IdocRestService'];
 
 angular
     .module('iDocApp')

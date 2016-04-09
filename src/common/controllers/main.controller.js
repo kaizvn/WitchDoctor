@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module('iDocApp')
-    .controller('MainCtrl', function ($rootScope, $scope, IdocRestService, $uibModal) {
+    .controller('MainCtrl', function ($rootScope, $scope, IdocRestService, $uibModal, $timeout) {
 
 	   	$rootScope.$watch('hideFooter', function(value) {
     		$scope.hideFooter = value;
@@ -34,4 +34,8 @@ angular.module('iDocApp')
 		$(document).mouseup(function(e){
             $('.input-group-btn').removeClass('open');
         });
+
+        $timeout(function () {
+            $rootScope.$broadcast('INIT_COMPLETE');
+        }, 1);
     });
