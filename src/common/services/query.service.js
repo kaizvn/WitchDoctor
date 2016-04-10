@@ -9,6 +9,12 @@ function queryService() {
         getCurrentPage: function() {
             return (this.skip / 5) - 1;
         },
+        getParam: function(key) {
+            return this[key];
+        },
+        isSearchBy: function(key) {
+            return this[key] ? true: false;
+        },
         setSkip: function(skip) {
             this.skip = skip;
         },

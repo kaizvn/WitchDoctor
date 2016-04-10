@@ -4,7 +4,11 @@
     "search": "Tìm bác sĩ",
     "pageTitle": {
       "home": "Khám Bác Sĩ - Danh sách bác sĩ tốt bạn hằng tìm kiếm, mọi chuyên khoa, một trang web",
-      "results": "Kết quả tìm kiếm - Khám Bác Sĩ",
+      "results": {
+        "doctor": "Kết quả tìm kiếm bác sĩ {{doctor}} - Khám Bác Sĩ",
+        "specialty": "Kết quả tìm kiếm chuyên khoa {{specialty}} - Khám Bác Sĩ",
+        "all": "Kết quả tìm kiếm - Khám Bác Sĩ"
+      },
       "about": "Về Chúng Tôi - Khám Bác Sĩ",
       "detail": "Thông tin bác sĩ {{doctor}} - Khám Bác Sĩ"
     },
