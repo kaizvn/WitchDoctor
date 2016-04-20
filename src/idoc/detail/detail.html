@@ -23,7 +23,7 @@
                         </div>
                         <star-rating rating-value="doctor.ratings[0].rating" readonly="true"></star-rating>
                         <div class="doctor__address">
-                            <div class="doctor__address_street">{{doctor.profile.address.raw}}</div>
+                            <div class="doctor__address_street">{{doctor.practices[0].addresses[0].formatted || doctor.practices[0].addresses[0].raw}}</div>
                         </div>
                     </div>
                 </div>
@@ -53,10 +53,10 @@
                     <span class="fact__text">Lượt tôn vinh</span>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6" ng-show="doctor.experience_in_years">
+            <div class="col-md-3 col-sm-6" ng-show="doctor.experienceYears">
                 <div class="fact">
                     <i class="fa fa-rocket"></i>
-                    <span class="fact__number">{{doctor.experience_in_years}}</span>
+                    <span class="fact__number">{{doctor.experienceYears}}</span>
                     <span class="fact__text">Năm kinh nghiệm</span>
                 </div>
             </div>
@@ -104,9 +104,17 @@
                                 <h4 class="line__content_title">PHÒNG MẠCH</h4>
                                 <div ng-repeat="practice in doctor.practices" class="doctor__special">
                                     <h5 ng-show="practice.name">Phòng mạch {{practice.name}}</h5>
-                                    <p>Địa chỉ: {{practice.address.formatted && practice.address.formatted || practice.address.raw}}</p>
-                                    <p ng-show="practice.office_hours">Giờ khám: {{practice.office_hours}}</p>
-                                    <p ng-show="practice.description">Giới thiệu: {{practice.description}}</p>
+                                    <div ng-repeat="address in practice.addresses" class="doctor__address__special" ng-show="practice.addresses.length">
+                                        <span class="glyphicon glyphicon-home" aria-hidden="true"/> {{address.formatted || address.raw}}
+                                    </div>
+                                    <div ng-repeat="phone in practice.phones" class="doctor__phone__special" ng-show="practice.phones.length">
+                                        <span class="glyphicon glyphicon-phone-alt" aria-hidden="true"/> {{phone.number}}
+                                    </div>
+                                    <div ng-repeat="email in practice.emails" class="doctor__email__special" ng-show="practice.emails.length">
+                                        <span class="glyphicon glyphicon-envelope" aria-hidden="true"/> {{email.email}}
+                                    </div>
+                                    <p ng-show="practice.office_hours"><span class="glyphicon glyphicon-time" aria-hidden="true"/> {{practice.office_hours}}</p>
+                                    <p ng-show="practice.description">{{practice.description}}</p>
                                 </div>
                             </div>
                         </div>

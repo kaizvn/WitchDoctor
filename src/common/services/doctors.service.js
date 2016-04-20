@@ -1,6 +1,30 @@
 'use strict';
 
 function doctorsService() {
+    function getFirstValid(items, keys) {
+        /*
+        get first valid item in the array [items]
+        valid means:
+            - object, array: non empty, has values of one of the [keys]
+            - POD: invalid
+        items must be objects
+        */
+        if(!items) return null;
+        return _.find( items, function(e){
+            if( _.isEmpty(e) ){
+                return false;
+            }
+            if( !_.isEmpty(keys) ){
+                for( var i=0; i<keys.length; i++ ){
+                    if( Boolean(e[keys[i]]) ){
+                        return true;
+                    }
+                }
+                return false;
+            }
+            return true;
+        });
+    };
 
     var service = {
         results: null,
@@ -27,15 +51,9 @@ function doctorsService() {
         },
 
         getAddressDoctor: function (doctor) {
-            if (doctor.practices) {
-                var found = false;
-                for (var i = 0; i < doctor.practices.length && !found; i++) {
-                    if (doctor.practices[i].address && doctor.practices[i].address.raw) {
-                        found = true;
-                        return doctor.practices[i].address;
-                    }
-                }
-            }
+            var p = getFirstValid(doctor.practices);
+            var a = p ? getFirstValid(p.addresses, ['formatted', 'raw']) : null;
+            return a;
         },
 
         getRelatedDoctors: function (doctors, id) {
@@ -51,12 +69,12 @@ function doctorsService() {
                 return {
                     full_name: doctor.profile.name,
                     specialties: _.pluck(doctor.specialties, 'name').join(' | '),
-                    rating: doctor.ratings.length > 0 ? doctor.ratings[0].rating : 0,
+                    rating: function(x) { var r = getFirstValid(x); return r ? r.rating : 0; }(doctor.ratings),
                     id: doctor.id,
                     address: self.getAddressDoctor(doctor),
                     bio: doctor.profile.bio ? doctor.profile.bio.substr(0, 155) + '...' : '',
                     title: doctor.profile.title,
-                    image_url: doctor.profile.images && doctor.profile.images.length > 0 ? doctor.profile.images[0].image : '',
+                    image_url: function(x) { var r = getFirstValid(x); return r ? r.image : ''; }(doctor.profile.images),
                     gender: doctor.profile.gender
                 }
             });

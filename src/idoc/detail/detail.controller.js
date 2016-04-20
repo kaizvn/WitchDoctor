@@ -7,7 +7,7 @@ function DetailCtrl($scope, idocRestService, doctorsService, $stateParams, $anch
         $scope.doctor = response.data;
         $scope.doctor.profile.image_url = $scope.doctor.profile.images && $scope.doctor.profile.images.length > 0 ? $scope.doctor.profile.images[0].image : '';
         $scope.doctor.profile.address = doctorsService.getAddressDoctor($scope.doctor);
-        $scope.doctor.experience_in_years = accumulateExperience(response.data.experiences);
+        $scope.doctor.experienceYears = accumulateExperience($scope.doctor.experiences);
 
         function accumulateExperience(ar) {
             var exp = 0;
