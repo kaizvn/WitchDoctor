@@ -1,5 +1,9 @@
 'use strict';
 var SECRET_KEY = 'a6ca4d508fa19d1cea5fd1eeebbed9f3';
+var SECRET_PARAMS = {
+    'client_id': 'rY1dYhZVV4eb2jIeHiaHC6r57E1O3n6BIEtCJhhj',
+    'client_secret': '1lg43tMbInULuivsR7WYnu2ZiQyo8DCxduMTq9KlWLGFdNrFuSNHpVDSWVCCIqgOf2y93tEmyLcygGIZuLz2l1fxjSMnnzq51E8VSYIyv3KWChYJnxWFisCHSLVFO96R'
+};
 var defaultParams = function (type) {
     if (type == void 0) return {};
 
@@ -46,7 +50,7 @@ var DEFAULT_PARAMS = {
 };
 
 
-function idocRestService($http, iDocApiPath, $q) {
+function idocRestService($http, iDocApiPath, $q, utilService) {
     var api = {};
 
     api.getDoctors = function (params) {
@@ -103,6 +107,9 @@ function idocRestService($http, iDocApiPath, $q) {
     };
 
     api.login = function (data) {
+        var data = _.extend(data, SECRET_PARAMS);
+        data.grant_type = 'password';
+        data = utilService.jsonToParams(data);
         return $http.post(iDocApiPath.login(), data, {
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"
@@ -110,15 +117,28 @@ function idocRestService($http, iDocApiPath, $q) {
         });
     };
 
-    api.logout = function () {
-        return $http.get(iDocApiPath.logout());
+    api.logout = function (token) {
+        var data = {
+            'token': token
+        };
+        data = _.extend(data, SECRET_PARAMS);
+        data = utilService.jsonToParams(data);
+        return $http.post(iDocApiPath.logout(), data, {
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            }
+        });
+    };
+
+    api.getInfo = function() {
+        return $http.get(iDocApiPath.getInfo());
     };
 
     return api;
 
 }
 
-idocRestService.$inject = ['$http', 'iDocApiPath', '$q'];
+idocRestService.$inject = ['$http', 'iDocApiPath', '$q', 'utilService'];
 
 
 angular

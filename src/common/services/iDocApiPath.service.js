@@ -8,8 +8,8 @@ function iDocApiPath() {
     /* Base Url API */
     this.getBaseUrl = function () {
         // return '/api';
-        //return 'http://api.khambacsi.com:56765';
-        return 'http://127.0.0.1:8000'
+        return 'http://api.khambacsi.com:56765';
+        //return 'http://127.0.0.1:8000'
     };
 
     this.getDoctors = function () {
@@ -58,6 +58,10 @@ function iDocApiPath() {
 
     this.logout = function () {
         return this.getBaseUrl() + '/auth/revoke-token/';
+    };
+
+    this.getInfo = function () {
+        return this.getBaseUrl() + '/auth/me/';
     };
 }
 

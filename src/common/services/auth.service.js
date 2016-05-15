@@ -1,55 +1,46 @@
 'use strict';
 
-function authService($http, localStorageService, idocRestService) {
-    var _identity,
-        _authenticated = false;
+function Auth($rootScope, Principal, localStorageService, idocRestService, $state) {
 
     return {
-        login: function(user) {
+        login: function(user, $uibModalInstance) {
+            var _this = this;
             idocRestService.login(user).then(function (response) {
-                _authenticated = true;
-                _identity = response.data;
                 localStorageService.set('token', response.data);
+                $uibModalInstance.close();
+                Principal.identity(true).then(function (response) {
+                    localStorageService.set('user', response);
+                });
             });
         },
         logout: function() {
-            idocRestService.logout().then(function (response) {
+            idocRestService.logout(Principal.getToken()).then(function (response) {
                 localStorageService.clearAll();
-                this.authenticate(null);
+                Principal.authenticate(null);
             });
         },
-        getToken: function () {
-            return localStorageService.get('token').access_token;
-        },
-        isInRole: function (role) {
-            if (!_authenticated || !_identity || !_identity.roles) {
-                return false;
-            }
-            return _identity.roles.indexOf(role) !== -1;
-        },
-        authenticate: function (identity) {
-            _identity = identity;
-            _authenticated = identity !== null;
-        },
-        isInAnyRole: function (roles) {
-            if (!_authenticated || !_identity.roles) {
-                return false;
-            }
-            for (var i = 0; i < roles.length; i++) {
-                if (this.isInRole(roles[i])) {
-                    return true;
-                }
-            }
-            return false;
-        },
-        isAuthenticated: function () {
-            return _authenticated;
+        authorize: function(force) {
+            return Principal.identity(force)
+                .then(function() {
+                    var isAuthenticated = Principal.isAuthenticated();
+
+                    if ($rootScope.toState.data.roles && $rootScope.toState.data.roles.length > 0 && !Principal.isInAnyRole($rootScope.toState.data.roles)) {
+                        if (isAuthenticated) {
+                            $state.go('accessdenied');
+                        }
+                        else {
+                            $rootScope.returnToState = $rootScope.toState;
+                            $rootScope.returnToStateParams = $rootScope.toStateParams;
+                            $state.go('login');
+                        }
+                    } 
+                });
         }
     };
 };
 
-authService.$inject = ['$http', 'localStorageService', 'idocRestService'];
+Auth.$inject = ['$rootScope', 'Principal', 'localStorageService', 'idocRestService', '$state'];
 
 angular
     .module('iDocApp')
-    .service('authService', authService);
+    .service('Auth', Auth);
