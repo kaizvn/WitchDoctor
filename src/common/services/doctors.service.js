@@ -69,7 +69,7 @@ function doctorsService() {
                 return {
                     full_name: doctor.profile.name,
                     specialties: _.pluck(doctor.specialties, 'name').join(' | '),
-                    rating: function(x) { var r = getFirstValid(x); return r ? r.rating : 0; }(doctor.ratings),
+                    rating: doctor.rating.rating,
                     id: doctor.id,
                     address: self.getAddressDoctor(doctor),
                     bio: doctor.profile.bio ? doctor.profile.bio.substr(0, 155) + '...' : '',

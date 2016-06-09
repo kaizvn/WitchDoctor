@@ -21,7 +21,7 @@
 								<span ng-hide="doctor.specialties.length == 1 || (doctor.specialties.length - 1) == $index"> | </span>
 							</span>
                         </div>
-                        <star-rating rating-value="doctor.ratings[0].rating" readonly="true"></star-rating>
+                        <star-rating rating-value="doctor.rating.rating" readonly="true"></star-rating>
                         <div class="doctor__address">
                             <div class="doctor__address_street">{{doctor.practices[0].addresses[0].formatted || doctor.practices[0].addresses[0].raw}}</div>
                         </div>
@@ -97,6 +97,22 @@
                             </div>
                         </div>
 
+                        <div class="block__detail_line">
+                            <span class="line__icon fa fa-mortar-board"></span>
+
+                            <div class="line__content">
+                                <h4 class="line__content_title">DANH HIỆU</h4>
+
+                                <div class="line__content_description no-padding">
+                                    <div ng-repeat="title in doctor.profile.titles" class="doctor__special">
+                                        <h5>{{title.name}}</h5>
+
+                                        <p>{{title.description}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="block__detail_line" ng-show="doctor.practices.length">
                             <span class="line__icon fa fa-life-saver"></span>
 
@@ -115,6 +131,18 @@
                                     </div>
                                     <p ng-show="practice.office_hours"><span class="glyphicon glyphicon-time" aria-hidden="true"/> {{practice.office_hours}}</p>
                                     <p ng-show="practice.description">{{practice.description}}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="block__detail_line" ng-show="doctor.hospital_practices.length">
+                            <span class="line__icon fa fa-hospital-o"></span>
+
+                            <div class="line__content">
+                                <h4 class="line__content_title">PHÒNG KHÁM</h4>
+                                <div ng-repeat="practice in doctor.hospital_practices" class="doctor__special">
+                                    <h5 ng-show="practice.hospital">{{practice.hospital}}</h5>
+                                    <p ng-show="practice.office_hours"><span class="glyphicon glyphicon-time" aria-hidden="true"/> {{practice.office_hours}}</p>
                                 </div>
                             </div>
                         </div>
@@ -140,7 +168,7 @@
                             <span class="line__icon fa fa-hospital-o"></span>
 
                             <div class="line__content">
-                                <h4 class="line__content_title">BỆNH VIỆN</h4>
+                                <h4 class="line__content_title">BỆNH VIỆN LIÊN KẾT</h4>
 
                                 <div class="line__content_description no-padding">
                                     <div ng-repeat="affiliation in doctor.hospital_affiliations" class="doctor__special">
@@ -169,14 +197,14 @@
                             </div>
                         </div>
 
-                        <div class="block__detail_line" ng-show="doctor.generic_educations.length">
+                        <div class="block__detail_line" ng-show="doctor.educations.length">
                             <span class="line__icon fa fa-mortar-board"></span>
 
                             <div class="line__content">
                                 <h4 class="line__content_title">QUÁ TRÌNH ĐÀO TẠO</h4>
 
                                 <div class="line__content_description">
-                                    <div ng-repeat="education in doctor.generic_educations" class="clearfix">
+                                    <div ng-repeat="education in doctor.educations" class="clearfix">
                                         <div class="pull-left">
                                             <div class="outer-circle">
                                                 <div class="inner-circle"></div>
