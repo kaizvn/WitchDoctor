@@ -41,7 +41,7 @@ angular.module('iDocApp')
                 }
             }).state({
                 name: 'detail',
-                url: "/detail/:id",
+                url: "/doctors/:id",
                 views: {
                     "content-view": {
                         "controller": "DetailCtrl",

@@ -105,9 +105,7 @@
 
                                 <div class="line__content_description no-padding">
                                     <div ng-repeat="title in doctor.profile.titles" class="doctor__special">
-                                        <h5>{{title.name}}</h5>
-
-                                        <p>{{title.description}}</p>
+                                        <h5 title={{title.description}} >{{title.name}}</h5>
                                     </div>
                                 </div>
                             </div>
@@ -224,7 +222,7 @@
                             <span class="line__icon fa fa-shield"></span>
 
                             <div class="line__content">
-                                <h4 class="line__content_title">KINH NGHIỆM CHỮA TRỊ</h4>
+                                <h4 class="line__content_title">KINH NGHIỆM</h4>
 
                                 <div class="line__content_description">
                                     <div ng-repeat="experience in doctor.experiences" class="clearfix">
