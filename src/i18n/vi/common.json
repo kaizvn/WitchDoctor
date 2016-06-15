@@ -3,14 +3,14 @@
     "app": "KhamBacSi",
     "search": "Tìm bác sĩ",
     "pageTitle": {
-      "home": "Khám Bác Sĩ - Danh sách bác sĩ tốt bạn hằng tìm kiếm, mọi chuyên khoa, một trang web",
+      "home": "Danh sách bác sĩ giỏi-kinh nghiệm-hàng đầu Việt Nam",
       "results": {
-        "doctor": "Kết quả tìm kiếm bác sĩ {{doctor}} - Khám Bác Sĩ",
-        "specialty": "Kết quả tìm kiếm chuyên khoa {{specialty}} - Khám Bác Sĩ",
-        "all": "Kết quả tìm kiếm - Khám Bác Sĩ"
+        "doctor": "Kết quả tìm kiếm {{doctor}}",
+        "specialty": "Chuyên khoa {{specialty}}",
+        "all": "Kết quả tìm kiếm"
       },
-      "about": "Về Chúng Tôi - Khám Bác Sĩ",
-      "detail": "Thông tin bác sĩ {{doctor}} - Khám Bác Sĩ"
+      "about": "Đội ngũ Khám Bác Sĩ",
+      "detail": "Bác sĩ {{doctor}}"
     },
     "menu": {
       "account": {
@@ -28,7 +28,7 @@
     },
     "home": {
       "banner": {
-        "title": "Danh sách bác sĩ tốt bạn hằng tìm kiếm, mọi chuyên khoa, một trang web",
+        "title": "Danh sách bác sĩ giỏi bạn hằng tìm kiếm, mọi chuyên khoa, một trang web",
         "medium": "Bằng bất cứ phương thức nào: Tên bác sĩ | Bệnh mắc phải | Triệu chứng biểu hiện",
         "form": {
           "input": "Triệu chứng / Bác Sĩ",

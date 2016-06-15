@@ -339,7 +339,9 @@ module.exports = function (grunt) {
                         'assets/images/**/*.{jpg,png,gif,webp}',
                         'assets/skin/**/*.{jpg,png,gif,webp}',
                         'assets/fonts/**/*',
-                        'data.json'
+                        'data.json',
+                        'sitemap.xml',
+                        'robots.txt'
                     ]
                 }, {
                     expand: true,

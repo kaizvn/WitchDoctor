@@ -1,0 +1,14 @@
+User-agent: *
+Disallow: /admin
+Disallow: /files/secret-plans.pdf
+
+User-agent: googlebot
+Disallow: /admin
+Disallow: /files/secret-plans.pdf
+Disallow: /dont-show-to-google
+Disallow: /*?search=
+
+User-agent: googlebot-images
+Disallow: /admin
+
+Sitemap: http://khambacsi.com/sitemap.xml
