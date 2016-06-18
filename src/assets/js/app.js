@@ -12,6 +12,7 @@
             'ngResource',
             'ngCookies',
             'ui.router',
+            'ui.router.metatags',
             'ct.ui.router.extras',
             'pascalprecht.translate',
             'ui.bootstrap',
@@ -25,7 +26,8 @@
 
     angular.module('iDocApp')
         .config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider,
-                          $translateProvider, $provide, tmhDynamicLocaleProvider, httpRequestInterceptorCacheBusterProvider, $localStorageProvider) {
+                          $translateProvider, $provide, tmhDynamicLocaleProvider, httpRequestInterceptorCacheBusterProvider,
+                          $localStorageProvider) {
             //enable htmlmode - remove #! on url
             //$locationProvider.html5Mode(true);
 
@@ -58,7 +60,6 @@
             tmhDynamicLocaleProvider.useCookieStorage('NG_TRANSLATE_LANG_KEY');
 
             $locationProvider.hashPrefix('!');
-
         })
         .factory('authInterceptor', function ($rootScope, $q, $location, localStorageService) {
             return {
@@ -154,5 +155,22 @@
              ref.parentNode.insertBefore(js, ref);
 
              } (document));*/
-        });
+        })
+        .config(['UIRouterMetatagsProvider', function(UIRouterMetatagsProvider){
+            UIRouterMetatagsProvider
+                .setTitlePrefix('')
+                // .setTitleSuffix(' | Khambacsi')
+                .setDefaultTitle("Khambacsi.com")
+                .setDefaultDescription('The best doctors for you and your loved ones, qualified and experienced.')
+                .setDefaultKeywords('keywords')
+                // .setStaticProperties({
+                //         'fb:app_id': 'your fb app id',
+                //         'og:site_name': 'your site name'
+                //     })
+                .setOGURL(true);
+        }])
+        .run(['$rootScope', 'MetaTags', function($rootScope, MetaTags) {
+            $rootScope.MetaTags = MetaTags;
+        }])
+        ;
 })();

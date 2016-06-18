@@ -4,37 +4,37 @@ function MainCtrl($rootScope, $scope, idocRestService, $uibModal, titleService, 
 
     var _this = this;
 
-    this.setTitle = function(route) {
-        switch (route.name) {
-            case 'home':
-                $translate('global.pageTitle.home').then(function(txt) {
-                    titleService.setTitle(txt);
-                });
-                break;
+    // this.setTitle = function(route) {
+    //     switch (route.name) {
+    //         case 'home':
+    //             $translate('global.pageTitle.home').then(function(txt) {
+    //                 titleService.setTitle(txt);
+    //             });
+    //             break;
 
-            case 'results':
-                $translate('global.pageTitle.results').then(function(txt) {
-                    titleService.setTitle(txt);
-                });
-                break;
+    //         case 'results':
+    //             $translate('global.pageTitle.results').then(function(txt) {
+    //                 titleService.setTitle(txt);
+    //             });
+    //             break;
 
-            case 'about':
-                $translate('global.pageTitle.about').then(function(txt) {
-                    titleService.setTitle(txt);
-                });
-                break;
+    //         case 'about':
+    //             $translate('global.pageTitle.about').then(function(txt) {
+    //                 titleService.setTitle(txt);
+    //             });
+    //             break;
 
-            default:
-                $translate('global.pageTitle.home').then(function(txt) {
-                    titleService.setTitle(txt);
-                });
-                break;
-        }
-    };
+    //         default:
+    //             $translate('global.pageTitle.home').then(function(txt) {
+    //                 titleService.setTitle(txt);
+    //             });
+    //             break;
+    //     }
+    // };
 
-    $scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
-        _this.setTitle(toState);
-    });
+    // $scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
+    //     _this.setTitle(toState);
+    // });
 
     $rootScope.$watch('hideFooter', function(value) {
         $scope.hideFooter = value;

@@ -1,6 +1,6 @@
 'use strict';
 
-function DetailCtrl($scope, idocRestService, doctorsService, $stateParams, $anchorScroll, $translate, titleService) {
+function DetailCtrl($scope, idocRestService, doctorsService, $stateParams, $anchorScroll, $translate, seoService, MetaTags) {
     var isRelated;
     idocRestService.getDoctorDetail($stateParams.id).then(function (response) {
         isRelated = false;
@@ -28,12 +28,8 @@ function DetailCtrl($scope, idocRestService, doctorsService, $stateParams, $anch
             $scope.maps[0].des = profile.address.raw;
         }
 
-        /* Set Title For SEO */
-        $translate('global.pageTitle.detail', {
-            doctor: profile.name
-        }).then(function(txt) {
-            titleService.setTitle(txt);
-        });
+        /*SEO*/
+        seoService.update({doctor: profile.name});
 
         if (doctorsService.results) {
             isRelated = true;
@@ -55,7 +51,7 @@ function DetailCtrl($scope, idocRestService, doctorsService, $stateParams, $anch
     });
 }
 
-DetailCtrl.$inject = ['$scope', 'idocRestService', 'doctorsService', '$stateParams', '$anchorScroll', '$translate', 'titleService'];
+DetailCtrl.$inject = ['$scope', 'idocRestService', 'doctorsService', '$stateParams', '$anchorScroll', '$translate', 'seoService', 'MetaTags'];
 
 angular.module('iDocApp')
     .controller('DetailCtrl', DetailCtrl);

@@ -2,7 +2,7 @@
   "port": "8080",
   "static_path": "/src/dist",
   "api_path": "/api",
-  "api_server": "api.khambacsi.com:56765",
+  "api_server": "api.khambacsi.com",
   "proxy_config": "ProdProxyConfig",
   "FB_AUTH": {
     "APP_ID": 154366684653118,

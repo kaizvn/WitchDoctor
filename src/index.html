@@ -10,10 +10,11 @@
 <!--[if gt IE 9]><!-->
 <html class="no-js" id="ng-app" ng-app="iDocApp"> <!--<![endif]-->
 <head>
-    <title>Danh sách bác sĩ giỏi-kinh nghiệm-hàng đầu Việt Nam</title>
-
+    <title>{{MetaTags.title | translate}}</title>
+    <meta name="description" content="{{MetaTags.description | translate}}"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="apple-touch-icon" href="/favicon-iphone.png" />
+    <!-- "{{'global.home.meta.description' | translate}}"  -->
     <!-- build:css /assets/styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="../bower_components/Bootflat/css/bootstrap.min.css" />
@@ -174,6 +175,7 @@
 <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 <script src="../bower_components/angular-utils-pagination/dirPagination.js"></script>
 <script src="../bower_components/chosen/chosen.jquery.min.js"></script>
+<script src="../bower_components/ui-router-metatags/dist/ui-router-metatags.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
@@ -193,13 +195,13 @@
 <script src="/common/services/query.service.js"></script>
 <script src="/common/services/title.service.js"></script>
 <script src="/common/services/util.service.js"></script>
+<script src="/common/services/seo.service.js"></script>
 
 <script src="/common/directives/maps.directive.js"></script>
 <script src="/common/directives/starRaiting.directive.js"></script>
 <script src="/common/directives/skinSelect.directive.js"></script>
 <script src="/common/directives/idocSearch.directive.js"></script>
 <script src="/common/directives/hasRole.directive.js"></script>
-<script src="/common/directives/title.directive.js"></script>
 
 <script src="/common/filters/imageDefault.filter.js"></script>
 

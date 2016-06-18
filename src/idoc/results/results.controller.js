@@ -2,7 +2,7 @@
 
 
 function ResultsCtrl($scope, $state, $stateParams, $location, doctorsService, idocRestService,
-    $anchorScroll, urlService, queryService, $translate, titleService) {
+    $anchorScroll, urlService, queryService, $translate, seoService) {
 
     var _this = this;
     $scope.params = $stateParams.query || {};
@@ -13,29 +13,19 @@ function ResultsCtrl($scope, $state, $stateParams, $location, doctorsService, id
         idocRestService.getDoctors(params).then(function (response) {
 
 
-            /* Set Title For SEO */
+            /*SEO*/
+            var seoData = '';
             switch(true) {
                 case queryService.isSearchBy('name'):
-                    $translate('global.pageTitle.results.doctor', {
-                        doctor: queryService.getParam('name')
-                    }).then(function(txt) {
-                        titleService.setTitle(txt);
-                    });
-                break;
-
+                    seoData = 'tên bác sĩ: ' + queryService.getParam('name');
+                    break;
                 case queryService.isSearchBy('specialty'):
-                    $translate('global.pageTitle.results.specialty', {
-                        specialty: queryService.getParam('specialty')
-                    }).then(function(txt) {
-                        titleService.setTitle(txt);
-                    });
-                break;
-
-                default:
-                    $translate('global.pageTitle.results.all').then(function(txt) {
-                        titleService.setTitle(txt);
-                    });
+                    seoData = 'tên chuyên khoa: ' + queryService.getParam('specialty');
+                    break;
+                // more to come, condition, diseases
             };
+            console.log(seoData);
+            seoService.update({data:seoData});
 
             $scope.data = doctorsService.formatDoctorsData(response.data);
 
@@ -111,7 +101,7 @@ function ResultsCtrl($scope, $state, $stateParams, $location, doctorsService, id
 }
 
 ResultsCtrl.$inject = ['$scope', '$state', '$stateParams', '$location', 'doctorsService',
-'idocRestService', '$anchorScroll', 'urlService', 'queryService', '$translate', 'titleService'];
+'idocRestService', '$anchorScroll', 'urlService', 'queryService', '$translate', 'seoService'];
 
 angular.module('iDocApp')
     .controller('ResultsCtrl', ResultsCtrl);

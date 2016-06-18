@@ -1,4 +1,22 @@
 {
+  "home": {
+    "title": "Danh sách bác sĩ giỏi-kinh nghiệm-hàng đầu Việt Nam",
+    "meta":{
+      "description": "Tìm bác sĩ giỏi và tốt nhất theo đúng triệu chứng, bệnh, chuyên khoa. Các bs kinh nghiệm cùng thông tin chi tiết về phòng khám và bệnh viện công tác."
+    }
+  },
+  "results":{
+    "title": "Tìm theo {{data}}",
+    "meta":{
+      "description": "Kết quả tìm kiếm bác sĩ theo {{data}}"
+    }
+  },
+  "detail":{
+    "title": "Bác sĩ {{doctor}}",
+    "meta":{
+      "description": "Thông tin bác sĩ {{doctor}}"
+    }
+  },
   "global": {
     "app": "KhamBacSi",
     "search": "Tìm bác sĩ",

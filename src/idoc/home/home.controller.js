@@ -1,7 +1,7 @@
 'use strict';
 
 
-function HomeCtrl($scope, $state, idocRestService, $timeout, $http) {
+function HomeCtrl($scope, $state, idocRestService, $timeout, $http, kbsSeo) {
     $scope.content = 'Home';
     var querySearch = {};
 

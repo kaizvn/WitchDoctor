@@ -1,15 +1,30 @@
 {
+  "home": {
+    "title": "The top doctors in Vietnam",
+    "meta":{
+      "description": "Find the best and right doctors by conditions or specialties, highly experienced and qualified with full practice and hospital details"
+    }
+  },
+  "results":{
+    "title": "Danh sách bác sĩ",
+    "meta":{
+      "description": "Danh sách bác sĩ"
+    }
+  },
+  "detail":{
+    "title": "Bác sĩ {{doctor}} ơi ả ơi à",
+    "meta":{
+      "description": "Thông tin bác sĩ {{doctor}}"
+    }
+  },
   "global": {
     "app": "KhamBacSi",
     "show": false,
     "search": "Search Doctor by Name",
     "home": {
       "banner": {
-        "banner": {
-          "title": "Great doctors you wish you knew before, every specialty, all in one place",
-          "medium": "By any means: Doctor Names | Suspected Conditions | Symptoms Encountered"
-          // "medium": "Right treatment starts with meeting the right doctors"
-        },
+        "title": "Great doctors you wish you knew before, every specialty, all in one place",
+        "medium": "By Doctor Names | Conditions | Symptoms",
         "form": {
           "input": "Triệu chứng / Bác Sĩ",
           "location": "Chọn thành phố",
@@ -44,9 +59,9 @@
         "signup": "Sign Up"
       },
       "top_url": {
-        "news": "Tin tức",
-        "is_doctor": "Là bác sĩ ?",
-        "about_us": "Về chúng tôi"
+        "news": "News",
+        "is_doctor": "For Doctors",
+        "about_us": "About Us"
       }
     },
     "footer": {
@@ -93,18 +108,18 @@
         ]
       },
       "contact": {
-        "label": "Liên hệ",
+        "label": "Contact us",
         "items": [
           {
-            "label": "Thông tin",
+            "label": "More info",
             "keyword": ""
           },
           {
-            "label": "Bản đồ",
+            "label": "Map",
             "keyword": ""
           },
           {
-            "label": "Gửi câu hỏi",
+            "label": "Q & A",
             "keyword": ""
           }
         ]
