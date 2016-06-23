@@ -2,7 +2,7 @@
   "note": "You should change the mockDirectory to your mock directory path.",
   "mockDirectory": "src/main/resources/static/mocks",
   "quiet": false,
-  "port": "7879",
+  "port": "9787",
   "latency": 50,
   "allowedDomains": ["*"],
   "allowedHeaders": ["Content-Type"],

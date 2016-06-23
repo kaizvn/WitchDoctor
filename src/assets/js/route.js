@@ -68,7 +68,7 @@ angular.module('iDocApp')
                 }
             }).state({
                 name: 'about',
-                url: "/about",
+                url: "/about/",
                 metaTags: selectMetaTags('about'),
                 views: {
                     "content-view": {

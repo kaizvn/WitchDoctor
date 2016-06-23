@@ -39,7 +39,7 @@ module.exports = function (grunt) {
             },
             livereload: {
                 options: {
-                    livereload: 35729
+                    livereload: 35799
                 },
                 files: [
                     'src/**/*.html',
@@ -87,6 +87,17 @@ module.exports = function (grunt) {
                             js: '\'{{filePath}}\','
                         }
                     }
+                }
+            }
+        },
+
+        prerender: {
+            dist:{
+                options: {
+                    sitemap: 'http://127.0.0.1:9000/sitemap.xml',
+                    dest: 'src/dist/snapshots/',
+                    hashPrefix: '!',
+                    hashed: true
                 }
             }
         },
@@ -455,7 +466,7 @@ module.exports = function (grunt) {
             'concurrent:sassDev',
             'configureProxies',
             'express',
-            'apimocker',
+            // 'apimocker',
             'watch'
         ])
     });
@@ -488,6 +499,44 @@ module.exports = function (grunt) {
         'usemin',
         'htmlmin'
     ]);
+
+    grunt.registerTask('seo', function(){
+        function createSitemap(hostname, data){
+            var sm = require('sitemap');
+            
+            var doctors = JSON.parse(fs.readFileSync('export#500.json', 'utf8'));
+            var doctors_urls = doctors.map(function(u){
+                return {
+                    url: '/doctors/' + u,
+                    changefreq: 'daily', priority:0.9
+                }
+            }).slice(0,10);
+
+            var sitemap = sm.createSitemap ({
+                hostname: hostname,
+                cacheTime: 1,//600000,        // 600 sec - cache purge period 
+                urls: [
+                    { url: '/',  changefreq: 'daily', priority: 1 },
+                    { url: '/about/',  changefreq: 'daily',  priority: 0.3 }
+                ]
+                .concat(doctors_urls)
+            });
+
+            return sitemap;         
+        };
+
+        var renderHost = 'http://127.0.0.1:9000';
+        var hostname = 'http://khambacsi.com';
+
+        fs.writeFileSync("src/sitemap.xml", createSitemap(renderHost).toString());
+
+        grunt.task.run([
+            'prerender'
+        ]);
+
+        fs.writeFileSync("src/sitemap.xml", createSitemap(hostname).toString());        
+    });
+    
 
     grunt.registerTask('default', [
         'test',
