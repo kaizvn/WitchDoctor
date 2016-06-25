@@ -24,7 +24,6 @@ function ResultsCtrl($scope, $state, $stateParams, $location, doctorsService, id
                     break;
                 // more to come, condition, diseases
             };
-            console.log(seoData);
             seoService.update({data:seoData});
 
             $scope.data = doctorsService.formatDoctorsData(response.data);

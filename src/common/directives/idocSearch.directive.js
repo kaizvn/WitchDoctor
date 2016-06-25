@@ -27,18 +27,20 @@ angular.module('iDocApp')
                     };
                 }
 
-                _.each($scope.actionGroup, function(obj, key, list) {
-                    if(obj.value) {
-                       $scope.selectedType = obj.text;
-                    }
-                });
+                // _.each($scope.actionGroup, function(obj, key, list) {
+                //     if(obj.value) {
+                //        $scope.selectedType = obj.text;
+                //         // $scope.selectedType = key;
+                //     }
+                // });
 
-                $scope.onSelectType = function(type){
+                $scope.onSelectType = function($event, type){
                     _.each($scope.actionGroup, function (value, key, list) {
                         return list[key].value = false;
                     });
 
-                    $scope.selectedType = $scope.actionGroup[type].text;
+                    // $scope.selectedType = $scope.actionGroup[type].text;
+                    $scope.selectedType = $event.currentTarget.text;
                     $scope.actionGroup[type].value = true;
 
                     $scope.showSearchType = !$scope.showSearchType;
@@ -91,7 +93,7 @@ angular.module('iDocApp')
                     querySearch.name =  doctor ? doctor : null;
                     querySearch.actionGroup = $scope.actionGroup;
 
-                    $state.go('result', {query: querySearch});
+                    $state.go('results', {query: querySearch});
                 }
 
                 $scope.onSelectedCity = function(city) {

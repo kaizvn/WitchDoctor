@@ -1,5 +1,5 @@
 <div class="banner">
-    <div class="container">
+    <div class="container-fluid">
         <div class="banner__head">
             <h1 class="banner__head_title">{{'global.home.banner.title' | translate}}</h1>
 
@@ -7,59 +7,69 @@
         </div>
         <div class="banner__body">
             <form ng-submit="doSearch()">
-                <div class="row">
-                    <div class="col-sm-6">
+                <div class="input-group">
+                    <!-- <select class="form-control">
+                        <option value="one">Tp. HCM</option>
+                        <option value="two">Hanoi</option>
+                    </select> -->
+                    <div class="row">
+                        <ul class="nav nav-tabs nav-justified custom-tab" role="navigation">
+                            <li><a href="#" ng-click="onSelectType('conditions')" ng-class="{active: isActive('conditions')}">Bệnh</a></li>
+                            <li><a href="#" ng-click="onSelectType('name')" ng-class="{active: isActive('name')}">Bác sĩ</a></li>
+                            <li><a href="#" ng-click="onSelectType('specialty')" ng-class="{active: isActive('specialty')}">Chuyên Khoa</a></li>
+                        </ul>
+                    </div>
+                    <div class="row">
                         <div class="relative">
-                            <div class="input-group">
-                                <div class="input-group-btn">
-                                    <button type="button" class="btn btn-select" tabindex="-1">{{selectedType}}</button>
-                                    <button type="button" class="btn dropdown-toggle">
-                                        <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="javascript:void(0)" ng-click="onSelectType('conditions')">Bệnh</a>
-                                        </li>
-                                        <li><a href="javascript:void(0)" ng-click="onSelectType('name')">Bác sĩ</a></li>
-                                        <li><a href="javascript:void(0)" ng-click="onSelectType('specialty')">Chuyên
-                                            Khoa</a></li>
-                                    </ul>
-                                </div>
-                                <div class="input-group-text">
-                                    <input type="text"
-                                           ng-show="actionGroup.conditions.value"
-                                           ng-model="condition"
-                                           uib-typeahead="condition as condition.name for condition in getConditions($viewValue)"
-                                           typeahead-loading="loading"
-                                           typeahead-on-select="onSelectCondition(condition)"
-                                           typeahead-no-results="noResults"
-                                           class="form-control">
-                                    <input type="text"
-                                           ng-show="actionGroup.name.value"
-                                           uib-typeahead="doctor.name for doctor in getParams($viewValue)"
-                                           typeahead-loading="loading"
-                                           typeahead-no-results="noResults"
-                                           typeahead-on-select="onSelectResult(doctor)"
-                                           ng-model="doctor"
-                                           class="form-control">
-                                    <input type="text"
-                                           ng-show="actionGroup.specialty.value"
-                                           uib-typeahead="specialty.name for specialty in getParams($viewValue)"
-                                           typeahead-loading="loading"
-                                           typeahead-no-results="noResults"
-                                           typeahead-on-select="onSelectResult(specialty)"
-                                           ng-model="specialty"
-                                           class="form-control">
-                                </div>
-                            </div>
-                            <div class="searchLoading" ng-show="loading">
-                                <i class="glyphicon glyphicon-refresh"></i> Tìm kiếm
-                            </div>
-                            <div class="searchNoResult" ng-show="noResults">
-                                <i class="glyphicon glyphicon-remove"></i> Không có kết quả
-                            </div>
+                            <input type="text"
+                                   ng-show="actionGroup.conditions.value"
+                                   ng-model="condition"
+                                   uib-typeahead="condition as condition.name for condition in getConditions($viewValue)"
+                                   typeahead-loading="loading"
+                                   typeahead-on-select="onSelectCondition(condition)"
+                                   typeahead-no-results="noResults"
+                                   class="form-control"
+                                   placeholder="{{'home.search.placeholder.condition' | translate}}">
+                            <input type="text"
+                                   ng-show="actionGroup.name.value"
+                                   uib-typeahead="doctor.name for doctor in getParams($viewValue)"
+                                   typeahead-loading="loading"
+                                   typeahead-no-results="noResults"
+                                   typeahead-on-select="onSelectResult(doctor)"
+                                   ng-model="doctor"
+                                   class="form-control"
+                                   placeholder="{{'home.search.placeholder.doctor' | translate}}">
+                            <input type="text"
+                                   ng-show="actionGroup.specialty.value"
+                                   uib-typeahead="specialty.name for specialty in getParams($viewValue)"
+                                   typeahead-loading="loading"
+                                   typeahead-no-results="noResults"
+                                   typeahead-on-select="onSelectResult(specialty)"
+                                   ng-model="specialty"
+                                   class="form-control"
+                                   placeholder="{{'home.search.placeholder.specialty' | translate}}">
+                            <span class="form-control-feedback hidden-sm hidden-xs">
+                                <!--hidden classes (sm xs) must be opposite to below button (lg md)-->
+                                <button type="submit" class="inline-btn">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </span>
+                        </div>
+                        <div class="searchLoading" ng-show="loading">
+                            <i class="glyphicon glyphicon-refresh"></i> Tìm kiếm
+                        </div>
+                        <div class="searchNoResult" ng-show="noResults">
+                            <i class="glyphicon glyphicon-remove"></i> Không có kết quả
                         </div>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="row">
+                        <div class="hidden-md hidden-lg">
+                            <button type="submit" class="btn btn-primary btn-block">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- <div class="col-sm-4">
                         <div class="select-group">
                             <i class="fa fa-map-marker"></i>
                             <input type="text"
@@ -70,12 +80,7 @@
                                    ng-model="city"
                                    class="form-control form-control-city">
                         </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <button type="submit" class="btn btn-primary btn-block">
-                            {{'global.home.banner.form.action' | translate}}
-                        </button>
-                    </div>
+                    </div> -->
                 </div>
             </form>
         </div>

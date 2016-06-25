@@ -20,20 +20,26 @@
 		position: relative;
 		z-index: 99;
 		padding: 5px;
-		background: rgba(255, 255, 255, 0.3);
+		//background: rgba(255, 255, 255, 0.3);
 		max-width: 766px;
 		margin: 0 auto;
 		border-radius: 2px;
 		margin-top: 30px;
-		.form-control {
-			height: 45px;
-			border: none;
+
+		$text-input-height: 45px;
+
+		.form-control, .form-control-feedback {
+			height: $text-input-height;
+			//border: none;
 			border-radius: 0;
 			&-city {
 				padding-left: 30px;
 			}
 		}
-		.input-group-text .form-control {
+		input[type="text"] {
+			padding-right: $text-input-height;
+		}
+		.input-group-text .form-control, .form-control-feedback {
 			border-top-right-radius: 2px;
 			border-bottom-right-radius: 2px;
 		}
@@ -45,12 +51,12 @@
 		.input-group-btn .btn {
 			font-size: 14px;
 			font-weight: normal;
-			height: 45px;
+			height: $text-input-height;
 		}
 		.chosen-container-single {
 		 	.chosen-single {
-				height: 45px;
-				line-height: 45px;
+				height: $text-input-height;
+				line-height: $text-input-height;
 				border-radius: 2px;
 				div b {
 					margin-top: 18px;
@@ -65,6 +71,17 @@
 		}		
 		.select-group .fa {
 			top: 12px;
+		}
+		.form-control-feedback{
+			.inline-btn {
+				height: $text-input-height;
+				font-size: 20px;
+				//font-weight: bold;
+				//padding: 7px 12px;
+				background-color: transparent;
+				border-color: transparent;
+				vertical-align: middle;
+			}
 		}
 	}
 	.overlay {
@@ -100,6 +117,13 @@
 	        box-shadow: none;
 	    }
     }
+	.custom-tab {
+		//background-color: rgb(245, 247, 250, 0.6);
+		.active {
+			background-color: rgb(59, 175, 218);
+			color: #FFFFFF;
+		}
+	}
 }
 
 .btn-select {
@@ -117,6 +141,7 @@
 		}
 		&__body {
 			margin-bottom: 60px;
+			.custom-tab
 			.form-control,
 			.input-group-btn .btn,
 			.chosen-container {
@@ -125,6 +150,10 @@
 			.select-group,
 			.input-group {
 				margin-bottom: 5px;
+			}
+			input[type="text"] {
+				padding-left: 5px;
+				padding-right: 5px;
 			}
 		}
 	}

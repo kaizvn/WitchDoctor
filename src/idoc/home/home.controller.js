@@ -1,38 +1,42 @@
 'use strict';
 
 
-function HomeCtrl($scope, $state, idocRestService, $timeout, $http, kbsSeo) {
+function HomeCtrl($scope, $state, idocRestService, $timeout, $http, seoService) {
     $scope.content = 'Home';
     var querySearch = {};
 
     $scope.actionGroup = {
         conditions: {
             value: true,
-            text: 'Bệnh'
+            text: 'Benh'
         },
         specialty: {
             value: false,
-            text: 'Chuyên khoa'
+            text: 'Chuyen khoa'
         },
         name: {
             value: false,
-            text: 'Bác sĩ'
+            text: 'Bac si'
         }
     };
 
-    $scope.selectedType = $scope.actionGroup.conditions.text,
+    $scope.selectedType = 'conditions';
 
     $scope.onSelectType = function(type){
         _.each($scope.actionGroup, function (value, key, list) {
             return list[key].value = false;
         });
 
-        $scope.selectedType = $scope.actionGroup[type].text;
+        $scope.selectedType = type;
         $scope.actionGroup[type].value = true;
 
         $scope.showSearchType = !$scope.showSearchType;
         querySearch = {};
     };
+
+    $scope.isActive = function(type) {
+        return $scope.selectedType === type;
+    }
 
     $scope.getConditions = function (input) {
         return idocRestService.getConditions(input).then(function (response) {
@@ -90,7 +94,7 @@ function HomeCtrl($scope, $state, idocRestService, $timeout, $http, kbsSeo) {
 }
 
 
-HomeCtrl.$inject = ['$scope', '$state', 'idocRestService', '$timeout', '$http'];
+HomeCtrl.$inject = ['$scope', '$state', 'idocRestService', '$timeout', '$http', 'seoService'];
 
 angular.module('iDocApp')
     .controller('HomeCtrl', HomeCtrl);

@@ -6,14 +6,14 @@
                 <div class="col-sm-4">
                     <div class="input-group">
                         <div class="input-group-btn">
-                            <button type="button" class="btn btn-select" tabindex="-1">{{selectedType}}</button>
+                            <button type="button" class="btn btn-select" tabindex="-1">{{selectedType || "Bệnh"}}</button>
                             <button type="button" class="btn dropdown-toggle">
                                 <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a href="javascript:void(0)" ng-click="onSelectType('conditions')">Bệnh</a></li>
-                                <li><a href="javascript:void(0)" ng-click="onSelectType('name')">Bác sĩ</a></li>
-                                <li><a href="javascript:void(0)" ng-click="onSelectType('specialty')">Chuyên Khoa</a></li>
+                                <li><a href="#" ng-click="onSelectType($event, 'conditions')">Bệnh</a></li>
+                                <li><a href="#" ng-click="onSelectType($event, 'name')">Bác sĩ</a></li>
+                                <li><a href="#" ng-click="onSelectType($event, 'specialty')">Chuyên Khoa</a></li>
                             </ul>
                         </div>
                         <div class="input-group-text">

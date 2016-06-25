@@ -160,7 +160,7 @@
             UIRouterMetatagsProvider
                 .setTitlePrefix('')
                 // .setTitleSuffix(' | Khambacsi')
-                .setDefaultTitle("Khambacsi.com")
+                .setDefaultTitle("home.title")
                 .setDefaultDescription('The best doctors for you and your loved ones, qualified and experienced.')
                 .setDefaultKeywords('keywords')
                 // .setStaticProperties({
