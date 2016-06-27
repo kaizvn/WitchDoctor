@@ -223,7 +223,7 @@ module.exports = function (grunt) {
                     css: [
                         [/(assets\/images\/.*?\.(?:gif|jpeg|jpg|png|webp|svg|woff|ttf))/gm, 'Update the JS to reference our revved images']
                         // to test
-                        //[/(assets\/fonts\/.*?\.(?:woff|ttf))/gm, 'Update the JS to reference our revved images']
+                        // [/(assets\/fonts\/.*?\.(?:woff|ttf))/gm, 'Update the JS to reference our revved images']
                     ],
                     html: [
                         [/(assets\/images\/.*?\.(?:gif|jpeg|jpg|png|webp|svg))/gm, 'Update the HTML to reference our revved images']
@@ -284,9 +284,11 @@ module.exports = function (grunt) {
             //         ]
             //     }
             // }
-            options: {
-                root: 'src' // Replace relative paths for static resources with absolute path
-            }
+            // src option causes Bootflat's font url configured incorrectly
+            // http://ignaciosuay.com/how-to-avoid-grunt-build-not-loading-bootstrap-glyphicons-using-jhipster/
+            // options: {
+            //     root: 'src' // Replace relative paths for static resources with absolute path
+            // }
         },
         ngtemplates: {
             dist: {
@@ -525,14 +527,16 @@ module.exports = function (grunt) {
             return sitemap;         
         };
 
+        console.log('<%= yeoman.dist %>');
+
         var renderHost = 'http://127.0.0.1:9000';
         var hostname = 'http://khambacsi.com';
 
         fs.writeFileSync("src/sitemap.xml", createSitemap(renderHost).toString());
 
-        grunt.task.run([
-            'prerender'
-        ]);
+        // grunt.task.run([
+        //     'prerender'
+        // ]);
 
         fs.writeFileSync("src/sitemap.xml", createSitemap(hostname).toString());        
     });
