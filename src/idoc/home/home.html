@@ -2,16 +2,16 @@
     <div class="container-fluid">
         <div class="banner__head">
             <h1 class="banner__head_title">{{'global.home.banner.title' | translate}}</h1>
-
             <p class="banner__head_subTitle">{{'global.home.banner.medium' | translate}}</p>
         </div>
         <div class="banner__body">
             <form ng-submit="doSearch()">
-                <div class="input-group">
-                    <!-- <select class="form-control">
-                        <option value="one">Tp. HCM</option>
-                        <option value="two">Hanoi</option>
-                    </select> -->
+                <!-- <select class="form-control">
+                    <option value="one">Tp. HCM</option>
+                    <option value="two">Hanoi</option>
+                </select> -->
+                <!--col-middle to even out row oudentation-->
+                <div class="col-middle">
                     <div class="row">
                         <ul class="nav nav-tabs nav-justified custom-tab" role="navigation">
                             <li><a href="#" ng-click="onSelectType('conditions')" ng-class="{active: isActive('conditions')}">Bệnh</a></li>
@@ -48,12 +48,12 @@
                                    ng-model="specialty"
                                    class="form-control"
                                    placeholder="{{'home.search.placeholder.specialty' | translate}}">
-                            <span class="form-control-feedback hidden-sm hidden-xs">
-                                <!--hidden classes (sm xs) must be opposite to below button (lg md)-->
-                                <button type="submit" class="inline-btn">
-                                    <span class="glyphicon glyphicon-search"></span>
-                                </button>
-                            </span>
+                    <span class="form-control-feedback hidden-sm hidden-xs">
+                        <!--hidden classes (sm xs) must be opposite to below button (lg md)-->
+                        <button type="submit" class="inline-btn">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
                         </div>
                         <div class="searchLoading" ng-show="loading">
                             <i class="glyphicon glyphicon-refresh"></i> Tìm kiếm
@@ -69,19 +69,19 @@
                             </button>
                         </div>
                     </div>
-                    <!-- <div class="col-sm-4">
-                        <div class="select-group">
-                            <i class="fa fa-map-marker"></i>
-                            <input type="text"
-                                   uib-typeahead="city.name for city in getCities($viewValue)"
-                                   typeahead-loading="loadingCity"
-                                   typeahead-no-results="noResultsCity"
-                                   placeholder="Nhập thành phố"
-                                   ng-model="city"
-                                   class="form-control form-control-city">
-                        </div>
-                    </div> -->
                 </div>
+                <!-- <div class="col-sm-4">
+                    <div class="select-group">
+                        <i class="fa fa-map-marker"></i>
+                        <input type="text"
+                               uib-typeahead="city.name for city in getCities($viewValue)"
+                               typeahead-loading="loadingCity"
+                               typeahead-no-results="noResultsCity"
+                               placeholder="Nhập thành phố"
+                               ng-model="city"
+                               class="form-control form-control-city">
+                    </div>
+                </div> -->
             </form>
         </div>
     </div>
