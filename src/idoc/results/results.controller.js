@@ -30,15 +30,19 @@ function ResultsCtrl($scope, $state, $stateParams, $location, doctorsService, id
 
             $scope.data.currentPage = ($scope.data.skip / 5) + 1;
 
-            $scope.maps = _.map($scope.data.results, function (doctor) {
-                var obj = {title: doctor.full_name};
-                if (doctor.address) {
-                    obj.lat = doctor.address.lat;
-                    obj.lon = doctor.address.lng;
-                    obj.des = doctor.address.raw;
-                }
-                return obj;
-            });
+            $scope.maps = _.chain($scope.data.results)
+                // remove doctors without addresses on maps
+                .filter(function(d){
+                    return d.address;
+                })
+                .map(function(d){
+                    var obj = {title: d.full_name};
+                    obj.lat = d.address.lat;
+                    obj.lon = d.address.lng;
+                    obj.des = d.address.raw;
+                    return obj;
+                })
+                .value();
 
             $scope.isShowResult = true;
             $scope.loader.active = false;

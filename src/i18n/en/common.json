@@ -5,11 +5,29 @@
       "description": "Find the best and right doctors by conditions or specialties, highly experienced and qualified with full practice and hospital details"
     },
     "search":{
+      "param":{
+        "condition": "Condition",
+        "doctor": "Doctor Name",
+        "specialty": "Specialty"
+      },
       "placeholder":{
-        "condition": "stress ...",
-        "doctor": "le minh thong ...",
-        "specialty": "cardiology ..."
+        "condition": "eg. stress, hepatitis type b, diabetes ...",
+        "doctor": "eg. le minh thong ...",
+        "specialty": "eg. cardiology ..."
       }
+    },
+    "banner": {
+      "title": "Great doctors recommended by other doctors",
+      "medium": "Easily search for your doctors by",
+      "form": {
+        "input": "Triệu chứng / Bác Sĩ",
+        "location": "Chọn thành phố",
+        "action": "Tìm"
+      }
+    },
+    "menu":{
+      "vietnamese": "Tiếng Việt",
+      "english": "English"
     }
   },
   "results":{

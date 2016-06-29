@@ -2,6 +2,8 @@
 
 
 function HomeCtrl($scope, $state, idocRestService, $timeout, $http, seoService) {
+    seoService.update();
+
     $scope.content = 'Home';
     var querySearch = {};
 

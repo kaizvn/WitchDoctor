@@ -18,15 +18,13 @@ function seoService($q, $translate, MetaTags) {
     }
     return {
         update : function(data){
-            if(data){
-                $q.all([
-                    $translate(MetaTags.title, data),
-                    $translate(MetaTags.description, data),
-                ]).then(function(resolvedData){
-                    MetaTags.title = addTitleBoilers(resolvedData[0]);
-                    MetaTags.description = addTitleBoilers(resolvedData[1]);
-                });
-            }
+            $q.all([
+                $translate(MetaTags.title, data),
+                $translate(MetaTags.description, data),
+            ]).then(function(resolvedData){
+                MetaTags.title = addTitleBoilers(resolvedData[0]);
+                MetaTags.description = addTitleBoilers(resolvedData[1]);
+            });
         }
     };
 

@@ -5,11 +5,29 @@
       "description": "Tìm bác sĩ giỏi và tốt nhất theo đúng triệu chứng, bệnh, chuyên khoa. Các bs kinh nghiệm cùng thông tin chi tiết về phòng khám và bệnh viện công tác."
     },
     "search":{
+      "param":{
+        "condition": "Bệnh",
+        "doctor": "Tên bác sĩ",
+        "specialty": "Chuyên khoa"
+      },
       "placeholder":{
-        "condition": "đau đầu, viêm gan ...",
-        "doctor": "lê minh thông ...",
-        "specialty": "ung bướu ..."
+        "condition": "vd: đau đầu, viêm gan ...",
+        "doctor": "vd: lê minh thông ...",
+        "specialty": "vd: ung bướu ..."
       }
+    },
+    "banner": {
+      "title": "Danh sách bác sĩ giỏi bạn hằng tìm kiếm",
+      "medium": "Dễ dàng tìm bác sĩ theo",
+      "form": {
+        "input": "Triệu chứng / Bác Sĩ",
+        "location": "Chọn thành phố",
+        "action": "Tìm"
+      }
+    },
+    "menu":{
+      "vietnamese": "Vietnamese",
+      "english": "English"
     }
   },
   "results":{

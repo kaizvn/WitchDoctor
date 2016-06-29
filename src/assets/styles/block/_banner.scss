@@ -1,3 +1,7 @@
+$tab-input-height: 45px;
+$text-input-height: $tab-input-height*1.5;
+$input-font-size: 16px;
+
 .banner {
 	background: url(/assets/images/banner.jpg) top left no-repeat;
 	min-height: 450px;
@@ -8,6 +12,7 @@
 		z-index: 99;
 		text-align: center;
 		margin-top: 125px;
+		margin-bottom: 25px;
 		&_title {
 			color: #fff;
 			margin-bottom: 5px;
@@ -24,11 +29,12 @@
 		max-width: 766px;
 		margin: 0 auto;
 		border-radius: 2px;
-		margin-top: 30px;
+		//margin-top: 30px;
+		font-size: $input-font-size;
 
-		$text-input-height: 45px;
 
 		.form-control, .form-control-feedback {
+			font-size: $input-font-size;
 			height: $text-input-height;
 			//border: none;
 			border-radius: 0;
@@ -39,7 +45,7 @@
 		input[type="text"] {
 			padding-right: $text-input-height;
 		}
-		.input-group-text .form-control, .form-control-feedback {
+		.form-control, .form-control-feedback {
 			border-top-right-radius: 2px;
 			border-bottom-right-radius: 2px;
 		}
@@ -48,33 +54,12 @@
 			font-weight: bold;
 			padding: 7px 12px;
 		}
-		.input-group-btn .btn {
-			font-size: 14px;
-			font-weight: normal;
-			height: $text-input-height;
-		}
-		.chosen-container-single {
-		 	.chosen-single {
-				height: $text-input-height;
-				line-height: $text-input-height;
-				border-radius: 2px;
-				div b {
-					margin-top: 18px;
-				}
-			}
-			&.chosen-with-drop {
-				.chosen-single {
-					border-bottom-left-radius: 0;
-					border-bottom-right-radius: 0;
-				}
-			}
-		}		
 		.select-group .fa {
 			top: 12px;
 		}
 		.form-control-feedback{
 			.inline-btn {
-				height: $text-input-height;
+				height: $tab-input-height;
 				font-size: 20px;
 				//font-weight: bold;
 				//padding: 7px 12px;
@@ -143,9 +128,8 @@
 			margin-bottom: 60px;
 			.custom-tab,
 			.form-control,
-			.input-group-btn .btn,
-			.chosen-container {
-				font-size: 12px;
+			.input-group-btn .btn{
+				font-size: $input-font-size;
 			}
 			.select-group,
 			.input-group {

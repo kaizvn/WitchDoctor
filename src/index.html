@@ -10,7 +10,7 @@
 <!--[if gt IE 9]><!-->
 <html class="no-js" id="ng-app" ng-app="iDocApp"> <!--<![endif]-->
 <head>
-    <title>{{MetaTags.title | translate}}</title>
+    <title ng-bind="MetaTags.title">Danh sách bác sĩ giỏi-kinh nghiệm-hàng đầu Việt Nam</title>
     <meta name="description" content="{{MetaTags.description | translate}}"/>
     <meta name="fragment" content="!">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -48,6 +48,20 @@
         ga('create', 'UA-72221643-1', 'auto');
         ga('send', 'pageview');
     </script>
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+            n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+                document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+        fbq('init', '150026422033867');
+        fbq('track', "PageView");</script>
+    <noscript><img height="1" width="1" style="display:none"
+                   src="https://www.facebook.com/tr?id=150026422033867&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
 </head>
 <body ng-controller="MainCtrl" style="display:none;" ng-show="isDOMReady">
 <h1 title="Danh sách bác sĩ giỏi hàng đầu và kinh nghiệm"></h1>
@@ -77,6 +91,9 @@
         </div>
         <div collapse="navCollapsed" class="collapse navbar-collapse" id="iDocNav">
             <ul class="nav navbar-nav navbar-right">
+                <li><!-- Go to www.addthis.com/dashboard to customize your tools -->
+                    <div class="addthis_sharing_toolbox"></div>
+                </li>
                 <li><a href="http://news.khambacsi.com">{{'global.menu.top_url.news'
                     | translate}}</a></li>
                 <li><a href="#">{{'global.menu.top_url.is_doctor'
@@ -85,6 +102,8 @@
                     | translate}}</a></li>
                 <li><a href="javascript:void(0)" ng-click="openRegister()" class="btn btn-primary btn-register">{{'global.menu.account.signup'
                     | translate}}</a></li>
+                <li><a href="javascript:void(0)" ng-click="changeLanguage('vi')" ng-show="getCurrentLanguage()!=='vi'">{{'home.menu.vietnamese' | translate}}</a></li>
+                <li><a href="javascript:void(0)" ng-click="changeLanguage('en')" ng-show="getCurrentLanguage()!=='en'">{{'home.menu.english' | translate}}</a></li>
             </ul>
         </div>
     </div>
@@ -216,5 +235,7 @@
 <script src="/idoc/booking/booking.controller.js"></script>
 <!-- endbuild -->
 
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5767e93086846a65"></script>
 </body>
 </html>

@@ -64,6 +64,14 @@ function MainCtrl($rootScope, $scope, idocRestService, $uibModal, titleService, 
         });
     };
 
+    $scope.changeLanguage = function (langKey) {
+        $translate.use(langKey);
+    };
+    
+    $scope.getCurrentLanguage = function(){
+        return $translate.use();
+    };
+
     $(document).mouseup(function(e){
         $('.input-group-btn').removeClass('open');
     });

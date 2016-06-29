@@ -4,6 +4,7 @@ logs
 *.DS_Store
 .tmp
 .sass-cache
+.directory
 bower_components
 src/assets/styles/main.css
 src/assets/styles/main.css.map
