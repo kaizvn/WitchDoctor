@@ -58,9 +58,10 @@ $input-font-size: 16px;
 			top: 12px;
 		}
 		.form-control-feedback{
+            margin-right: 12px;
 			.inline-btn {
-				height: $tab-input-height;
-				font-size: 20px;
+				height: $text-input-height;
+				font-size: $input-font-size*2;
 				//font-weight: bold;
 				//padding: 7px 12px;
 				background-color: transparent;

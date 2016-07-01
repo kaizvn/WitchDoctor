@@ -54,7 +54,7 @@ angular.module('iDocApp')
             },
             link: function (scope, element, attributes) {
                 var id = attributes.id;
-                adapSizeMap();
+                // adapSizeMap(); #bug caused resizing even without map data
                 scope.$watch('mapData', function(maps) {
                     if(maps) {
                         google.maps.event.addDomListener(window, 'load', initMap(scope.mapData, id));

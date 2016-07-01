@@ -26,8 +26,10 @@
       }
     },
     "menu":{
-      "vietnamese": "Vietnamese",
-      "english": "English"
+      "button":{
+        "vi": "Vietnamese",
+        "en": "English"
+      }
     }
   },
   "results":{
@@ -99,19 +101,11 @@
       }
     },
     "footer": {
-      "primary_care": {
+      "specialties": {
         "label": "Chuyên khoa",
         "items": [
           {
-            "label": "Ung thư",
-            "keyword": ""
-          },
-          {
-            "label": "Da liễu",
-            "keyword": ""
-          },
-          {
-            "label": "Tai mũi họng",
+            "label": "Tạo Hình - Thẩm Mỹ",
             "keyword": ""
           },
           {
@@ -119,13 +113,25 @@
             "keyword": ""
           },
           {
-            "label": "Tiêu hoá",
+            "label": "Sản Phụ Khoa",
+            "keyword": ""
+          },
+          {
+            "label": "Nội Tổng Quát",
+            "keyword": ""
+          },
+          {
+            "label": "Ung Bướu",
+            "keyword": ""
+          },
+          {
+            "label": "Nội Tim Mạch",
             "keyword": ""
           }
         ]
       },
       "doctors": {
-        "label": "Đội ngũ",
+        "label": "Bệnh Thường Gặp",
         "items": [
           {
             "label": "Atlantic technologies",
@@ -142,7 +148,8 @@
         ]
       },
       "contact": {
-        "label": "Liên hệ",
+        "label": "Khambacsi",
+        "aboutUs": "Về chúng tôi",
         "items": [
           {
             "label": "Thông tin",

@@ -169,6 +169,10 @@
                 //     })
                 .setOGURL(true);
         }])
+        .run([ '$translatePartialLoader', '$translate', function run($translatePartialLoader, $translate) {
+            $translatePartialLoader.addPart('common');
+            // $translate.use('vi');
+        } ])
         .run(['$rootScope', 'MetaTags', function($rootScope, MetaTags) {
             $rootScope.MetaTags = MetaTags;
         }])
