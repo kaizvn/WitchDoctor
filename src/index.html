@@ -65,6 +65,16 @@
     <!-- End Facebook Pixel Code -->
 </head>
 <body ng-controller="MainCtrl" style="display:none;" ng-show="isDOMReady">
+<!--facebook SDK-->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.6&appId=1644099942472741";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!--end of facebook SDK-->
 <h1 title="Danh sách bác sĩ giỏi hàng đầu và kinh nghiệm"></h1>
 <h2 title="Tìm bác sĩ dựa theo triệu chứng bệnh, chuyên khoa hoặc tên bác sĩ"></h2>
 <div class="loader" ng-show="$root.loader.active">
@@ -92,6 +102,9 @@
         </div>
         <div collapse="navCollapsed" class="collapse navbar-collapse" id="iDocNav">
             <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <div class="fb-like" data-href="https://www.facebook.com/khambacsi" data-width="10" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+                </li>
                 <li><!-- Go to www.addthis.com/dashboard to customize your tools -->
                     <div class="addthis_sharing_toolbox"></div>
                 </li>
