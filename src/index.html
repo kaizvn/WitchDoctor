@@ -16,6 +16,11 @@
     <meta name="fragment" content="!">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="apple-touch-icon" href="/favicon-iphone.png" />
+    <!--facebook setup-->
+    <meta property="fb:app_id" content="1644099942472741" />
+    <meta property="fb:admins" content="134769023525621"/>
+    <meta property="fb:admins" content="100000348235762"/>
+    <!--end of facebook setup-->
     <!-- build:css /assets/styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="../bower_components/textAngular/dist/textAngular.css" />
@@ -71,7 +76,7 @@
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
     js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.6&appId=1644099942472741";
+    js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.6&appId=1644099942472741";
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 <!--end of facebook SDK-->
@@ -120,43 +125,51 @@
                 <li><a language-button="en" path="home.menu.button"></a></li>
             </ul>
         </div>
+        
     </div>
 </nav>
 <!-- End Nav -->
 
 <!-- Start Main View -->
 <div id="main" ui-view="content-view">
-
 </div>
 <!-- End Main View -->
 
+<!--facebook comments-->
+<div class="comments-container" ng-hide="hideFacebookComments">
+    <div class="fb-comments" data-href="https://facebook.com/khambacsi" data-numposts="5"></div>
+</div>
+<!--end of facebook comments-->
+
 <!-- Start Footer -->
-<footer class="footer" ng-hide="hideFooter">
+<div class="footer" ng-hide="hideFooter">
     <div class="container">
-        <div class="clearfix">
-            <dl class="footer-nav">
-                <dt class="nav-title">{{'global.footer.specialties.label' | translate}}</dt>
-                <dd class="nav-item" ng-repeat="obj in ['Ung Bướu', 'Nhi khoa', 'Sản Phụ Khoa', 'Nội Tim Mạch', 'Nội Tổng Quát', 'Tạo Hình - Thẩm Mỹ']">
+        <div class="row">
+            <!--<div class="col-lg-3 col-md-3 col-xs-12 col-sm-3 footer-one">-->
+                <!--<div class="footer-logo"><a href="#"><img src="/assets/images/logo_footer.png" alt="Khám Bác Sĩ"></a></div>-->
+            <!--</div>-->
+            <dl class="col-lg-3 col-md-3 col-xs-12 col-sm-3 footer-two">
+                <h5 class="nav-title">{{'global.footer.specialties.label' | translate}}</h5>
+                <div class="nav-item" ng-repeat="obj in ['Ung Bướu', 'Nhi khoa', 'Sản Phụ Khoa', 'Nội Tim Mạch', 'Nội Tổng Quát', 'Tạo Hình - Thẩm Mỹ']">
                     <a href="results" internal-link="results" specialty={{obj}}></a>
-                </dd>
+                </div>
             </dl>
-            <dl class="footer-nav">
-                <dt class="nav-title">{{'global.footer.doctors.label' | translate}}</dt>
-                <dd class="nav-item" ng-repeat="obj in ['bệnh trĩ', 'béo phì', 'tiểu đường', 'cao huyết áp', 'viêm mũi dị ứng', 'viêm loét dạ dày-tá tràng']">
+            <dl class="col-lg-3 col-md-3 col-xs-12 col-sm-3 footer-three">
+                <h5 class="nav-title">{{'global.footer.doctors.label' | translate}}</h5>
+                <div class="nav-item" ng-repeat="obj in ['bệnh trĩ', 'béo phì', 'tiểu đường', 'cao huyết áp', 'viêm mũi dị ứng', 'viêm loét dạ dày-tá tràng']">
                     <a href="results" internal-link="results" conditions={{obj}}></a>
-                </dd>
+                </div>
             </dl>
-            <dl class="footer-nav">
-                <dt class="nav-title">{{'global.footer.contact.label' | translate}}</dt>
-                <dd class="nav-item"><a ui-sref="about">{{'global.footer.contact.aboutUs' | translate}}</a></dd>
-                <dd class="nav-item"><a ui-sref="about">{{'global.footer.contact.items.0.label' | translate}}</a></dd>
-                <dd class="nav-item"><a ui-sref="about">{{'global.footer.contact.items.2.label' | translate}}</a></dd>
+            <dl class="col-lg-3 col-md-3 col-xs-12 col-sm-3 footer-four">
+                <h5 class="nav-title">{{'global.footer.contact.label' | translate}}</h5>
+                <div class="nav-item"><a ui-sref="about">{{'global.footer.contact.aboutUs' | translate}}</a></div>
+                <div class="nav-item"><a ui-sref="about">{{'global.footer.contact.items.0.label' | translate}}</a></div>
+                <div class="nav-item"><a ui-sref="about">{{'global.footer.contact.items.2.label' | translate}}</a></div>
             </dl>
-            <!--<div class="footer-logo"><a href="#"><img src="/assets/images/logo_footer.png" alt="Khám Bác Sĩ"></a></div>-->
         </div>
         <p class="footer-copyright" ng-bind-html="'global.footer.copyright' | translate"></p>
     </div>
-</footer>
+</div>
 <!-- End Footer -->
 
 <!--[if lt IE 9]>

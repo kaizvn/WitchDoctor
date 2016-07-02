@@ -40,6 +40,10 @@ function MainCtrl($rootScope, $scope, idocRestService, $uibModal, titleService, 
         $scope.hideFooter = value;
     });
 
+    $rootScope.$watch('hideFacebookComments', function(value) {
+        $scope.hideFacebookComments = value;
+    });
+
     $scope.openLogin = function() {
         var loginModel = $uibModal.open({
             size: 'sm',

@@ -100,6 +100,12 @@
                     $rootScope.hideFooter = false;
                 }
 
+                if (toState.name !== 'home') {
+                    $rootScope.hideFacebookComments = true;
+                } else {
+                    $rootScope.hideFacebookComments = false;
+                }
+
                 $rootScope.previousStateName = fromState.name;
                 $rootScope.previousStateParams = fromParams;
 
