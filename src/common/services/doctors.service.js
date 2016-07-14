@@ -74,7 +74,7 @@ function doctorsService() {
                     address: self.getAddressDoctor(doctor),
                     bio: doctor.profile.bio ? doctor.profile.bio.substr(0, 155) + '...' : '',
                     title: doctor.profile.title,
-                    image_url: function(x) { var r = getFirstValid(x); return r ? r.image : ''; }(doctor.profile.images),
+                    image_url: getFirstValid(doctor.profile.images),
                     gender: doctor.profile.gender
                 }
             });

@@ -91,7 +91,7 @@
                             <span class="line__icon fa fa-bullhorn"></span>
 
                             <div class="line__content">
-                                <h4 class="line__content_title">TIỂU SỬ</h4>
+                                <h4 class="line__content_title">Giới Thiệu</h4>
 
                                 <div class="line__content_description no-padding">{{doctor.profile.bio}}</div>
                             </div>
@@ -101,7 +101,7 @@
                             <span class="line__icon fa fa-mortar-board"></span>
 
                             <div class="line__content">
-                                <h4 class="line__content_title">DANH HIỆU</h4>
+                                <h4 class="line__content_title">Danh Hiệu và Bằng Cấp của BS. {{doctor.profile.first_name}}</h4>
 
                                 <div class="line__content_description no-padding">
                                     <div ng-repeat="title in doctor.profile.titles" class="doctor__special">
@@ -115,20 +115,43 @@
                             <span class="line__icon fa fa-life-saver"></span>
 
                             <div class="line__content">
-                                <h4 class="line__content_title">PHÒNG MẠCH</h4>
+                                <h4 class="line__content_title">Khám Tại Phòng Mạch</h4>
                                 <div ng-repeat="practice in doctor.practices" class="doctor__special">
-                                    <h5 ng-show="practice.name">Phòng mạch {{practice.name}}</h5>
-                                    <div ng-repeat="address in practice.addresses" class="doctor__address__special" ng-show="practice.addresses.length">
-                                        <span class="glyphicon glyphicon-home" aria-hidden="true"/> {{address.formatted || address.raw}}
+                                    <!--<div class="row">-->
+                                        <h5 ng-show="practice.name">Phòng mạch {{practice.name}}</h5>
+                                        <div ng-repeat="address in practice.addresses" class="doctor__address__special" ng-show="practice.addresses.length">
+                                            <span class="glyphicon glyphicon-home" aria-hidden="true"/> {{address.formatted || address.raw}}
+                                        </div>
+                                        <div ng-repeat="phone in practice.phones" class="doctor__phone__special" ng-show="practice.phones.length">
+                                            <span class="glyphicon glyphicon-phone-alt" aria-hidden="true"/> {{phone.number}}
+                                        </div>
+                                        <div ng-repeat="email in practice.emails" class="doctor__email__special" ng-show="practice.emails.length">
+                                            <span class="glyphicon glyphicon-envelope" aria-hidden="true"/> {{email.email}}
+                                        </div>
+                                        <p ng-show="practice.office_hours"><span class="glyphicon glyphicon-time" aria-hidden="true"/> {{practice.office_hours}}</p>
+                                        <p ng-show="practice.description">{{practice.description}}</p>
+                                    <!--</div>-->
+                                    <div class="row">
+                                        <div class="col-xs-10 col-xs-offset-1">
+                                            <uib-carousel active="active" interval="20000" no-wrap="noWrapSlides">
+                                                <uib-slide ng-repeat="pimg in practice.images track by $index" index="$index">
+                                                    <img ng-src="{{pimg}}" style="max-height:325px; margin:0 auto;">
+                                                    <div class="carousel-caption">
+                                                        <h4>Phòng mạch BS. {{doctor.profile.first_name}}</h4>
+                                                    </div>
+                                                </uib-slide>
+                                            </uib-carousel>
+                                        </div>
                                     </div>
-                                    <div ng-repeat="phone in practice.phones" class="doctor__phone__special" ng-show="practice.phones.length">
-                                        <span class="glyphicon glyphicon-phone-alt" aria-hidden="true"/> {{phone.number}}
-                                    </div>
-                                    <div ng-repeat="email in practice.emails" class="doctor__email__special" ng-show="practice.emails.length">
-                                        <span class="glyphicon glyphicon-envelope" aria-hidden="true"/> {{email.email}}
-                                    </div>
-                                    <p ng-show="practice.office_hours"><span class="glyphicon glyphicon-time" aria-hidden="true"/> {{practice.office_hours}}</p>
-                                    <p ng-show="practice.description">{{practice.description}}</p>
+                                    <!--<div class="row">-->
+                                        <!--<div ng-repeat="pimg in practice.images">-->
+                                            <!--<div class="col-md-4">-->
+                                                <!--<a href="{{pimg}}">-->
+                                                    <!--<img src="{{pimg}}" class="img-thumbnail img-responsive">-->
+                                                <!--</a>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
                                 </div>
                             </div>
                         </div>
@@ -137,7 +160,7 @@
                             <span class="line__icon fa fa-hospital-o"></span>
 
                             <div class="line__content">
-                                <h4 class="line__content_title">PHÒNG KHÁM</h4>
+                                <h4 class="line__content_title">Khám Tại Bệnh Viện</h4>
                                 <div ng-repeat="practice in doctor.hospital_practices" class="doctor__special">
                                     <h5 ng-show="practice.hospital">{{practice.hospital}}</h5>
                                     <p ng-show="practice.office_hours"><span class="glyphicon glyphicon-time" aria-hidden="true"/> {{practice.office_hours}}</p>
@@ -150,7 +173,7 @@
                             <span class="line__icon fa fa-suitcase"></span>
 
                             <div class="line__content">
-                                <h4 class="line__content_title">CHUYÊN KHOA CÔNG TÁC</h4>
+                                <h4 class="line__content_title">Các Chuyên Khoa Chữa Trị</h4>
 
                                 <div class="line__content_description no-padding">
                                     <div ng-repeat="special in doctor.specialties" class="doctor__special">
@@ -166,7 +189,7 @@
                             <span class="line__icon fa fa-hospital-o"></span>
 
                             <div class="line__content">
-                                <h4 class="line__content_title">BỆNH VIỆN LIÊN KẾT</h4>
+                                <h4 class="line__content_title">Các Bệnh Viện BS. {{doctor.profile.first_name}} Làm Việc</h4>
 
                                 <div class="line__content_description no-padding">
                                     <div ng-repeat="affiliation in doctor.hospital_affiliations" class="doctor__special">
@@ -183,7 +206,7 @@
                             <span class="line__icon fa fa-users"></span>
 
                             <div class="line__content">
-                                <h4 class="line__content_title">HỘI VIÊN</h4>
+                                <h4 class="line__content_title">BS. {{doctor.profile.first_name}} Là Thành Viên Của</h4>
 
                                 <div class="line__content_description no-padding">
                                     <div ng-repeat="affiliation in doctor.group_affiliations" class="doctor__special">
@@ -199,7 +222,7 @@
                             <span class="line__icon fa fa-mortar-board"></span>
 
                             <div class="line__content">
-                                <h4 class="line__content_title">QUÁ TRÌNH ĐÀO TẠO</h4>
+                                <h4 class="line__content_title">Quá Trình Đào Tạo của BS. {{doctor.profile.first_name}}</h4>
 
                                 <div class="line__content_description">
                                     <div ng-repeat="education in doctor.educations" class="clearfix">
@@ -222,7 +245,7 @@
                             <span class="line__icon fa fa-shield"></span>
 
                             <div class="line__content">
-                                <h4 class="line__content_title">KINH NGHIỆM</h4>
+                                <h4 class="line__content_title">Kinh Nghiệm Làm Việc của BS. {{doctor.profile.first_name}}</h4>
 
                                 <div class="line__content_description">
                                     <div ng-repeat="experience in doctor.experiences" class="clearfix">
@@ -246,7 +269,7 @@
                             <span class="line__icon fa fa-trophy"></span>
 
                             <div class="line__content">
-                                <h4 class="line__content_title">NHỮNG ĐIỂM SON TRONG SỰ NGHIỆP</h4>
+                                <h4 class="line__content_title">Những Thành Tựu Trong Sự Nghiệp của BS. {{doctor.profile.first_name}}</h4>
 
                                 <div class="line__content_description">
                                     <div ng-repeat="highlight in doctor.profile.highlights" class="clearfix">
@@ -265,11 +288,11 @@
                             </div>
                         </div>
 
-                        <div class="block__detail_line">
+                        <div class="block__detail_line" ng-show="doctor.profile.languages.length">
                             <span class="line__icon fa fa-language"></span>
 
                             <div class="line__content">
-                                <h4 class="line__content_title">NGÔN NGỮ DÙNG TẠI PHÒNG KHÁM</h4>
+                                <h4 class="line__content_title">Bạn Có Thể Dùng các Ngôn Ngữ Sau Tại Phòng Mạch</h4>
 
                                 <div class="line__content_description">
 									<span ng-repeat="language in doctor.profile.languages">{{language.name}}

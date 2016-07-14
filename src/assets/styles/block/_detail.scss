@@ -57,6 +57,17 @@
     			display: block;
     		}
     	}
+		.carousel-control {
+			$arrow-color: rgb(29, 86, 114);
+			&.left,
+			&.right {
+				background-image: none;
+				//text-shadow: -4px 0 $arrow-color, 0 4px $arrow-color, 4px 0 $arrow-color, 0 -4px $arrow-color;
+				text-shadow: 0 2px 4px rgb(29, 86, 114);
+				opacity: 1.0;
+				color: white;
+			}
+		}
     }
 }
 

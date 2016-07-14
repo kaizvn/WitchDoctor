@@ -5,7 +5,7 @@ function DetailCtrl($scope, idocRestService, doctorsService, $stateParams, $anch
     idocRestService.getDoctorDetail($stateParams.id).then(function (response) {
         isRelated = false;
         $scope.doctor = response.data;
-        $scope.doctor.profile.image_url = $scope.doctor.profile.images && $scope.doctor.profile.images.length > 0 ? $scope.doctor.profile.images[0].image : '';
+        $scope.doctor.profile.image_url = $scope.doctor.profile.images && $scope.doctor.profile.images.length > 0 ? $scope.doctor.profile.images[0] : '';
         $scope.doctor.profile.address = doctorsService.getAddressDoctor($scope.doctor);
         $scope.doctor.experienceYears = accumulateExperience($scope.doctor.experiences);
 
