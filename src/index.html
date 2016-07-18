@@ -135,22 +135,25 @@
 </div>
 <!-- End Main View -->
 
-<!--facebook comments-->
-<div class="comments-container" ng-hide="hideFacebookComments">
-    <div class="fb-comments" data-href="https://facebook.com/khambacsi" data-numposts="5"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <!--facebook comments-->
+            <div class="comments-container" ng-hide="hideFacebookComments">
+                <div class="fb-comments" data-href="https://facebook.com/khambacsi" data-numposts="5"></div>
+            </div>
+            <!--end of facebook comments-->
+        </div>
+    </div>
 </div>
-<!--end of facebook comments-->
 
 <!-- Start Footer -->
 <div class="footer" ng-hide="hideFooter">
     <div class="container">
         <div class="row">
-            <!--<div class="col-lg-3 col-md-3 col-xs-12 col-sm-3 footer-one">-->
-                <!--<div class="footer-logo"><a href="#"><img src="/assets/images/logo_footer.png" alt="Khám Bác Sĩ"></a></div>-->
-            <!--</div>-->
             <dl class="col-lg-3 col-md-3 col-xs-12 col-sm-3 footer-two">
                 <h5 class="nav-title">{{'global.footer.specialties.label' | translate}}</h5>
-                <div class="nav-item" ng-repeat="obj in ['Ung Bướu', 'Nhi khoa', 'Sản Phụ Khoa', 'Nội Tim Mạch', 'Nội Tổng Quát', 'Tạo Hình - Thẩm Mỹ']">
+                <div class="nav-item" ng-repeat="obj in ['Ung Bướu', 'Nhi Khoa', 'Sản Phụ Khoa', 'Nội Tim Mạch', 'Nội Tổng Quát', 'Tạo Hình - Thẩm Mỹ']">
                     <a href="results" internal-link="results" specialty={{obj}}></a>
                 </div>
             </dl>
@@ -167,7 +170,12 @@
                 <div class="nav-item"><a ui-sref="about">{{'global.footer.contact.items.2.label' | translate}}</a></div>
             </dl>
         </div>
-        <p class="footer-copyright" ng-bind-html="'global.footer.copyright' | translate"></p>
+        <p>
+            <a href="#" class="footer-copyright" ng-bind-html="'global.footer.copyright' | translate"></a>
+            <a href="#" class="footer-copyright" ng-bind-html="'global.footer.atlantech' | translate"></a>
+            <!--Freepik copyrights for graphics-->
+            <a href="http://www.freepik.com" class="footer-copyright" ng-bind-html="'global.footer.freepik_copyrights' | translate"></a>
+        </p>
     </div>
 </div>
 <!-- End Footer -->

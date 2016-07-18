@@ -3,7 +3,9 @@ $text-input-height: $tab-input-height*1.5;
 $input-font-size: 16px;
 
 .banner {
-	background: url(/assets/images/banner.jpg) top left no-repeat;
+	//background: url(/assets/images/banner.jpg) top left no-repeat;
+	//background: url(/assets/images/wave_bg_colorful.svg) left no-repeat;
+	background: url(/assets/images/nurse_in_office.jpg) left no-repeat;
 	min-height: 450px;
 	background-size: cover;
 	position: relative;
@@ -11,14 +13,15 @@ $input-font-size: 16px;
 		position: relative;
 		z-index: 99;
 		text-align: center;
-		margin-top: 125px;
+		margin-top: 75px;
 		margin-bottom: 25px;
+		background-color: rgba(255,255,255,.25);
 		&_title {
-			color: #fff;
-			margin-bottom: 5px;
+			color: #00234B;
+			margin-bottom: 10px;
 		}
 		&_subTitle {
-			color: #fff;
+			color: #00234B;
 		}
 	}
 	&__body {
@@ -77,7 +80,7 @@ $input-font-size: 16px;
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background: rgba(0, 0, 0, 0.2);
+		//background: rgba(0, 0, 0, 0.2);
 	}
 
 	.custom-popup-wrapper {
@@ -120,7 +123,6 @@ $input-font-size: 16px;
 	.banner {
 		min-height: 400px;
 		&__head {
-			margin-top: 50px;
 			&_title {
 				font-size: 32px;
 			}

@@ -1,9 +1,5 @@
 <div class="banner">
     <div class="container-fluid">
-        <div class="banner__head">
-            <h1 class="banner__head_title">{{'home.banner.title' | translate}}</h1>
-            <h3 class="banner__head_subTitle">{{'home.banner.medium' | translate}}</h3>
-        </div>
         <div class="banner__body">
             <form ng-submit="doSearch()">
                 <!-- <select class="form-control">
@@ -11,7 +7,13 @@
                     <option value="two">Hanoi</option>
                 </select> -->
                 <!--col-middle to even out row oudentation-->
-                <div class="col-middle">
+                <div class="col-md-11">
+                    <div class="row">
+                        <div class="banner__head">
+                            <h1 class="banner__head_title">{{'home.banner.title' | translate}}</h1>
+                            <h3 class="banner__head_subTitle">{{'home.banner.medium' | translate}}</h3>
+                        </div>
+                    </div>
                     <div class="row">
                         <ul class="nav nav-tabs nav-justified custom-tab" role="navigation">
                             <li><a href="#" ng-click="onSelectType('conditions')" ng-class="{active: isActive('conditions')}">{{'home.search.param.condition' | translate}}</a></li>
@@ -88,42 +90,78 @@
     <div class="overlay"></div>
 </div>
 
-<div class="section container">
-    <h2 class="section__title">{{'global.home.body.top_quote' | translate}} </h2>
-    <p class="section__subTitle">{{'global.home.body.sub_quote' | translate}}</p>
-
-    <div class="row">
-        <div class="row-height">
-            <div class="col-sm-6 col-md-4 col-sm-height">
-                <div class="thumbnail inside-full-height">
-                    <img class="img-rounded" src="/assets/images/info01.jpg" alt="">
-
-                    <div class="caption text-center">
-                        <h3>{{'global.home.body.thumbnails.slot01.title' | translate}}</h3>
-
-                        <p>{{ 'global.home.body.thumbnails.slot01.desc' | translate}}</p>
+<div class="features">
+    <div class="even-feature">
+        <div class="container vcenter">
+            <div class="row"><!--^-- IMPORTANT FOR CENTER ALIGN Additional class -->
+                <div class="col-md-5 col-md-push-7">
+                    <img class="img-responsive" src="assets/images/doctor_blue.gif">
+                </div>
+                <div class="col-md-7 col-md-pull-5">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="b-header">{{'global.home.body.thumbnails.slot01.title' | translate}}</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="sg-header5 hp-header6-container">{{'global.home.body.thumbnails.slot01.desc_01' | translate}}</p>
+                            <ul class="hp-list hp-list-frb">
+                                <li>{{'global.home.body.thumbnails.slot01.li_01' | translate}}</li>
+                                <li>{{'global.home.body.thumbnails.slot01.li_02' | translate}}</li>
+                                <li>{{'global.home.body.thumbnails.slot01.li_03' | translate}}</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-4 col-sm-height">
-                <div class="thumbnail inside-full-height">
-                    <img class="img-rounded" src="/assets/images/info02.jpg" alt="">
-
-                    <div class="caption text-center">
-                        <h3>{{'global.home.body.thumbnails.slot02.title' | translate}}</h3>
-
-                        <p>{{ 'global.home.body.thumbnails.slot02.desc' | translate}}</p>
+        </div>
+    </div>
+    <div class="odd-feature">
+        <div class="container vcenter">
+            <div class="row"><!--^-- IMPORTANT FOR CENTER ALIGN Additional class -->
+                <div class="col-md-4">
+                    <img class="img-responsive" src="assets/images/O7DCEB1_blue.gif">
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="b-header">
+                                {{'global.home.body.thumbnails.slot02.title' | translate}}
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="sg-header5 hp-header6-container">{{'global.home.body.thumbnails.slot02.desc_01' | translate}}</p>
+                            <p class="sg-header5 hp-header6-container">{{'global.home.body.thumbnails.slot02.desc_02' | translate}}</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-4 col-sm-height">
-                <div class="thumbnail inside-full-height">
-                    <img class="img-rounded" src="/assets/images/info03.jpg" alt="">
+        </div>
+    </div>
 
-                    <div class="caption text-center">
-                        <h3>{{ 'global.home.body.thumbnails.slot03.title' | translate}}</h3>
-
-                        <p>{{ 'global.home.body.thumbnails.slot03.desc' | translate}}</p>
+    <div class="even-feature">
+        <div class="container vcenter">
+            <div class="row"><!--^-- IMPORTANT FOR CENTER ALIGN Additional class -->
+                <div class="col-md-5 col-md-push-7">
+                    <img class="img-responsive" src="assets/images/share_info_great_doctors_navy.gif">
+                </div>
+                <div class="col-md-7 col-md-pull-5">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="b-header">
+                                {{'global.home.body.thumbnails.slot03.title' | translate}}
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="sg-header5 hp-header6-container">{{'global.home.body.thumbnails.slot03.desc_01' | translate}}</p>
+                            <p class="sg-header5 hp-header6-container">{{'global.home.body.thumbnails.slot03.desc_02' | translate}}</p>
+                            <p class="sg-header5 hp-header6-container">{{'global.home.body.thumbnails.slot03.desc_03' | translate}}</p>
+                        </div>
                     </div>
                 </div>
             </div>

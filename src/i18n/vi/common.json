@@ -86,23 +86,29 @@
         "sub_quote": "Bằng cách kết hợp công nghệ và giúp bác sĩ tối ưu chất lượng dịch vụ",
         "thumbnails": {
           "slot01": {
-            "title": "Đội ngũ bác sĩ",
-            "desc": "Đội ngũ bác sĩ là cốt lõi và mối liên kết chặt chẽ với họ là trọng tâm trong dịch vụ chúng tôi. Kho dữ liệu của khambacsi.com có trên 20.000 bác sĩ, trải rộng trên 3 trung tâm hành chính lớn nhất nước: Tp Hồ Chí Minh, Hà Nội và Đà Nẵng."
+            "title": "Các Tiêu Chí Đánh Giá Bác Sĩ Giỏi",
+            "desc_01": "Ngược với những phương pháp đánh giá truyền thống vốn mang nặng yếu tố cảm tính, chúng tôi dựa trên 3 tiêu chí chuyên môn để xây dựng nên danh sách bác sĩ giỏi:",
+            "li_01": "Đào tạo và học vấn: học hàm, học vị, bằng cấp và các chứng chỉ chuyên ngành",
+            "li_02": "Kinh nghiệm: số năm làm việc tại các cơ sở y tế, các bệnh viện, phòng khám",
+            "li_03": "Thành tựu chuyên môn: các giải thưởng khoa học, các công trình nghiên cứu đạt được xuyên suốt quá trình công tác"
           },
           "slot02": {
-            "title": "Công nghệ số",
-            "desc": "Dùng sức mạnh lan tỏa của công nghệ thông tin để tối đa hóa khả năng tiếp cận của họ đến bệnh nhân"
+            "title": "Giới Thiệu Từ Các Bác Sĩ Khác",
+            "desc_01": "Chúng tôi đã đặt câu hỏi với hơn 20 bác sĩ từ nhiều chuyên ngành khác nhau về những chuyên gia mà họ tin tưởng nhất để chuyển bệnh nhân đến khi gặp ca khó",
+            "desc_02": "Kết hợp danh sách các bác sĩ được để cử này với các tiêu chí chuyên môn đã nghiên cứu, chúng tôi đúc kết thành một cơ sở dữ liệu các bác sĩ giỏi, được tín nhiệm cao nhất."
           },
           "slot03": {
-            "title": "Chất lượng dịch vụ",
-            "desc": "Hỗ trợ đội ngũ bác sĩ trong vấn đề quản lí và điều phối là mũi nhọn trong dịch vụ"
+            "title": "Bác Sĩ Giỏi Cho Mọi Nhà",
+            "desc_01": "Chúng tôi tin rằng việc có một danh sách các bác sĩ giỏi phòng khi hữu sự là cực kỳ hữu ích cho tất cả mọi người.",
+            "desc_02": "Mong mỏi của chúng tôi là khi phải lựa chọn bác sĩ để đi khám, bạn có một nguồn thông tin tiện lợi, có cơ sở khoa học và hoàn toàn vượt trội hơn so với việc hỏi thăm bà con hàng xóm hay người thân xưa nay.",
+            "desc_03": "Dù đã cố gắng xây dựng danh sách này dựa trên những yếu tố khách quan hết sức có thể nhưng nếu bạn có mong muốn chỉnh sửa dữ liệu hoặc nêu ý kiến đóng góp xây dựng, hãy gửi mail về contact@khambacsi.com hoặc comment trực tiếp trên khung facebook ngay trên trang web này!"
           }
         }
       }
     },
     "footer": {
       "specialties": {
-        "label": "Chuyên khoa",
+        "label": "CHUYÊN KHOA",
         "items": [
           {
             "label": "Tạo Hình - Thẩm Mỹ",
@@ -131,7 +137,7 @@
         ]
       },
       "doctors": {
-        "label": "Bệnh Thường Gặp",
+        "label": "BỆNH THƯỜNG GẶP",
         "items": [
           {
             "label": "Atlantic technologies",
@@ -148,7 +154,7 @@
         ]
       },
       "contact": {
-        "label": "Khambacsi",
+        "label": "KHAMBACSI",
         "aboutUs": "Về chúng tôi",
         "items": [
           {
@@ -165,7 +171,9 @@
           }
         ]
       },
-      "copyright": "&copy; 2015 khambacsi.com"
+      "copyright": "&trade;2015 khambacsi.com",
+      "atlantech": ", &reg;Atlantic Technologies Ltd.",
+      "freepik_copyrights": ", đồ họa bởi &reg;Freepik"
     },
     "about_us": {
       "about": {

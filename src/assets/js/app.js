@@ -54,6 +54,7 @@
             $translateProvider.addInterpolation('$translateMessageFormatInterpolation');
             $translateProvider.useLoaderCache(true);
             $translateProvider.useCookieStorage();
+            $translateProvider.fallbackLanguage('vi');
 
             tmhDynamicLocaleProvider.defaultLocale("vi-vn");
             tmhDynamicLocaleProvider.localeLocationPattern('/bower_components/angular-i18n/angular-locale_{{locale}}.js');
@@ -177,6 +178,7 @@
         }])
         .run([ '$translatePartialLoader', '$translate', function run($translatePartialLoader, $translate) {
             $translatePartialLoader.addPart('common');
+            $translatePartialLoader.addPart('specialties');
             // $translate.use('vi');
         } ])
         .run(['$rootScope', 'MetaTags', function($rootScope, MetaTags) {

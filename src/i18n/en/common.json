@@ -63,16 +63,22 @@
         "sub_quote": "Bằng cách kết hợp công nghệ và giúp bác sĩ tối ưu chất lượng dịch vụ",
         "thumbnails": {
           "slot01": {
-            "title": "Đội ngũ bác sĩ",
-            "desc": "Đội ngũ bác sĩ là cốt lõi và mối liên kết chặt chẽ với họ là trọng tâm trong dịch vụ chúng tôi. Kho dữ liệu của khambacsi.com có trên 20.000 bác sĩ, trải rộng trên 3 trung tâm hành chính lớn nhất nước: Tp Hồ Chí Minh, Hà Nội và Đà Nẵng."
+            "title": "What Makes A Good Doctor",
+            "desc_01": "Unlike traditional patient reviews and ratings, our rating is calculated from 3 important indicators of doctor quality:",
+            "li_01": "Credentials: medical school, medical licenses, residency, fellowship, professional certificates",
+            "li_02": "Experience: years practicing medicine, practice specialties",
+            "li_03": "Professional achievements: awards, research publications"
           },
           "slot02": {
-            "title": "Công nghệ số",
-            "desc": "Dùng sức mạnh lan tỏa của công nghệ thông tin để tối đa hóa khả năng tiếp cận của họ đến bệnh nhân"
+            "title": "Doctor Referrals",
+            "desc_01": "We conducted a survey from more than 20 doctors from almost all specialties about what doctors they will entrust their patients to in escalated or complicated cases.",
+            "desc_02": "Combined the survey results with our studied rating system, we finalized our database of great and qualified doctors and is ready for use."
           },
           "slot03": {
-            "title": "Chất lượng dịch vụ",
-            "desc": "Hỗ trợ đội ngũ bác sĩ trong vấn đề quản lí và điều phối là mũi nhọn trong dịch vụ"
+            "title": "Great Doctors For Everyone",
+            "desc_01": "We believe this list of trusted doctors is extremely useful to any one of us.",
+            "desc_02": "We hope that when you have to choose one physician to visit, you already have a reliable, convenient source of information which is far superior than the common word-of-mouth approach.",
+            "desc_03": "Although we worked super hard to build the rating system and the resultant doctor database, errors and mistakes are unfortunately unavoidable. Hence we are more than eager to listen to all contributions from you, please don't hesitate to email to contact@khambacsi.com or comment directly in the Facebook frame right on this page!"
           }
         }
       }
@@ -93,7 +99,7 @@
     },
     "footer": {
       "specialties": {
-        "label": "Specialties",
+        "label": "SPECIALTIES",
         "items": [
           {
             "label": "Tạo Hình - Thẩm Mỹ",
@@ -122,7 +128,7 @@
         ]
       },
       "doctors": {
-        "label": "Health Issues",
+        "label": "POPULAR ISSUES",
         "items": [
           {
             "label": "Atlantic technologies",
@@ -139,7 +145,7 @@
         ]
       },
       "contact": {
-        "label": "Khambacsi",
+        "label": "KHAMBACSI",
         "aboutUs": "About Us",
         "items": [
           {
@@ -156,7 +162,9 @@
           }
         ]
       },
-      "copyright": "&copy 2015 khambacsi.com"
+      "copyright": "&trade;2015 khambacsi.com",
+      "atlantech": ", &reg;Atlantic Technologies Ltd.",
+      "freepik_copyrights": ", graphics by &reg;Freepik"
     },
     "about_us": {
       "about": {

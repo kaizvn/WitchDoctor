@@ -1,0 +1,406 @@
+.features {
+	border-color: #00b3ee;
+	padding: 40px 0 20px;
+	line-height: 1.75em;
+	text-align: justify;
+	font-size: 18px;
+
+	.even-feature,
+	.odd-feature {
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+
+	.even-feature {
+		color: #00234B;
+		background-color: white;
+	}
+
+	.odd-feature {
+		background-color: whitesmoke;
+		color: #00234B;
+	}
+}
+
+.container {
+	.row .b-header{
+		padding-top: 20px;
+		padding-bottom: 15px;
+		text-align: left;
+	}
+	.vcenter {
+		display: flex;
+		align-items: center;
+	}
+}
+
+@media (max-width: 767px) {
+	.features {
+		.even-feature,
+		.odd-feature {
+			padding-top: 40px;
+			padding-bottom: 40px;
+		}
+	}
+}
+
+
+
+
+
+
+.detail-wrap {
+	padding: 40px 0;
+}
+
+.funfacts {
+	background: #f8f9fa;
+	border-bottom: 1px solid #dbd9d5;
+	padding: 10px 0;
+}
+
+.fact {
+	color: #666;
+	.fa {
+		color: #3bafda;
+		font-size: 24px;
+		vertical-align: middle;
+	}
+	&__number {
+		font-size: 36px;
+		vertical-align: middle;
+		margin: 0 5px;
+	}
+	&__text {
+		vertical-align: middle;
+	}
+}
+
+.block {
+	border-style: solid;
+    border-color: #e5e5e5;
+    border-width: 0 1px 2px 1px;
+    background-color: #fff;
+    margin-bottom: 15px;
+    &__title {
+    	position: relative;
+	    line-height: 50px;
+	    border-bottom: 1px solid #eee;
+	    padding: 20px 30px 15px;
+	    text-align: left;
+	    h3 {
+	    	font-size: 20px;
+	    	font-weight: normal;
+	    }
+    }
+    &__detail {
+    	padding: 0 30px 20px;
+    	&_line {
+    		padding-top: 20px;
+    		margin-bottom: 10px;
+    		&:after {
+    			content: " ";
+    			clear: both;
+    			display: block;
+    		}
+    	}
+		.carousel-control {
+			$arrow-color: rgb(29, 86, 114);
+			&.left,
+			&.right {
+				background-image: none;
+				//text-shadow: -4px 0 $arrow-color, 0 4px $arrow-color, 4px 0 $arrow-color, 0 -4px $arrow-color;
+				text-shadow: 0 2px 4px rgb(29, 86, 114);
+				opacity: 1.0;
+				color: white;
+			}
+		}
+    }
+}
+
+.line {
+	&__icon {
+		font-size: 32px;
+		float: left;
+	}
+	&__content {
+		padding-left: 60px;
+		&_title {
+			padding-top: 7px;
+			margin-bottom: 20px;
+			font-weight: normal;
+		}
+		&_description {
+			padding-left: 9px;
+			> div:last-child .pull-left {
+				border-left: none;
+				padding-bottom: 0;
+			}
+			.pull-left {
+				padding-bottom: 50px;
+				border-left: 1px solid #ccc;
+			}
+			h5 {
+				font-size: 14px;
+				font-weight: normal;
+				color: #3bafda;
+				text-transform: uppercase;
+				margin-bottom: 5px;
+				&.doctor__education_title {
+					padding-left: 30px;
+					color: #979797;
+				}
+			}
+			.doctor__education_school {
+				padding-left: 30px;
+			}
+		}
+	}
+}
+
+#map {
+	height: 295px;
+}
+
+.doctor-big {
+	border: none;
+	.doctor__image {
+		width: 183px;
+		height: 209px;
+		overflow: hidden;
+		img {
+			width: 183px;
+			border: 5px solid #f8f9fa;
+		}
+	}
+	.doctor__favorite {
+		font-size: 24px;
+		top: 22px;
+		cursor: pointer;
+	}
+	.doctor__name {
+		font-size: 24px;
+		line-height: 24px;
+		font-weight: normal;
+		margin: 25px 0 15px;
+		color: #666;
+		padding-right: 45px;
+		&:hover {
+			color: #666;
+		}
+	}
+	.doctor__details {
+		padding-left: 200px;
+		border-bottom: none;
+	}
+	.doctor__better {
+		font-size: 22px;
+	}
+	.doctor__rating {
+		margin: 20px 0;
+		span {
+			font-size: 24px;
+		}
+	}
+	.doctor__action {
+		margin-top: 20px;
+	}
+}
+
+.doctor__special {
+	padding-bottom: 15px;
+}
+
+
+.btn-icon {
+	font-size: 18px;
+	margin-bottom: 5px;
+	padding: 10px 15px;
+	min-width: 300px;
+	i {
+		float: left;
+		font-size: 24px;
+	}
+}
+
+.recentWrap {
+	&__title {
+	    line-height: 50px;
+	    padding: 20px 30px 15px;
+	    text-align: left;
+    	font-size: 20px;
+    	font-weight: normal;
+	}
+}
+
+.recentBl {
+	text-align: center;
+	&__detail {
+		border: 1px solid #e5e5e5;
+		background: #fff;
+		text-align: center;
+		padding: 45px 0 30px;
+	}
+	&__image {
+		width: 112px;
+	    height: 134px;
+	    display: inline-block;
+	    margin-bottom: -35px;
+	    img {
+	    	width: 112px;
+		    height: 134px;
+		    border: 1px solid #fff;
+	    }
+	}
+	&__name {
+		color: #666;
+		font-size: 14px;
+		margin-bottom: 10px;
+	}
+	&__specialty {
+		color: #999;
+	}
+	&__rating {
+		color: #da4453;
+		margin: 7px 0 20px;
+		span {
+			font-size: 24px;
+		}
+	}
+}
+
+.btn-viewprofile {
+	background: none;
+	border: 1px solid #3BAFDA;
+	color: #3BAFDA;
+	padding: 8px 15px;
+	min-width: 190px;
+	&:hover {
+		background: #3BAFDA;
+		border: 1px solid #3BAFDA;
+		color: #fff;
+	}
+}
+
+.block-sm {
+	.block__title {
+		padding: 15px 20px;
+		margin-bottom: 10px;
+		h3 {
+			font-size: 16px;
+			line-height: 22px;
+		}
+	}
+}
+
+.media {
+	margin: 10px;
+	border-bottom: 1px solid #eee;
+	padding-bottom: 7px;
+	&:last-child {
+		border-bottom: none;
+	}
+	img {
+		width: 48px;
+		height: 56px;
+		border: 1px solid #eee;
+		border-radius: 2px;
+	}
+	.doctor__name {
+		font-size: 15px;
+		margin-top: 0;
+	}
+	.doctor__address {
+		font-size: 13px;
+	}
+}
+
+.outer-circle {
+	border-radius: 50%;
+    border: 1px solid #ccc;
+    height: 18px;
+    width: 18px;
+    position: relative;
+    left: -9px;
+    background: white;
+    .inner-circle {
+    	position: absolute;
+	    background: #778da1;
+	    border-radius: 50%;
+	    height: 6px;
+	    width: 6px;
+	    top: 50%;
+	    left: 50%;
+	    margin: -3px 0 0 -3px;
+    }
+}
+
+@media (max-width: 767px) {
+	#detail {
+		margin-top: 10px;
+	}
+	.doctor-big {
+		.doctor__image {
+			width: 100%;
+			margin-bottom: 10px;
+			img {
+				width: 100%;
+			}
+		}
+		.doctor__details {
+			padding-left: 0;
+		}
+		.doctor__name {
+			font-size: 18px;
+			padding-right: 0;
+			margin-bottom: 10px;
+		}
+		.doctor__favorite {
+			top: 4px;
+		}
+		.doctor__rating {
+			margin: 10px 0 0;
+		}
+		.btn-icon {
+			min-width: 100%;
+		}
+	}
+	.detail-wrap {
+		.col-md-9 {
+			padding: 0;
+		}		
+		.block__title {
+			padding-right: 10px;
+			padding-left: 10px;
+			h3 {
+				font-size: 18px;
+			}
+		}
+	}
+	.block__detail {
+		padding: 0 10px;
+		&_line {
+			margin-bottom: 0;
+		}
+	}
+	.line__content {
+		padding-left: 40px;
+		&_title {
+			font-size: 15px;
+			padding-top: 4px;
+		}
+	}
+	.line__icon {
+		font-size: 24px;
+	}
+	.review {
+		&__quocte {
+			padding: 10px 0 0 25px;
+			clear: both;
+			i {
+				left: 0;
+				top: 5px;
+			}
+		}
+	}
+}

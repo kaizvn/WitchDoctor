@@ -1,12 +1,12 @@
 'use strict';
 
 angular.module('iDocApp')
-    .directive('internalLink', function ($interpolate, urlService, idocRestService) {
+    .directive('internalLink', function ($rootScope, $translate, $interpolate, urlService, idocRestService) {
         return {
             restrict: 'A',
             // priority:1001, // compiles first
             scope: {
-                page: '@internalLink' // evaluated, as opposed to '=' which is interpolated
+                page: '@internalLink', // evaluated, as opposed to '=' which is interpolated
             },
 
             link: function(scope, el, attrs) {
@@ -19,12 +19,13 @@ angular.module('iDocApp')
                     }
                 });
                 el.removeAttr('internalLink');
-                
                 if(scope.page){
                     if(params.conditions){
                         idocRestService.getSpecialtiesByCondition(params.conditions).then(function (response) {
+                            var spec = response.data.results[0].specialties[0];
                             params = {
-                                specialty:response.data.results[0].specialties[0].name
+                                specialty: spec.name,
+                                eng_specialty: spec.eng_name ? spec.eng_name : spec.name
                             };
                             var uri = urlService.getUrlFor(scope.page, null, params, true);
                             el.attr('href', uri);
@@ -35,8 +36,28 @@ angular.module('iDocApp')
                     }
                 }
 
-                var text = params[Object.keys(params)[0]];
+                var key = Object.keys(params)[0];
+                var text = params[key];
                 el.text(text);
+
+                function getTranslationId(key, txt){
+                    function isSubstring(big, small){
+                        return big.indexOf(small) >= 0;
+                    }
+                    if(isSubstring(key, 'specialt')){
+                        return 'specialties.' + txt;
+                    }else{
+                        return txt; //implement for conditions later
+                    }
+                }
+
+                var deregister = $rootScope.$on('$translateChangeSuccess', function () {
+                    $translate(getTranslationId(key, text)).then(function(translation){
+                        el.text(translation);
+                    });
+                });
+
+                scope.$on('$destroy', deregister); //gc
             }
         };
     });

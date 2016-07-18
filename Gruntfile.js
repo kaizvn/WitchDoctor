@@ -541,7 +541,38 @@ module.exports = function (grunt) {
 
         fs.writeFileSync("src/sitemap.xml", createSitemap(hostname).toString());        
     });
-    
+
+    grunt.registerTask('import_translations', function(){
+        var done = this.async();
+
+        function writeJson(filename, data){
+            fs.writeFile(filename, JSON.stringify(data, null, 4), function(err) {
+                if(err) {
+                    throw(err);
+                } else {
+                    console.log("JSON saved to " + filename);
+                    done();
+                }
+            });
+        }
+        function importSpecialties(src){
+            var data = require(src);
+            var specs = {
+                'vi': {},
+                'en': {}
+            };
+            data.forEach(function(s){
+                var key = s['name'];
+                specs['en'][key] = s['eng_name'] ? s['eng_name'] : s['name'];
+                specs['vi'][key] = key;
+            });
+
+            writeJson('src/i18n/vi/specialties.json', {'specialties': specs['vi']});
+            writeJson('src/i18n/en/specialties.json', {'specialties': specs['en']});
+        }
+
+        importSpecialties(path.join(process.env.HOME, 'Dropbox/CodeProjects/kbs_backend/dev/std/cache/KBS_H_Specialties/database.json'));
+    });
 
     grunt.registerTask('default', [
         'test',
